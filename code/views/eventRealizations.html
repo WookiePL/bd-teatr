@@ -7,16 +7,16 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico"> 
+    <link rel="icon" href="../../favicon.ico">
     <!-- Bootstrap core CSS -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles -->
     <link href="../assets/css/style.css" rel="stylesheet">
     <!-- Cuprum font -->
     <link href='https://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
-    <title>Miejsca</title>
+    <title>Wydarzenia</title>
   </head>
-  <body onload="initializePage()">
+  <body onload="fillEventsTable()">
     <!-- NAVBAR -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -31,7 +31,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="eventRealizations.html">Wydarzenia</a></li>
+            <li class="active"><a href="#">Wydarzenia</a></li>
             <li><a href="#about">Rezerwacje</a></li>
           </ul>
           <ul class="nav navbar-nav  navbar-right">
@@ -41,63 +41,30 @@
       </div>
     </nav>
     <div class="container">
+      <!-- Header -->
       <div class="center-content">
-        <h1>Wybór miejsc</h1>
+        <h1>Realizacje wydarzeń</h1>
       </div>
-      <div>
-        <!-- Event description -->
-        <table class="table table-striped event-info center-align">
-          <tbody>
-            <tr>
-              <td>Wydarzenie :</td>
-              <td id="eventName"></td>
-            </tr>
-            <tr>
-              <td>Data :</td>
-              <td id="eventDate"></td>
-            </tr>
-            <tr>
-              <td>Godzina:</td>
-              <td id="eventHour"></td>
-            </tr>
-            <tr>
-              <td>Sala:</td>
-              <td id="eventRoom"></td>
-            </tr>
-            <tr>
-              <td>Budynek:</td>
-              <td id="eventBuilding"></td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- Legend -->
-        <table class="legend center-align">
+      <!-- Events table -->
+      <table class="table table-striped large-table center-align">
+        <thead>
           <tr>
-            <td class="rect selected"></td>
-            <td class="desc">Wybrane</td>
-            <td class="rect occupied"></td>
-            <td class="desc">Zajęte</td>
-            <td class="rect with-border unoccupied"></td>
-            <td class="desc">Wolne</td>
-          <tr>
-        <table>
-        <!-- Sectors visualisation with seats selecting -->
-        <div id="sectors">
-        </div>
-        <!-- Choosen seats section -->
-        <div class="center-content">
-          <h2>Wybrane miejsca</h2>
-          <div id="selected-seats" class="center-align">
-          </div>
-          <div class="button-section center-align">
-            <a href="#tickets" class="btn btn-success left" role="button">Bilet</a>
-            <a href="#reservation" class="btn btn-success right" role="button">Rezerwacja</a>
-          </div>
-        </div>
-      </div>
+            <th>Nazwa</th>
+            <th>Rodzaj</th>
+            <th>Data</th>
+            <th>Godzina</th>
+            <th>Sala</th>
+            <th>Budynek</th>
+            <th>Akcja</th>
+          </tr>
+        </thead>
+        <tbody id="eventsTableBody">
+        </tbody>
+      </table>
     </div><!-- /.container -->
     <!-- Page logic -->
-    <script src="../assets/js/selectSeats.js"></script>
+    <script src="../assets/js/general.js"></script>
+    <script src="../assets/js/eventRealizations.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>

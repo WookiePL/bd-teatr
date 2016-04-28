@@ -70,6 +70,7 @@ function selectSeat(tableId, seatNumber) {
     }
     var selectedSeatsParagraph = document.getElementById(tableId + "SelectedSeats");
     if(selectedSeats[tableId].length > 0) {
+      selectedSeats[tableId].sort(function(a,b){return a-b});
       selectedSeatsParagraph.innerHTML = selectedSeats[tableId].toString();
     }
     else {
@@ -78,7 +79,7 @@ function selectSeat(tableId, seatNumber) {
   }
 }
 
-function fillTable(tableId, rowsNumber, columnsNumber) {
+function fillSectorSeatsTable(tableId, rowsNumber, columnsNumber) {
   var table = document.getElementById(tableId);
   var seatNumber = 0;
   for(var i = 0; i < rowsNumber; i++) {
@@ -120,7 +121,7 @@ function createSector(name, rowsNumber, columnsNumber) {
   sectorTable.id = name;
   sectorTable.className += " select-seats center-align";
   container.appendChild(sectorTable);
-  fillTable(name, rowsNumber, columnsNumber);
+  fillSectorSeatsTable(name, rowsNumber, columnsNumber);
   //fill selected seats section
   container = document.getElementById('selected-seats');
   var sectorNameParagraph = document.createElement('P');
@@ -138,7 +139,7 @@ function createSectors() {
   }
 }
 
-function fillEventDescription() {
+function fillEventDescriptionTable() {
   var element = document.getElementById('eventName');
   element.innerHTML = eventObject.name;
   element = document.getElementById('eventDate');
@@ -152,6 +153,6 @@ function fillEventDescription() {
 }
 
 function initializePage() {
-  fillEventDescription();
+  fillEventDescriptionTable();
   createSectors();
 }
