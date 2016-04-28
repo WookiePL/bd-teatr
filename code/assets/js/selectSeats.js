@@ -1,12 +1,46 @@
-// seats state objects
+//DATA
+//event describing object
+eventObject = {
+  name: 'Romeo i Julia',
+  date: '23-05-2016',
+  hour: '17:00',
+  room: '4',
+  building: 'ul.Jagiellońska 12'
+}
+
+//array of sector objects
+// sector describing object e.g.:
+// {
+//   name: 'name',
+//   rowsNumber: 3,
+//   columnsNumber: 5
+// }
+sectorsArray = [
+  {
+    name:'Parter',
+    rowsNumber: 5,
+    columnsNumber: 8
+  },
+  {
+    name: 'Balkon',
+    rowsNumber: 4,
+    columnsNumber: 10
+  }
+];
+
 // seat state are kept as object as follows:
 // {
-//   #nameOfSector1: [list of seat numbers],
-//   #nameOfSector2: [list of seat numbers],
+//   nameOfSector1: [array of seat numbers],
+//   nameOfSector2: [array of seat numbers],
 //   ...
 // }
-occupiedSeats = {Parter:[2,4,14,15,22],Balkon:[35,36,37]};
+occupiedSeats = {
+  Parter:[2,4,14,15,22],
+  Balkon:[35,36,37]
+};
 selectedSeats = {};
+
+//LOGIC
 
 //checks if array contains object
 function arrayContains(array, object) {
@@ -98,15 +132,26 @@ function createSector(name, rowsNumber, columnsNumber) {
   container.appendChild(sectorSelectedSeatsParagraph);
 }
 
-// listOfSectors is an array of sector describing objects:
-// sector describing object e.g.:
-// {
-//   name: 'name',
-//   rowsNumber: 3,
-//   columnsNumber: 5
-// }
-function createSectors(listOfSectors) {
-  for (var i = 0; i < listOfSectors.length; i++) {
-    createSector(listOfSectors[i].name, listOfSectors[i].rowsNumber, listOfSectors[i].columnsNumber);
+function createSectors() {
+  for (var i = 0; i < sectorsArray.length; i++) {
+    createSector(sectorsArray[i].name, sectorsArray[i].rowsNumber, sectorsArray[i].columnsNumber);
   }
+}
+
+function fillEventDescription() {
+  var element = document.getElementById('eventName');
+  element.innerHTML = eventObject.name;
+  element = document.getElementById('eventDate');
+  element.innerHTML = eventObject.date;
+  element = document.getElementById('eventHour');
+  element.innerHTML = eventObject.hour;
+  element = document.getElementById('eventRoom');
+  element.innerHTML = eventObject.room;
+  element = document.getElementById('eventBuilding');
+  element.innerHTML = eventObject.building;
+}
+
+function initializePage() {
+  fillEventDescription();
+  createSectors();
 }

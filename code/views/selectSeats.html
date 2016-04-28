@@ -22,8 +22,7 @@
 
   </head>
 
-  <!-- <body onload="fillTable('Parter',3,4)"> -->
-  <body onload="createSectors([{name:'Parter', rowsNumber: 5, columnsNumber: 8},{name: 'Balkon', rowsNumber: 4, columnsNumber: 10}])">
+  <body onload="initializePage()">
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -62,23 +61,23 @@
           <tbody>
             <tr>
               <td>Wydarzenie :</td>
-              <td>Romeo i Julia</td>
+              <td id="eventName"></td>
             </tr>
             <tr>
               <td>Data :</td>
-              <td>23-04-2016</td>
+              <td id="eventDate"></td>
             </tr>
             <tr>
               <td>Godzina:</td>
-              <td>17:00</td>
+              <td id="eventHour"></td>
             </tr>
             <tr>
               <td>Sala:</td>
-              <td>4</td>
+              <td id="eventRoom"></td>
             </tr>
             <tr>
               <td>Budynek:</td>
-              <td>ul.Jagiellońska 12</td>
+              <td id="eventBuilding"></td>
             </tr>
           </tbody>
         </table>
