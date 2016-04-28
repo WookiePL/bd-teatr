@@ -76,7 +76,7 @@ function fillEventReservationTable() {
     td.appendChild(a);
     //third action icon
     a = document.createElement("A");
-    a.href = "#";
+    a.href = "editReservation.html";
     img = new Image();
     img.src = "../assets/images/edit.png";
     img.className += " action-icon";
