@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.StackPane?>
+
+<Pane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.MenuController">
+  <children>
+    <Button fx:id="buttonUsers" layoutX="24.0" layoutY="34.0" mnemonicParsing="false" onAction="#goUsers" text="Zarządzaj użytkownikami" />
+    <Button fx:id="buttonDictionaries" layoutX="36.0" layoutY="65.0" mnemonicParsing="false" onAction="#goDictionaries" text="Zarządzaj słownikami" />
+    <Button fx:id="buttonExit" layoutX="70.0" layoutY="165.0" mnemonicParsing="false" onAction="#goExit" text="Wyjście" />
+  </children>
+</Pane>

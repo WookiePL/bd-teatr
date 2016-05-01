@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.DictionariesController">
+   <children>
+      <Button fx:id="buttonBackMenu" layoutX="73.0" layoutY="161.0" mnemonicParsing="false" onAction="#backMenu" text="Powrót" />
+   </children>
+</Pane>
