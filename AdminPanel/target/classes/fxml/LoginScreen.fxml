@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<StackPane fx:id="loginStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.LoginController">
+   <children>
+      <BorderPane prefHeight="408.0" prefWidth="600.0">
+         <top>
+            <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Logowanie" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+               </children>
+            </StackPane>
+         </top>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#login" style="-fx-background-color: #79FF4D;" text="Login" />
+                  <Button fx:id="buttonExit" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #79FF4D;" text="Wyjście" />
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Login:" />
+                  <TextField fx:id="textFieldLogin" />
+                  <Label text="Hasło:" />
+                  <PasswordField fx:id="passwordField" />
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="labelErrorMessage" text="Błędny login lub hasło" textFill="RED" visible="false" />
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

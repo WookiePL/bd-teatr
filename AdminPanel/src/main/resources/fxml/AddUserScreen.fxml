@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.AddUserController">
+   <children>
+      <BorderPane prefHeight="408.0" prefWidth="600.0">
+         <top>
+            <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Dodaj użytkownika" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+               </children>
+            </StackPane>
+         </top>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="buttonAddUser" mnemonicParsing="false" onAction="#addUser" style="-fx-background-color: #79FF4D;" text="Dodaj" />
+                  <Button mnemonicParsing="false" onAction="#backToUsers" style="-fx-background-color: #79FF4D;" text="Anuluj" />
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="ID:" />
+                  <TextField fx:id="textFieldId" />
+                  <Label text="Imię:" />
+                  <TextField fx:id="textFieldFirstName" />
+                  <Label text="Nazwisko:" />
+                  <TextField fx:id="textFieldLastName" />
+                  <Label text="E-mail:" />
+                  <TextField fx:id="textFieldEmail" />
+                  <Label text="Telefon:" />
+                  <TextField fx:id="textFieldPhone" />
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</Pane>

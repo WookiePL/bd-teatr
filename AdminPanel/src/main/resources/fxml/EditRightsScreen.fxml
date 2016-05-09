@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.EditRightsController">
+   <children>
+      <BorderPane prefHeight="408.0" prefWidth="600.0">
+         <top>
+            <StackPane prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Edytuj uprawnienia" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+               </children>
+            </StackPane>
+         </top>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#confirm" style="-fx-background-color: #79FF4D;" text="Zatwierdź" />
+                  <Button mnemonicParsing="false" onAction="#backToUsers" style="-fx-background-color: #79FF4D;" text="Anuluj" />
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <CheckBox fx:id="checkBox1" mnemonicParsing="false" text="right1" />
+                  <CheckBox fx:id="checkBox2" mnemonicParsing="false" text="right2" />
+                  <CheckBox fx:id="checkBox3" mnemonicParsing="false" text="right3" />
+                  <CheckBox fx:id="checkBox4" mnemonicParsing="false" text="right4" />
+                  <CheckBox fx:id="checkBox5" mnemonicParsing="false" text="right5" />
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</Pane>

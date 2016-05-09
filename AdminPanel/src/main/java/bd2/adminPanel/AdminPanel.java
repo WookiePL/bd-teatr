@@ -15,11 +15,11 @@ public class AdminPanel extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(this.getClass().getResource("/fxml/MainScreen.fxml"));
+		loader.setLocation(this.getClass().getResource("/fxml/LoginScreen.fxml"));
 
 		StackPane stackPane = loader.load();
 
-		Scene scene = new Scene(stackPane, 200, 250);
+		Scene scene = new Scene(stackPane, 600, 408);
 
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Admin Panel");

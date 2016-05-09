@@ -1,12 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.UsersController">
+<Pane prefHeight="408.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.UsersController">
    <children>
-      <Button fx:id="buttonBackMenu" layoutX="73.0" layoutY="161.0" mnemonicParsing="false" onAction="#backMenu" text="Powrót" />
+      <BorderPane prefHeight="408.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <bottom>
+            <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="buttonBackMenu" mnemonicParsing="false" onAction="#backMenu" style="-fx-background-color: #79FF4D;" text="Powrót" />
+               </children>
+            </StackPane>
+         </bottom>
+         <top>
+            <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Zarządzaj użytkownikami" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+               </children>
+            </StackPane>
+         </top>
+         <left>
+            <ListView fx:id="listViewUsers" onMouseClicked="#userDetail" prefHeight="318.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <VBox prefHeight="318.0" prefWidth="261.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Dane użytkownika:" />
+                  <VBox prefHeight="337.0" prefWidth="300.0">
+                     <children>
+                        <Label text="ID:" />
+                        <TextField fx:id="textFieldId" />
+                        <Label text="Imię:" />
+                        <TextField fx:id="textFieldFirstName" />
+                        <Label text="Nazwisko:" />
+                        <TextField fx:id="textFieldLastName" />
+                        <Label text="E-mail:" />
+                        <TextField fx:id="textFieldEmail" />
+                        <Label text="Telefon:" />
+                        <TextField fx:id="textFieldPhone" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+                     <children>
+                        <Button fx:id="buttonAddUser" mnemonicParsing="false" onAction="#addUser" style="-fx-background-color: #79FF4D;" text="Dodaj" />
+                        <Button fx:id="buttonDeleteUser" mnemonicParsing="false" onAction="#deleteUser" style="-fx-background-color: #79FF4D;" text="Usuń" />
+                        <Button fx:id="buttonEditUser" mnemonicParsing="false" onAction="#editUser" style="-fx-background-color: #79FF4D;" text="Edytuj" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <right>
+            <VBox prefHeight="318.0" prefWidth="155.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Posiadane uprawnienia:" />
+                  <ListView fx:id="listViewRights" prefHeight="370.0" prefWidth="145.0" />
+                  <HBox alignment="CENTER" prefHeight="131.0" prefWidth="100.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="buttonEditRights" mnemonicParsing="false" onAction="#editRights" style="-fx-background-color: #79FF4D;" text="Edytuj uprawnienia" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </right>
+      </BorderPane>
    </children>
 </Pane>

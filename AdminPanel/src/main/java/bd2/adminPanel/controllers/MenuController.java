@@ -13,7 +13,7 @@ public class MenuController {
 	private MainController mainController;
 	
 	@FXML
-	public void goUsers() {
+	public void users() {
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/UsersScreen.fxml"));
 		Pane pane = null;
 		
@@ -30,7 +30,7 @@ public class MenuController {
 	}
 	
 	@FXML 
-	public void goDictionaries() {
+	public void dictionaries() {
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/DictionariesScreen.fxml"));
 		Pane pane = null;
 		
@@ -47,7 +47,7 @@ public class MenuController {
 	}
 	
 	@FXML
-	public void goExit() {
+	public void exit() {
 		Platform.exit();
 	}
 	

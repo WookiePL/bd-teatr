@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.DictionariesController">
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.DictionariesController">
    <children>
-      <Button fx:id="buttonBackMenu" layoutX="73.0" layoutY="161.0" mnemonicParsing="false" onAction="#backMenu" text="Powrót" />
+      <BorderPane prefHeight="408.0" prefWidth="600.0">
+         <top>
+            <StackPane prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Zarządzaj słownikami" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+         </top>
+         <bottom>
+            <StackPane prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="buttonBackMenu" mnemonicParsing="false" onAction="#backMenu" style="-fx-background-color: #79FF4D;" text="Powrót" />
+               </children>
+            </StackPane>
+         </bottom>
+      </BorderPane>
    </children>
 </Pane>
