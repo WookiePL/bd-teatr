@@ -9,14 +9,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
 
-
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.UsersController">
    <children>
       <BorderPane prefHeight="432.0" prefWidth="620.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
             <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="buttonBackMenu" mnemonicParsing="false" onAction="#backMenu" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%);; -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );; -fx-text-fill: #395306;" styleClass="button_green" text="Powrót">
+                  <Button fx:id="buttonBackMenu" mnemonicParsing="false" onAction="#backMenu" onMouseEntered="#buttonBackMenuOnMouseEntered" onMouseExited="#buttonBackMenuOnMouseExited" onMousePressed="#buttonBackMenuOnMousePressed" onMouseReleased="#buttonBackMenuOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Wróć">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -36,11 +35,27 @@
             </StackPane>
          </top>
          <left>
-            <ListView fx:id="listViewUsers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#userDetail" prefHeight="263.0" prefWidth="170.0" BorderPane.alignment="CENTER_RIGHT">
-               <BorderPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </BorderPane.margin>
-            </ListView>
+            <VBox>
+               <children>
+                  <ListView fx:id="listViewUsers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#userDetail" prefHeight="305.0" prefWidth="170.0" BorderPane.alignment="CENTER_RIGHT">
+                     <BorderPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </BorderPane.margin>
+                  </ListView>
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="150.0" spacing="40.0">
+                     <children>
+                        <Button fx:id="buttonDeleteUser" mnemonicParsing="false" onAction="#deleteUser" onMouseEntered="#buttonDeleteUserOnMouseEntered" onMouseExited="#buttonDeleteUserOnMouseExited" onMousePressed="#buttonDeleteUserOnMousePressed" onMouseReleased="#buttonDeleteUserOnMouseReleased" style="-fx-background-color: linear-gradient(#ff3535, #ff0000), radial-gradient(center 50% -40%, radius 200%, #ee3636 45%, #c80000 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #ffe3e3;" text="Usuń">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
          </left>
          <center>
             <VBox alignment="CENTER" maxWidth="500.0" prefHeight="318.0" prefWidth="261.0" BorderPane.alignment="CENTER">
@@ -56,47 +71,35 @@
                   <VBox prefHeight="228.0" prefWidth="295.0" spacing="2.0">
                      <children>
                         <Label text="Login:" />
-                        <TextField fx:id="textFieldId" editable="false" />
+                        <TextField fx:id="textFieldId" />
                         <Label text="Imię:" />
-                        <TextField fx:id="textFieldFirstName" editable="false" />
+                        <TextField fx:id="textFieldFirstName" />
                         <Label text="Nazwisko:" />
-                        <TextField fx:id="textFieldLastName" editable="false" />
+                        <TextField fx:id="textFieldLastName" />
                         <Label text="E-mail:" />
-                        <TextField fx:id="textFieldEmail" editable="false" />
+                        <TextField fx:id="textFieldEmail" />
                         <Label text="Telefon:" />
-                        <TextField fx:id="textFieldPhone" editable="false" />
+                        <TextField fx:id="textFieldPhone" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                      </VBox.margin>
                   </VBox>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  <HBox alignment="CENTER" prefHeight="17.0" prefWidth="240.0" spacing="10.0">
                      <children>
-                        <Button fx:id="buttonDeleteUser" mnemonicParsing="false" onAction="#deleteUser" style="-fx-background-color: linear-gradient(#ff3535, #ff0000), radial-gradient(center 50% -40%, radius 200%, #ee3636 45%, #c80000 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-text-fill: #450404;" text="Usuń">
+                        <Button fx:id="buttonAddUser" mnemonicParsing="false" onAction="#addUser" onMouseEntered="#buttonAddUserOnMouseEntered" onMouseExited="#buttonAddUserOnMouseExited" onMousePressed="#buttonAddUserOnMousePressed" onMouseReleased="#buttonAddUserOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Dodaj użytkownika">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="buttonEditUser" mnemonicParsing="false" onAction="#editUser" onMouseEntered="#buttonEditUserOnMouseEntered" onMouseExited="#buttonEditUserOnMouseExited" onMousePressed="#buttonEditUserOnMousePressed" onMouseReleased="#buttonEditUserOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Zastosuj edycję">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
                      </children>
                      <VBox.margin>
-                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
-                     <children>
-                        <Button fx:id="buttonAddUser" mnemonicParsing="false" onAction="#addUser" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Dodaj">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="buttonEditUser" mnemonicParsing="false" onAction="#editUser" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%);; -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );; -fx-text-fill: #395306;" styleClass="button_green" text="Edytuj">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Button>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
                   </HBox>
                </children>
@@ -123,7 +126,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                      <children>
-                        <Button fx:id="buttonEditRights" mnemonicParsing="false" onAction="#editRights" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%);; -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );; -fx-text-fill: #395306;" styleClass="button_green" text="Edytuj uprawnienia">
+                        <Button fx:id="buttonEditRights" mnemonicParsing="false" onAction="#editRights" onMouseEntered="#buttonEditRightsOnMouseEntered" onMouseExited="#buttonEditRightsOnMouseExited" onMousePressed="#buttonEditRightsOnMousePressed" onMouseReleased="#buttonEditRightsOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Edytuj uprawnienia">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
