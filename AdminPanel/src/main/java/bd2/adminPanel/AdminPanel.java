@@ -21,6 +21,8 @@ public class AdminPanel extends Application {
 
 		Scene scene = new Scene(stackPane, 600, 408);
 
+                primaryStage.setMinWidth(640);
+                primaryStage.setMinHeight(472);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Admin Panel");
 		primaryStage.show();

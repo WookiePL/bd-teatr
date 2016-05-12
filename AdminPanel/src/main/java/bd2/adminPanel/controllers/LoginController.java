@@ -22,19 +22,30 @@ public class LoginController {
 	private PasswordField passwordField;
 	
 	@FXML
-	private Label labelErrorMessage;
+	private Label labelWrongLogin;
+        
+        @FXML
+	private Label labelWrongPassword;
 	
 	@FXML
 	public void login() {
 		String login = "admin";
 		String password = "admin";
 		
-		loadMainScreen();
-//		if(login.equals(textFieldLogin.getText()) && password.equals(passwordField.getText())) {
-//			loadMainScreen();
-//		} else {
-//			labelErrorMessage.setVisible(true);
-//		}
+                loadMainScreen();
+                /*
+		if(login.equals(textFieldLogin.getText())) {
+                    if(password.equals(passwordField.getText())) {
+			loadMainScreen();
+                    }
+                    else {
+                        labelWrongLogin.setVisible(false);
+                        labelWrongPassword.setVisible(true);
+                    }
+		} else {
+                        labelWrongPassword.setVisible(false);
+			labelWrongLogin.setVisible(true);
+		}*/
 	}
 	
 	@FXML
