@@ -54,7 +54,7 @@ function fillEventReservationTable() {
     td = row.insertCell(); //for actions
     //first action icon
     var a = document.createElement("A");
-    a.href = "#";
+    a.href = "tickets.html";
     var img = new Image();
     img.src = "../assets/images/confirm.png";
     img.className += " action-icon";
