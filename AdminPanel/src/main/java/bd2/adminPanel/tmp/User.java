@@ -4,21 +4,12 @@ import java.util.List;
 
 public class User {
 
-    private String id;
     private String login;
     private String firstName;
     private String lastName;
     private String email;
     private String phone;
     private List<Right> rights;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getLogin() {
         return login;
@@ -68,9 +59,9 @@ public class User {
         this.rights = rights;
     }
 
-    public User(String id, String firstName, String lastName, String email, String phone, List<Right> rights) {
+    public User(String login, String firstName, String lastName, String email, String phone, List<Right> rights) {
         super();
-        this.id = id;
+        this.login = login;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -80,6 +71,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "Id: " + id + ", " + firstName + " " + lastName;
+        return "Login: " + login + ", " + firstName + " " + lastName;
     }
 }

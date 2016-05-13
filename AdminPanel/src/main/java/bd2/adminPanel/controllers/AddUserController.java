@@ -10,59 +10,59 @@ import javafx.scene.layout.Pane;
 
 public class AddUserController {
 
-	private MainController mainController;
-	private FXMLLoader loader;
-	private UsersController usersController;
-	private Pane pane = null;
+    private MainController mainController;
+    private FXMLLoader loader;
+    private UsersController usersController;
+    private Pane pane = null;
 
-	@FXML
-	private TextField textFieldId;
+    @FXML
+    private TextField textFieldId;
 
-	@FXML
-	private TextField textFieldFirstName;
+    @FXML
+    private TextField textFieldFirstName;
 
-	@FXML
-	private TextField textFieldLastName;
+    @FXML
+    private TextField textFieldLastName;
 
-	@FXML
-	private TextField textFieldEmail;
+    @FXML
+    private TextField textFieldEmail;
 
-	@FXML
-	private TextField textFieldPhone;
+    @FXML
+    private TextField textFieldPhone;
 
-	public void setMainController(MainController mainController) {
-		this.mainController = mainController;
-	}
+    public void setMainController(MainController mainController) {
+        this.mainController = mainController;
+    }
 
-	@FXML
-	public void backToUsers() {
-		init();
-		mainController.setScreen(pane);
-	}
+    @FXML
+    public void backToUsers() {
+        init();
+        mainController.setScreen(pane);
+    }
 
-	@FXML
-	public void addUser() {
-		init();
-		
-		User user = new User(textFieldId.getText(), textFieldFirstName.getText(), textFieldLastName.getText(),
-				textFieldEmail.getText(), textFieldPhone.getText(), null);
-		
-		usersController.getUserRepository().getUsers().add(user);
-		usersController.initialize(null, null);
+    @FXML
+    public void addUser() {
+        init();
 
-		mainController.setScreen(pane);
-	}
+        User user = new User(textFieldId.getText(), textFieldFirstName.getText(), textFieldLastName.getText(),
+                textFieldEmail.getText(), textFieldPhone.getText(), null);
 
-	public void init() {
-		loader = new FXMLLoader(this.getClass().getResource("/fxml/UsersScreen.fxml"));
+        usersController.getUserRepository().getUsers().add(user);
+        usersController.initialize(null, null);
 
-		try {
-			pane = loader.load();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        mainController.setScreen(pane);
+    }
 
-		usersController = loader.getController();
-		usersController.setMainController(mainController);	
-	}
+    public void init() {
+        loader = new FXMLLoader(this.getClass().getResource("/fxml/UsersScreen.fxml"));
+
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        usersController = loader.getController();
+        usersController.setMainController(mainController);
+    }
 }
