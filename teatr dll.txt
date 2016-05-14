@@ -1,0 +1,332 @@
+
+
+CREATE TABLE theater.Building
+(
+	"building_id" Serial,
+	"adress" Text
+)
+;
+
+CREATE TABLE theater.User
+(
+	"user_id" Serial,
+	"name" Text,
+	"surname" Text
+)
+;
+
+CREATE TABLE theater.Ticket
+(
+	"ticket_id" Serial,
+	"number" int,
+	"event_realization_id" Integer,
+	"user_id" Integer
+)
+;
+
+CREATE TABLE theater.Sector
+(
+	"sector_id" Serial,
+	"number" int,
+	"room_id" Integer NOT NULL
+)
+;
+
+CREATE TABLE theater.Room
+(
+	"room_id" Serial,
+	"number" int,
+	"building_id" Integer NOT NULL
+)
+;
+
+CREATE TABLE theater.Roles
+(
+	"role_id" Serial,
+	"name" Text,
+	"code" int
+)
+;
+
+CREATE TABLE theater.Reservation
+(
+	"reservation_id" Serial,
+	"name" Text,
+	"phone" int,
+	"email" Text,
+	"date" Date,
+	"revoke_date" Date,
+	"event_realization_id" Integer,
+	"user_id" Integer
+)
+;
+
+CREATE TABLE theater.PriceList
+(
+	"price_list_id" Serial,
+	"from" Date,
+	"to" Date,
+	"event_id" Integer NOT NULL
+)
+;
+
+
+
+CREATE TABLE theater.Price
+(
+	"price" decimal,
+	"price_id" Serial,
+	"group_of_clients_id" Integer NOT NULL,
+	"price_list_id" Integer NOT NULL,
+	"period_id" Integer NOT NULL,
+)
+;
+
+CREATE TABLE theater.Place
+(
+	"place_id" Serial,
+	"number" int,
+	"sector_id" Integer NOT NULL,
+	"ticket_id" Integer,
+	"reservation_id" Integer
+)
+;
+
+CREATE TABLE theater.Period
+(
+	"period_id" Serial,
+	"name" Text
+)
+;
+
+CREATE TABLE theater.JoinUsersToRoles
+(
+	"role_id" Integer,
+	"user_id" Integer
+)
+;
+
+CREATE TABLE theater.GroupOfClients
+(
+	"group_of_clients_id" Serial,
+	"name" Text
+)
+;
+
+CREATE TABLE theater.EventType
+(
+	"event_type_id" Serial,
+	"name" Text
+)
+;
+
+CREATE TABLE theater.EventRealization
+(
+	"date" Date,
+	"event_realization_id" Serial,
+	"price" int,
+	"hour" int,
+	"event_id" Integer,
+	"room_id" Integer
+)
+;
+
+CREATE TABLE theater.Event
+(
+	"event_id" Serial,
+	"name" Text,
+	"description" Text,
+	"event_type_id" Integer NOT NULL
+)
+;
+
+CREATE TABLE theater.DayOfWeek
+(
+	"name" Text,
+	"day_of_week_id" Integer NOT NULL
+)
+;
+
+CREATE TABLE theater.Cycle
+(
+	"cycle_id" Serial,
+	"period_id" Integer NOT NULL,
+	"day_of_week_id" Integer NOT NULL
+)
+;
+
+
+
+
+
+
+
+
+ALTER TABLE theater.Building ADD CONSTRAINT "PK_Building"
+	PRIMARY KEY ("building_id")
+;
+
+ALTER TABLE theater.User ADD CONSTRAINT "PK_User"
+	PRIMARY KEY ("user_id")
+;
+
+ALTER TABLE theater.Ticket ADD CONSTRAINT "PK_Ticket"
+	PRIMARY KEY ("ticket_id")
+;
+
+ALTER TABLE theater.Sector ADD CONSTRAINT "PK_Sector"
+	PRIMARY KEY ("sector_id")
+;
+
+ALTER TABLE theater.Room ADD CONSTRAINT "PK_Room"
+	PRIMARY KEY ("room_id")
+;
+
+ALTER TABLE theater.Roles ADD CONSTRAINT "PK_Roles"
+	PRIMARY KEY ("role_id")
+;
+
+ALTER TABLE theater.Reservation ADD CONSTRAINT "PK_Reservation"
+	PRIMARY KEY ("reservation_id")
+;
+
+ALTER TABLE theater.PriceList ADD CONSTRAINT "PK_PriceList"
+	PRIMARY KEY ("price_list_id")
+;
+
+
+ALTER TABLE theater.Price ADD CONSTRAINT "PK_Price"
+	PRIMARY KEY ("price_id")
+;
+
+ALTER TABLE theater.Place ADD CONSTRAINT "PK_Place"
+	PRIMARY KEY ("place_id")
+;
+
+ALTER TABLE theater.Period ADD CONSTRAINT "PK_Period"
+	PRIMARY KEY ("period_id")
+;
+
+ALTER TABLE theater.GroupOfClients ADD CONSTRAINT "PK_GroupOfClients"
+	PRIMARY KEY ("group_of_clients_id")
+;
+
+ALTER TABLE theater.EventType ADD CONSTRAINT "PK_EventType"
+	PRIMARY KEY ("event_type_id")
+;
+
+ALTER TABLE theater.EventRealization ADD CONSTRAINT "PK_EventRealization"
+	PRIMARY KEY ("event_realization_id")
+;
+
+ALTER TABLE theater.Event ADD CONSTRAINT "PK_Event"
+	PRIMARY KEY ("event_id")
+;
+
+ALTER TABLE theater.DayOfWeek ADD CONSTRAINT "PK_DayOfWeek"
+	PRIMARY KEY ("day_of_week_id")
+;
+
+ALTER TABLE theater.Cycle ADD CONSTRAINT "PK_Cycle"
+	PRIMARY KEY ("cycle_id")
+;
+
+
+
+
+
+ALTER TABLE theater.Ticket ADD CONSTRAINT "FK_Ticket_EventRealization"
+	FOREIGN KEY ("event_realization_id") REFERENCES theater.EventRealization ("event_realization_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+ALTER TABLE theater.Ticket ADD CONSTRAINT "FK_Ticket_User"
+	FOREIGN KEY ("user_id") REFERENCES theater.User ("user_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+ALTER TABLE theater.Sector ADD CONSTRAINT "FK_Sector_Room"
+	FOREIGN KEY ("room_id") REFERENCES theater.Room ("room_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+ALTER TABLE theater.Reservation ADD CONSTRAINT "FK_Reservation_EventRealization"
+	FOREIGN KEY ("event_realization_id") REFERENCES theater.EventRealization ("event_realization_id") ON DELETE Cascade ON UPDATE Cascade
+;
+ALTER TABLE theater.Reservation ADD CONSTRAINT "FK_Reservation_User"
+	FOREIGN KEY ("user_id") REFERENCES theater.User ("user_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+
+ALTER TABLE theater.Room ADD CONSTRAINT "FK_Room_Building"
+	FOREIGN KEY ("building_id") REFERENCES theater.Building ("building_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+
+
+
+ALTER TABLE theater.PriceList ADD CONSTRAINT "FK_PriceList_Event"
+	FOREIGN KEY ("event_id") REFERENCES theater.Event ("event_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+
+
+
+ALTER TABLE theater.joinuserstoroles ADD CONSTRAINT "Roles"
+	FOREIGN KEY ("role_id") REFERENCES theater.Roles ("role_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+
+ALTER TABLE theater.joinuserstoroles ADD CONSTRAINT "User"
+	FOREIGN KEY ("user_id") REFERENCES theater.User ("user_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+ALTER TABLE theater.EventRealization ADD CONSTRAINT "FK_EventRealization_Event"
+	FOREIGN KEY ("event_id") REFERENCES theater.Event ("event_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+ALTER TABLE theater.EventRealization ADD CONSTRAINT "FK_EventRealization_Room"
+	FOREIGN KEY ("room_id") REFERENCES theater.Room ("room_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+ALTER TABLE theater.Event ADD CONSTRAINT "FK_Event_EventType"
+	FOREIGN KEY ("event_type_id") REFERENCES theater.EventType ("event_type_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+ALTER TABLE theater.Cycle ADD CONSTRAINT "FK_Cycle_Period"
+	FOREIGN KEY ("period_id") REFERENCES theater.Period ("period_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+ALTER TABLE theater.Cycle ADD CONSTRAINT "FK_Cycle_DayOfWeek"
+	FOREIGN KEY ("day_of_week_id") REFERENCES theater.DayOfWeek ("day_of_week_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+
+
+
+ALTER TABLE theater.Price ADD CONSTRAINT "FK_Price_PriceList"
+	FOREIGN KEY ("price_list_id") REFERENCES theater.PriceList ("price_list_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+ALTER TABLE theater.Place ADD CONSTRAINT "FK_Place_Sector"
+	FOREIGN KEY ("sector_id") REFERENCES theater.Sector ("sector_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+ALTER TABLE theater.Place ADD CONSTRAINT "FK_Place_Ticket"
+	FOREIGN KEY ("ticket_id") REFERENCES theater.Ticket ("ticket_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+
+ALTER TABLE theater.Place ADD CONSTRAINT "FK_Place_Reservation"
+	FOREIGN KEY ("reservation_id") REFERENCES theater.Reservation ("reservation_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+
+ALTER TABLE theater.Price ADD CONSTRAINT "FK_Price_GroupOfClients"
+	FOREIGN KEY ("group_of_clients_id") REFERENCES theater.GroupOfClients ("group_of_clients_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+
+ALTER TABLE theater.Price ADD CONSTRAINT "FK_Price_Period"
+	FOREIGN KEY ("period_id") REFERENCES theater.Period ("period_id") ON DELETE Cascade ON UPDATE Cascade
+;
+
+
+
