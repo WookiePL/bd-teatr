@@ -36,7 +36,8 @@
                   <PasswordField fx:id="passwordField" />
                   <StackPane prefHeight="150.0" prefWidth="200.0">
                      <children>
-                        <Label fx:id="labelErrorMessage" text="Błędny login lub hasło" textFill="RED" visible="false" />
+                        <Label fx:id="labelWrongPassword" text="Błędne hasło." textFill="RED" visible="false" />
+                        <Label fx:id="labelWrongLogin" text="Użytkownik nie istnieje." textFill="RED" visible="false" />
                      </children>
                   </StackPane>
                </children>

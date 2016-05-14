@@ -3,73 +3,74 @@ package bd2.adminPanel.tmp;
 import java.util.List;
 
 public class User {
-	private String id;
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String phone;
-	private List<Right> rights;
 
-	public String getId() {
-		return id;
-	}
+    private String login;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phone;
+    private List<Right> rights;
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public String getLogin() {
+        return login;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public void setLogin(String id) {
+        this.login = login;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	
-	public String getEmail() {
-		return email;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public List<Right> getRights() {
-		return rights;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public void setRights(List<Right> rights) {
-		this.rights = rights;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-	public User(String id, String firstName, String lastName, String email, String phone, List<Right> rights) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.phone = phone;
-		this.rights = rights;
-	}
+    public List<Right> getRights() {
+        return rights;
+    }
 
-	@Override
-	public String toString() {
-		return "Id: " + id + ", "+ firstName + " " + lastName;
-	}
+    public void setRights(List<Right> rights) {
+        this.rights = rights;
+    }
+
+    public User(String login, String firstName, String lastName, String email, String phone, List<Right> rights) {
+        super();
+        this.login = login;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.rights = rights;
+    }
+
+    @Override
+    public String toString() {
+        return "Login: " + login + ", " + firstName + " " + lastName;
+    }
 }

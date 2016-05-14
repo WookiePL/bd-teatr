@@ -135,3 +135,29 @@ h2 {
   margin-top: 40px;
   padding-bottom: 100px;
 }
+
+#sum {
+  margin-top: 40px;
+  margin-bottom: -40px;
+}
+
+#count {
+  margin-top: 40px;
+}
+
+.ticket {
+  margin-bottom: 100px;
+}
+
+.login {
+  background-color: #b2f38e;
+}
+
+.login-header {
+  font-size: 140px;
+}
+
+.login-button {
+  margin-top: 15px;
+  width: 360px;
+}
