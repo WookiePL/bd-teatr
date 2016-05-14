@@ -1,0 +1,57 @@
+package example.persist.model;
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "groupofclients", schema = "theater")
+public class GroupofclientsEntity {
+    private Integer groupOfClientsId;
+    private String name;
+
+    @Id
+    @Column(name = "group_of_clients_id", columnDefinition = "serial")
+    @SequenceGenerator(name = "groupofclients_group_of_clients_id_seq",
+            sequenceName = "groupofclients_group_of_clients_id_seq",
+            allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator = "groupofclients_group_of_clients_id_seq")
+    public Integer getGroupOfClientsId() {
+        return groupOfClientsId;
+    }
+
+    public void setGroupOfClientsId(Integer groupOfClientsId) {
+        this.groupOfClientsId = groupOfClientsId;
+    }
+
+    @Basic
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        GroupofclientsEntity that = (GroupofclientsEntity) o;
+
+        if (groupOfClientsId != null ? !groupOfClientsId.equals(that.groupOfClientsId) : that.groupOfClientsId != null)
+            return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = groupOfClientsId != null ? groupOfClientsId.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
+    }
+}
