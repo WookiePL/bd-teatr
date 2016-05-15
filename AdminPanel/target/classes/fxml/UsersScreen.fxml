@@ -26,7 +26,7 @@
          <top>
             <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="BOTTOM_CENTER">
                <children>
-                  <Label text="Zarządzaj użytkownikami" textFill="WHITE">
+                  <Label text="Zarządzanie użytkownikami" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -66,7 +66,7 @@
                <children>
                   <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label text="Dane użytkownika:">
+                        <Label text="Dane:">
                            <VBox.margin>
                               <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                            </VBox.margin>
@@ -117,14 +117,17 @@
             </AnchorPane>
          </center>
          <right>
-            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="180.0" BorderPane.alignment="CENTER_LEFT">
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="180.0" minWidth="130.0" BorderPane.alignment="CENTER_LEFT">
                <children>
-                  <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="180.0" nodeOrientation="LEFT_TO_RIGHT" spacing="7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="180.0" nodeOrientation="LEFT_TO_RIGHT" spacing="7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label text="Posiadane uprawnienia:">
+                        <Label text="Uprawnienia:">
                            <VBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
                         </Label>
                         <CheckBox fx:id="checkBox1" mnemonicParsing="false" text="Uprawnienie 1" />
                         <CheckBox fx:id="checkBox2" mnemonicParsing="false" text="Uprawnienie 2" />

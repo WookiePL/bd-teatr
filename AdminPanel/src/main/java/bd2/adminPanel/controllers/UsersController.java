@@ -243,13 +243,13 @@ public class UsersController implements Initializable {
                         = FXCollections.observableArrayList();
                 rights.addAll(user.getRights());
             }
-            
+
             checkBox1.setSelected(false);
             checkBox2.setSelected(false);
             checkBox3.setSelected(false);
             checkBox4.setSelected(false);
             checkBox5.setSelected(false);
-            
+
             List<Right> rights = user.getRights();
 
             if (rights != null) {
@@ -297,6 +297,26 @@ public class UsersController implements Initializable {
         User user = new User(textFieldLogin.getText(),
                 textFieldFirstName.getText(), textFieldLastName.getText(),
                 textFieldEmail.getText(), textFieldPhone.getText(), null);
+
+        List<Right> rights = new ArrayList<>();
+
+        if (checkBox1.isSelected()) {
+            rights.add(new Right(Right.RIGHT_1_ID, Right.RIGHT_1_ID, Right.RIGHT_1_ID));
+        }
+        if (checkBox2.isSelected()) {
+            rights.add(new Right(Right.RIGHT_2_ID, Right.RIGHT_2_ID, Right.RIGHT_2_ID));
+        }
+        if (checkBox3.isSelected()) {
+            rights.add(new Right(Right.RIGHT_3_ID, Right.RIGHT_3_ID, Right.RIGHT_3_ID));
+        }
+        if (checkBox4.isSelected()) {
+            rights.add(new Right(Right.RIGHT_4_ID, Right.RIGHT_4_ID, Right.RIGHT_4_ID));
+        }
+        if (checkBox5.isSelected()) {
+            rights.add(new Right(Right.RIGHT_5_ID, Right.RIGHT_5_ID, Right.RIGHT_5_ID));
+        }
+
+        user.setRights(rights);
 
         userRepository.getUsers().add(user);
         initialize(null, null);
@@ -354,15 +374,15 @@ public class UsersController implements Initializable {
             user.setLastName(textFieldLastName.getText());
             user.setEmail(textFieldEmail.getText());
             user.setPhone(textFieldPhone.getText());
-            
+
             List<Right> rights = new ArrayList<>();
 
             if (checkBox1.isSelected()) {
                 rights.add(new Right(Right.RIGHT_1_ID, Right.RIGHT_1_ID, Right.RIGHT_1_ID));
-            } 
+            }
             if (checkBox2.isSelected()) {
                 rights.add(new Right(Right.RIGHT_2_ID, Right.RIGHT_2_ID, Right.RIGHT_2_ID));
-            } 
+            }
             if (checkBox3.isSelected()) {
                 rights.add(new Right(Right.RIGHT_3_ID, Right.RIGHT_3_ID, Right.RIGHT_3_ID));
             }
@@ -374,7 +394,7 @@ public class UsersController implements Initializable {
             }
 
             user.setRights(rights);
-            
+
             for (int index = 0; index < userRepository.getUsers().size();
                     ++index) {
                 if (userRepository.getUsers().get(index).getLogin().
