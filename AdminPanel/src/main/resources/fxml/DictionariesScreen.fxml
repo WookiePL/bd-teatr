@@ -13,9 +13,9 @@
          <top>
             <StackPane prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Zarządzaj słownikami" textFill="WHITE">
+                  <Label text="Zarządzanie słownikami" textFill="WHITE">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="18.0" />
                      </font>
                   </Label>
                </children>
@@ -24,7 +24,11 @@
          <bottom>
             <StackPane prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="buttonBackMenu" mnemonicParsing="false" onAction="#backMenu" style="-fx-background-color: #79FF4D;" text="Powrót" />
+                  <Button fx:id="buttonBackMenu" mnemonicParsing="false" onAction="#backMenu" onMouseEntered="#buttonBackMenuOnMouseEntered" onMouseExited="#buttonBackMenuOnMouseExited" onMousePressed="#buttonBackMenuOnMousePressed" onMouseReleased="#buttonBackMenuOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" text="Wróć">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
                </children>
             </StackPane>
          </bottom>

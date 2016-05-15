@@ -31,7 +31,7 @@
                      <children>
                         <Label text="Zarządzanie użytkownikami" textFill="WHITE">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="18.0" />
                            </font>
                         </Label>
                      </children>

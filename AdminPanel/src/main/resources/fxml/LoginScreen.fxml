@@ -18,7 +18,7 @@
                      <children>
                         <Label text="Logowanie" textFill="WHITE">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="18.0" />
                            </font>
                         </Label>
                      </children>
@@ -27,17 +27,28 @@
                <bottom>
                   <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#login" style="-fx-background-color: #79FF4D;" text="Login" />
-                        <Button fx:id="buttonExit" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #79FF4D;" text="Wyjście" />
+                        <Button fx:id="buttonExit" mnemonicParsing="false" onAction="#exit" onMouseEntered="#buttonExitOnMouseEntered" onMouseExited="#buttonExitOnMouseExited" onMousePressed="#buttonExitOnMousePressed" onMouseReleased="#buttonExitOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" text="Wyjdź">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
                      </children>
                   </HBox>
                </bottom>
                <center>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label text="Login:" />
+                        <Label text="Login:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
                         <TextField fx:id="textFieldLogin" maxWidth="150.0" />
-                        <Label text="Hasło:" />
+                        <Label text="Hasło:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
                         <PasswordField fx:id="passwordField" maxWidth="150.0" />
                         <StackPane maxHeight="0.0" prefHeight="0.0" prefWidth="200.0">
                            <children>
@@ -45,6 +56,11 @@
                               <Label fx:id="labelWrongLogin" text="Użytkownik nie istnieje." textFill="RED" visible="false" />
                            </children>
                         </StackPane>
+                        <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#login" onMouseEntered="#buttonLoginOnMouseEntered" onMouseExited="#buttonLoginOnMouseExited" onMousePressed="#buttonLoginOnMousePressed" onMouseReleased="#buttonLoginOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" text="Zaloguj się">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
                      </children>
                      <BorderPane.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
