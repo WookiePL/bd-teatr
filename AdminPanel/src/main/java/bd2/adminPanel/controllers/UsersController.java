@@ -1,21 +1,17 @@
 package bd2.adminPanel.controllers;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import bd2.adminPanel.tmp.Right;
 import bd2.adminPanel.tmp.User;
 import bd2.adminPanel.tmp.UserRepository;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -26,19 +22,13 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.Shadow;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 
 public class UsersController implements Initializable {
 
     private MainController mainController;
 
-    private static UserRepository userRepository = new UserRepository();
+    private static final UserRepository userRepository = new UserRepository();
 
     @FXML
     private ListView<User> listViewUsers;

@@ -1,5 +1,5 @@
 package bd2.adminPanel.controllers;
-
+/*
 import java.io.IOException;
 
 import bd2.adminPanel.tmp.User;
@@ -66,3 +66,4 @@ public class AddUserController {
         usersController.setMainController(mainController);
     }
 }
+*/

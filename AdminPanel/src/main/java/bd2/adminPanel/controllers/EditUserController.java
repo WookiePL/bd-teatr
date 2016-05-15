@@ -1,5 +1,5 @@
 package bd2.adminPanel.controllers;
-
+/*
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -83,3 +83,4 @@ public class EditUserController implements Initializable {
         usersController.setMainController(mainController);
     }
 }
+*/
