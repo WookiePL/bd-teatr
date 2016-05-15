@@ -5,7 +5,7 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "eventrealization", schema = "theater")
-public class EventrealizationEntity {
+public class EventRealizationEntity {
     private Date date;
     private Integer eventRealizationId;
     private Integer price;
@@ -84,7 +84,7 @@ public class EventrealizationEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        EventrealizationEntity that = (EventrealizationEntity) o;
+        EventRealizationEntity that = (EventRealizationEntity) o;
 
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
         if (eventRealizationId != null ? !eventRealizationId.equals(that.eventRealizationId) : that.eventRealizationId != null)

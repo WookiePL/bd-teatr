@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "groupofclients", schema = "theater")
-public class GroupofclientsEntity {
+public class GroupOfClientsEntity {
     private Integer groupOfClientsId;
     private String name;
 
@@ -39,7 +39,7 @@ public class GroupofclientsEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        GroupofclientsEntity that = (GroupofclientsEntity) o;
+        GroupOfClientsEntity that = (GroupOfClientsEntity) o;
 
         if (groupOfClientsId != null ? !groupOfClientsId.equals(that.groupOfClientsId) : that.groupOfClientsId != null)
             return false;

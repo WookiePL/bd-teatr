@@ -8,7 +8,7 @@ public class RoomEntity {
     private Integer roomId;
     private Integer number;
     private Integer buildingId;
-    //private BuildingEntity building;
+    private BuildingEntity building;
 
     @Id
     @Column(name = "room_id", columnDefinition = "serial")
@@ -45,15 +45,15 @@ public class RoomEntity {
         this.buildingId = buildingId;
     }
 
-//    @ManyToOne
-//    @JoinColumn(name = "building_id")
-//    public BuildingEntity getBuilding() {
-//        return building;
-//    }
-//
-//    public void setBuilding(BuildingEntity building) {
-//        this.building = building;
-//    }
+    @ManyToOne
+    @JoinColumn(name = "building_id")
+    public BuildingEntity getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(BuildingEntity building) {
+        this.building = building;
+    }
 
     @Override
     public boolean equals(Object o) {
