@@ -10,7 +10,7 @@
       <schema id="2" parent="1" name="theater">
         <object-id>16394</object-id>
         <introspection-state-number>682</introspection-state-number>
-        <introspection-timestamp>2016-05-13.16:31:05.167</introspection-timestamp>
+        <introspection-timestamp>2016-05-15.12:02:29.829</introspection-timestamp>
       </schema>
       <sequence id="3" parent="2" name="building_building_id_seq">
         <object-id>17994</object-id>

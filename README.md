@@ -1,4 +1,4 @@
 ﻿# bd-teatr
 System do obsługi wydarzeń w teatrze.
 Bazy Danych II
-Politechnika Śląska, AEiI 2016
+Politechnika Śląska w Gliwicach, AEiI 2016

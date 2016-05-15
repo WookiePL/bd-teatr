@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "dayofweek", schema = "theater")
-public class DayofweekEntity {
+public class DayOfWeekEntity {
     private String name;
     private Integer dayOfWeekId;
     private List<CycleEntity> cycles;
@@ -31,7 +31,7 @@ public class DayofweekEntity {
         this.dayOfWeekId = dayOfWeekId;
     }
 
-    @OneToMany(mappedBy = "cycleEntity")
+    @OneToMany(mappedBy = "cycleEntity", fetch = FetchType.LAZY)
     public List<CycleEntity> getCycles() {
         return cycles;
     }
@@ -45,7 +45,7 @@ public class DayofweekEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        DayofweekEntity that = (DayofweekEntity) o;
+        DayOfWeekEntity that = (DayOfWeekEntity) o;
 
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (dayOfWeekId != null ? !dayOfWeekId.equals(that.dayOfWeekId) : that.dayOfWeekId != null) return false;

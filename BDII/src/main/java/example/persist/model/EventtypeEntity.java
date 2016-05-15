@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "eventtype", schema = "theater")
-public class EventtypeEntity {
+public class EventTypeEntity {
     private Integer eventTypeId;
     private String name;
 
@@ -38,7 +38,7 @@ public class EventtypeEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        EventtypeEntity that = (EventtypeEntity) o;
+        EventTypeEntity that = (EventTypeEntity) o;
 
         if (eventTypeId != null ? !eventTypeId.equals(that.eventTypeId) : that.eventTypeId != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;

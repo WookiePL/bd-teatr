@@ -9,7 +9,7 @@ import java.util.List;
 public class BuildingEntity {
     private Integer buildingId;
     private String address;
-   // private List<RoomEntity> rooms;
+    private List<RoomEntity> rooms;
 
     @Id
     @Column(name = "building_id", columnDefinition = "serial")
@@ -36,14 +36,14 @@ public class BuildingEntity {
         this.address = address;
     }
 
-//    @OneToMany(mappedBy = "buildingEntity")
-//    public List<RoomEntity> getRooms() {
-//        return rooms;
-//    }
-//
-//    public void setRooms(List<RoomEntity> rooms) {
-//        this.rooms = rooms;
-//    }
+    @OneToMany(mappedBy = "buildingEntity", fetch = FetchType.LAZY)
+    public List<RoomEntity> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(List<RoomEntity> rooms) {
+        this.rooms = rooms;
+    }
 
     @Override
     public boolean equals(Object o) {
