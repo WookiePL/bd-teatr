@@ -6,40 +6,48 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.StackPane?>
 
-<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.MenuController">
-  <children>
-      <BorderPane prefHeight="408.0" prefWidth="600.0">
-         <top>
-            <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
-               <children>
-                  <Label text="Panel administratora" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-               </children>
-            </StackPane>
-         </top>
-         <bottom>
-            <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
-               <children>
-                <Button fx:id="buttonExit" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #79FF4D;" text="Wyjście" />
-               </children>
-            </StackPane>
-         </bottom>
-         <center>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
-               <children>
-                <Button fx:id="buttonUsers" mnemonicParsing="false" onAction="#users" prefHeight="70.0" prefWidth="249.0" style="-fx-background-color: #79FF4D;" text="Zarządzaj użytkownikami">
-                     <font>
-                        <Font size="14.0" />
-                     </font></Button>
-                <Button fx:id="buttonDictionaries" mnemonicParsing="false" onAction="#dictionaries" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: #79FF4D;" text="Zarządzaj słownikami">
-                     <font>
-                        <Font size="14.0" />
-                     </font></Button>
-               </children>
-            </VBox>
-         </center>
-      </BorderPane>
-  </children>
-</Pane>
+
+<StackPane fx:id="menuStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.MenuController">
+   <children>
+      <AnchorPane>
+         <children>
+            <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Panel administratora" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </top>
+               <bottom>
+                  <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+                     <children>
+                      <Button fx:id="buttonExit" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #79FF4D;" text="Wyjście" />
+                     </children>
+                  </StackPane>
+               </bottom>
+               <center>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+                     <children>
+                      <Button fx:id="buttonUsers" mnemonicParsing="false" onAction="#users" prefHeight="70.0" prefWidth="249.0" style="-fx-background-color: #79FF4D;" text="Zarządzaj użytkownikami">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                      <Button fx:id="buttonDictionaries" mnemonicParsing="false" onAction="#dictionaries" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: #79FF4D;" text="Zarządzaj słownikami">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

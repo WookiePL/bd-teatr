@@ -54,7 +54,7 @@ public class LoginController {
     }
 
     private void loadMainScreen() {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainScreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MenuScreen.fxml"));
         StackPane pane = null;
 
         try {

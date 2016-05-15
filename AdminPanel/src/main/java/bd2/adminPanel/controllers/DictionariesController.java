@@ -1,17 +1,27 @@
 package bd2.adminPanel.controllers;
 
+import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.StackPane;
 
 public class DictionariesController {
 
-    private MainController mainController;
-
+    @FXML
+    private StackPane dictonariesStackPane;
+    
     @FXML
     public void backMenu() {
-        mainController.loadMenuScreen();
-    }
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MenuScreen.fxml"));
+        StackPane pane = null;
 
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        dictonariesStackPane.getChildren().clear();
+        dictonariesStackPane.getChildren().add(pane);
     }
 }

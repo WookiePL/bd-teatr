@@ -1,5 +1,5 @@
 package bd2.adminPanel.controllers;
-
+/*
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,7 +31,7 @@ public class MainController implements Initializable {
         }
 
         MenuController menuController = loader.getController();
-        menuController.setMainController(this);
+        //menuController.setMainController(this);
 
         setScreen(pane);
     }
@@ -41,3 +41,4 @@ public class MainController implements Initializable {
         mainStackPane.getChildren().add(pane);
     }
 }
+*/

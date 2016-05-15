@@ -19,7 +19,7 @@ public class AdminPanel extends Application {
 
         StackPane stackPane = loader.load();
 
-        Scene scene = new Scene(stackPane, 600, 408);
+        Scene scene = new Scene(stackPane, 640, 472);
 
         primaryStage.setMinWidth(640);
         primaryStage.setMinHeight(472);

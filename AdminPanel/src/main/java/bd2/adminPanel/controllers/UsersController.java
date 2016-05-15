@@ -6,11 +6,13 @@ import java.util.ResourceBundle;
 import bd2.adminPanel.tmp.Right;
 import bd2.adminPanel.tmp.User;
 import bd2.adminPanel.tmp.UserRepository;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -22,14 +24,16 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
 public class UsersController implements Initializable {
 
-    private MainController mainController;
-
     private static final UserRepository userRepository = new UserRepository();
 
+    @FXML
+    private StackPane usersStackPane;
+    
     @FXML
     private ListView<User> listViewUsers;
 
@@ -114,10 +118,6 @@ public class UsersController implements Initializable {
 
     public User getSelectedUser() {
         return selectedUser;
-    }
-
-    public void setMainController(MainController mainController) {
-        this.mainController = mainController;
     }
 
     @FXML
@@ -210,7 +210,17 @@ public class UsersController implements Initializable {
 
     @FXML
     public void backMenu() {
-        mainController.loadMenuScreen();
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MenuScreen.fxml"));
+        StackPane pane = null;
+
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        usersStackPane.getChildren().clear();
+        usersStackPane.getChildren().add(pane);
     }
 
     @FXML

@@ -6,7 +6,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.DictionariesController">
+
+<StackPane fx:id="dictonariesStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.DictionariesController">
    <children>
       <BorderPane prefHeight="408.0" prefWidth="600.0">
          <top>
@@ -29,4 +30,4 @@
          </bottom>
       </BorderPane>
    </children>
-</Pane>
+</StackPane>
