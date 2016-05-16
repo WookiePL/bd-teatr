@@ -161,8 +161,25 @@ public class DictionariesController {
     }
     
     @FXML
+    public void daysOfWeek() {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource(
+                "/fxml/DictonaryDaysOfWeekScreen.fxml"));
+        StackPane pane = null;
+
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        dictionariesStackPane.getChildren().clear();
+        dictionariesStackPane.getChildren().add(pane);
+    }
+    
+    @FXML
     public void backMenu() {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MenuScreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource(
+                "/fxml/MenuScreen.fxml"));
         StackPane pane = null;
 
         try {
