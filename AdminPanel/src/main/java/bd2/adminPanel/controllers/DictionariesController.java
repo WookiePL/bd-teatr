@@ -12,10 +12,22 @@ import javafx.scene.paint.Color;
 public class DictionariesController {
 
     @FXML
-    private StackPane dictonariesStackPane;
+    private StackPane dictionariesStackPane;
     
     @FXML
     private Button buttonBackMenu;
+    
+    @FXML
+    private Button buttonDayOfWeek;
+    
+    @FXML
+    private Button buttonGroupOfClients;
+    
+    @FXML
+    private Button buttonEventsType;
+    
+    @FXML
+    private Button buttonBuildings;
     
     private final DropShadow shadow = new DropShadow(BlurType.THREE_PASS_BOX,
             Color.rgb(0, 0, 0, 0.4), 5, 0.0, 0, 1);
@@ -37,6 +49,28 @@ public class DictionariesController {
             + "-40%, radius 200%, #ceff52 45%, #92e600 50%); -fx-background-"
             + "radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: "
             + "#395306";
+    
+    @FXML
+    public void buttonDayOfWeekOnMouseEntered() {
+        buttonDayOfWeek.setEffect(shadow);
+        buttonDayOfWeek.setStyle(greenButtonOnMouseStyle);
+    }
+
+    @FXML
+    public void buttonDayOfWeekOnMouseExited() {
+        buttonDayOfWeek.setEffect(null);
+        buttonDayOfWeek.setStyle(greenButtonReleasedStyle);
+    }
+
+    @FXML
+    public void buttonDayOfWeekOnMousePressed() {
+        buttonDayOfWeek.setStyle(greenButtonPressedStyle);
+    }
+
+    @FXML
+    public void buttonDayOfWeekOnMouseReleased() {
+        buttonDayOfWeek.setStyle(greenButtonReleasedStyle);
+    }
     
     @FXML
     public void buttonBackMenuOnMouseEntered() {
@@ -61,6 +95,72 @@ public class DictionariesController {
     }
     
     @FXML
+    public void buttonGroupOfClientsOnMouseEntered() {
+        buttonGroupOfClients.setEffect(shadow);
+        buttonGroupOfClients.setStyle(greenButtonOnMouseStyle);
+    }
+
+    @FXML
+    public void buttonGroupOfClientsOnMouseExited() {
+        buttonGroupOfClients.setEffect(null);
+        buttonGroupOfClients.setStyle(greenButtonReleasedStyle);
+    }
+
+    @FXML
+    public void buttonGroupOfClientsOnMousePressed() {
+        buttonGroupOfClients.setStyle(greenButtonPressedStyle);
+    }
+
+    @FXML
+    public void buttonGroupOfClientsOnMouseReleased() {
+        buttonGroupOfClients.setStyle(greenButtonReleasedStyle);
+    }
+    
+    @FXML
+    public void buttonEventsTypeOnMouseEntered() {
+        buttonEventsType.setEffect(shadow);
+        buttonEventsType.setStyle(greenButtonOnMouseStyle);
+    }
+
+    @FXML
+    public void buttonEventsTypeOnMouseExited() {
+        buttonEventsType.setEffect(null);
+        buttonEventsType.setStyle(greenButtonReleasedStyle);
+    }
+
+    @FXML
+    public void buttonEventsTypeOnMousePressed() {
+        buttonEventsType.setStyle(greenButtonPressedStyle);
+    }
+
+    @FXML
+    public void buttonEventsTypeOnMouseReleased() {
+        buttonEventsType.setStyle(greenButtonReleasedStyle);
+    }
+    
+    @FXML
+    public void buttonBuildingsOnMouseEntered() {
+        buttonBuildings.setEffect(shadow);
+        buttonBuildings.setStyle(greenButtonOnMouseStyle);
+    }
+
+    @FXML
+    public void buttonBuildingsOnMouseExited() {
+        buttonBuildings.setEffect(null);
+        buttonBuildings.setStyle(greenButtonReleasedStyle);
+    }
+
+    @FXML
+    public void buttonBuildingsOnMousePressed() {
+        buttonBuildings.setStyle(greenButtonPressedStyle);
+    }
+
+    @FXML
+    public void buttonBuildingsOnMouseReleased() {
+        buttonBuildings.setStyle(greenButtonReleasedStyle);
+    }
+    
+    @FXML
     public void backMenu() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MenuScreen.fxml"));
         StackPane pane = null;
@@ -71,7 +171,7 @@ public class DictionariesController {
             e.printStackTrace();
         }
 
-        dictonariesStackPane.getChildren().clear();
-        dictonariesStackPane.getChildren().add(pane);
+        dictionariesStackPane.getChildren().clear();
+        dictionariesStackPane.getChildren().add(pane);
     }
 }
