@@ -752,4 +752,7 @@
       </key>
     </database-model>
   </data-source>
+  <data-source name="PostgreSQL - postgres@localhost" uuid="6990241c-d499-4562-9ca2-ad88b28db56d">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

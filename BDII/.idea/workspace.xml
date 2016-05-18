@@ -1,7 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e7ce6b4-1c3c-4170-a642-5a9d39c541f2" name="Default" comment="" />
+    <list default="true" id="3e7ce6b4-1c3c-4170-a642-5a9d39c541f2" name="Default" comment="Dodałem klasy DAO (oraz interfejsy dla tych klas), klasy DTO + relacje encji + poprawa nazw klas i paczki">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/EventDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/EventRealizationDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/EventTypeDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/GroupOfClientsDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IEventDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IEventRealizationDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IEventTypeDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IGroupOfClientsDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IPlaceDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IPriceDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IPriceListDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IReservationDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IRolesDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/ISectorDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/ITicketDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IUserDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/PlaceDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/PriceDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/PriceListDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/ReservationDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/RolesDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/SectorDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/TicketDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/UserDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/EventDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/EventRealizationDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/EventTypeDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/GroupOfClientsDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/PlaceDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/PriceDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/PriceListDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/ReservationDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/RolesDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/SectorDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/TicketDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/UserDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/DayOfWeekEntity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventRealizationEntity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventTypeEntity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/GroupOfClientsEntity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/JoinuserstorolesEntity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceListEntity.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/DayofweekEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/EventrealizationEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/EventtypeEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/GroupofclientsEntity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/PricelistEntity.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/example/controller/MainController.class" afterPath="$PROJECT_DIR$/target/classes/example/controller/MainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/example/persist/dtos/CycleDTO.class" afterPath="$PROJECT_DIR$/target/classes/example/persist/dtos/CycleDTO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/CycleEntity.class" afterPath="$PROJECT_DIR$/target/classes/example/persist/model/CycleEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/DayofweekEntity.class" afterPath="$PROJECT_DIR$/target/classes/example/persist/model/DayofweekEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/EventrealizationEntity.class" afterPath="$PROJECT_DIR$/target/classes/example/persist/model/EventrealizationEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/EventtypeEntity.class" afterPath="$PROJECT_DIR$/target/classes/example/persist/model/EventtypeEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/GroupofclientsEntity.class" afterPath="$PROJECT_DIR$/target/classes/example/persist/model/GroupofclientsEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/PricelistEntity.class" afterPath="$PROJECT_DIR$/target/classes/example/persist/model/PricelistEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater.war" afterPath="$PROJECT_DIR$/target/theater.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/controller/MainController.class" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/controller/MainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/dtos/CycleDTO.class" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/dtos/CycleDTO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/BuildingEntity.class" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/BuildingEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/CycleEntity.class" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/CycleEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/DayofweekEntity.class" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/DayofweekEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/EventrealizationEntity.class" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/EventrealizationEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/EventtypeEntity.class" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/EventtypeEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/GroupofclientsEntity.class" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/GroupofclientsEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/PeriodEntity.class" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/PeriodEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/PricelistEntity.class" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/PricelistEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/RoomEntity.class" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/RoomEntity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/lib/Theater-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/theater/WEB-INF/lib/Theater-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/theater/META-INF/MANIFEST.MF" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/config/HibernateConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/theater/config/HibernateConfiguration.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/config/MyWebAppInit.java" afterPath="$PROJECT_DIR$/src/main/java/theater/config/MyWebAppInit.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/config/TemplateEngineConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/theater/config/TemplateEngineConfiguration.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/config/WebMvcConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/theater/config/WebMvcConfiguration.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/theater/controller/MainController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/BaseDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/BaseDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/BuildingDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/BuildingDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/CycleDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/CycleDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/DayOfWeekDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/DayOfWeekDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/IBaseDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IBaseDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/IBuildingDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IBuildingDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/ICycleDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/ICycleDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/IDayOfWeekDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IDayOfWeekDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/IPeriodDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IPeriodDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/IRoomDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IRoomDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/PeriodDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/PeriodDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/daos/RoomDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/RoomDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/dtos/BuildingDTO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/BuildingDTO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/dtos/CycleDTO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/CycleDTO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/dtos/DayOfWeekDTO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/DayOfWeekDTO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/dtos/PeriodDTO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/PeriodDTO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/dtos/RoomDTO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/dtos/RoomDTO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/BuildingEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/BuildingEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/CycleEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/CycleEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/EventEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/PeriodEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PeriodEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/PlaceEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PlaceEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/PriceEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/ReservationEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/ReservationEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/RolesEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/RolesEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/RoomEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/SectorEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/SectorEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/TicketEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/TicketEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/persist/model/UserEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/UserEntity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/services/EventService.java" afterPath="$PROJECT_DIR$/src/main/java/theater/services/EventService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/example/services/IEventService.java" afterPath="$PROJECT_DIR$/src/main/java/theater/services/IEventService.java" />
+    </list>
     <ignored path="Theater.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,16 +136,6 @@
     <option name="SORT_POSITIONED" value="false" />
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="PostgreSQL - theaterDB@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -41,122 +143,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RoomEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/model/RoomEntity.java">
+      <file leaf-file-name="RolesDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/dtos/RolesDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+            <state relative-caret-position="34">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IRoomDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/IRoomDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PeriodDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/PeriodDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoomDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/RoomDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#492#493#0" expanded="true" />
-                <element signature="e#529#530#0" expanded="true" />
-                <element signature="e#587#588#0" expanded="true" />
-                <element signature="e#621#622#0" expanded="true" />
-                <element signature="e#682#683#0" expanded="true" />
-                <element signature="e#716#717#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoomDTO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/dtos/RoomDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IPeriodDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/IPeriodDAO.java">
+      <file leaf-file-name="TicketDTO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/dtos/TicketDTO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="17" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DayOfWeekDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/DayOfWeekDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BuildingDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/BuildingDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="42" selection-end-column="5" />
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DayOfWeekDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/dtos/DayOfWeekDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DayOfWeekEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/model/DayOfWeekEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -171,6 +173,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -179,48 +184,65 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/example/config/WebSecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/resources/database.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/example/config/TemplateEngineConfiguration.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/example/config/HibernateConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/config/CustomSuccessHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/config/MyWebAppInit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IBuildingDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/BuildingDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/home.html" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/BuildingDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/config/WebMvcConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/database.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/example/services/IEventService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/BaseDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/BuildingEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/RoomEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/CycleEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/PeriodEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/DayofweekEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IPeriodDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/PeriodDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/Period.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/PeriodDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/ICycleDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/CycleDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/Cycle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/CycleDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/DayOfWeekDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IDayOfWeekDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/DayOfWeekDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IRoomDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/RoomDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/RoomDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/EventrealizationEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/EventDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/EventDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/EventRealizationDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/EventRealizationDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/EventTypeDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/GroupOfClientsDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/PlaceDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/PriceDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/PricelistEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/PriceListEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/PriceList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/PriceListDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/ReservationDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/RolesEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/RolesDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/SectorDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/TicketEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/TicketDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/UserDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IEventRealizationDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IEventDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IEventTypeDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/EventTypeDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/RoomEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/EventRealizationEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IGroupOfClientsDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IPlaceDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IPriceDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IPriceListDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IReservationDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IRolesDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/ISectorDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/ITicketDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/IUserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/GroupOfClientsDAO.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/59a25ed8-233f-450e-9af3-68d043818d7d/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/PlaceDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/PriceDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/PriceListDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/ReservationDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/daos/DayOfWeekDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/daos/ReservationDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/daos/IRolesDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/daos/RolesDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/daos/SectorDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/daos/TicketDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/daos/UserDAO.java" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -242,26 +264,52 @@
     </option>
   </component>
   <component name="MavenProjectNavigator">
-    <treeState>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Theater" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-    </treeState>
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1928" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>Class structureJava</id>
+          </State>
+          <State>
+            <id>JUnit issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Javadoc issuesJava</id>
+          </State>
+          <State>
+            <id>Portability issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -273,21 +321,20 @@
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
+      <flattenPackages ProjectPane="false" />
+      <showMembers ProjectPane="false" />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
       <autoscrollToSource />
       <autoscrollFromSource />
-      <sortByType />
+      <sortByType ProjectPane="false" />
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -323,18 +370,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -354,33 +389,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Theater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BDII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="theater" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -406,37 +419,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Theater" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BDII" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
+              <option name="myItemId" value="theater" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -470,15 +453,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
+              <option name="myItemId" value="theater" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="persist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dtos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -504,7 +483,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
+              <option name="myItemId" value="theater" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -538,7 +517,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
+              <option name="myItemId" value="theater" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -568,7 +547,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="example" />
+              <option name="myItemId" value="theater" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -578,38 +557,40 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL&#10;DB2 (JTOpen)" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/git-cmd.exe" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Szkoła\BDII\src\main\java\example\persist\daos" />
-      <recent name="D:\Szkoła\BDII\src\main\java\example\persist" />
-      <recent name="D:\Szkoła\BDII\src\main" />
-      <recent name="D:\Szkoła\BDII\src\main\java\example" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="example.config" />
-      <recent name="example.persist.daos" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Szkoła\BDII\src\main\java\example\resources" />
       <recent name="D:\Szkoła\BDII\src\main\java\example" />
       <recent name="D:\Szkoła\BDII\src\main\java\example\config" />
       <recent name="D:\Szkoła\BDII" />
       <recent name="D:\Szkoła\BDII\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="example.config" />
+      <recent name="example.persist.daos" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Szkoła\BDII\src\main\java\example\persist\daos" />
+      <recent name="D:\Szkoła\BDII\src\main\java\example\persist" />
+      <recent name="D:\Szkoła\BDII\src\main" />
+      <recent name="D:\Szkoła\BDII\src\main\java\example" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Run">
@@ -769,65 +750,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
@@ -1153,7 +1075,7 @@
       </MavenSettings>
       <method />
     </configuration>
-    <configuration default="false" name="Run" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.33" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+    <configuration default="false" name="Run" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.33" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="Java 1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="BDII:war exploded">
@@ -1219,12 +1141,7 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
-      <method>
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="BDII:war exploded" />
-        </option>
-      </method>
+      <method />
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Maven.build" />
@@ -1234,8 +1151,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
+  <component name="SvnConfiguration" myUseAcceleration="nothing" cleanupOnStartRun="true">
+    <configuration useDefault="false">F:\Projects\bd-teatr</configuration>
+    <supportedVersion>125</supportedVersion>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -1254,11 +1172,20 @@
       <workItem from="1463149833218" duration="2381000" />
       <workItem from="1463222716868" duration="11541000" />
       <workItem from="1463304268175" duration="3440000" />
+      <workItem from="1463383446670" duration="17000" />
+      <workItem from="1463383495027" duration="7933000" />
+      <workItem from="1463402958037" duration="7979000" />
+      <workItem from="1463429306018" duration="1194000" />
+      <workItem from="1463508672728" duration="40000" />
+      <workItem from="1463508883011" duration="1847000" />
+      <workItem from="1463512538367" duration="111000" />
+      <workItem from="1463512701326" duration="1639000" />
+      <workItem from="1463595956858" duration="3342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24901000" />
+    <option name="totallyTimeSpent" value="49003000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1270,70 +1197,73 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26867336" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14765458" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46376812" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26848873" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14750378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20842217" sideWeight="0.4960981" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23373677" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32905295" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17041801" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27231467" sideWeight="0.4960981" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24413647" sideWeight="0.5039019" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15458423" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24413647" sideWeight="0.5039019" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13219616" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.49417636" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5058236" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5058236" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26867336" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14750378" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19818456" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17041801" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21331316" sideWeight="0.4960981" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24413647" sideWeight="0.5039019" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24413647" sideWeight="0.5039019" order="6" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1347,6 +1277,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Dodałem klasy DAO (oraz interfejsy dla tych klas), klasy DTO + relacje encji + poprawa nazw klas i paczki" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodałem klasy DAO (oraz interfejsy dla tych klas), klasy DTO + relacje encji + poprawa nazw klas i paczki" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="9" />
@@ -1358,268 +1292,46 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/dtos/BlogPostDTO.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/BlogPostDAOImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/services/BlogPostService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/services/IBlogPostService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/webapp/WEB-INF/templates/fragments/admin.html" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ed16785f-d1d3-49a8-a161-4af0ba86c525/console.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/EventEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="65" column="61" selection-start-line="65" selection-start-column="61" selection-end-line="65" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/CycleDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/dtos/BuildingDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="uml://DATABASE/ed16785f-d1d3-49a8-a161-4af0ba86c525.SCHEMA:theaterDB.theater">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>ed16785f-d1d3-49a8-a161-4af0ba86c525.SCHEMA:theaterDB.theater</OriginalElement>
-          <nodes>
-            <node x="1676.25" y="325.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.sector</node>
-            <node x="1344.6118421052631" y="0.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.building</node>
-            <node x="1458.75" y="570.5">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.joinuserstoroles</node>
-            <node x="643.0" y="314.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.pricelist</node>
-            <node x="751.6491228070175" y="0.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.eventtype</node>
-            <node x="1486.25" y="325.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.roles</node>
-            <node x="92.5" y="559.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.cycle</node>
-            <node x="0.0" y="336.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.dayofweek</node>
-            <node x="1341.6118421052631" y="135.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.room</node>
-            <node x="220.0" y="336.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.period</node>
-            <node x="880.0" y="292.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.eventrealization</node>
-            <node x="1126.75" y="504.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.reservation</node>
-            <node x="905.75" y="548.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.ticket</node>
-            <node x="404.0" y="336.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.groupofclients</node>
-            <node x="405.5" y="537.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.price</node>
-            <node x="746.6491228070175" y="124.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.event</node>
-            <node x="1274.75" y="325.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.user</node>
-            <node x="1174.25" y="760.0">ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.place</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.reservation" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.eventrealization">
-              <point x="-78.0" y="-103.0" />
-              <point x="1204.75" y="474.0" />
-              <point x="1108.0" y="474.0" />
-              <point x="76.0" y="81.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.eventrealization" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.event">
-              <point x="-76.0" y="-81.0" />
-              <point x="956.0" y="267.0" />
-              <point x="897.3991228070175" y="267.0" />
-              <point x="50.25" y="59.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.price" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.period">
-              <point x="-72.0" y="-70.0" />
-              <point x="441.5" y="484.0" />
-              <point x="343.0" y="484.0" />
-              <point x="41.0" y="37.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.pricelist" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.event">
-              <point x="0.0" y="-59.0" />
-              <point x="751.5" y="267.0" />
-              <point x="796.8991228070175" y="267.0" />
-              <point x="-50.25" y="59.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.place" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.reservation">
-              <point x="0.0" y="-70.0" />
-              <point x="0.0" y="103.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.ticket" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.user">
-              <point x="50.25" y="-59.0" />
-              <point x="1056.5" y="484.0" />
-              <point x="1303.4166666666667" y="484.0" />
-              <point x="-57.33333333333326" y="48.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.sector" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.room">
-              <point x="0.0" y="-48.0" />
-              <point x="1767.75" y="267.0" />
-              <point x="1475.1118421052631" y="267.0" />
-              <point x="44.5" y="48.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.place" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.ticket">
-              <point x="-72.33333333333326" y="-70.0" />
-              <point x="1210.4166666666667" y="735.0" />
-              <point x="1006.25" y="735.0" />
-              <point x="0.0" y="59.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.joinuserstoroles" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.roles">
-              <point x="37.5" y="-36.5" />
-              <point x="0.0" y="48.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.joinuserstoroles" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.user">
-              <point x="-37.5" y="-36.5" />
-              <point x="1496.25" y="484.0" />
-              <point x="1418.0833333333333" y="484.0" />
-              <point x="57.33333333333326" y="48.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.room" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.building">
-              <point x="0.0" y="-48.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.event" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.eventtype">
-              <point x="0.0" y="-59.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.cycle" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.period">
-              <point x="44.0" y="-48.0" />
-              <point x="224.5" y="484.0" />
-              <point x="261.0" y="484.0" />
-              <point x="-41.0" y="37.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.price" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.pricelist">
-              <point x="72.0" y="-70.0" />
-              <point x="585.5" y="484.0" />
-              <point x="751.5" y="484.0" />
-              <point x="0.0" y="59.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.eventrealization" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.room">
-              <point x="76.0" y="-81.0" />
-              <point x="1108.0" y="267.0" />
-              <point x="1386.1118421052631" y="267.0" />
-              <point x="-44.5" y="48.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.place" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.sector">
-              <point x="72.33333333333326" y="-70.0" />
-              <point x="1355.0833333333333" y="735.0" />
-              <point x="1767.75" y="735.0" />
-              <point x="0.0" y="48.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.ticket" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.eventrealization">
-              <point x="-50.25" y="-59.0" />
-              <point x="-76.0" y="81.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.reservation" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.user">
-              <point x="78.0" y="-103.0" />
-              <point x="0.0" y="48.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.cycle" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.dayofweek">
-              <point x="-44.0" y="-48.0" />
-              <point x="136.5" y="484.0" />
-              <point x="100.0" y="484.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-            <edge source="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.price" target="ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.groupofclients">
-              <point x="0.0" y="-70.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.6287234042553191" x="372.0" y="43.0" />
-          <SelectedNodes>
-            <node>ed16785f-d1d3-49a8-a161-4af0ba86c525.TABLE:theaterDB.theater.pricelist</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/!POBRANE/HibernateConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="75" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/CommentEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/!POBRANE/ICommentDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/!POBRANE/CommentDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="5" selection-start-line="21" selection-start-column="3" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/!POBRANE/UserDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/ed16785f-d1d3-49a8-a161-4af0ba86c525">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>ed16785f-d1d3-49a8-a161-4af0ba86c525</OriginalElement>
-          <nodes />
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.8695652173913042" x="1318.0" y="239.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/config/WebSecurityConfig.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/resources/mail.properties" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.2.4.RELEASE/spring-core-4.2.4.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/config/CustomSuccessHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/controller/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/BaseDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/services/EventService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/config/WebMvcConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/config/MyWebAppInit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="425">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/config/TemplateEngineConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/config/TemplateEngineConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        <state relative-caret-position="17">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1630,64 +1342,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/config/MyWebAppInit.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/config/WebMvcConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        <state relative-caret-position="221">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/services/IEventService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/BaseDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/EventTypeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BaseDAO#0;class#BaseDAO#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="476">
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/config/HibernateConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/EventDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/model/BuildingEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="38" column="66" selection-start-line="38" selection-start-column="66" selection-end-line="38" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1052#1053#0" expanded="true" />
-            <element signature="e#1080#1081#0" expanded="true" />
-            <element signature="e#1132#1133#0" expanded="true" />
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="method#equals#0;class#BuildingEntity#0" expanded="false" />
-            <element signature="method#hashCode#0;class#BuildingEntity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/59a25ed8-233f-450e-9af3-68d043818d7d/console.sql">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6990241c-d499-4562-9ca2-ad88b28db56d/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1697,335 +1384,350 @@
           <ID>DATABASE</ID>
           <OriginalElement>59a25ed8-233f-450e-9af3-68d043818d7d</OriginalElement>
           <nodes>
-            <node x="92.5" y="559.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.cycle</node>
-            <node x="1333.1052631578946" y="135.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.room</node>
-            <node x="1656.75" y="325.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.sector</node>
-            <node x="1439.25" y="570.5">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.joinuserstoroles</node>
-            <node x="1466.75" y="325.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.roles</node>
-            <node x="404.0" y="336.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.groupofclients</node>
-            <node x="220.0" y="336.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.period</node>
-            <node x="1202.0" y="760.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.place</node>
-            <node x="405.5" y="537.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.price</node>
-            <node x="1274.75" y="325.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.user</node>
-            <node x="643.0" y="314.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.pricelist</node>
-            <node x="1336.1052631578946" y="0.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.building</node>
-            <node x="880.0" y="292.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.eventrealization</node>
-            <node x="747.2302631578946" y="124.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.event</node>
-            <node x="0.0" y="336.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.dayofweek</node>
-            <node x="878.0" y="504.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.reservation</node>
-            <node x="1210.0" y="548.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.ticket</node>
-            <node x="752.2302631578946" y="0.0">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.eventtype</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.cycle</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.room</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.sector</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.joinuserstoroles</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.groupofclients</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.roles</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.period</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.place</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.user</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.price</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.pricelist</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.building</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.eventrealization</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.event</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.dayofweek</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.reservation</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.ticket</node>
+            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.eventtype</node>
           </nodes>
           <notes />
-          <edges>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.sector" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.room">
-              <point x="0.0" y="-48.0" />
-              <point x="1748.25" y="267.0" />
-              <point x="1466.6052631578946" y="267.0" />
-              <point x="44.5" y="48.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.cycle" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.period">
-              <point x="44.0" y="-48.0" />
-              <point x="224.5" y="484.0" />
-              <point x="261.0" y="484.0" />
-              <point x="-41.0" y="37.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.joinuserstoroles" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.roles">
-              <point x="37.5" y="-36.5" />
-              <point x="0.0" y="48.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.event" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.eventtype">
-              <point x="0.0" y="-59.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.ticket" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.eventrealization">
-              <point x="-50.25" y="-59.0" />
-              <point x="1260.25" y="474.0" />
-              <point x="1108.0" y="474.0" />
-              <point x="76.0" y="81.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.pricelist" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.event">
-              <point x="0.0" y="-59.0" />
-              <point x="751.5" y="267.0" />
-              <point x="797.4802631578946" y="267.0" />
-              <point x="-50.25" y="59.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.eventrealization" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.event">
-              <point x="-76.0" y="-81.0" />
-              <point x="956.0" y="267.0" />
-              <point x="897.9802631578946" y="267.0" />
-              <point x="50.25" y="59.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.place" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.sector">
-              <point x="72.33333333333326" y="-70.0" />
-              <point x="1382.8333333333333" y="735.0" />
-              <point x="1748.25" y="735.0" />
-              <point x="0.0" y="48.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.room" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.building">
-              <point x="0.0" y="-48.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.price" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.pricelist">
-              <point x="72.0" y="-70.0" />
-              <point x="585.5" y="484.0" />
-              <point x="751.5" y="484.0" />
-              <point x="0.0" y="59.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.cycle" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.dayofweek">
-              <point x="-44.0" y="-48.0" />
-              <point x="136.5" y="484.0" />
-              <point x="100.0" y="484.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.eventrealization" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.room">
-              <point x="76.0" y="-81.0" />
-              <point x="1108.0" y="267.0" />
-              <point x="1377.6052631578946" y="267.0" />
-              <point x="-44.5" y="48.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.place" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.ticket">
-              <point x="0.0" y="-70.0" />
-              <point x="0.0" y="59.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.price" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.groupofclients">
-              <point x="0.0" y="-70.0" />
-              <point x="0.0" y="37.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.price" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.period">
-              <point x="-72.0" y="-70.0" />
-              <point x="441.5" y="484.0" />
-              <point x="343.0" y="484.0" />
-              <point x="41.0" y="37.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.place" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.reservation">
-              <point x="-72.33333333333326" y="-70.0" />
-              <point x="1238.1666666666667" y="735.0" />
-              <point x="1034.0" y="735.0" />
-              <point x="0.0" y="103.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.ticket" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.user">
-              <point x="50.25" y="-59.0" />
-              <point x="0.0" y="48.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.reservation" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.eventrealization">
-              <point x="-78.0" y="-103.0" />
-              <point x="-76.0" y="81.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.joinuserstoroles" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.user">
-              <point x="-37.5" y="-36.5" />
-              <point x="1476.75" y="484.0" />
-              <point x="1418.0833333333333" y="484.0" />
-              <point x="57.33333333333326" y="48.0" />
-            </edge>
-            <edge source="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.reservation" target="59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.user">
-              <point x="78.0" y="-103.0" />
-              <point x="1112.0" y="484.0" />
-              <point x="1303.4166666666667" y="484.0" />
-              <point x="-57.33333333333326" y="48.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.6043010752688172" x="387.15302491103205" y="375.53380782918146" />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.5918918918918918" x="1019.0" y="700.0" />
           <SelectedNodes />
           <Categories>
-            <Category>Key columns</Category>
             <Category>Columns</Category>
+            <Category>Key columns</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/model/PeriodEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="45" column="5" selection-start-line="9" selection-start-column="3" selection-end-line="45" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="237">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/dtos/BuildingDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/dtos/PeriodDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/IBaseDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/ICycleDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/CycleDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/model/CycleEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="66" column="5" selection-start-line="7" selection-start-column="3" selection-end-line="66" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/dtos/CycleDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/IBuildingDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/IDayOfWeekDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/DayOfWeekDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/model/DayOfWeekEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/dtos/DayOfWeekDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/IPeriodDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/IRoomDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/PeriodDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/BuildingDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="42" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/daos/RoomDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/EventRealizationEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#621#622#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-          </folding>
+          <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/model/RoomEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        <state relative-caret-position="537">
+          <caret line="68" column="13" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/dtos/UserDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IDayOfWeekDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IEventDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IEventTypeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IEventRealizationDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IGroupOfClientsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IPeriodDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IPriceDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IReservationDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IRoomDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/ISectorDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/ITicketDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IUserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IPriceListDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/GroupOfClientsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/BuildingEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/BuildingDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/config/HibernateConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/example/persist/dtos/RoomDTO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/RoomDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="-102">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/59a25ed8-233f-450e-9af3-68d043818d7d/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IPlaceDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IBaseDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/PeriodDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/PlaceDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/PriceDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/PriceListDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/ReservationDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IRolesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/RolesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#616#617#0" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#715#716#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/SectorDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/TicketDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#700#701#0" expanded="true" />
+            <element signature="e#736#737#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/DayOfWeekDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#566#567#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#661#662#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/dtos/RolesDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/dtos/TicketDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding />
         </state>
       </provider>

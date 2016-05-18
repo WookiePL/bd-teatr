@@ -6,5 +6,9 @@
       <user-name>postgres</user-name>
       <schema-pattern>theaterDB.theater</schema-pattern>
     </data-source>
+    <data-source name="PostgreSQL - postgres@localhost" uuid="6990241c-d499-4562-9ca2-ad88b28db56d">
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+    </data-source>
   </component>
 </project>
