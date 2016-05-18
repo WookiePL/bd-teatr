@@ -1,6 +1,7 @@
 package theater.persist.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -9,6 +10,8 @@ public class SectorEntity {
     private Integer sectorId;
     private Integer number;
     private Integer roomId;
+    private RoomEntity room;
+    private List<PlaceEntity> places;
 
     @Id
     @Column(name = "sector_id", columnDefinition = "serial")
@@ -43,6 +46,25 @@ public class SectorEntity {
 
     public void setRoomId(Integer roomId) {
         this.roomId = roomId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    public RoomEntity getRoom() {
+        return room;
+    }
+
+    public void setRoom(RoomEntity room) {
+        this.room = room;
+    }
+
+    @OneToMany(mappedBy = "placeEntity", fetch = FetchType.LAZY)
+    public List<PlaceEntity> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(List<PlaceEntity> places) {
+        this.places = places;
     }
 
     @Override

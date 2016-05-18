@@ -11,6 +11,7 @@ public class RoomEntity {
     private Integer buildingId;
     private BuildingEntity building;
     private List<EventRealizationEntity> eventRealizations;
+    private List<SectorEntity> sectors;
 
     @Id
     @Column(name = "room_id", columnDefinition = "serial")
@@ -65,6 +66,16 @@ public class RoomEntity {
     public void setEventRealizations(List<EventRealizationEntity> eventRealizations) {
         this.eventRealizations = eventRealizations;
     }
+
+    @OneToMany(mappedBy = "roomEntity", fetch = FetchType.LAZY)
+    public List<SectorEntity> getSectors() {
+        return sectors;
+    }
+
+    public void setSectors(List<SectorEntity> sectors) {
+        this.sectors = sectors;
+    }
+
 
     @Override
     public boolean equals(Object o) {

@@ -1,6 +1,7 @@
 package theater.persist.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -10,6 +11,9 @@ public class TicketEntity {
     private Integer number;
     private Integer eventRealizationId;
     private Integer userId;
+    private EventRealizationEntity eventRealization;
+    private UserEntity user;
+    private List<PlaceEntity> places;
 
 
     @Id
@@ -55,6 +59,35 @@ public class TicketEntity {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "event_realization_id")
+    public EventRealizationEntity getEventRealization() {
+        return eventRealization;
+    }
+
+    public void setEventRealization(EventRealizationEntity eventRealization) {
+        this.eventRealization = eventRealization;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
+
+    @OneToMany(mappedBy = "ticketEntity", fetch = FetchType.LAZY)
+    public List<PlaceEntity> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(List<PlaceEntity> places) {
+        this.places = places;
     }
 
     @Override

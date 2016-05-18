@@ -2,6 +2,7 @@ package theater.persist.model;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
 
 @Entity
@@ -15,6 +16,8 @@ public class ReservationEntity {
     private Date revokeDate;
     private Integer eventRealizationId;
     private Integer userId;
+    private EventRealizationEntity eventRealization;
+    private List<PlaceEntity> places;
 
     @Id
     @Column(name = "reservation_id", columnDefinition = "serial")
@@ -99,6 +102,25 @@ public class ReservationEntity {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "event_realization_id")
+    public EventRealizationEntity getEventRealization() {
+        return eventRealization;
+    }
+
+    public void setEventRealization(EventRealizationEntity eventRealization) {
+        this.eventRealization = eventRealization;
+    }
+
+    @OneToMany(mappedBy = "reservationEntity", fetch = FetchType.LAZY)
+    public List<PlaceEntity> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(List<PlaceEntity> places) {
+        this.places = places;
     }
 
     @Override

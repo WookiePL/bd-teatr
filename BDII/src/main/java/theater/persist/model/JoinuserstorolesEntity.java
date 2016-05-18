@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "joinuserstoroles", schema = "theater")
-public class JoinuserstorolesEntity {
+public class JoinUsersToRolesEntity {
     private Integer roleId;
     private Integer userId;
 
@@ -36,7 +36,7 @@ public class JoinuserstorolesEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        JoinuserstorolesEntity that = (JoinuserstorolesEntity) o;
+        JoinUsersToRolesEntity that = (JoinUsersToRolesEntity) o;
 
         if (roleId != null ? !roleId.equals(that.roleId) : that.roleId != null) return false;
         if (userId != null ? !userId.equals(that.userId) : that.userId != null) return false;

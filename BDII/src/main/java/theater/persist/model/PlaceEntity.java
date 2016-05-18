@@ -10,6 +10,7 @@ public class PlaceEntity {
     private Integer sectorId;
     private Integer ticketId;
     private Integer reservationId;
+    private SectorEntity sector;
 
     @Id
     @Column(name = "place_id", columnDefinition = "serial")
@@ -64,6 +65,16 @@ public class PlaceEntity {
 
     public void setReservationId(Integer reservationId) {
         this.reservationId = reservationId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "sector_id")
+    public SectorEntity getSector() {
+        return sector;
+    }
+
+    public void setSector(SectorEntity sector) {
+        this.sector = sector;
     }
 
     @Override
