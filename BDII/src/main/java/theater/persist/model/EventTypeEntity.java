@@ -1,12 +1,14 @@
 package theater.persist.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "eventtype", schema = "theater")
 public class EventTypeEntity {
     private Integer eventTypeId;
     private String name;
+    private List<EventEntity> events;
 
     @Id
     @Column(name = "event_type_id", columnDefinition = "serial")
@@ -31,6 +33,15 @@ public class EventTypeEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @OneToMany(mappedBy = "eventEntity", fetch = FetchType.LAZY)
+    public List<EventEntity> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<EventEntity> events) {
+        this.events = events;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package theater.persist.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "roles", schema = "theater")
@@ -8,6 +9,7 @@ public class RolesEntity {
     private Integer roleId;
     private String name;
     private Integer code;
+    private List<JoinUsersToRolesEntity> joinUsersToRolesEntities;
 
     @Id
     @Column(name = "role_id", columnDefinition = "serial")
@@ -42,6 +44,15 @@ public class RolesEntity {
 
     public void setCode(Integer code) {
         this.code = code;
+    }
+
+    @OneToMany(mappedBy = "rolesEntity", fetch = FetchType.LAZY)
+    public List<JoinUsersToRolesEntity> getJoinUsersToRolesEntities() {
+        return joinUsersToRolesEntities;
+    }
+
+    public void setJoinUsersToRolesEntities(List<JoinUsersToRolesEntity> joinUsersToRolesEntities) {
+        this.joinUsersToRolesEntities = joinUsersToRolesEntities;
     }
 
     @Override

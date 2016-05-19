@@ -10,6 +10,7 @@ public class PeriodEntity {
     private Integer periodId;
     private String name;
     private List<CycleEntity> cycles;
+    private List<PriceEntity> prices;
 
     @Id
     @Column(name = "period_id", columnDefinition = "serial")
@@ -36,13 +37,22 @@ public class PeriodEntity {
         this.name = name;
     }
 
-    @OneToMany(mappedBy = "cycleEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "periodEntity", fetch = FetchType.LAZY)
     public List<CycleEntity> getCycles() {
         return cycles;
     }
 
     public void setCycles(List<CycleEntity> cycles) {
         this.cycles = cycles;
+    }
+
+    @OneToMany(mappedBy = "periodEntity", fetch = FetchType.LAZY)
+    public List<PriceEntity> getPrices() {
+        return prices;
+    }
+
+    public void setPrices(List<PriceEntity> prices) {
+        this.prices = prices;
     }
 
     @Override

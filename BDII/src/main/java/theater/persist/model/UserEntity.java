@@ -1,6 +1,7 @@
 package theater.persist.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -9,6 +10,9 @@ public class UserEntity {
     private Integer userId;
     private String name;
     private String surname;
+    private List<ReservationEntity> reservations;
+    private List<TicketEntity> tickets;
+    private List<JoinUsersToRolesEntity> joinUsersToRolesEntities;
 
 
     @Id
@@ -44,6 +48,33 @@ public class UserEntity {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
+    public List<ReservationEntity> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<ReservationEntity> reservations) {
+        this.reservations = reservations;
+    }
+
+    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
+    public List<TicketEntity> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<TicketEntity> tickets) {
+        this.tickets = tickets;
+    }
+
+    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
+    public List<JoinUsersToRolesEntity> getJoinUsersToRolesEntities() {
+        return joinUsersToRolesEntities;
+    }
+
+    public void setJoinUsersToRolesEntities(List<JoinUsersToRolesEntity> joinUsersToRolesEntities) {
+        this.joinUsersToRolesEntities = joinUsersToRolesEntities;
     }
 
     @Override

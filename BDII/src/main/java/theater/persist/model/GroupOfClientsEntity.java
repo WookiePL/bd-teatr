@@ -1,6 +1,7 @@
 package theater.persist.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -8,6 +9,7 @@ import javax.persistence.*;
 public class GroupOfClientsEntity {
     private Integer groupOfClientsId;
     private String name;
+    private List<PriceEntity> prices;
 
     @Id
     @Column(name = "group_of_clients_id", columnDefinition = "serial")
@@ -32,6 +34,15 @@ public class GroupOfClientsEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @OneToMany(mappedBy = "groupOfClientsEntity", fetch = FetchType.LAZY)
+    public List<PriceEntity> getPrices() {
+        return prices;
+    }
+
+    public void setPrices(List<PriceEntity> prices) {
+        this.prices = prices;
     }
 
     @Override

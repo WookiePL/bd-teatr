@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e7ce6b4-1c3c-4170-a642-5a9d39c541f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/DayOfWeekEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/DayOfWeekEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventEntity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventRealizationEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventRealizationEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/JoinuserstorolesEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/JoinuserstorolesEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventTypeEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventTypeEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/GroupOfClientsEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/GroupOfClientsEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/PeriodEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PeriodEntity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/PlaceEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PlaceEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceListEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceListEntity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/ReservationEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/ReservationEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/SectorEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/SectorEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/TicketEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/TicketEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/RolesEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/RolesEntity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/UserEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/UserEntity.java" />
     </list>
     <ignored path="Theater.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,40 +44,28 @@
     <favorites_list name="Theater" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4077156">
+    <splitter split-orientation="horizontal" split-proportion="0.37153518">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="EventTypeEntity.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/EventTypeEntity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="RoomEntity.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="RoomEntity.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="305">
-                  <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="67" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#1869#1870#0" expanded="true" />
-                    <element signature="e#1899#1900#0" expanded="true" />
-                    <element signature="e#1957#1958#0" expanded="true" />
-                    <element signature="e#1995#1996#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="390">
+                  <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BuildingEntity.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="BuildingEntity.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/BuildingEntity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="263">
-                  <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-                  <folding />
+                <state relative-caret-position="430">
+                  <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+                  <folding>
+                    <element signature="e#1132#1133#0" expanded="true" />
+                    <element signature="e#1166#1167#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -81,55 +74,59 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="RoomEntity.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java">
+          <file leaf-file-name="EventTypeEntity.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/EventTypeEntity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="254">
-                  <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-                  <folding>
-                    <element signature="e#1869#1870#0" expanded="true" />
-                    <element signature="e#1899#1900#0" expanded="true" />
-                    <element signature="e#1957#1958#0" expanded="true" />
-                    <element signature="e#1995#1996#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SectorEntity.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/SectorEntity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="60" column="32" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+                <state relative-caret-position="510">
+                  <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1041#1042#0" expanded="true" />
-                    <element signature="e#1070#1071#0" expanded="true" />
-                    <element signature="e#1115#1116#0" expanded="true" />
-                    <element signature="e#1151#1152#0" expanded="true" />
-                    <element signature="e#1235#1236#0" expanded="true" />
-                    <element signature="e#1262#1263#0" expanded="true" />
-                    <element signature="e#1306#1307#0" expanded="true" />
-                    <element signature="e#1338#1339#0" expanded="true" />
-                    <element signature="e#1447#1448#0" expanded="true" />
-                    <element signature="e#1476#1477#0" expanded="true" />
-                    <element signature="e#1531#1532#0" expanded="true" />
-                    <element signature="e#1567#1568#0" expanded="true" />
+                    <element signature="e#1050#1051#0" expanded="true" />
+                    <element signature="e#1079#1080#0" expanded="true" />
+                    <element signature="e#1134#1135#0" expanded="true" />
+                    <element signature="e#1170#1171#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PlaceEntity.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/PlaceEntity.java">
+          <file leaf-file-name="PriceEntity.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/PriceEntity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+                <state relative-caret-position="447">
+                  <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
                   <folding>
-                    <element signature="e#1681#1682#0" expanded="true" />
-                    <element signature="e#1710#1711#0" expanded="true" />
-                    <element signature="e#1760#1761#0" expanded="true" />
-                    <element signature="e#1796#1797#0" expanded="true" />
+                    <element signature="e#1861#1862#0" expanded="true" />
+                    <element signature="e#1893#1894#0" expanded="true" />
+                    <element signature="e#1952#1953#0" expanded="true" />
+                    <element signature="e#1994#1995#0" expanded="true" />
+                    <element signature="e#2110#2111#0" expanded="true" />
+                    <element signature="e#2147#2148#0" expanded="true" />
+                    <element signature="e#2221#2222#0" expanded="true" />
+                    <element signature="e#2273#2274#0" expanded="true" />
+                    <element signature="e#2363#2364#0" expanded="true" />
+                    <element signature="e#2392#2393#0" expanded="true" />
+                    <element signature="e#2442#2443#0" expanded="true" />
+                    <element signature="e#2478#2479#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PriceListEntity.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/PriceListEntity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="782">
+                  <caret line="79" column="5" selection-start-line="72" selection-start-column="4" selection-end-line="79" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#1468#1469#0" expanded="true" />
+                    <element signature="e#1496#1497#0" expanded="true" />
+                    <element signature="e#1543#1544#0" expanded="true" />
+                    <element signature="e#1577#1578#0" expanded="true" />
+                    <element signature="e#1690#1691#0" expanded="true" />
+                    <element signature="e#1719#1720#0" expanded="true" />
+                    <element signature="e#1774#1775#0" expanded="true" />
+                    <element signature="e#1810#1811#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -138,14 +135,93 @@
           <file leaf-file-name="EventRealizationEntity.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/EventRealizationEntity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+                <state relative-caret-position="425">
+                  <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
                   <folding>
-                    <element signature="e#2029#2030#0" expanded="true" />
-                    <element signature="e#2056#2057#0" expanded="true" />
-                    <element signature="e#2372#2373#0" expanded="true" />
-                    <element signature="e#2420#2421#0" expanded="true" />
+                    <element signature="e#2290#2291#0" expanded="true" />
+                    <element signature="e#2318#2319#0" expanded="true" />
+                    <element signature="e#2365#2366#0" expanded="true" />
+                    <element signature="e#2399#2400#0" expanded="true" />
+                    <element signature="e#2531#2532#0" expanded="true" />
+                    <element signature="e#2566#2567#0" expanded="true" />
+                    <element signature="e#2809#2810#0" expanded="true" />
+                    <element signature="e#2839#2840#0" expanded="true" />
+                    <element signature="e#2897#2898#0" expanded="true" />
+                    <element signature="e#2935#2936#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EventEntity.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/EventEntity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1591#1592#0" expanded="true" />
+                    <element signature="e#1623#1624#0" expanded="true" />
+                    <element signature="e#1682#1683#0" expanded="true" />
+                    <element signature="e#1724#1725#0" expanded="true" />
+                    <element signature="e#1855#1856#0" expanded="true" />
+                    <element signature="e#1895#1896#0" expanded="true" />
+                    <element signature="e#2165#2166#0" expanded="true" />
+                    <element signature="e#2205#2206#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GroupOfClientsEntity.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/GroupOfClientsEntity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="289">
+                  <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#698#699#0" expanded="true" />
+                    <element signature="e#737#738#0" expanded="true" />
+                    <element signature="e#1144#1145#0" expanded="true" />
+                    <element signature="e#1173#1174#0" expanded="true" />
+                    <element signature="e#1228#1229#0" expanded="true" />
+                    <element signature="e#1264#1265#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PeriodEntity.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/PeriodEntity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="459">
+                  <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
+                  <folding>
+                    <element signature="e#1268#1269#0" expanded="true" />
+                    <element signature="e#1297#1298#0" expanded="true" />
+                    <element signature="e#1352#1353#0" expanded="true" />
+                    <element signature="e#1388#1389#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CycleEntity.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/CycleEntity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="493">
+                  <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DayOfWeekEntity.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/DayOfWeekEntity.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -153,37 +229,13 @@
           <file leaf-file-name="ReservationEntity.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/ReservationEntity.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="67">
-                  <caret line="106" column="4" selection-start-line="106" selection-start-column="4" selection-end-line="114" selection-end-column="5" />
+                <state relative-caret-position="356">
+                  <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
                   <folding>
-                    <element signature="e#2517#2518#0" expanded="true" />
-                    <element signature="e#2556#2557#0" expanded="true" />
-                    <element signature="e#2807#2808#0" expanded="true" />
-                    <element signature="e#2836#2837#0" expanded="true" />
-                    <element signature="e#2891#2892#0" expanded="true" />
-                    <element signature="e#2927#2928#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TicketEntity.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/TicketEntity.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#1636#1637#0" expanded="true" />
-                    <element signature="e#1675#1676#0" expanded="true" />
-                    <element signature="e#1895#1896#0" expanded="true" />
-                    <element signature="e#1922#1923#0" expanded="true" />
-                    <element signature="e#1966#1967#0" expanded="true" />
-                    <element signature="e#1998#1999#0" expanded="true" />
-                    <element signature="e#2108#2109#0" expanded="true" />
-                    <element signature="e#2137#2138#0" expanded="true" />
-                    <element signature="e#2192#2193#0" expanded="true" />
-                    <element signature="e#2228#2229#0" expanded="true" />
+                    <element signature="e#2818#2819#0" expanded="true" />
+                    <element signature="e#2845#2846#0" expanded="true" />
+                    <element signature="e#2889#2890#0" expanded="true" />
+                    <element signature="e#2921#2922#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -212,16 +264,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/daos/EventRealizationDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/EventTypeDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/GroupOfClientsDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/PlaceDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/PriceDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/PricelistEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/model/PriceListEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/PriceList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/PriceListDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/ReservationDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/persist/model/RolesEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/RolesDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/example/persist/dtos/SectorDTO.java" />
@@ -259,10 +301,20 @@
         <option value="$PROJECT_DIR$/src/main/java/theater/persist/daos/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/SectorEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/PlaceEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/EventRealizationEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/ReservationEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/TicketEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/RolesEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/UserEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/JoinUsersToRolesEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/PlaceEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/ReservationEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/EventRealizationEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/EventEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/EventTypeEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceListEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/GroupOfClientsEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/PeriodEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/theater/persist/model/DayOfWeekEntity.java" />
       </list>
     </option>
   </component>
@@ -297,8 +349,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -366,8 +418,8 @@
       <pane id="ProjectPane">
         <subPane />
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -989,7 +1041,8 @@
       <workItem from="1463508883011" duration="1847000" />
       <workItem from="1463512538367" duration="111000" />
       <workItem from="1463512701326" duration="1639000" />
-      <workItem from="1463595956858" duration="5738000" />
+      <workItem from="1463595956858" duration="5883000" />
+      <workItem from="1463687435752" duration="5880000" />
     </task>
     <task id="LOCAL-00001" summary="Dodałem klasy DAO (oraz interfejsy dla tych klas), klasy DTO + relacje encji + poprawa nazw klas i paczki">
       <created>1463606710146</created>
@@ -998,11 +1051,18 @@
       <option name="project" value="LOCAL" />
       <updated>1463606710146</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Dalsze relacje encji">
+      <created>1463609085889</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1463609085889</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51399000" />
+    <option name="totallyTimeSpent" value="57424000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1014,41 +1074,41 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26848873" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14750378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23373677" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.49573562" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26848873" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14750378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32869378" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17041801" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25189108" sideWeight="0.4960981" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18656716" sideWeight="0.4960981" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24413647" sideWeight="0.5039019" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23373677" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24413647" sideWeight="0.5039019" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1110,128 +1170,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/config/WebMvcConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/EventTypeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/EventDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6990241c-d499-4562-9ca2-ad88b28db56d/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/59a25ed8-233f-450e-9af3-68d043818d7d">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>59a25ed8-233f-450e-9af3-68d043818d7d</OriginalElement>
-          <nodes>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.cycle</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.room</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.sector</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.joinuserstoroles</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.groupofclients</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.roles</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.period</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.place</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.user</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.price</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.pricelist</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.building</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.eventrealization</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.event</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.dayofweek</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.reservation</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.ticket</node>
-            <node x="" y="">59a25ed8-233f-450e-9af3-68d043818d7d.TABLE:theaterDB.theater.eventtype</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.5918918918918918" x="1019.0" y="700.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/dtos/UserDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IDayOfWeekDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IEventDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IEventTypeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IEventRealizationDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/daos/IGroupOfClientsDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1342,7 +1280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1358,7 +1295,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1366,7 +1302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-36">
           <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1390,15 +1325,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#715#716#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1406,15 +1332,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#532#533#0" expanded="true" />
-            <element signature="e#596#597#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#735#736#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1422,15 +1339,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#496#497#0" expanded="false" />
-            <element signature="e#533#534#0" expanded="false" />
-            <element signature="e#597#598#0" expanded="false" />
-            <element signature="e#633#634#0" expanded="false" />
-            <element signature="e#700#701#0" expanded="false" />
-            <element signature="e#736#737#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1448,15 +1356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#471#472#0" expanded="false" />
-            <element signature="e#508#509#0" expanded="false" />
-            <element signature="e#566#567#0" expanded="false" />
-            <element signature="e#600#601#0" expanded="false" />
-            <element signature="e#661#662#0" expanded="false" />
-            <element signature="e#695#696#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1480,7 +1379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1488,121 +1386,279 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
           <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/config/WebMvcConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagram.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/UserEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="70" column="63" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1315#1316#0" expanded="false" />
+            <element signature="e#1350#1351#0" expanded="false" />
+            <element signature="e#1423#1424#0" expanded="false" />
+            <element signature="e#1471#1472#0" expanded="false" />
+            <element signature="e#1581#1582#0" expanded="false" />
+            <element signature="e#1611#1612#0" expanded="false" />
+            <element signature="e#1669#1670#0" expanded="false" />
+            <element signature="e#1707#1708#0" expanded="false" />
+            <element signature="e#1844#1845#0" expanded="false" />
+            <element signature="e#1891#1892#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/EventTypeEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/RolesEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/BuildingEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="447">
+          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1225#1226#0" expanded="false" />
+            <element signature="e#1272#1273#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/SectorEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="60" column="32" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+        <state relative-caret-position="391">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1151#1152#0" expanded="true" />
-            <element signature="e#1235#1236#0" expanded="true" />
-            <element signature="e#1262#1263#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1338#1339#0" expanded="true" />
-            <element signature="e#1447#1448#0" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
-            <element signature="e#1531#1532#0" expanded="true" />
-            <element signature="e#1567#1568#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/PlaceEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/JoinUsersToRolesEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="425">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
           <folding>
-            <element signature="e#1681#1682#0" expanded="true" />
-            <element signature="e#1710#1711#0" expanded="true" />
-            <element signature="e#1760#1761#0" expanded="true" />
-            <element signature="e#1796#1797#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/EventRealizationEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
-          <folding>
-            <element signature="e#2029#2030#0" expanded="true" />
-            <element signature="e#2056#2057#0" expanded="true" />
-            <element signature="e#2372#2373#0" expanded="true" />
-            <element signature="e#2420#2421#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-          <folding>
-            <element signature="e#1869#1870#0" expanded="true" />
-            <element signature="e#1899#1900#0" expanded="true" />
-            <element signature="e#1957#1958#0" expanded="true" />
-            <element signature="e#1995#1996#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/ReservationEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="106" column="4" selection-start-line="106" selection-start-column="4" selection-end-line="114" selection-end-column="5" />
-          <folding>
-            <element signature="e#2517#2518#0" expanded="true" />
-            <element signature="e#2556#2557#0" expanded="true" />
-            <element signature="e#2807#2808#0" expanded="true" />
-            <element signature="e#2836#2837#0" expanded="true" />
-            <element signature="e#2891#2892#0" expanded="true" />
-            <element signature="e#2927#2928#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+            <element signature="e#993#994#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/TicketEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
+        <state relative-caret-position="493">
+          <caret line="81" column="5" selection-start-line="73" selection-start-column="4" selection-end-line="81" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
-            <element signature="e#1675#1676#0" expanded="true" />
-            <element signature="e#1895#1896#0" expanded="true" />
-            <element signature="e#1922#1923#0" expanded="true" />
-            <element signature="e#1966#1967#0" expanded="true" />
-            <element signature="e#1998#1999#0" expanded="true" />
-            <element signature="e#2108#2109#0" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2192#2193#0" expanded="true" />
-            <element signature="e#2228#2229#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/PlaceEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="91" column="14" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
+          <folding>
+            <element signature="e#1962#1963#0" expanded="true" />
+            <element signature="e#1991#1992#0" expanded="true" />
+            <element signature="e#2041#2042#0" expanded="true" />
+            <element signature="e#2077#2078#0" expanded="true" />
+            <element signature="e#2182#2183#0" expanded="true" />
+            <element signature="e#2216#2217#0" expanded="true" />
+            <element signature="e#2281#2282#0" expanded="true" />
+            <element signature="e#2327#2328#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/ReservationEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+          <folding>
+            <element signature="e#2818#2819#0" expanded="true" />
+            <element signature="e#2845#2846#0" expanded="true" />
+            <element signature="e#2889#2890#0" expanded="true" />
+            <element signature="e#2921#2922#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/EventEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1591#1592#0" expanded="true" />
+            <element signature="e#1623#1624#0" expanded="true" />
+            <element signature="e#1682#1683#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1855#1856#0" expanded="true" />
+            <element signature="e#1895#1896#0" expanded="true" />
+            <element signature="e#2165#2166#0" expanded="true" />
+            <element signature="e#2205#2206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/EventTypeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1079#1080#0" expanded="true" />
+            <element signature="e#1134#1135#0" expanded="true" />
+            <element signature="e#1170#1171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/EventRealizationEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
+          <folding>
+            <element signature="e#2290#2291#0" expanded="true" />
+            <element signature="e#2318#2319#0" expanded="true" />
+            <element signature="e#2365#2366#0" expanded="true" />
+            <element signature="e#2399#2400#0" expanded="true" />
+            <element signature="e#2531#2532#0" expanded="true" />
+            <element signature="e#2566#2567#0" expanded="true" />
+            <element signature="e#2809#2810#0" expanded="true" />
+            <element signature="e#2839#2840#0" expanded="true" />
+            <element signature="e#2897#2898#0" expanded="true" />
+            <element signature="e#2935#2936#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar!/javax/persistence/FetchType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/PriceEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <element signature="e#1861#1862#0" expanded="true" />
+            <element signature="e#1893#1894#0" expanded="true" />
+            <element signature="e#1952#1953#0" expanded="true" />
+            <element signature="e#1994#1995#0" expanded="true" />
+            <element signature="e#2110#2111#0" expanded="true" />
+            <element signature="e#2147#2148#0" expanded="true" />
+            <element signature="e#2221#2222#0" expanded="true" />
+            <element signature="e#2273#2274#0" expanded="true" />
+            <element signature="e#2363#2364#0" expanded="true" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2442#2443#0" expanded="true" />
+            <element signature="e#2478#2479#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/PriceListEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="79" column="5" selection-start-line="72" selection-start-column="4" selection-end-line="79" selection-end-column="5" />
+          <folding>
+            <element signature="e#1468#1469#0" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
+            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
+            <element signature="e#1690#1691#0" expanded="true" />
+            <element signature="e#1719#1720#0" expanded="true" />
+            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1810#1811#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/GroupOfClientsEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#1144#1145#0" expanded="true" />
+            <element signature="e#1173#1174#0" expanded="true" />
+            <element signature="e#1228#1229#0" expanded="true" />
+            <element signature="e#1264#1265#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/BuildingEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+          <folding>
+            <element signature="e#1132#1133#0" expanded="true" />
+            <element signature="e#1166#1167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/PeriodEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
+          <folding>
+            <element signature="e#1268#1269#0" expanded="true" />
+            <element signature="e#1297#1298#0" expanded="true" />
+            <element signature="e#1352#1353#0" expanded="true" />
+            <element signature="e#1388#1389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/CycleEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/DayOfWeekEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

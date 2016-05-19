@@ -11,6 +11,9 @@ public class PriceEntity {
     private Integer groupOfClientsId;
     private Integer priceListId;
     private Integer periodId;
+    private PriceListEntity priceList;
+    private GroupOfClientsEntity groupOfClients;
+    private PeriodEntity period;
 
     @Id
     @Column(name = "price_id", columnDefinition = "serial")
@@ -66,6 +69,36 @@ public class PriceEntity {
 
     public void setPeriodId(Integer periodId) {
         this.periodId = periodId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "price_list_id")
+    public PriceListEntity getPriceList() {
+        return priceList;
+    }
+
+    public void setPriceList(PriceListEntity priceList) {
+        this.priceList = priceList;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "group_of_clients_id")
+    public GroupOfClientsEntity getGroupOfClients() {
+        return groupOfClients;
+    }
+
+    public void setGroupOfClients(GroupOfClientsEntity groupOfClients) {
+        this.groupOfClients = groupOfClients;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "period_id")
+    public PeriodEntity getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(PeriodEntity period) {
+        this.period = period;
     }
 
     @Override

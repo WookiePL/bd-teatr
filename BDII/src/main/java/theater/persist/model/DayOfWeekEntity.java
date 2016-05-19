@@ -31,7 +31,7 @@ public class DayOfWeekEntity {
         this.dayOfWeekId = dayOfWeekId;
     }
 
-    @OneToMany(mappedBy = "cycleEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "dayOfWeekEntity", fetch = FetchType.LAZY)
     public List<CycleEntity> getCycles() {
         return cycles;
     }

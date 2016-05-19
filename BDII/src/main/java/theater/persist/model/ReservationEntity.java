@@ -17,6 +17,7 @@ public class ReservationEntity {
     private Integer eventRealizationId;
     private Integer userId;
     private EventRealizationEntity eventRealization;
+    private UserEntity user;
     private List<PlaceEntity> places;
 
     @Id
@@ -112,6 +113,16 @@ public class ReservationEntity {
 
     public void setEventRealization(EventRealizationEntity eventRealization) {
         this.eventRealization = eventRealization;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "event_realization_id")
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 
     @OneToMany(mappedBy = "reservationEntity", fetch = FetchType.LAZY)

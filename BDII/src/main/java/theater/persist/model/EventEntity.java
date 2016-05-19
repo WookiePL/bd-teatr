@@ -1,6 +1,7 @@
 package theater.persist.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "event", schema = "theater")
@@ -9,6 +10,9 @@ public class EventEntity {
     private String name;
     private String description;
     private Integer eventTypeId;
+    private EventTypeEntity eventType;
+    private List<EventRealizationEntity> eventRealizations;
+    private List<PriceListEntity> priceListEntities;
 
 
     @Id
@@ -54,6 +58,34 @@ public class EventEntity {
 
     public void setEventTypeId(Integer eventTypeId) {
         this.eventTypeId = eventTypeId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "event_type_id")
+    public EventTypeEntity getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(EventTypeEntity eventType) {
+        this.eventType = eventType;
+    }
+
+    @OneToMany(mappedBy = "eventEntity", fetch = FetchType.LAZY)
+    public List<EventRealizationEntity> getEventRealizations() {
+        return eventRealizations;
+    }
+
+    public void setEventRealizations(List<EventRealizationEntity> eventRealizations) {
+        this.eventRealizations = eventRealizations;
+    }
+
+    @OneToMany(mappedBy = "eventEntity", fetch = FetchType.LAZY)
+    public List<PriceListEntity> getPriceListEntities() {
+        return priceListEntities;
+    }
+
+    public void setPriceListEntities(List<PriceListEntity> priceListEntities) {
+        this.priceListEntities = priceListEntities;
     }
 
     @Override

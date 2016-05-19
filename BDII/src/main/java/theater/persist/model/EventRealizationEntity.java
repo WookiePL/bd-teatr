@@ -14,7 +14,9 @@ public class EventRealizationEntity {
     private Integer eventId;
     private Integer roomId;
     private RoomEntity room;
+    private EventEntity event;
     private List<ReservationEntity> reservations;
+    private List<TicketEntity> tickets;
 
     @Id
     @Column(name = "event_realization_id", columnDefinition = "serial")
@@ -92,6 +94,16 @@ public class EventRealizationEntity {
         this.room = room;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "event_id")
+    public EventEntity getEvent() {
+        return event;
+    }
+
+    public void setEvent(EventEntity event) {
+        this.event = event;
+    }
+
     @OneToMany(mappedBy = "eventRealizationEntity", fetch = FetchType.LAZY)
     public List<ReservationEntity> getReservations() {
         return reservations;
@@ -99,6 +111,15 @@ public class EventRealizationEntity {
 
     public void setReservations(List<ReservationEntity> reservations) {
         this.reservations = reservations;
+    }
+
+    @OneToMany(mappedBy = "eventRealizationEntity", fetch = FetchType.LAZY)
+    public List<TicketEntity> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<TicketEntity> tickets) {
+        this.tickets = tickets;
     }
 
     @Override
