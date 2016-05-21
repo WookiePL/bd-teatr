@@ -1,18 +1,24 @@
 package bd2.adminPanel.controllers;
 
+import bd2.adminPanel.tmp.User;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
-public class MenuController {
+public class MenuController implements Initializable {
 
     @FXML
     private StackPane menuStackPane;
@@ -189,5 +195,11 @@ public class MenuController {
     @FXML
     public void exit() {
         Platform.exit();
+    }
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        buttonUsers.defaultButtonProperty().bind(buttonUsers.focusedProperty());
+        buttonDictionaries.defaultButtonProperty().bind(buttonDictionaries.focusedProperty());
     }
 }

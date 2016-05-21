@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
 
-
 <StackPane fx:id="loginStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.LoginController">
    <children>
       <AnchorPane>
@@ -27,7 +26,7 @@
                <bottom>
                   <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="buttonExit" mnemonicParsing="false" onAction="#exit" onMouseEntered="#buttonExitOnMouseEntered" onMouseExited="#buttonExitOnMouseExited" onMousePressed="#buttonExitOnMousePressed" onMouseReleased="#buttonExitOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" text="Wyjdź">
+                        <Button fx:id="buttonExit" cancelButton="true" mnemonicParsing="false" onAction="#exit" onMouseEntered="#buttonExitOnMouseEntered" onMouseExited="#buttonExitOnMouseExited" onMousePressed="#buttonExitOnMousePressed" onMouseReleased="#buttonExitOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" text="Wyjdź">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -56,7 +55,7 @@
                               <Label fx:id="labelWrongLogin" text="Użytkownik nie istnieje." textFill="RED" visible="false" />
                            </children>
                         </StackPane>
-                        <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#login" onMouseEntered="#buttonLoginOnMouseEntered" onMouseExited="#buttonLoginOnMouseExited" onMousePressed="#buttonLoginOnMousePressed" onMouseReleased="#buttonLoginOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" text="Zaloguj się">
+                        <Button fx:id="buttonLogin" defaultButton="true" mnemonicParsing="false" onAction="#login" onMouseEntered="#buttonLoginOnMouseEntered" onMouseExited="#buttonLoginOnMouseExited" onMousePressed="#buttonLoginOnMousePressed" onMouseReleased="#buttonLoginOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" text="Zaloguj się">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>

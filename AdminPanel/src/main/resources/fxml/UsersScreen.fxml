@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
 
-
 <StackPane fx:id="usersStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.UsersController">
    <children>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="620.0">
@@ -18,7 +17,7 @@
                <bottom>
                   <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="TOP_CENTER">
                      <children>
-                        <Button fx:id="buttonBackMenu" mnemonicParsing="false" onAction="#backMenu" onMouseEntered="#buttonBackMenuOnMouseEntered" onMouseExited="#buttonBackMenuOnMouseExited" onMousePressed="#buttonBackMenuOnMousePressed" onMouseReleased="#buttonBackMenuOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Wróć">
+                        <Button fx:id="buttonBackMenu" cancelButton="true" mnemonicParsing="false" onAction="#backMenu" onMouseEntered="#buttonBackMenuOnMouseEntered" onMouseExited="#buttonBackMenuOnMouseExited" onMousePressed="#buttonBackMenuOnMousePressed" onMouseReleased="#buttonBackMenuOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Wróć">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -101,7 +100,7 @@
                                           <Font name="System Bold" size="12.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="buttonEditUser" mnemonicParsing="false" onAction="#editUser" onMouseEntered="#buttonEditUserOnMouseEntered" onMouseExited="#buttonEditUserOnMouseExited" onMousePressed="#buttonEditUserOnMousePressed" onMouseReleased="#buttonEditUserOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Zastosuj edycję">
+                                    <Button fx:id="buttonEditUser" defaultButton="true" mnemonicParsing="false" onAction="#editUser" onMouseEntered="#buttonEditUserOnMouseEntered" onMouseExited="#buttonEditUserOnMouseExited" onMousePressed="#buttonEditUserOnMousePressed" onMouseReleased="#buttonEditUserOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Zastosuj edycję">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>

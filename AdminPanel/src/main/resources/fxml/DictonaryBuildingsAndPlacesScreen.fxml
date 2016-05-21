@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane fx:id="dictionariesStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.DictonaryDaysOfWeekController">
+<StackPane fx:id="dictionariesStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.DictonaryBuildingsAndPlacesController">
    <children>
       <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -27,7 +27,7 @@
                <top>
                   <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
                      <children>
-                        <Label text="Edycja dni tygodnia" textFill="WHITE">
+                        <Label text="Edycja budynków i pomieszczeń" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
                            </font>

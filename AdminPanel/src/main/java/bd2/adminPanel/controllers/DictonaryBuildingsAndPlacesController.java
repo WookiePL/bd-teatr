@@ -14,7 +14,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
-public class DictonaryDaysOfWeekController {
+public class DictonaryBuildingsAndPlacesController {
     
     @FXML
     private StackPane dictionariesStackPane;

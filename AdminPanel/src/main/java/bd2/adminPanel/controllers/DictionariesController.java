@@ -18,13 +18,13 @@ public class DictionariesController {
     private Button buttonBackMenu;
     
     @FXML
-    private Button buttonDayOfWeek;
+    private Button buttonDaysOfWeek;
     
     @FXML
-    private Button buttonGroupOfClients;
+    private Button buttonGroupsOfClients;
     
     @FXML
-    private Button buttonEventsType;
+    private Button buttonEventTypes;
     
     @FXML
     private Button buttonBuildings;
@@ -52,24 +52,24 @@ public class DictionariesController {
     
     @FXML
     public void buttonDayOfWeekOnMouseEntered() {
-        buttonDayOfWeek.setEffect(shadow);
-        buttonDayOfWeek.setStyle(greenButtonOnMouseStyle);
+        buttonDaysOfWeek.setEffect(shadow);
+        buttonDaysOfWeek.setStyle(greenButtonOnMouseStyle);
     }
 
     @FXML
     public void buttonDayOfWeekOnMouseExited() {
-        buttonDayOfWeek.setEffect(null);
-        buttonDayOfWeek.setStyle(greenButtonReleasedStyle);
+        buttonDaysOfWeek.setEffect(null);
+        buttonDaysOfWeek.setStyle(greenButtonReleasedStyle);
     }
 
     @FXML
     public void buttonDayOfWeekOnMousePressed() {
-        buttonDayOfWeek.setStyle(greenButtonPressedStyle);
+        buttonDaysOfWeek.setStyle(greenButtonPressedStyle);
     }
 
     @FXML
     public void buttonDayOfWeekOnMouseReleased() {
-        buttonDayOfWeek.setStyle(greenButtonReleasedStyle);
+        buttonDaysOfWeek.setStyle(greenButtonReleasedStyle);
     }
     
     @FXML
@@ -96,46 +96,46 @@ public class DictionariesController {
     
     @FXML
     public void buttonGroupOfClientsOnMouseEntered() {
-        buttonGroupOfClients.setEffect(shadow);
-        buttonGroupOfClients.setStyle(greenButtonOnMouseStyle);
+        buttonGroupsOfClients.setEffect(shadow);
+        buttonGroupsOfClients.setStyle(greenButtonOnMouseStyle);
     }
 
     @FXML
     public void buttonGroupOfClientsOnMouseExited() {
-        buttonGroupOfClients.setEffect(null);
-        buttonGroupOfClients.setStyle(greenButtonReleasedStyle);
+        buttonGroupsOfClients.setEffect(null);
+        buttonGroupsOfClients.setStyle(greenButtonReleasedStyle);
     }
 
     @FXML
     public void buttonGroupOfClientsOnMousePressed() {
-        buttonGroupOfClients.setStyle(greenButtonPressedStyle);
+        buttonGroupsOfClients.setStyle(greenButtonPressedStyle);
     }
 
     @FXML
     public void buttonGroupOfClientsOnMouseReleased() {
-        buttonGroupOfClients.setStyle(greenButtonReleasedStyle);
+        buttonGroupsOfClients.setStyle(greenButtonReleasedStyle);
     }
     
     @FXML
     public void buttonEventsTypeOnMouseEntered() {
-        buttonEventsType.setEffect(shadow);
-        buttonEventsType.setStyle(greenButtonOnMouseStyle);
+        buttonEventTypes.setEffect(shadow);
+        buttonEventTypes.setStyle(greenButtonOnMouseStyle);
     }
 
     @FXML
     public void buttonEventsTypeOnMouseExited() {
-        buttonEventsType.setEffect(null);
-        buttonEventsType.setStyle(greenButtonReleasedStyle);
+        buttonEventTypes.setEffect(null);
+        buttonEventTypes.setStyle(greenButtonReleasedStyle);
     }
 
     @FXML
     public void buttonEventsTypeOnMousePressed() {
-        buttonEventsType.setStyle(greenButtonPressedStyle);
+        buttonEventTypes.setStyle(greenButtonPressedStyle);
     }
 
     @FXML
     public void buttonEventsTypeOnMouseReleased() {
-        buttonEventsType.setStyle(greenButtonReleasedStyle);
+        buttonEventTypes.setStyle(greenButtonReleasedStyle);
     }
     
     @FXML
@@ -164,6 +164,54 @@ public class DictionariesController {
     public void daysOfWeek() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(
                 "/fxml/DictonaryDaysOfWeekScreen.fxml"));
+        StackPane pane = null;
+
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        dictionariesStackPane.getChildren().clear();
+        dictionariesStackPane.getChildren().add(pane);
+    }
+    
+    @FXML
+    public void GroupsOfClients() {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource(
+                "/fxml/DictonaryGroupsOfClientsScreen.fxml"));
+        StackPane pane = null;
+
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        dictionariesStackPane.getChildren().clear();
+        dictionariesStackPane.getChildren().add(pane);
+    }
+    
+    @FXML
+    public void EventTypes() {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource(
+                "/fxml/DictonaryEventTypesScreen.fxml"));
+        StackPane pane = null;
+
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        dictionariesStackPane.getChildren().clear();
+        dictionariesStackPane.getChildren().add(pane);
+    }
+    
+    @FXML
+    public void Buildings() {
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource(
+                "/fxml/DictonaryBuildingsAndPlacesScreen.fxml"));
         StackPane pane = null;
 
         try {

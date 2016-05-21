@@ -235,8 +235,8 @@ public class UsersController implements Initializable {
             textFieldEmail.setText(user.getEmail());
             textFieldPhone.setText(user.getPhone());
 
-            buttonEditUser.setVisible(true);
-            buttonDeleteUser.setVisible(true);
+            buttonEditUser.setDisable(false);
+            buttonDeleteUser.setDisable(false);
 
             if (user.getRights() != null) {
                 ObservableList<Right> rights
@@ -279,20 +279,7 @@ public class UsersController implements Initializable {
     }
 
     @FXML
-    public void addUser() {/*
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/AddUserScreen.fxml"));
-        Pane pane = null;
-
-        try {
-            pane = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        AddUserController addUserController = loader.getController();
-        addUserController.setMainController(mainController);
-
-        mainController.setScreen(pane);*/ // MO¯NA WYWALIÆ OKNO DODAWANIA USERA I KLASÊ KONTROLERA ZA NIE ODPOWIEDZIALN¥.
+    public void addUser() {
 
         User user = new User(textFieldLogin.getText(),
                 textFieldFirstName.getText(), textFieldLastName.getText(),
@@ -353,21 +340,6 @@ public class UsersController implements Initializable {
         User user = listViewUsers.getSelectionModel().getSelectedItem();
         if (user != null) {
             selectedUser = user;
-            /*
-            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/EditUserScreen.fxml"));
-            Pane pane = null;
-
-            try {
-                pane = loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            EditUserController editUserController = loader.getController();
-            editUserController.setMainController(mainController);
-
-            mainController.setScreen(pane);
-             */ // MO¯NA WYWALIÆ OKNO EDYTOWANIA USERA I KLASÊ KONTROLERA ZA NIE ODPOWIEDZIALN¥.
 
             user.setLogin(textFieldLogin.getText());
             user.setFirstName(textFieldFirstName.getText());
@@ -412,8 +384,8 @@ public class UsersController implements Initializable {
         ObservableList<User> users = FXCollections.observableArrayList();
         users.addAll(userRepository.getUsers());
 
-        buttonEditUser.setVisible(false);
-        buttonDeleteUser.setVisible(false);
+        buttonEditUser.setDisable(true);
+        buttonDeleteUser.setDisable(true);
 
         listViewUsers.setItems(users);
         listViewUsers.refresh();
