@@ -227,7 +227,7 @@ public class DictionariesController {
     @FXML
     public void backMenu() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(
-                "/fxml/MenuScreen.fxml"));
+                "/fxml/MainMenuScreen.fxml"));
         StackPane pane = null;
 
         try {

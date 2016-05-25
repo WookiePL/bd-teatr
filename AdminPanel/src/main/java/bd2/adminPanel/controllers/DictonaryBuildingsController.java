@@ -14,7 +14,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
-public class DictonaryBuildingsAndPlacesController {
+public class DictonaryBuildingsController {
     
     @FXML
     private StackPane dictionariesStackPane;

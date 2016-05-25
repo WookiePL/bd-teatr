@@ -78,7 +78,7 @@ public class UsersController implements Initializable {
     @FXML
     public void backMenu() {
         FXMLLoader loader = new FXMLLoader(this.getClass()
-                .getResource("/fxml/MenuScreen.fxml"));
+                .getResource("/fxml/MainMenuScreen.fxml"));
         StackPane pane = null;
 
         try {
