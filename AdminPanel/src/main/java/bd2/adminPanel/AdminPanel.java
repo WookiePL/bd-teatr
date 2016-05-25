@@ -15,7 +15,8 @@ public class AdminPanel extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("/fxml/LoginScreen.fxml"));
+        loader.setLocation(this.getClass()
+                .getResource("/fxml/LoginScreen.fxml"));
 
         StackPane stackPane = loader.load();
 
