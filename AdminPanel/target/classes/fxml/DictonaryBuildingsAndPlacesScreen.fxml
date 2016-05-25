@@ -16,7 +16,7 @@
                <bottom>
                   <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="buttonBackMenu" cancelButton="true" mnemonicParsing="false" onAction="#back" onMouseEntered="#buttonBackMenuOnMouseEntered" onMouseExited="#buttonBackMenuOnMouseExited" onMousePressed="#buttonBackMenuOnMousePressed" onMouseReleased="#buttonBackMenuOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" text="Wróć">
+                        <Button fx:id="buttonBackMenu" cancelButton="true" mnemonicParsing="false" onAction="#back" onMouseEntered="#buttonBackMenuOnMouseEntered" onMouseExited="#buttonBackMenuOnMouseExited" onMousePressed="#buttonBackMenuOnMousePressed" onMouseReleased="#buttonBackMenuOnMouseReleased" stylesheets="@GreenButton.css" text="Wróć">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -35,6 +35,57 @@
                      </children>
                   </StackPane>
                </top>
+               <center>
+                  <HBox>
+                     <children>
+                        <VBox>
+                           <children>
+                              <ListView prefHeight="295.0" prefWidth="200.0" />
+                              <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Button" />
+                                    <Button mnemonicParsing="false" text="Button" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <ListView prefHeight="295.0" prefWidth="200.0" />
+                              <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Button" />
+                                    <Button mnemonicParsing="false" stylesheets="@GreenButton.css" text="Button" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <ListView prefHeight="295.0" prefWidth="200.0" />
+                              <HBox alignment="CENTER" prefHeight="75.0" prefWidth="200.0" spacing="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Button" />
+                                    <Button mnemonicParsing="false" text="Button" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </center>
             </BorderPane>
          </children>
       </AnchorPane>

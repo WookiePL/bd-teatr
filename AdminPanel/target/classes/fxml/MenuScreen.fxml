@@ -45,11 +45,7 @@
                <center>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
                      <children>
-                      <Button fx:id="buttonUsers" defaultButton="true" mnemonicParsing="false" onAction="#users" onMouseEntered="#buttonUsersOnMouseEntered" onMouseExited="#buttonUsersOnMouseExited" onMousePressed="#buttonUsersOnMousePressed" onMouseReleased="#buttonUsersOnMouseReleased" prefHeight="70.0" prefWidth="249.0" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-text-fill: #395306; -fx-background-insets: 0, 1; -fx-background-radius: 6, 5; focused: -fx-background-color: #395306;" text="Zarządzaj użytkownikami">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Button>
+                      <Button fx:id="buttonUsers" defaultButton="true" mnemonicParsing="false" onAction="#users" onMouseEntered="#buttonUsersOnMouseEntered" onMouseExited="#buttonUsersOnMouseExited" onMousePressed="#buttonUsersOnMousePressed" onMouseReleased="#buttonUsersOnMouseReleased" prefHeight="70.0" prefWidth="249.0" stylesheets="@GreenButtonHuge.css" text="Zarządzaj użytkownikami" />
                       <Button fx:id="buttonDictionaries" mnemonicParsing="false" onAction="#dictionaries" onMouseEntered="#buttonDictionariesOnMouseEntered" onMouseExited="#buttonDictionariesOnMouseExited" onMousePressed="#buttonDictionariesOnMousePressed" onMouseReleased="#buttonDictionariesOnMouseReleased" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" text="Zarządzaj słownikami">
                            <font>
                               <Font name="System Bold" size="16.0" />

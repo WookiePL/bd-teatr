@@ -1,0 +1,35 @@
+.button {
+-fx-background-color:
+    linear-gradient( #f0ff35, #a9ff00 ),
+    radial-gradient( center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50% );
+-fx-background-radius: 6, 5;
+-fx-background-insets: 0, 1;
+-fx-text-fill: #395306;
+-fx-font-family: System;
+-fx-font-weight: bold;
+-fx-font-size: 16;
+}
+
+.button:hover {
+-fx-background-color:
+    linear-gradient(#f4ff57, #caff38),
+    radial-gradient(center 50% -40%, radius 200%, #ceff52 45%, #92e600 50%);
+-fx-background-radius: 6, 5;
+-fx-background-insets: 0, 1;
+-fx-text-fill: #395306;
+-fx-font-family: System;
+-fx-font-weight: bold;
+-fx-font-size: 16;
+}
+
+.button:active {
+-fx-background-color:
+    linear-gradient(#a9ff00, #f0ff35),
+    radial-gradient(center 50% +140%, radius 200%, #b8ee36 45%, #80c800 50%);
+-fx-background-radius: 6, 5;
+-fx-background-insets: 0, 1;
+-fx-text-fill: #395306;
+-fx-font-family: System;
+-fx-font-weight: bold;
+-fx-font-size: 16;
+}

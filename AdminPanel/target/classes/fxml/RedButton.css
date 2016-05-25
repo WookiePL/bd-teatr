@@ -1,0 +1,31 @@
+.button {
+-fx-background-color:
+    linear-gradient(#ff3535, #ff0000),
+    radial-gradient(center 50% -40%, radius 200%, #ee3636 45%, #c80000 50%);
+-fx-background-radius: 6, 5;
+-fx-background-insets: 0, 1;
+-fx-text-fill: #ffe3e3;
+-fx-font-family: System;
+-fx-font-weight: bold;
+-fx-font-size: 12;
+}
+
+.button:hover {
+-fx-background-color:
+    linear-gradient(#ff7373, #ffa6a6),
+    radial-gradient(center 50% -40%, radius 200%, #ff6b6b 45%, #f00000 50%);
+-fx-effect: 
+    dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0, 0, 1);
+}
+
+.button:pressed {
+-fx-background-color:
+    linear-gradient(#ff0000, #ff3535),
+    radial-gradient(center 50% +140%, radius 200%, #ee3636 45%, #c80000 50%);
+}
+
+.button:focused {
+-fx-effect: 
+    dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0, 0, 1);
+-fx-text-fill: white;
+}
