@@ -25,7 +25,7 @@
                <bottom>
                   <StackPane prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="buttonBackMenu" cancelButton="true" mnemonicParsing="false" onAction="#backMenu" onMouseEntered="#buttonBackMenuOnMouseEntered" onMouseExited="#buttonBackMenuOnMouseExited" onMousePressed="#buttonBackMenuOnMousePressed" onMouseReleased="#buttonBackMenuOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" text="Wróć">
+                        <Button fx:id="buttonBackMenu" cancelButton="true" mnemonicParsing="false" onAction="#backMenu" stylesheets="@GreenButton.css" text="Wróć">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -36,22 +36,22 @@
                <center>
                   <VBox alignment="CENTER" spacing="20.0">
                      <children>
-                        <Button fx:id="buttonDaysOfWeek" mnemonicParsing="false" onAction="#daysOfWeek" onMouseEntered="#buttonDayOfWeekOnMouseEntered" onMouseExited="#buttonDayOfWeekOnMouseExited" onMousePressed="#buttonDayOfWeekOnMousePressed" onMouseReleased="#buttonDayOfWeekOnMouseReleased" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Dni tygodnia" BorderPane.alignment="CENTER">
+                        <Button fx:id="buttonDaysOfWeek" mnemonicParsing="false" onAction="#daysOfWeek" prefHeight="50.0" prefWidth="130.0" stylesheets="@GreenButtonBig.css" text="Dni tygodnia" BorderPane.alignment="CENTER">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="buttonGroupsOfClients" mnemonicParsing="false" onAction="#GroupsOfClients" onMouseEntered="#buttonGroupOfClientsOnMouseEntered" onMouseExited="#buttonGroupOfClientsOnMouseExited" onMousePressed="#buttonGroupOfClientsOnMousePressed" onMouseReleased="#buttonGroupOfClientsOnMouseReleased" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Grupy klientów">
+                        <Button fx:id="buttonGroupsOfClients" mnemonicParsing="false" onAction="#GroupsOfClients" prefHeight="50.0" prefWidth="130.0" stylesheets="@GreenButtonBig.css" text="Grupy klientów">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="buttonEventTypes" mnemonicParsing="false" onAction="#EventTypes" onMouseEntered="#buttonEventsTypeOnMouseEntered" onMouseExited="#buttonEventsTypeOnMouseExited" onMousePressed="#buttonEventsTypeOnMousePressed" onMouseReleased="#buttonEventsTypeOnMouseReleased" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Typy wydarzeń">
+                        <Button fx:id="buttonEventTypes" mnemonicParsing="false" onAction="#EventTypes" prefHeight="50.0" prefWidth="130.0" stylesheets="@GreenButtonBig.css" text="Typy wydarzeń">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="buttonBuildings" mnemonicParsing="false" onAction="#Buildings" onMouseEntered="#buttonBuildingsOnMouseEntered" onMouseExited="#buttonBuildingsOnMouseExited" onMousePressed="#buttonBuildingsOnMousePressed" onMouseReleased="#buttonBuildingsOnMouseReleased" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Budynki oraz pomieszczenia" textAlignment="CENTER" wrapText="true">
+                        <Button fx:id="buttonBuildings" mnemonicParsing="false" onAction="#Buildings" prefHeight="50.0" prefWidth="130.0" stylesheets="@GreenButtonBig.css" text="Budynki oraz pomieszczenia" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>

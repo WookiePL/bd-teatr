@@ -22,6 +22,33 @@ public class DictonaryBuildingsController {
     @FXML
     private Button buttonBackMenu;
     
+    @FXML
+    private Button buttonAddBuilding;
+    
+    @FXML
+    private Button buttoneditBuilding;
+    
+    @FXML
+    private Button buttonDeleteBuilding;
+            
+    @FXML
+    private Button buttonAddSector;
+    
+    @FXML
+    private Button buttonEditSector;
+    
+    @FXML
+    private Button buttonDeleteSector;
+    
+    @FXML
+    private Button buttonAddPlace;
+    
+    @FXML
+    private Button buttonEditPlace;
+    
+    @FXML
+    private Button buttonDeletePlace;
+    
     private final DropShadow shadow = new DropShadow(BlurType.THREE_PASS_BOX,
             Color.rgb(0, 0, 0, 0.4), 5, 0.0, 0, 1);
     
