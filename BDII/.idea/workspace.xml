@@ -2,119 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e7ce6b4-1c3c-4170-a642-5a9d39c541f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/theater/services/CustomUserDetailsService.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/config/HibernateConfiguration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/config/MyWebAppInit.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/config/TemplateEngineConfiguration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/config/WebMvcConfiguration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/controller/MainController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/daos/BaseDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/daos/BuildingDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/daos/CycleDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/daos/IBaseDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/daos/IBuildingDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/daos/ICycleDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/daos/IPeriodDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/daos/PeriodDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/dtos/BuildingDTO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/dtos/CycleDTO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/dtos/PeriodDTO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/BuildingEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/CycleEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/DayofweekEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/EventEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/EventrealizationEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/EventtypeEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/GroupofclientsEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/PeriodEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/PlaceEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/PriceEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/PricelistEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/ReservationEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/RolesEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/RoomEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/SectorEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/TicketEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/persist/model/UserEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/services/EventService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/example/services/IEventService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/config/HibernateConfiguration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/config/MyWebAppInit.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/config/TemplateEngineConfiguration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/config/WebMvcConfiguration.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/controller/MainController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/daos/BaseDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/daos/BuildingDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/daos/CycleDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/daos/IBaseDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/daos/IBuildingDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/daos/ICycleDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/daos/IPeriodDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/daos/PeriodDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/dtos/BuildingDTO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/dtos/CycleDTO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/dtos/PeriodDTO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/BuildingEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/CycleEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/DayofweekEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/EventEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/EventrealizationEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/EventtypeEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/GroupofclientsEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/PeriodEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/PlaceEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/PriceEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/PricelistEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/ReservationEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/RolesEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/RoomEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/SectorEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/TicketEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/persist/model/UserEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/services/EventService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/classes/example/services/IEventService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/theater/WEB-INF/lib/Theater-1.0-SNAPSHOT.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/theater.war" afterPath="$PROJECT_DIR$/target/theater.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BDII.iml" afterPath="$PROJECT_DIR$/BDII.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/config/HibernateConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/theater/config/HibernateConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/config/MyWebAppInit.java" afterPath="$PROJECT_DIR$/src/main/java/theater/config/MyWebAppInit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/config/TemplateEngineConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/theater/config/TemplateEngineConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/config/WebMvcConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/theater/config/WebMvcConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/theater/controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/EventDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/EventDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/EventRealizationDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/EventRealizationDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/EventTypeDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/EventTypeDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/GroupOfClientsDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/GroupOfClientsDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IUserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/IUserDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/PlaceDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/PlaceDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/PriceDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/PriceDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/PriceListDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/PriceListDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/ReservationDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/ReservationDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/RolesDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/RolesDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/SectorDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/SectorDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/TicketDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/TicketDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/daos/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/daos/UserDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/BuildingEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/BuildingEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/CycleEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/CycleEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/DayOfWeekEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/DayOfWeekEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventRealizationEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventRealizationEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventTypeEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/EventTypeEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/GroupOfClientsEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/GroupOfClientsEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/JoinuserstorolesEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/JoinuserstorolesEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/PeriodEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PeriodEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/PlaceEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PlaceEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceListEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/PriceListEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/ReservationEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/ReservationEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/RolesEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/RolesEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/SectorEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/SectorEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/TicketEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/TicketEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/theater/persist/model/UserEntity.java" afterPath="$PROJECT_DIR$/src/main/java/theater/persist/model/UserEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/DictonaryBuildingsController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/DictonaryDaysOfWeekController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/DictonaryEventTypesController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/DictonaryGroupsOfClientsController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/nbactions.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/DictonaryBuildingsController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/DictonaryDaysOfWeekController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/DictonaryEventTypesController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/DictonaryGroupsOfClientsController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/MainMenuController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/DictonaryBuildingsScreen.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/DictonaryDaysOfWeekScreen.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/DictonaryEventTypesScreen.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/DictonaryGroupsOfClientsScreen.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/GreenButton.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/GreenButtonBig.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/GreenButtonHuge.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/RedButton.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/DictonaryDaysOfWeekScreen.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/DictonaryEventTypesScreen.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/DictonaryGroupsOfClientsScreen.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/GreenButton.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/GreenButtonBig.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/GreenButtonHuge.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/RedButton.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/EditUserController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/MenuController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/EditUserScreen.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/MenuScreen.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/MainController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/MenuController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/EditUserScreen.fxml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/target/AdminPanel-0.0.1-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/../AdminPanel/target/AdminPanel-0.0.1-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/AdminPanel.class" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/AdminPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/DictionariesController.class" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/DictionariesController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/LoginController.class" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/LoginController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/UsersController.class" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/controllers/UsersController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/tmp/Right.class" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/tmp/Right.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/tmp/User.class" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/bd2/adminPanel/tmp/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/AdminPanel.java" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/AdminPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/DictionariesController.java" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/DictionariesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/LoginController.java" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/UsersController.java" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/controllers/UsersController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/tmp/User.java" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/java/bd2/adminPanel/tmp/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/DictionariesScreen.fxml" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/DictionariesScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/LoginScreen.fxml" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/LoginScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/UsersScreen.fxml" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/UsersScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/DictionariesScreen.fxml" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/DictionariesScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/LoginScreen.fxml" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/LoginScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/UsersScreen.fxml" afterPath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/UsersScreen.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AdminPanel/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/../AdminPanel/target/maven-archiver/pom.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../AdminPanel/target/classes/fxml/MenuScreen.fxml" afterPath="$PROJECT_DIR$/../AdminPanel/src/main/resources/fxml/MainMenuScreen.fxml" />
     </list>
     <ignored path="Theater.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1122,7 +1061,7 @@
       <workItem from="1463512701326" duration="1639000" />
       <workItem from="1463595956858" duration="5883000" />
       <workItem from="1463687435752" duration="5880000" />
-      <workItem from="1464467087141" duration="354000" />
+      <workItem from="1464467087141" duration="485000" />
     </task>
     <task id="LOCAL-00001" summary="Dodałem klasy DAO (oraz interfejsy dla tych klas), klasy DTO + relacje encji + poprawa nazw klas i paczki">
       <created>1463606710146</created>
@@ -1142,7 +1081,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57778000" />
+    <option name="totallyTimeSpent" value="57909000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

@@ -53,58 +53,13 @@ public class UsersController implements Initializable {
     private TextField textFieldPhone;
 
     @FXML
-    private Button buttonAddUser;
-
-    @FXML
     private Button buttonEditUser;
-
-    @FXML
-    private Button buttonBackMenu;
 
     @FXML
     private Button buttonDeleteUser;
 
     @FXML
     private CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5;
-
-    private final DropShadow shadow = new DropShadow(BlurType.THREE_PASS_BOX,
-            Color.rgb(0, 0, 0, 0.4), 5, 0.0, 0, 1);
-
-    private final String greenButtonReleasedStyle = "-fx-background-color: "
-            + "linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% "
-            + "-40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-"
-            + "radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: "
-            + "#395306;";
-
-    private final String greenButtonPressedStyle = "-fx-background-color: "
-            + "linear-gradient(#a9ff00, #f0ff35), radial-gradient(center 50% "
-            + "+140%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-"
-            + "radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: "
-            + "#395306";
-
-    private final String greenButtonOnMouseStyle = "-fx-background-color: "
-            + "linear-gradient(#f4ff57, #caff38), radial-gradient(center 50% "
-            + "-40%, radius 200%, #ceff52 45%, #92e600 50%); -fx-background-"
-            + "radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: "
-            + "#395306";
-
-    private final String redButtonReleasedStyle = "-fx-background-color: "
-            + "linear-gradient(#ff3535, #ff0000), radial-gradient(center 50% "
-            + "-40%, radius 200%, #ee3636 45%, #c80000 50%); -fx-background-"
-            + "radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: "
-            + "#ffe3e3";
-
-    private final String redButtonPressedStyle = "-fx-background-color: "
-            + "linear-gradient(#ff0000, #ff3535), radial-gradient(center 50% "
-            + "+140%, radius 200%, #ee3636 45%, #c80000 50%); -fx-background-"
-            + "radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: "
-            + "#ffe3e3";
-
-    private final String redButtonOnMouseStyle = "-fx-background-color: "
-            + "linear-gradient(#ff7373, #ffa6a6), radial-gradient(center 50% "
-            + "-40%, radius 200%, #ff6b6b 45%, #f00000 50%); -fx-background-"
-            + "radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: "
-            + "#ffe3e3";
 
     private static User selectedUser;
 
@@ -121,96 +76,9 @@ public class UsersController implements Initializable {
     }
 
     @FXML
-    public void buttonAddUserOnMouseEntered() {
-        buttonAddUser.setEffect(shadow);
-        buttonAddUser.setStyle(greenButtonOnMouseStyle);
-    }
-
-    @FXML
-    public void buttonAddUserOnMouseExited() {
-        buttonAddUser.setEffect(null);
-        buttonAddUser.setStyle(greenButtonReleasedStyle);
-    }
-
-    @FXML
-    public void buttonAddUserOnMousePressed() {
-        buttonAddUser.setStyle(greenButtonPressedStyle);
-    }
-
-    @FXML
-    public void buttonAddUserOnMouseReleased() {
-        buttonAddUser.setStyle(greenButtonReleasedStyle);
-    }
-
-    @FXML
-    public void buttonEditUserOnMouseEntered() {
-        buttonEditUser.setEffect(shadow);
-        buttonEditUser.setStyle(greenButtonOnMouseStyle);
-    }
-
-    @FXML
-    public void buttonEditUserOnMouseExited() {
-        buttonEditUser.setEffect(null);
-        buttonEditUser.setStyle(greenButtonReleasedStyle);
-    }
-
-    @FXML
-    public void buttonEditUserOnMousePressed() {
-        buttonEditUser.setStyle(greenButtonPressedStyle);
-    }
-
-    @FXML
-    public void buttonEditUserOnMouseReleased() {
-        buttonEditUser.setStyle(greenButtonReleasedStyle);
-    }
-
-    @FXML
-    public void buttonBackMenuOnMouseEntered() {
-        buttonBackMenu.setEffect(shadow);
-        buttonBackMenu.setStyle(greenButtonOnMouseStyle);
-    }
-
-    @FXML
-    public void buttonBackMenuOnMouseExited() {
-        buttonBackMenu.setEffect(null);
-        buttonBackMenu.setStyle(greenButtonReleasedStyle);
-    }
-
-    @FXML
-    public void buttonBackMenuOnMousePressed() {
-        buttonBackMenu.setStyle(greenButtonPressedStyle);
-    }
-
-    @FXML
-    public void buttonBackMenuOnMouseReleased() {
-        buttonBackMenu.setStyle(greenButtonReleasedStyle);
-    }
-
-    @FXML
-    public void buttonDeleteUserOnMouseEntered() {
-        buttonDeleteUser.setEffect(shadow);
-        buttonDeleteUser.setStyle(redButtonOnMouseStyle);
-    }
-
-    @FXML
-    public void buttonDeleteUserOnMouseExited() {
-        buttonDeleteUser.setEffect(null);
-        buttonDeleteUser.setStyle(redButtonReleasedStyle);
-    }
-
-    @FXML
-    public void buttonDeleteUserOnMousePressed() {
-        buttonDeleteUser.setStyle(redButtonPressedStyle);
-    }
-
-    @FXML
-    public void buttonDeleteUserOnMouseReleased() {
-        buttonDeleteUser.setStyle(redButtonReleasedStyle);
-    }
-
-    @FXML
     public void backMenu() {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MenuScreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass()
+                .getResource("/fxml/MainMenuScreen.fxml"));
         StackPane pane = null;
 
         try {
@@ -235,8 +103,8 @@ public class UsersController implements Initializable {
             textFieldEmail.setText(user.getEmail());
             textFieldPhone.setText(user.getPhone());
 
-            buttonEditUser.setVisible(true);
-            buttonDeleteUser.setVisible(true);
+            buttonEditUser.setDisable(false);
+            buttonDeleteUser.setDisable(false);
 
             if (user.getRights() != null) {
                 ObservableList<Right> rights
@@ -279,20 +147,7 @@ public class UsersController implements Initializable {
     }
 
     @FXML
-    public void addUser() {/*
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/AddUserScreen.fxml"));
-        Pane pane = null;
-
-        try {
-            pane = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        AddUserController addUserController = loader.getController();
-        addUserController.setMainController(mainController);
-
-        mainController.setScreen(pane);*/ // MO¯NA WYWALIÆ OKNO DODAWANIA USERA I KLASÊ KONTROLERA ZA NIE ODPOWIEDZIALN¥.
+    public void addUser() {
 
         User user = new User(textFieldLogin.getText(),
                 textFieldFirstName.getText(), textFieldLastName.getText(),
@@ -301,19 +156,24 @@ public class UsersController implements Initializable {
         List<Right> rights = new ArrayList<>();
 
         if (checkBox1.isSelected()) {
-            rights.add(new Right(Right.RIGHT_1_ID, Right.RIGHT_1_ID, Right.RIGHT_1_ID));
+            rights.add(new Right(Right.RIGHT_1_ID, Right.RIGHT_1_ID,
+                    Right.RIGHT_1_ID));
         }
         if (checkBox2.isSelected()) {
-            rights.add(new Right(Right.RIGHT_2_ID, Right.RIGHT_2_ID, Right.RIGHT_2_ID));
+            rights.add(new Right(Right.RIGHT_2_ID, Right.RIGHT_2_ID,
+                    Right.RIGHT_2_ID));
         }
         if (checkBox3.isSelected()) {
-            rights.add(new Right(Right.RIGHT_3_ID, Right.RIGHT_3_ID, Right.RIGHT_3_ID));
+            rights.add(new Right(Right.RIGHT_3_ID, Right.RIGHT_3_ID,
+                    Right.RIGHT_3_ID));
         }
         if (checkBox4.isSelected()) {
-            rights.add(new Right(Right.RIGHT_4_ID, Right.RIGHT_4_ID, Right.RIGHT_4_ID));
+            rights.add(new Right(Right.RIGHT_4_ID, Right.RIGHT_4_ID,
+                    Right.RIGHT_4_ID));
         }
         if (checkBox5.isSelected()) {
-            rights.add(new Right(Right.RIGHT_5_ID, Right.RIGHT_5_ID, Right.RIGHT_5_ID));
+            rights.add(new Right(Right.RIGHT_5_ID, Right.RIGHT_5_ID,
+                    Right.RIGHT_5_ID));
         }
 
         user.setRights(rights);
@@ -353,21 +213,6 @@ public class UsersController implements Initializable {
         User user = listViewUsers.getSelectionModel().getSelectedItem();
         if (user != null) {
             selectedUser = user;
-            /*
-            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/EditUserScreen.fxml"));
-            Pane pane = null;
-
-            try {
-                pane = loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            EditUserController editUserController = loader.getController();
-            editUserController.setMainController(mainController);
-
-            mainController.setScreen(pane);
-             */ // MO¯NA WYWALIÆ OKNO EDYTOWANIA USERA I KLASÊ KONTROLERA ZA NIE ODPOWIEDZIALN¥.
 
             user.setLogin(textFieldLogin.getText());
             user.setFirstName(textFieldFirstName.getText());
@@ -378,19 +223,24 @@ public class UsersController implements Initializable {
             List<Right> rights = new ArrayList<>();
 
             if (checkBox1.isSelected()) {
-                rights.add(new Right(Right.RIGHT_1_ID, Right.RIGHT_1_ID, Right.RIGHT_1_ID));
+                rights.add(new Right(Right.RIGHT_1_ID, Right.RIGHT_1_ID,
+                        Right.RIGHT_1_ID));
             }
             if (checkBox2.isSelected()) {
-                rights.add(new Right(Right.RIGHT_2_ID, Right.RIGHT_2_ID, Right.RIGHT_2_ID));
+                rights.add(new Right(Right.RIGHT_2_ID, Right.RIGHT_2_ID,
+                        Right.RIGHT_2_ID));
             }
             if (checkBox3.isSelected()) {
-                rights.add(new Right(Right.RIGHT_3_ID, Right.RIGHT_3_ID, Right.RIGHT_3_ID));
+                rights.add(new Right(Right.RIGHT_3_ID, Right.RIGHT_3_ID,
+                        Right.RIGHT_3_ID));
             }
             if (checkBox4.isSelected()) {
-                rights.add(new Right(Right.RIGHT_4_ID, Right.RIGHT_4_ID, Right.RIGHT_4_ID));
+                rights.add(new Right(Right.RIGHT_4_ID, Right.RIGHT_4_ID,
+                        Right.RIGHT_4_ID));
             }
             if (checkBox5.isSelected()) {
-                rights.add(new Right(Right.RIGHT_5_ID, Right.RIGHT_5_ID, Right.RIGHT_5_ID));
+                rights.add(new Right(Right.RIGHT_5_ID, Right.RIGHT_5_ID,
+                        Right.RIGHT_5_ID));
             }
 
             user.setRights(rights);
@@ -412,8 +262,8 @@ public class UsersController implements Initializable {
         ObservableList<User> users = FXCollections.observableArrayList();
         users.addAll(userRepository.getUsers());
 
-        buttonEditUser.setVisible(false);
-        buttonDeleteUser.setVisible(false);
+        buttonEditUser.setDisable(true);
+        buttonDeleteUser.setDisable(true);
 
         listViewUsers.setItems(users);
         listViewUsers.refresh();

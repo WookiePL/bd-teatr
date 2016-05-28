@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.Pane?>
+
+<StackPane fx:id="menuStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.MainMenuController">
+   <children>
+      <AnchorPane>
+         <children>
+            <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Panel administratora" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </top>
+               <bottom>
+                  <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" spacing="20.0">
+                           <children>
+                              <Button fx:id="buttonLogout" cancelButton="true" mnemonicParsing="false" onAction="#logout" stylesheets="@GreenButton.css" text="Wyloguj się">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                            <Button fx:id="buttonExit" mnemonicParsing="false" onAction="#exit" stylesheets="@GreenButton.css" text="Wyjdź">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </StackPane>
+               </bottom>
+               <center>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+                     <children>
+                      <Button fx:id="buttonUsers" defaultButton="true" mnemonicParsing="false" onAction="#users" prefHeight="70.0" prefWidth="249.0" stylesheets="@GreenButtonHuge.css" text="Zarządzaj użytkownikami" textAlignment="CENTER" />
+                      <Button fx:id="buttonDictionaries" mnemonicParsing="false" onAction="#dictionaries" prefHeight="70.0" prefWidth="250.0" stylesheets="@GreenButtonHuge.css" text="Zarządzaj słownikami" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -9,16 +9,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
 
-
-<StackPane fx:id="usersStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.UsersController">
+<StackPane fx:id="usersStackPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bd2.adminPanel.controllers.UsersController">
    <children>
-      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="620.0">
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="620.0">
          <children>
-            <BorderPane prefHeight="432.0" prefWidth="620.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <BorderPane prefHeight="440.0" prefWidth="620.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <bottom>
                   <StackPane prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="TOP_CENTER">
                      <children>
-                        <Button fx:id="buttonBackMenu" mnemonicParsing="false" onAction="#backMenu" onMouseEntered="#buttonBackMenuOnMouseEntered" onMouseExited="#buttonBackMenuOnMouseExited" onMousePressed="#buttonBackMenuOnMousePressed" onMouseReleased="#buttonBackMenuOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Wróć">
+                        <Button fx:id="buttonBackMenu" cancelButton="true" mnemonicParsing="false" onAction="#backMenu" stylesheets="@GreenButton.css" text="Wróć">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
@@ -37,114 +36,109 @@
                      </children>
                   </StackPane>
                </top>
-               <left>
-                  <AnchorPane maxHeight="1.7976931348623157E308" prefWidth="180.0" BorderPane.alignment="CENTER_RIGHT">
-                     <children>
-                        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <ListView fx:id="listViewUsers" maxHeight="1.7976931348623157E308" maxWidth="250.0" onMouseClicked="#userDetail" BorderPane.alignment="CENTER_RIGHT">
-                                 <BorderPane.margin>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </BorderPane.margin>
-                              </ListView>
-                              <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="0.0" prefWidth="150.0" spacing="40.0">
-                                 <children>
-                                    <Button fx:id="buttonDeleteUser" mnemonicParsing="false" onAction="#deleteUser" onMouseEntered="#buttonDeleteUserOnMouseEntered" onMouseExited="#buttonDeleteUserOnMouseExited" onMousePressed="#buttonDeleteUserOnMousePressed" onMouseReleased="#buttonDeleteUserOnMouseReleased" style="-fx-background-color: linear-gradient(#ff3535, #ff0000), radial-gradient(center 50% -40%, radius 200%, #ee3636 45%, #c80000 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #ffe3e3;" text="Usuń">
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                 </VBox.margin>
-                              </HBox>
-                           </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-               </left>
                <center>
-                  <AnchorPane maxWidth="500.0" minWidth="260.0" BorderPane.alignment="CENTER">
+                  <AnchorPane BorderPane.alignment="CENTER">
                      <children>
-                        <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+                        <HBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label text="Dane:">
-                                 <VBox.margin>
-                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <VBox prefHeight="228.0" prefWidth="295.0" spacing="2.0">
+                              <VBox alignment="CENTER" maxWidth="400.0" spacing="15.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Label text="Login:" />
-                                    <TextField fx:id="textFieldLogin" maxWidth="500.0" />
-                                    <Label text="Imię:" />
-                                    <TextField fx:id="textFieldFirstName" maxWidth="500.0" />
-                                    <Label text="Nazwisko:" />
-                                    <TextField fx:id="textFieldLastName" maxWidth="500.0" />
-                                    <Label text="E-mail:" />
-                                    <TextField fx:id="textFieldEmail" maxWidth="500.0" />
-                                    <Label text="Telefon:" />
-                                    <TextField fx:id="textFieldPhone" maxWidth="500.0" />
+                                    <ListView fx:id="listViewUsers" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#userDetail" onMouseClicked="#userDetail" prefHeight="300.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER_RIGHT" VBox.vgrow="ALWAYS">
+                                       <BorderPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </BorderPane.margin>
+                                    </ListView>
+                                    <Button fx:id="buttonDeleteUser" alignment="CENTER" mnemonicParsing="false" onAction="#deleteUser" stylesheets="@RedButton.css" text="Usuń" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Button>
                                  </children>
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-                                 </VBox.margin>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="5.0" top="5.0" />
+                                 </HBox.margin>
                               </VBox>
-                              <HBox alignment="CENTER" prefHeight="17.0" prefWidth="240.0" spacing="10.0">
+                              <VBox alignment="CENTER" maxWidth="1000.0" spacing="20.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Button fx:id="buttonAddUser" mnemonicParsing="false" onAction="#addUser" onMouseEntered="#buttonAddUserOnMouseEntered" onMouseExited="#buttonAddUserOnMouseExited" onMousePressed="#buttonAddUserOnMousePressed" onMouseReleased="#buttonAddUserOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Dodaj użytkownika">
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
-                                    <Button fx:id="buttonEditUser" mnemonicParsing="false" onAction="#editUser" onMouseEntered="#buttonEditUserOnMouseEntered" onMouseExited="#buttonEditUserOnMouseExited" onMousePressed="#buttonEditUserOnMousePressed" onMouseReleased="#buttonEditUserOnMouseReleased" style="-fx-background-color: linear-gradient(#f0ff35, #a9ff00), radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%); -fx-background-radius: 6, 5; -fx-background-insets: 0, 1; -fx-text-fill: #395306;" styleClass="button_green" text="Zastosuj edycję">
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Button>
+                                    <HBox alignment="CENTER" spacing="20.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="650.0" prefHeight="228.0" prefWidth="295.0" spacing="2.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Dane:" textAlignment="CENTER">
+                                                   <VBox.margin>
+                                                      <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Login:" />
+                                                <TextField fx:id="textFieldLogin" />
+                                                <Label text="Imię:" />
+                                                <TextField fx:id="textFieldFirstName" />
+                                                <Label text="Nazwisko:" />
+                                                <TextField fx:id="textFieldLastName" />
+                                                <Label text="E-mail:" />
+                                                <TextField fx:id="textFieldEmail" />
+                                                <Label text="Telefon:" />
+                                                <TextField fx:id="textFieldPhone" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                          <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="180.0" nodeOrientation="LEFT_TO_RIGHT" spacing="7.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Uprawnienia:" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <CheckBox fx:id="checkBox1" minWidth="97.0" mnemonicParsing="false" text="Uprawnienie 1" />
+                                                <CheckBox fx:id="checkBox2" minWidth="97.0" mnemonicParsing="false" text="Uprawnienie 2" />
+                                                <CheckBox fx:id="checkBox3" minWidth="97.0" mnemonicParsing="false" text="Uprawnienie 3" />
+                                                <CheckBox fx:id="checkBox4" minWidth="97.0" mnemonicParsing="false" text="Uprawnienie 4" />
+                                                <CheckBox fx:id="checkBox5" minWidth="97.0" mnemonicParsing="false" text="Uprawnienie 5" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" right="10.0" top="5.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="17.0" prefWidth="240.0" spacing="50.0">
+                                       <children>
+                                          <Button fx:id="buttonAddUser" mnemonicParsing="false" onAction="#addUser" stylesheets="@GreenButton.css" text="Dodaj użytkownika">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonEditUser" defaultButton="true" mnemonicParsing="false" onAction="#editUser" stylesheets="@GreenButton.css" text="Zastosuj edycję">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
                                  </children>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </HBox>
+                              </VBox>
                            </children>
-                           <BorderPane.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </BorderPane.margin>
-                        </VBox>
+                        </HBox>
                      </children>
                   </AnchorPane>
                </center>
-               <right>
-                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="180.0" minWidth="130.0" BorderPane.alignment="CENTER_LEFT">
-                     <children>
-                        <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="180.0" nodeOrientation="LEFT_TO_RIGHT" spacing="7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <Label text="Uprawnienia:">
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                              <CheckBox fx:id="checkBox1" mnemonicParsing="false" text="Uprawnienie 1" />
-                              <CheckBox fx:id="checkBox2" mnemonicParsing="false" text="Uprawnienie 2" />
-                              <CheckBox fx:id="checkBox3" mnemonicParsing="false" text="Uprawnienie 3" />
-                              <CheckBox fx:id="checkBox4" mnemonicParsing="false" text="Uprawnienie 4" />
-                              <CheckBox fx:id="checkBox5" mnemonicParsing="false" text="Uprawnienie 5" />
-                           </children>
-                           <BorderPane.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </BorderPane.margin>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-               </right>
             </BorderPane>
          </children>
       </AnchorPane>
