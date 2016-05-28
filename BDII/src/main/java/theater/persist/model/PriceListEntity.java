@@ -61,7 +61,7 @@ public class PriceListEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "event_id")
+    @JoinColumn(name = "event_id", insertable = false, updatable = false)
     public EventEntity getEvent() {
         return event;
     }
@@ -70,7 +70,7 @@ public class PriceListEntity {
         this.event = event;
     }
 
-    @OneToMany(mappedBy = "priceListEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "priceList", targetEntity = PriceEntity.class, fetch = FetchType.LAZY)
     public List<PriceEntity> getPrices() {
         return prices;
     }

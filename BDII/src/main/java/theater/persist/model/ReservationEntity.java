@@ -106,7 +106,7 @@ public class ReservationEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "event_realization_id")
+    @JoinColumn(name = "event_realization_id",insertable = false, updatable = false)
     public EventRealizationEntity getEventRealization() {
         return eventRealization;
     }
@@ -116,7 +116,7 @@ public class ReservationEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "event_realization_id")
+    @JoinColumn(name = "user_id",insertable = false, updatable = false)
     public UserEntity getUser() {
         return user;
     }
@@ -125,7 +125,7 @@ public class ReservationEntity {
         this.user = user;
     }
 
-    @OneToMany(mappedBy = "reservationEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY)
     public List<PlaceEntity> getPlaces() {
         return places;
     }

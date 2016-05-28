@@ -1,15 +1,14 @@
 package theater.persist.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "joinuserstoroles", schema = "theater")
 public class JoinUsersToRolesEntity {
     private Integer roleId;
     private Integer userId;
+    private UserEntity user;
+    private RolesEntity roles;
 
     @Basic
     @Column(name = "role_id")
@@ -29,6 +28,26 @@ public class JoinUsersToRolesEntity {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    public RolesEntity getRoles() {
+        return roles;
+    }
+
+    public void setRoles(RolesEntity roles) {
+        this.roles = roles;
     }
 
     @Override

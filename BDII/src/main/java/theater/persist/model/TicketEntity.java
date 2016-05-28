@@ -62,7 +62,7 @@ public class TicketEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "event_realization_id")
+    @JoinColumn(name = "event_realization_id", insertable = false, updatable = false)
     public EventRealizationEntity getEventRealization() {
         return eventRealization;
     }
@@ -72,7 +72,7 @@ public class TicketEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
     public UserEntity getUser() {
         return user;
     }
@@ -81,7 +81,7 @@ public class TicketEntity {
         this.user = user;
     }
 
-    @OneToMany(mappedBy = "ticketEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "ticket", targetEntity = PlaceEntity.class, fetch = FetchType.LAZY)
     public List<PlaceEntity> getPlaces() {
         return places;
     }

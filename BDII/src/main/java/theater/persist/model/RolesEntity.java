@@ -1,15 +1,15 @@
 package theater.persist.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
 @Table(name = "roles", schema = "theater")
 public class RolesEntity {
     private Integer roleId;
-    private String name;
-    private Integer code;
-    private List<JoinUsersToRolesEntity> joinUsersToRolesEntities;
+    private String role;
+    private Collection<UserEntity> users;
 
     @Id
     @Column(name = "role_id", columnDefinition = "serial")
@@ -27,32 +27,22 @@ public class RolesEntity {
     }
 
     @Basic
-    @Column(name = "name")
-    public String getName() {
-        return name;
+    @Column(name = "role")
+    public String getRole() {
+        return role;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    @Basic
-    @Column(name = "code")
-    public Integer getCode() {
-        return code;
+    @ManyToMany(mappedBy = "roleEntities", targetEntity = UserEntity.class, fetch = FetchType.EAGER)
+    public Collection<UserEntity> getUserEntity() {
+        return users;
     }
 
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    @OneToMany(mappedBy = "rolesEntity", fetch = FetchType.LAZY)
-    public List<JoinUsersToRolesEntity> getJoinUsersToRolesEntities() {
-        return joinUsersToRolesEntities;
-    }
-
-    public void setJoinUsersToRolesEntities(List<JoinUsersToRolesEntity> joinUsersToRolesEntities) {
-        this.joinUsersToRolesEntities = joinUsersToRolesEntities;
+    public void setUserEntity(Collection<UserEntity> user){
+        this.users=user;
     }
 
     @Override
@@ -63,8 +53,8 @@ public class RolesEntity {
         RolesEntity that = (RolesEntity) o;
 
         if (roleId != null ? !roleId.equals(that.roleId) : that.roleId != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (code != null ? !code.equals(that.code) : that.code != null) return false;
+        if (role != null ? !role.equals(that.role) : that.role != null) return false;
+
 
         return true;
     }
@@ -72,8 +62,7 @@ public class RolesEntity {
     @Override
     public int hashCode() {
         int result = roleId != null ? roleId.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (code != null ? code.hashCode() : 0);
+        result = 31 * result + (role != null ? role.hashCode() : 0);
         return result;
     }
 }

@@ -72,7 +72,7 @@ public class PriceEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "price_list_id")
+    @JoinColumn(name = "price_list_id", insertable = false, updatable = false)
     public PriceListEntity getPriceList() {
         return priceList;
     }
@@ -82,7 +82,7 @@ public class PriceEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "group_of_clients_id")
+    @JoinColumn(name = "group_of_clients_id", insertable = false, updatable = false)
     public GroupOfClientsEntity getGroupOfClients() {
         return groupOfClients;
     }
@@ -92,7 +92,7 @@ public class PriceEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "period_id")
+    @JoinColumn(name = "period_id", insertable = false, updatable = false)
     public PeriodEntity getPeriod() {
         return period;
     }

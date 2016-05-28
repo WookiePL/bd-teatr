@@ -70,7 +70,7 @@ public class PlaceEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "sector_id")
+    @JoinColumn(name = "sector_id", insertable = false, updatable = false)
     public SectorEntity getSector() {
         return sector;
     }
@@ -80,7 +80,7 @@ public class PlaceEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "ticket_id")
+    @JoinColumn(name = "ticket_id", insertable = false, updatable = false)
     public TicketEntity getTicket() {
         return ticket;
     }
@@ -90,7 +90,7 @@ public class PlaceEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "reservation_id")
+    @JoinColumn(name = "reservation_id",insertable = false, updatable = false)
     public ReservationEntity getReservation() {
         return reservation;
     }

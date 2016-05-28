@@ -35,7 +35,7 @@ public class EventTypeEntity {
         this.name = name;
     }
 
-    @OneToMany(mappedBy = "eventEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "eventType", fetch = FetchType.LAZY)
     public List<EventEntity> getEvents() {
         return events;
     }

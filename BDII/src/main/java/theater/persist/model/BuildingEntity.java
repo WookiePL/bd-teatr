@@ -36,7 +36,7 @@ public class BuildingEntity {
         this.address = address;
     }
 
-    @OneToMany(mappedBy = "buildingEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "building", fetch = FetchType.LAZY)
     public List<RoomEntity> getRooms() {
         return rooms;
     }

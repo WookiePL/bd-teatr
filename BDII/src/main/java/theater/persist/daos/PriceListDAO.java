@@ -1,12 +1,11 @@
 package theater.persist.daos;
 
+import org.springframework.stereotype.Repository;
 import theater.persist.model.PriceListEntity;
 
 import java.util.List;
 
-/**
- * Created by Wookie on 2016-05-16.
- */
+@Repository
 public class PriceListDAO extends BaseDAO<PriceListEntity, Integer> implements IPriceListDAO{
     @Override
     public PriceListEntity getPriceListById(int id) {

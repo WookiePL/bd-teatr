@@ -1,12 +1,11 @@
 package theater.persist.daos;
 
+import org.springframework.stereotype.Repository;
 import theater.persist.model.SectorEntity;
 
 import java.util.List;
 
-/**
- * Created by Wookie on 2016-05-18.
- */
+@Repository
 public class SectorDAO extends BaseDAO<SectorEntity, Integer> implements ISectorDAO{
     @Override
     public SectorEntity getSectorById(int id) {

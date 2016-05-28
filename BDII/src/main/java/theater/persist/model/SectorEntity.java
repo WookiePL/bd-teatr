@@ -49,7 +49,7 @@ public class SectorEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "room_id")
+    @JoinColumn(name = "room_id", insertable = false, updatable = false)
     public RoomEntity getRoom() {
         return room;
     }
@@ -58,7 +58,7 @@ public class SectorEntity {
         this.room = room;
     }
 
-    @OneToMany(mappedBy = "placeEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "sector", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<PlaceEntity> getPlaces() {
         return places;
     }

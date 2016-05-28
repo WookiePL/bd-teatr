@@ -49,7 +49,7 @@ public class RoomEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "building_id")
+    @JoinColumn(name = "building_id", insertable = false, updatable = false)
     public BuildingEntity getBuilding() {
         return building;
     }
@@ -58,7 +58,7 @@ public class RoomEntity {
         this.building = building;
     }
 
-    @OneToMany(mappedBy = "roomEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
     public List<EventRealizationEntity> getEventRealizations() {
         return eventRealizations;
     }
@@ -67,7 +67,7 @@ public class RoomEntity {
         this.eventRealizations = eventRealizations;
     }
 
-    @OneToMany(mappedBy = "roomEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
     public List<SectorEntity> getSectors() {
         return sectors;
     }
