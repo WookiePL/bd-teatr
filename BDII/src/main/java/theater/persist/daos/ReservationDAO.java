@@ -1,12 +1,10 @@
 package theater.persist.daos;
 
+import org.springframework.stereotype.Repository;
 import theater.persist.model.ReservationEntity;
 
 import java.util.List;
-
-/**
- * Created by Wookie on 2016-05-16.
- */
+@Repository
 public class ReservationDAO extends BaseDAO<ReservationEntity, Integer> implements IReservationDAO {
     @Override
     public ReservationEntity getReservationById(int id) {

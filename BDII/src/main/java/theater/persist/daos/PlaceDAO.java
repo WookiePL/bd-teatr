@@ -1,12 +1,11 @@
 package theater.persist.daos;
 
+import org.springframework.stereotype.Repository;
 import theater.persist.model.PlaceEntity;
 
 import java.util.List;
 
-/**
- * Created by Wookie on 2016-05-16.
- */
+@Repository
 public class PlaceDAO extends BaseDAO<PlaceEntity, Integer> implements IPlaceDAO {
     @Override
     public PlaceEntity getPlaceById(int id) {

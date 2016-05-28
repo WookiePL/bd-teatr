@@ -61,7 +61,7 @@ public class EventEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "event_type_id")
+    @JoinColumn(name = "event_type_id", insertable = false, updatable = false)
     public EventTypeEntity getEventType() {
         return eventType;
     }
@@ -70,7 +70,7 @@ public class EventEntity {
         this.eventType = eventType;
     }
 
-    @OneToMany(mappedBy = "eventEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "event", fetch = FetchType.LAZY)
     public List<EventRealizationEntity> getEventRealizations() {
         return eventRealizations;
     }
@@ -79,7 +79,7 @@ public class EventEntity {
         this.eventRealizations = eventRealizations;
     }
 
-    @OneToMany(mappedBy = "eventEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "event", fetch = FetchType.LAZY)
     public List<PriceListEntity> getPriceListEntities() {
         return priceListEntities;
     }

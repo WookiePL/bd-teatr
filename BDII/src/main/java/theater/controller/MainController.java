@@ -23,7 +23,6 @@ public class MainController {
         return "home";
     }
 
-
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");

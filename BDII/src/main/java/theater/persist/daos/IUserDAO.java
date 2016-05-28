@@ -4,12 +4,12 @@ import theater.persist.model.UserEntity;
 
 import java.util.List;
 
-/**
- * Created by Wookie on 2016-05-16.
- */
+
 public interface IUserDAO extends IBaseDAO<UserEntity, Integer> {
 
-    UserEntity getUserByid(int id);
+    UserEntity getUserById(int id);
+
+    UserEntity getUserByEmail(String email);
 
     List<UserEntity> getAllUsers();
 

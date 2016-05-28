@@ -5,9 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Wookie on 2016-05-16.
- */
+
 @Repository
 public class GroupOfClientsDAO extends BaseDAO<GroupOfClientsEntity, Integer> implements IGroupOfClientsDAO {
 

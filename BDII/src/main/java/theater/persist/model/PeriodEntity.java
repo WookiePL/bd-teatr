@@ -37,7 +37,7 @@ public class PeriodEntity {
         this.name = name;
     }
 
-    @OneToMany(mappedBy = "periodEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "period", fetch = FetchType.LAZY)
     public List<CycleEntity> getCycles() {
         return cycles;
     }
@@ -46,7 +46,7 @@ public class PeriodEntity {
         this.cycles = cycles;
     }
 
-    @OneToMany(mappedBy = "periodEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "period", fetch = FetchType.LAZY)
     public List<PriceEntity> getPrices() {
         return prices;
     }

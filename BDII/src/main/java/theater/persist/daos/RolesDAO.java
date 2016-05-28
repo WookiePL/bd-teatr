@@ -1,12 +1,10 @@
 package theater.persist.daos;
 
+import org.springframework.stereotype.Repository;
 import theater.persist.model.RolesEntity;
 
 import java.util.List;
-
-/**
- * Created by Wookie on 2016-05-18.
- */
+@Repository
 public class RolesDAO extends BaseDAO<RolesEntity, Integer> implements IRolesDAO{
 
     @Override

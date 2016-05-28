@@ -15,7 +15,7 @@ public class EventRealizationEntity {
     private Integer roomId;
     private RoomEntity room;
     private EventEntity event;
-    private List<ReservationEntity> reservations;
+//    private List<ReservationEntity> reservations;
     private List<TicketEntity> tickets;
 
     @Id
@@ -85,7 +85,7 @@ public class EventRealizationEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "room_id")
+    @JoinColumn(name = "room_id", insertable = false, updatable = false)
     public RoomEntity getRoom() {
         return room;
     }
@@ -95,7 +95,7 @@ public class EventRealizationEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "event_id")
+    @JoinColumn(name = "event_id", insertable = false, updatable = false)
     public EventEntity getEvent() {
         return event;
     }
@@ -104,16 +104,16 @@ public class EventRealizationEntity {
         this.event = event;
     }
 
-    @OneToMany(mappedBy = "eventRealizationEntity", fetch = FetchType.LAZY)
-    public List<ReservationEntity> getReservations() {
-        return reservations;
-    }
+//    @OneToMany(mappedBy = "eventRealization", fetch = FetchType.LAZY)
+//    public List<ReservationEntity> getReservations() {
+//        return reservations;
+//    }
+//
+//    public void setReservations(List<ReservationEntity> reservations) {
+//        this.reservations = reservations;
+//    }
 
-    public void setReservations(List<ReservationEntity> reservations) {
-        this.reservations = reservations;
-    }
-
-    @OneToMany(mappedBy = "eventRealizationEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "eventRealization", targetEntity = TicketEntity.class, fetch = FetchType.LAZY)
     public List<TicketEntity> getTickets() {
         return tickets;
     }

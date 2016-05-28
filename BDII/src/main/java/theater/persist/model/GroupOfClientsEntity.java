@@ -36,7 +36,7 @@ public class GroupOfClientsEntity {
         this.name = name;
     }
 
-    @OneToMany(mappedBy = "groupOfClientsEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "groupOfClients", targetEntity = PriceEntity.class, fetch = FetchType.LAZY)
     public List<PriceEntity> getPrices() {
         return prices;
     }

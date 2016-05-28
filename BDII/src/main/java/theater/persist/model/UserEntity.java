@@ -1,18 +1,27 @@
 package theater.persist.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
+import java.util.StringJoiner;
 
 
 @Entity
 @Table(name = "user", schema = "theater")
+@NamedQueries(
+        value = {
+                @NamedQuery(name = "getUserByEmail", query = "from UserEntity Where email LIKE :email")
+        }
+)
 public class UserEntity {
     private Integer userId;
     private String name;
     private String surname;
+    private String email;
+    private String password;
     private List<ReservationEntity> reservations;
     private List<TicketEntity> tickets;
-    private List<JoinUsersToRolesEntity> joinUsersToRolesEntities;
+    private Collection<RolesEntity> roleEntities;
 
 
     @Id
@@ -50,7 +59,27 @@ public class UserEntity {
         this.surname = surname;
     }
 
-    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
+    @Basic
+    @Column(name = "email")
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Basic
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @OneToMany(mappedBy = "user",targetEntity = ReservationEntity.class, fetch = FetchType.LAZY)
     public List<ReservationEntity> getReservations() {
         return reservations;
     }
@@ -59,7 +88,7 @@ public class UserEntity {
         this.reservations = reservations;
     }
 
-    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     public List<TicketEntity> getTickets() {
         return tickets;
     }
@@ -68,14 +97,18 @@ public class UserEntity {
         this.tickets = tickets;
     }
 
-    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
-    public List<JoinUsersToRolesEntity> getJoinUsersToRolesEntities() {
-        return joinUsersToRolesEntities;
+    @ManyToMany(fetch = FetchType.EAGER)//?
+    @JoinTable(name = "users_roles",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id")})
+    public Collection<RolesEntity> getRoleEntities() {
+        return roleEntities;
     }
 
-    public void setJoinUsersToRolesEntities(List<JoinUsersToRolesEntity> joinUsersToRolesEntities) {
-        this.joinUsersToRolesEntities = joinUsersToRolesEntities;
+    public void setRoleEntities(Collection<RolesEntity> roleEntities) {
+        this.roleEntities = roleEntities;
     }
+
 
     @Override
     public boolean equals(Object o) {

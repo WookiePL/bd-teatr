@@ -1,12 +1,11 @@
 package theater.persist.daos;
 
+import org.springframework.stereotype.Repository;
 import theater.persist.model.TicketEntity;
 
 import java.util.List;
 
-/**
- * Created by Wookie on 2016-05-18.
- */
+@Repository
 public class TicketDAO extends BaseDAO<TicketEntity, Integer> implements ITicketDAO {
     @Override
     public TicketEntity getTicketById(int id) {

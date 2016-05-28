@@ -8,7 +8,7 @@ public class CycleEntity {
     private Integer cycleId;
     private Integer periodId;
     private Integer dayOfWeekId;
-    private DayOfWeekEntity dayofweek;
+    private DayOfWeekEntity dayOfWeek;
     private PeriodEntity period;
 
     @Id
@@ -47,17 +47,17 @@ public class CycleEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "day_of_week_id")
-    public DayOfWeekEntity getDayofweek() {
-        return dayofweek;
+    @JoinColumn(name = "day_of_week_id", insertable = false, updatable = false)
+    public DayOfWeekEntity getDayOfWeek() {
+        return dayOfWeek;
     }
 
-    public void setDayofweek(DayOfWeekEntity dayofweek) {
-        this.dayofweek = dayofweek;
+    public void setDayOfWeek(DayOfWeekEntity dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
     }
 
     @ManyToOne
-    @JoinColumn(name = "period_id")
+    @JoinColumn(name = "period_id", insertable = false, updatable = false)
     public PeriodEntity getPeriod() {
         return period;
     }
