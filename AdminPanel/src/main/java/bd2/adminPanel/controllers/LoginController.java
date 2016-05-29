@@ -12,10 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.effect.BlurType;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 
 public class LoginController implements Initializable {
 
@@ -71,7 +68,6 @@ public class LoginController implements Initializable {
     private void loadMainScreen() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainMenuScreen.fxml"));
         StackPane pane = null;
-
         try {
             pane = loader.load();
         } catch (IOException e) {

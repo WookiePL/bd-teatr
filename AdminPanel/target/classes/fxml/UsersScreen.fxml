@@ -75,16 +75,12 @@
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label text="Login:" />
-                                                <TextField fx:id="textFieldLogin" />
                                                 <Label text="Imię:" />
                                                 <TextField fx:id="textFieldFirstName" />
                                                 <Label text="Nazwisko:" />
                                                 <TextField fx:id="textFieldLastName" />
                                                 <Label text="E-mail:" />
                                                 <TextField fx:id="textFieldEmail" />
-                                                <Label text="Telefon:" />
-                                                <TextField fx:id="textFieldPhone" />
                                              </children>
                                              <VBox.margin>
                                                 <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
