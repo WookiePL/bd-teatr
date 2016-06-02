@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import theater.persist.daos.UserDAO;
-import theater.persist.model.RolesEntity;
+import theater.persist.model.RoleEntity;
 import theater.persist.model.UserEntity;
 
 import java.util.ArrayList;
@@ -26,17 +26,19 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+
         UserEntity user = userDAO.getUserByEmail(email);
+
         if (user == null) {
             throw new UsernameNotFoundException("No user found with username: " + email);
         }
 
         return new org.springframework.security.core.userdetails.User
                 (user.getEmail(), user.getPassword(), true,
-                        true, true, true, getAuthorities(user.getRoleEntities()));
+                        true, true, true, getAuthorities(user.getRoles()));
     }
 
-    private Collection<? extends GrantedAuthority> getAuthorities(Collection<RolesEntity> role) {
+    private Collection<? extends GrantedAuthority> getAuthorities(Collection<RoleEntity> role) {
         return getGrantedAuthorities(getRoles(role));
     }
 
@@ -48,7 +50,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         return authorities;
     }
 
-    private List<String> getRoles(Collection<RolesEntity> roles) {
-        return roles.stream().map(RolesEntity::getRole).collect(Collectors.toList());
+    private List<String> getRoles(Collection<RoleEntity> roles) {
+        return roles.stream().map(RoleEntity::getRole).collect(Collectors.toList());
     }
 }

@@ -25,7 +25,7 @@ public class ReservationEntity {
     @SequenceGenerator(name = "reservation_reservation_id_seq",
             sequenceName = "reservation_reservation_id_seq",
             allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    @GeneratedValue(strategy = GenerationType.IDENTITY,
             generator = "reservation_reservation_id_seq")
     public Integer getReservationId() {
         return reservationId;

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../assets/images/favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <!-- Cuprum font -->
+    <link href='https://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+    <title>Rezerwacje</title>
+  </head>
+  <body onload="initializePage()">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Teatr</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="eventRealizations.html">Wydarzenia</a></li>
+            <li class="active"><a href="eventReservations.html">Rezerwacje</a></li>
+          </ul>
+          <ul class="nav navbar-nav  navbar-right">
+            <li class="active"><a href="login.html">Wyloguj</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container">
+      <!-- Header -->
+      <div class="center-content">
+        <h1>Rezerwacje</h1>
+      </div>
+      <!-- Event description -->
+      <table class="table table-striped event-info center-align">
+        <tbody>
+          <tr>
+            <td>Wydarzenie :</td>
+            <td id="eventName"></td>
+          </tr>
+          <tr>
+            <td>Data :</td>
+            <td id="eventDate"></td>
+          </tr>
+          <tr>
+            <td>Godzina:</td>
+            <td id="eventHour"></td>
+          </tr>
+          <tr>
+            <td>Sala:</td>
+            <td id="eventRoom"></td>
+          </tr>
+          <tr>
+            <td>Budynek:</td>
+            <td id="eventBuilding"></td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Reservations table -->
+      <table class="table table-striped large-table center-align">
+        <thead>
+          <tr>
+            <th>Imię Nazwisko</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Data utworzenia</th>
+            <th>Data odwołania</th>
+            <th>Sektor</th>
+            <th>Miejsca</th>
+            <th>Akcja</th>
+          </tr>
+        </thead>
+        <tbody id="reservationsTableBody">
+        </tbody>
+      </table>
+    </div><!-- /.container -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- Page logic -->
+    <script src="../assets/js/general.js"></script>
+    <script src="../assets/js/eventReservations.js"></script>
+  </body>
+</html>

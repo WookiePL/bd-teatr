@@ -16,7 +16,7 @@ public class GroupOfClientsEntity {
     @SequenceGenerator(name = "groupofclients_group_of_clients_id_seq",
             sequenceName = "groupofclients_group_of_clients_id_seq",
             allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    @GeneratedValue(strategy = GenerationType.IDENTITY,
             generator = "groupofclients_group_of_clients_id_seq")
     public Integer getGroupOfClientsId() {
         return groupOfClientsId;

@@ -4,9 +4,6 @@ import theater.persist.model.GroupOfClientsEntity;
 
 import java.util.List;
 
-/**
- * Created by Wookie on 2016-05-16.
- */
 public interface IGroupOfClientsDAO extends IBaseDAO<GroupOfClientsEntity, Integer> {
 
     GroupOfClientsEntity getGroupOfClientsById(int id);

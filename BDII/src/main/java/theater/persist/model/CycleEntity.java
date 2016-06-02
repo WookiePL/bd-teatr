@@ -16,7 +16,7 @@ public class CycleEntity {
     @SequenceGenerator(name = "cycle_cycle_id_seq",
             sequenceName = "cycle_cycle_id_seq",
             allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    @GeneratedValue(strategy = GenerationType.IDENTITY,
             generator = "cycle_cycle_id_seq")
     public Integer getCycleId() {
         return cycleId;

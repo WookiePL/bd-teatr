@@ -18,7 +18,7 @@ public class SectorEntity {
     @SequenceGenerator(name = "sector_sector_id_seq",
             sequenceName = "sector_sector_id_seq",
             allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    @GeneratedValue(strategy = GenerationType.IDENTITY,
             generator = "sector_sector_id_seq")
     public Integer getSectorId() {
         return sectorId;

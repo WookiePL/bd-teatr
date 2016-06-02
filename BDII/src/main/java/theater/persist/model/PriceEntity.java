@@ -20,7 +20,7 @@ public class PriceEntity {
     @SequenceGenerator(name = "price_price_id_seq",
             sequenceName = "price_price_id_seq",
             allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    @GeneratedValue(strategy = GenerationType.IDENTITY,
             generator = "price_price_id_seq")
     public Integer getPriceId() {
         return priceId;
