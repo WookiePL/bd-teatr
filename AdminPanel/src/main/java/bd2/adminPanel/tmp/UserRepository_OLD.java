@@ -3,7 +3,7 @@ package bd2.adminPanel.tmp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserRepository {
+public class UserRepository_OLD {
 
     private List<User> users = new ArrayList<>();
 
@@ -15,7 +15,7 @@ public class UserRepository {
         this.users = users;
     }
 
-    public UserRepository() {
+    public UserRepository_OLD() {
         List<Right> rightUser1 = new ArrayList<>();
         rightUser1.add(new Right(Right.RIGHT_1_ID, Right.RIGHT_1_NAME, Right.RIGHT_1_CODE));
 

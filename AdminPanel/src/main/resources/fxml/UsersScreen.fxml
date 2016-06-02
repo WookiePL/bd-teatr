@@ -65,7 +65,7 @@
                                  <children>
                                     <HBox alignment="CENTER" spacing="20.0">
                                        <children>
-                                          <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="650.0" prefHeight="228.0" prefWidth="295.0" spacing="2.0" HBox.hgrow="ALWAYS">
+                                          <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="650.0" prefHeight="228.0" prefWidth="295.0" spacing="4.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="Dane:" textAlignment="CENTER">
                                                    <VBox.margin>
@@ -88,7 +88,7 @@
                                           </VBox>
                                           <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="180.0" nodeOrientation="LEFT_TO_RIGHT" spacing="7.0" HBox.hgrow="ALWAYS">
                                              <children>
-                                                <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Uprawnienia:" textAlignment="CENTER">
+                                                <Label fx:id="titleListCheckBox" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Uprawnienia:" textAlignment="CENTER">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
@@ -96,11 +96,7 @@
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <CheckBox fx:id="checkBox1" minWidth="97.0" mnemonicParsing="false" text="Uprawnienie 1" />
-                                                <CheckBox fx:id="checkBox2" minWidth="97.0" mnemonicParsing="false" text="Uprawnienie 2" />
-                                                <CheckBox fx:id="checkBox3" minWidth="97.0" mnemonicParsing="false" text="Uprawnienie 3" />
-                                                <CheckBox fx:id="checkBox4" minWidth="97.0" mnemonicParsing="false" text="Uprawnienie 4" />
-                                                <CheckBox fx:id="checkBox5" minWidth="97.0" mnemonicParsing="false" text="Uprawnienie 5" />
+                                                <VBox fx:id="boxListCheckBox" spacing="7.0" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets bottom="5.0" right="10.0" top="5.0" />
