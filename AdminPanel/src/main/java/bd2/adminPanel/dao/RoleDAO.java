@@ -17,7 +17,8 @@ public class RoleDAO {
 	@Column(name = "role_id")
 	private int roleId;
 	private String role;
-	@ManyToMany(mappedBy = "roles", targetEntity = UserDAO.class, fetch = FetchType.EAGER)
+	@ManyToMany(mappedBy = "roles", targetEntity = UserDAO.class,
+                fetch = FetchType.EAGER)
 	private List<UserDAO> users;
 
 	public RoleDAO() {

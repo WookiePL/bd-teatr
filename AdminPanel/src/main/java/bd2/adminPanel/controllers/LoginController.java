@@ -66,7 +66,8 @@ public class LoginController implements Initializable {
     }
 
     private void loadMainScreen() {
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainMenuScreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass()
+                .getResource("/fxml/MainMenuScreen.fxml"));
         StackPane pane = null;
         try {
             pane = loader.load();

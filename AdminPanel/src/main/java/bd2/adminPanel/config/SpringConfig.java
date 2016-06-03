@@ -12,14 +12,14 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("bd2.adminPanel")
 public class SpringConfig {
 
-	@Bean
-	public EntityManagerFactory entityManagerFactory() {
-		return Persistence.createEntityManagerFactory("admin");
-	}
-	
-	@Bean
-	public EntityManager entityManager() {
-		return entityManagerFactory().createEntityManager();
-	}
-	
+    @Bean
+    public EntityManagerFactory entityManagerFactory() {
+        return Persistence.createEntityManagerFactory("admin");
+    }
+
+    @Bean
+    public EntityManager entityManager() {
+        return entityManagerFactory().createEntityManager();
+    }
+
 }

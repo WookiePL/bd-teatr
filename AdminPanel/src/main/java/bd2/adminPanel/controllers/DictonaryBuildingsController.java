@@ -13,40 +13,40 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
 public class DictonaryBuildingsController {
-    
+
     @FXML
     private StackPane dictionariesStackPane;
-    
+
     @FXML
     private Button buttonBackMenu;
-    
+
     @FXML
     private Button buttonAddBuilding;
-    
+
     @FXML
     private Button buttoneditBuilding;
-    
+
     @FXML
     private Button buttonDeleteBuilding;
-            
+
     @FXML
     private Button buttonAddSector;
-    
+
     @FXML
     private Button buttonEditSector;
-    
+
     @FXML
     private Button buttonDeleteSector;
-    
+
     @FXML
     private Button buttonAddPlace;
-    
+
     @FXML
     private Button buttonEditPlace;
-    
+
     @FXML
     private Button buttonDeletePlace;
-    
+
     @FXML
     public void back() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(

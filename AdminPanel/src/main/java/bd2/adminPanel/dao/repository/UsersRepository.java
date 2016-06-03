@@ -10,11 +10,11 @@ import bd2.adminPanel.dao.UserDAO;
 
 @Repository
 public class UsersRepository {
-	
-	@Autowired
-	private DBUtils dbUtils;
-	
-	public List<UserDAO> getUsers() {
-		return dbUtils.getAll(UserDAO.class);
-	}
+
+    @Autowired
+    private DBUtils dbUtils;
+
+    public List<UserDAO> getUsers() {
+        return dbUtils.getAll(UserDAO.class);
+    }
 }

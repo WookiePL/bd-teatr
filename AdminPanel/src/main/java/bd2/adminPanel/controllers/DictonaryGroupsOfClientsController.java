@@ -13,13 +13,13 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
 public class DictonaryGroupsOfClientsController {
-    
+
     @FXML
     private StackPane dictionariesStackPane;
-    
+
     @FXML
     private Button buttonBackMenu;
-    
+
     @FXML
     public void back() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(

@@ -12,6 +12,7 @@ import bd2.adminPanel.dao.RoleDAO;
 import bd2.adminPanel.dao.UserDAO;
 import bd2.adminPanel.dao.repository.RolesRepository;
 import bd2.adminPanel.dao.repository.UsersRepository;
+import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -74,7 +76,8 @@ public class UsersController implements Initializable {
             context.close();
         }
 
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainMenuScreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(
+                this.getClass().getResource("/fxml/MainMenuScreen.fxml"));
         StackPane pane = null;
 
         try {
@@ -101,7 +104,8 @@ public class UsersController implements Initializable {
             buttonDeleteUser.setDisable(false);
 
             if (user.getRoles() != null) {
-                ObservableList<RoleDAO> roles = FXCollections.observableArrayList();
+                ObservableList<RoleDAO> roles
+                        = FXCollections.observableArrayList();
                 roles.addAll(user.getRoles());
             }
 
@@ -125,25 +129,22 @@ public class UsersController implements Initializable {
 
     @FXML
     public void addUser() {
-        UserDAO user = new UserDAO(textFieldFirstName.getText(), textFieldLastName.getText(), textFieldEmail.getText(), "tmpPassword");
+        UserDAO user = new UserDAO(textFieldFirstName.getText(),
+                textFieldLastName.getText(), textFieldEmail.getText(),
+                "tmpPassword");
         List<RoleDAO> roles = rolesRepository.getRoles();
-        /*
-        if (checkBox1.isSelected()) {
-            user.getRoles().add(roles.get(0));
+
+        for (CheckBox checkBox : listCheckBox) {
+            for (RoleDAO role : roles) {
+                if (role.getRole().equals(checkBox.getText())) {
+                    if (checkBox.isSelected()) {
+                        user.getRoles().add(role);
+                    }
+                    break;
+                }
+            }
         }
-        if (checkBox2.isSelected()) {
-            user.getRoles().add(roles.get(1));
-        }
-        if (checkBox3.isSelected()) {
-            user.getRoles().add(roles.get(2));
-        }
-        if (checkBox4.isSelected()) {
-            user.getRoles().add(roles.get(3));
-        }
-        if (checkBox5.isSelected()) {
-            user.getRoles().add(roles.get(4));
-        }
-         */
+
         dbUtils.persist(user);
 
         initialize(null, null);
@@ -155,11 +156,19 @@ public class UsersController implements Initializable {
 
         if (user != null) {
             Alert alert = new Alert(AlertType.CONFIRMATION);
-            alert.getButtonTypes().set(0, new ButtonType("Tak", ButtonBar.ButtonData.YES));
-            alert.getButtonTypes().set(1, new ButtonType("Nie", ButtonBar.ButtonData.NO));
+            alert.getButtonTypes().set(0,
+                    new ButtonType("Tak", ButtonBar.ButtonData.YES));
+            alert.getButtonTypes().set(1,
+                    new ButtonType("Nie", ButtonBar.ButtonData.NO));
             alert.setTitle("Usun¹æ?");
-            alert.setHeaderText("Czy na pewno chcesz usun¹æ poni¿szego " + "u¿ytkownika?");
-            alert.setContentText("Imiê i nazwisko: " + user.getName() + " " + user.getSurname());
+            alert.setHeaderText("Czy na pewno chcesz usun¹æ poni¿szego "
+                    + "u¿ytkownika?");
+            alert.setContentText("E-mail: " + user.getEmail() + "\n"
+                    + "Imiê i nazwisko: " + user.getName() + " "
+                    + user.getSurname());
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add(getClass()
+                    .getResource("/fxml/GreenButton.css").toExternalForm());
 
             alert.showAndWait().ifPresent(rs -> {
                 if (rs.getButtonData() == ButtonBar.ButtonData.YES) {
@@ -179,43 +188,22 @@ public class UsersController implements Initializable {
             user.setEmail(textFieldEmail.getText());
 
             List<RoleDAO> roles = rolesRepository.getRoles();
-            /*
-            if (checkBox1.isSelected()) {
-                if (!user.getRoles().contains(roles.get(0))) {
-                    user.getRoles().add(roles.get(0));
+
+            for (CheckBox checkBox : listCheckBox) {
+                for (RoleDAO role : roles) {
+                    if (role.getRole().equals(checkBox.getText())) {
+                        if (checkBox.isSelected()) {
+                            if (!user.getRoles().contains(role)) {
+                                user.getRoles().add(role);
+                            }
+                        } else if (user.getRoles().contains(role)) {
+                            user.getRoles().remove(role);
+                        }
+                        break;
+                    }
                 }
-            } else if (user.getRoles().contains(roles.get(0))) {
-                user.getRoles().remove(roles.get(0));
             }
-            if (checkBox2.isSelected()) {
-                if (!user.getRoles().contains(roles.get(1))) {
-                    user.getRoles().add(roles.get(1));
-                }
-            } else if (user.getRoles().contains(roles.get(1))) {
-                user.getRoles().remove(roles.get(1));
-            }
-            if (checkBox3.isSelected()) {
-                if (!user.getRoles().contains(roles.get(2))) {
-                    user.getRoles().add(roles.get(2));
-                }
-            } else if (user.getRoles().contains(roles.get(2))) {
-                user.getRoles().remove(roles.get(2));
-            }
-            if (checkBox4.isSelected()) {
-                if (!user.getRoles().contains(roles.get(3))) {
-                    user.getRoles().add(roles.get(3));
-                }
-            } else if (user.getRoles().contains(roles.get(3))) {
-                user.getRoles().remove(roles.get(3));
-            }
-            if (checkBox5.isSelected()) {
-                if (!user.getRoles().contains(roles.get(4))) {
-                    user.getRoles().add(roles.get(4));
-                }
-            } else if (user.getRoles().contains(roles.get(4))) {
-                user.getRoles().remove(roles.get(4));
-            }
-             */
+
             dbUtils.persist(user);
 
             initialize(null, null);
@@ -241,19 +229,22 @@ public class UsersController implements Initializable {
 
         if (roles == null || roles.isEmpty()) {
             titleListCheckBox.setVisible(false);
-        } else {
-            listCheckBox.clear();
+        } else if (listCheckBox == null) {
+            listCheckBox = new ArrayList<>();
+            titleListCheckBox.setVisible(true);
             for (RoleDAO role : roles) {
                 listCheckBox.add(new CheckBox(role.getRole()));
             }
-            for (CheckBox checkBox : listCheckBox) {
+            listCheckBox.stream().forEach((checkBox) -> {
                 boxListCheckBox.getChildren().add(checkBox);
-            }
+            });
         }
     }
 
-    public void setContextAndRepositories(AnnotationConfigApplicationContext context, DBUtils dbUtils,
-            UsersRepository usersRepository, RolesRepository rolesRepository) {
+    public void setContextAndRepositories(
+            AnnotationConfigApplicationContext context, DBUtils dbUtils,
+            UsersRepository usersRepository, RolesRepository rolesRepository
+    ) {
 
         setContext(context);
         setDBUtils(dbUtils);

@@ -11,11 +11,10 @@ import bd2.adminPanel.dao.RoleDAO;
 @Repository
 public class RolesRepository {
 
-	@Autowired
-	private DBUtils dbUtils;
+    @Autowired
+    private DBUtils dbUtils;
 
-	public List<RoleDAO> getRoles() {
-		return dbUtils.getAll(RoleDAO.class);
-	}
-
+    public List<RoleDAO> getRoles() {
+        return dbUtils.getAll(RoleDAO.class);
+    }
 }

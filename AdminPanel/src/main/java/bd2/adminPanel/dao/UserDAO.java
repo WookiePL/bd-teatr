@@ -20,22 +20,32 @@ import javax.persistence.Table;
 public class UserDAO {
 	@Id
 	@Column(name = "user_id", columnDefinition = "serial")
-	@SequenceGenerator(name = "user_user_id_seq", sequenceName = "user_user_id_seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_user_id_seq")
+	@SequenceGenerator(name = "user_user_id_seq",
+                sequenceName = "user_user_id_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+                generator = "user_user_id_seq")
 	private int userId;
 	private String name;
 	private String surname;
 	private String email;
 	private String password;
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "users_roles", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = { @JoinColumn(name = "role_id") })
+	@JoinTable(name = "users_roles",
+                joinColumns = {
+                    @JoinColumn(name = "user_id")
+                },
+                inverseJoinColumns = {
+                    @JoinColumn(name = "role_id")
+                }
+        )
 	private List<RoleDAO> roles;
 
 	public UserDAO() {
 
 	}
 
-	public UserDAO(String name, String surname, String email, String password) {
+	public UserDAO(String name, String surname,
+                String email, String password) {
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
@@ -91,8 +101,8 @@ public class UserDAO {
 		this.roles = roles;
 	}
 
+        @Override
 	public String toString() {
 		return "ID: " + userId + ", " + name + " " + surname;
 	}
-
 }

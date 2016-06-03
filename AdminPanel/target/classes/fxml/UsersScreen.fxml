@@ -96,7 +96,7 @@
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </VBox.margin>
                                                 </Label>
-                                                <VBox fx:id="boxListCheckBox" spacing="7.0" />
+                                                <VBox fx:id="boxListCheckBox" alignment="CENTER_LEFT" maxWidth="100.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="50.0" spacing="7.0" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets bottom="5.0" right="10.0" top="5.0" />

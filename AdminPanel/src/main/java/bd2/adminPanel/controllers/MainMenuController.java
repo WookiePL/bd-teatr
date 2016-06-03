@@ -19,94 +19,103 @@ import javafx.scene.layout.StackPane;
 
 public class MainMenuController implements Initializable {
 
-	private AnnotationConfigApplicationContext context;
-	private DBUtils dbUtils;
-	private UsersRepository usersRepository;
-	private RolesRepository rolesRepository;
-	
-	@FXML
-	private StackPane menuStackPane;
+    private AnnotationConfigApplicationContext context;
+    private DBUtils dbUtils;
+    private UsersRepository usersRepository;
+    private RolesRepository rolesRepository;
 
-	@FXML
-	private Button buttonUsers;
+    @FXML
+    private StackPane menuStackPane;
 
-	@FXML
-	private Button buttonDictionaries;
+    @FXML
+    private Button buttonUsers;
 
-	@FXML
-	private Button buttonExit;
+    @FXML
+    private Button buttonDictionaries;
 
-	@FXML
-	private Button buttonLogout;
+    @FXML
+    private Button buttonExit;
 
-	@FXML
-	public void users() {
-		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/UsersScreen.fxml"));
-		StackPane pane = null;
-		try {
-			pane = loader.load();
-			((UsersController)loader.getController()).setContextAndRepositories(context, dbUtils, usersRepository, rolesRepository);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+    @FXML
+    private Button buttonLogout;
 
-		menuStackPane.getChildren().clear();
-		menuStackPane.getChildren().add(pane);
-	}
+    @FXML
+    public void users() {
+        FXMLLoader loader = new FXMLLoader(this.getClass()
+                .getResource("/fxml/UsersScreen.fxml"));
+        StackPane pane = null;
+        try {
+            pane = loader.load();
+            ((UsersController) loader.getController())
+                    .setContextAndRepositories(context, dbUtils,
+                            usersRepository, rolesRepository);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-	@FXML
-	public void dictionaries() {
-		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/DictionariesScreen.fxml"));
-		StackPane pane = null;
+        menuStackPane.getChildren().clear();
+        menuStackPane.getChildren().add(pane);
+    }
 
-		try {
-			pane = loader.load();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+    @FXML
+    public void dictionaries() {
+        FXMLLoader loader = new FXMLLoader(this.getClass()
+                .getResource("/fxml/DictionariesScreen.fxml"));
+        StackPane pane = null;
 
-		menuStackPane.getChildren().clear();
-		menuStackPane.getChildren().add(pane);
-	}
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-	@FXML
-	public void logout() {
-		dbUtils.close();
-		context.close();
-		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/LoginScreen.fxml"));
-		StackPane pane = null;
+        menuStackPane.getChildren().clear();
+        menuStackPane.getChildren().add(pane);
+    }
 
-		try {
-			pane = loader.load();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+    @FXML
+    public void logout() {
+        dbUtils.close();
+        context.close();
+        FXMLLoader loader = new FXMLLoader(this.getClass()
+                .getResource("/fxml/LoginScreen.fxml"));
+        StackPane pane = null;
 
-		menuStackPane.getChildren().clear();
-		menuStackPane.getChildren().add(pane);
-	}
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-	@FXML
-	public void exit() {
-		dbUtils.close();
-		context.close();
-		Platform.exit();
-	}
+        menuStackPane.getChildren().clear();
+        menuStackPane.getChildren().add(pane);
+    }
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		buttonUsers.defaultButtonProperty().bind(buttonUsers.focusedProperty());
-		buttonDictionaries.defaultButtonProperty().bind(buttonDictionaries.focusedProperty());
-		buttonLogout.defaultButtonProperty().bind(buttonLogout.focusedProperty());
-		buttonExit.defaultButtonProperty().bind(buttonExit.focusedProperty());
-		Platform.runLater(() -> {
-			buttonUsers.requestFocus();
-		});
-		
-		context = new AnnotationConfigApplicationContext(SpringConfig.class);
-		dbUtils = context.getBean("DBUtils", DBUtils.class);
-		usersRepository = context.getBean("usersRepository", UsersRepository.class);
-		rolesRepository = context.getBean("rolesRepository", RolesRepository.class);
-		
-	}
+    @FXML
+    public void exit() {
+        dbUtils.close();
+        context.close();
+        Platform.exit();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        buttonUsers.defaultButtonProperty().bind(buttonUsers.focusedProperty());
+        buttonDictionaries.defaultButtonProperty()
+                .bind(buttonDictionaries.focusedProperty());
+        buttonLogout.defaultButtonProperty()
+                .bind(buttonLogout.focusedProperty());
+        buttonExit.defaultButtonProperty().bind(buttonExit.focusedProperty());
+        Platform.runLater(() -> {
+            buttonUsers.requestFocus();
+        });
+
+        context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        dbUtils = context.getBean("DBUtils", DBUtils.class);
+        usersRepository =
+                context.getBean("usersRepository", UsersRepository.class);
+        rolesRepository =
+                context.getBean("rolesRepository", RolesRepository.class);
+
+    }
 }
