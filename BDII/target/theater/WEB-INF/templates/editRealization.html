@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" th:href="@{/resources/images/favicon.ico}" href='../resources/images/favicon.ico'/>
+    <!-- Bootstrap core CSS -->
+    <link rel='stylesheet' th:href="@{/resources/css/bootstrap.min.css}" href='../resources/css/bootstrap.min.css'/>
+    <!-- Custom styles -->
+    <link rel='stylesheet' th:href="@{/resources/css/style.css}" href='../resources/css/bootstrap.min.css'/>
+    <!-- Cuprum font -->
+    <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
+    <title>Edytuj rezerwację</title>
+  </head>
+  <body onload="//iniatializePage()">
+
+  <!-- NAVBAR -->
+  <div th:include="fragments/navbar :: navbar"></div>
+
+
+    <div class="container">
+      <!-- Header -->
+      <div class="center-content">
+        <h1>Utwórz/Edytuj realizację wydarzenia</h1>
+      </div>
+      <!-- Event description -->
+      <!-- Reservation form -->
+      <div class="reservation-form center-align">
+       <form method="#" action="eventReservations.html">
+         <div class="form-group">
+           <label for="clientName">Nazwa</label>
+	   <select>
+	     <option value="volvo">Romeo i Julia</option>
+	     <option value="saab">Saab</option>
+	     <option value="mercedes">Mercedes</option>
+	     <option value="audi">Audi</option>
+	   </select>
+         </div>
+         <div class="form-group">
+           <label for="clientSurname">Data</label>
+           <input type="date" class="form-control" id="clientSurname">
+         </div>
+         <div class="form-group">
+           <label for="clientEmail">Godzina</label>
+           <input type="text" class="form-control" id="clientEmail">
+         </div>
+         <div class="form-group">
+           <label for="clientName">Budynek</label>
+	   <select>
+	     <option value="volvo">ul. Moja 2</option>
+	     <option value="saab">Saab</option>
+	     <option value="mercedes">Mercedes</option>
+	     <option value="audi">Audi</option>
+	   </select>
+         </div>
+         <div class="form-group">
+           <label for="clientName">Nazwa</label>
+	   <select>
+	     <option value="volvo">2</option>
+	     <option value="saab">Saab</option>
+	     <option value="mercedes">Mercedes</option>
+	     <option value="audi">Audi</option>
+	   </select>
+         </div>
+
+         <a href="eventReservations.html" class="btn btn-success left" role="button">Anuluj</a>
+         <button type="submit" class="btn btn-success right">Zatwierdź</button>
+       </form>
+     </div>
+    </div><!-- /.container -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- Page logic -->
+    <script src="../assets/js/general.js"></script>
+    <!-- script src="../assets/js/editPriceList.js"></script -->
+  </body>
+</html>

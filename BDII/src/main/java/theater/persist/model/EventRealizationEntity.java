@@ -15,7 +15,7 @@ public class EventRealizationEntity {
     private Integer roomId;
     private RoomEntity room;
     private EventEntity event;
-//    private List<ReservationEntity> reservations;
+    private List<ReservationEntity> reservations;
     private List<TicketEntity> tickets;
 
     @Id
@@ -104,14 +104,14 @@ public class EventRealizationEntity {
         this.event = event;
     }
 
-//    @OneToMany(mappedBy = "eventRealization", fetch = FetchType.LAZY)
-//    public List<ReservationEntity> getReservations() {
-//        return reservations;
-//    }
-//
-//    public void setReservations(List<ReservationEntity> reservations) {
-//        this.reservations = reservations;
-//    }
+    @OneToMany(mappedBy = "eventRealization", fetch = FetchType.LAZY)
+    public List<ReservationEntity> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<ReservationEntity> reservations) {
+        this.reservations = reservations;
+    }
 
     @OneToMany(mappedBy = "eventRealization", targetEntity = TicketEntity.class, fetch = FetchType.LAZY)
     public List<TicketEntity> getTickets() {

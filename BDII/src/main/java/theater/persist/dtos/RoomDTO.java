@@ -2,6 +2,10 @@ package theater.persist.dtos;
 
 
 import theater.persist.model.BuildingEntity;
+import theater.persist.model.EventRealizationEntity;
+import theater.persist.model.SectorEntity;
+
+import java.util.List;
 
 public class RoomDTO {
 
@@ -9,6 +13,8 @@ public class RoomDTO {
     private Integer number;
     private Integer buildingId;
     private BuildingEntity building;
+    private List<EventRealizationEntity> eventRealizations;
+    private List<SectorEntity> sectors;
 
     public Integer getRoomId() {
         return roomId;
@@ -37,9 +43,23 @@ public class RoomDTO {
     public BuildingEntity getBuilding() {
         return building;
     }
-
     public void setBuilding(BuildingEntity building) {
         this.building = building;
     }
 
+    public List<EventRealizationEntity> getEventRealizations() {
+        return eventRealizations;
+    }
+
+    public void setEventRealizations(List<EventRealizationEntity> eventRealizations) {
+        this.eventRealizations = eventRealizations;
+    }
+
+    public List<SectorEntity> getSectors() {
+        return sectors;
+    }
+
+    public void setSectors(List<SectorEntity> sectors) {
+        this.sectors = sectors;
+    }
 }

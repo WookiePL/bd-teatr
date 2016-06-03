@@ -1,8 +1,6 @@
 package theater.persist.dtos;
 
-/**
- * Created by Wookie on 2016-05-16.
- */
+
 public class EventTypeDTO {
     private Integer eventTypeId;
     private String name;

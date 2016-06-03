@@ -13,6 +13,8 @@ public interface IReservationDAO extends IBaseDAO<ReservationEntity, Integer> {
 
     List<ReservationEntity> getAllReservations();
 
+    List<ReservationEntity> getAllReservations(int id);
+
     void addReservation(ReservationEntity reservation);
 
     void updateReservation(ReservationEntity reservation);

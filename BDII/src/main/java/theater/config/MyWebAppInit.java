@@ -36,10 +36,10 @@ public class MyWebAppInit implements WebApplicationInitializer {
         servlet.setLoadOnStartup(1);
         servlet.addMapping("/");
 
-        servletContext.addFilter("springSecurityFilterChain", new DelegatingFilterProxy("springSecurityFilterChain"))
-                .addMappingForUrlPatterns(null, false, "/*");
-
-        servletContext.addFilter("encoding-filter", encodingFilter);
+//        servletContext.addFilter("springSecurityFilterChain", new DelegatingFilterProxy("springSecurityFilterChain"))
+//                .addMappingForUrlPatterns(null, false, "/*");
+//
+//        servletContext.addFilter("encoding-filter", encodingFilter);
     }
 
 }

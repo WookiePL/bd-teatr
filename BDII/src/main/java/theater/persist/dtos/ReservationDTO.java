@@ -1,10 +1,13 @@
 package theater.persist.dtos;
 
-import java.sql.Date;
+import theater.persist.model.EventRealizationEntity;
+import theater.persist.model.PlaceEntity;
+import theater.persist.model.UserEntity;
 
-/**
- * Created by Wookie on 2016-05-16.
- */
+import java.sql.Date;
+import java.util.List;
+
+
 public class ReservationDTO {
     private Integer reservationId;
     private String name;
@@ -14,6 +17,9 @@ public class ReservationDTO {
     private Date revokeDate;
     private Integer eventRealizationId;
     private Integer userId;
+    private EventRealizationEntity eventRealization;
+    private UserEntity user;
+    private List<PlaceEntity> places;
 
     public Integer getReservationId() {
         return reservationId;
@@ -77,5 +83,29 @@ public class ReservationDTO {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public EventRealizationEntity getEventRealization() {
+        return eventRealization;
+    }
+
+    public void setEventRealization(EventRealizationEntity eventRealization) {
+        this.eventRealization = eventRealization;
+    }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
+
+    public List<PlaceEntity> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(List<PlaceEntity> places) {
+        this.places = places;
     }
 }

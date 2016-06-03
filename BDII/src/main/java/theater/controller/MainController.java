@@ -23,9 +23,6 @@ public class MainController {
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home(Model model) {
 
-        BuildingEntity b = new BuildingEntity();
-        b.setAdress("123");
-        eventService.addBuilding(b);
         return "home";
     }
 

@@ -24,17 +24,17 @@ public class EventRealizationDAO extends BaseDAO<EventRealizationEntity, Integer
     }
 
     @Override
-    public void addEventRealiztion(EventRealizationEntity eventRealization) {
+    public void addEventRealization(EventRealizationEntity eventRealization) {
         super.create(eventRealization);
     }
 
     @Override
-    public void updateEventRealiztion(EventRealizationEntity eventRealization) {
+    public void updateEventRealization(EventRealizationEntity eventRealization) {
         super.update(eventRealization);
     }
 
     @Override
-    public void deleteEventRealiztion(int id) {
+    public void deleteEventRealization(int id) {
         EventRealizationEntity eventRealization = super.readById(id);
         if (eventRealization != null) {
             super.delete(eventRealization);

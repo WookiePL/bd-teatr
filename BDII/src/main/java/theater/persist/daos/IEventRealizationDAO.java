@@ -13,9 +13,11 @@ public interface IEventRealizationDAO extends IBaseDAO<EventRealizationEntity, I
 
     List<EventRealizationEntity> getAllEventRealizations();
 
-    void addEventRealiztion(EventRealizationEntity eventRealization);
+    void addEventRealization(EventRealizationEntity eventRealization);
 
-    void updateEventRealiztion(EventRealizationEntity eventRealization);
+    void updateEventRealization(EventRealizationEntity eventRealization);
 
-    void deleteEventRealiztion(int id);
+    void deleteEventRealization(int id);
+
+
 }
