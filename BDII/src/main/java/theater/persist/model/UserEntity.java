@@ -3,7 +3,6 @@ package theater.persist.model;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
-import java.util.StringJoiner;
 
 
 @Entity
@@ -21,7 +20,7 @@ public class UserEntity {
     private String password;
     private List<ReservationEntity> reservations;
     private List<TicketEntity> tickets;
-    private Collection<RolesEntity> roleEntities;
+    private Collection<RoleEntity> roles;
 
 
     @Id
@@ -29,7 +28,7 @@ public class UserEntity {
     @SequenceGenerator(name = "user_user_id_seq",
             sequenceName = "user_user_id_seq",
             allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    @GeneratedValue(strategy = GenerationType.IDENTITY,
             generator = "user_user_id_seq")
     public Integer getUserId() {
         return userId;
@@ -97,16 +96,13 @@ public class UserEntity {
         this.tickets = tickets;
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)//?
-    @JoinTable(name = "users_roles",
-            joinColumns = {@JoinColumn(name = "user_id")},
-            inverseJoinColumns = {@JoinColumn(name = "role_id")})
-    public Collection<RolesEntity> getRoleEntities() {
-        return roleEntities;
+    @ManyToMany
+    public Collection<RoleEntity> getRoles() {
+        return roles;
     }
 
-    public void setRoleEntities(Collection<RolesEntity> roleEntities) {
-        this.roleEntities = roleEntities;
+    public void setRoles(Collection<RoleEntity> roles) {
+        this.roles = roles;
     }
 
 

@@ -1,6 +1,8 @@
 package theater.persist.daos;
 
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import theater.persist.model.BuildingEntity;
 import org.springframework.stereotype.Repository;
 
@@ -9,6 +11,8 @@ import java.util.List;
 @Repository
 public class BuildingDAO extends BaseDAO<BuildingEntity, Integer> implements IBuildingDAO {
 
+    @Autowired
+    SessionFactory sessionFactory;
 
     @Override
     public BuildingEntity getBuildingById(int id) {

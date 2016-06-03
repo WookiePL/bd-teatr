@@ -1,5 +1,7 @@
 package theater.controller;
 
+import theater.persist.daos.BuildingDAO;
+import theater.persist.model.BuildingEntity;
 import theater.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -20,8 +22,14 @@ public class MainController {
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home(Model model) {
-        return "warehouse";
+
+        BuildingEntity b = new BuildingEntity();
+        b.setAdress("123");
+        eventService.addBuilding(b);
+        return "home";
     }
+
+
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {

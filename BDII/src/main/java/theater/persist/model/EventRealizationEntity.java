@@ -23,7 +23,7 @@ public class EventRealizationEntity {
     @SequenceGenerator(name = "eventrealization_event_realization_id_seq",
             sequenceName = "eventrealization_event_realization_id_seq",
             allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    @GeneratedValue(strategy = GenerationType.IDENTITY,
             generator = "eventrealization_event_realization_id_seq")
     public Integer getEventRealizationId() {
         return eventRealizationId;

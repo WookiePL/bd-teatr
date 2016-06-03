@@ -19,7 +19,7 @@ public class PlaceEntity {
     @SequenceGenerator(name = "place_place_id_seq",
             sequenceName = "place_place_id_seq",
             allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    @GeneratedValue(strategy = GenerationType.IDENTITY,
             generator = "place_place_id_seq")
     public Integer getPlaceId() {
         return placeId;

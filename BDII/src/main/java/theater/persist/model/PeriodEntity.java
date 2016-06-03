@@ -17,7 +17,7 @@ public class PeriodEntity {
     @SequenceGenerator(name = "period_period_id_seq",
             sequenceName = "period_period_id_seq",
             allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    @GeneratedValue(strategy = GenerationType.IDENTITY,
             generator = "period_period_id_seq")
     public Integer getPeriodId() {
         return periodId;

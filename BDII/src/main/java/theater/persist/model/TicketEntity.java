@@ -21,7 +21,7 @@ public class TicketEntity {
     @SequenceGenerator(name = "ticket_ticket_id_seq",
             sequenceName = "ticket_ticket_id_seq",
             allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    @GeneratedValue(strategy = GenerationType.IDENTITY,
             generator = "ticket_ticket_id_seq")
     public Integer getTicketId() {
         return ticketId;

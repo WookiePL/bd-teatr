@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" th:href="@{/resources/images/favicon.ico}" href='../resources/images/favicon.ico'/>
+    <!-- Bootstrap core CSS -->
+    <link rel='stylesheet' th:href="@{/resources/css/bootstrap.min.css}" href='../resources/css/bootstrap.min.css'/>
+    <!-- Custom styles -->
+    <link rel='stylesheet' th:href="@{/resources/css/style.css}" href='../resources/css/bootstrap.min.css'/>
+    <!-- Cuprum font -->
+    <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
+    <title>Logowanie</title>
+</head>
+
+<body class="login">
+
+    <div class="container">
+
+        <div class="center-content">
+            <h1 class="login-header">Teatr</h1>
+        </div>
+
+        <div th:if="${param.error != null}" class="alert alert-danger" th:text="${session[SPRING_SECURITY_LAST_EXCEPTION]}">error</div>
+        <div><p th:if="${loginError}">Wrong user or password</p></div>
+
+        <div class="reservation-form center-align">
+            <form action="#" th:action="@{/login}" method="post">
+                  <!--action="eventRealizations.html">-->
+                <div class="form-group">
+                    <label for="login">Email użytkownika</label>
+                    <input name="username" type="email" class="form-control" id="login" placeholder="Email użytkownika"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Hasło</label>
+                    <input name="password" type="password" class="form-control" id="password" placeholder="Hasło"/>
+                </div>
+                <button type="submit" class="btn btn-success login-button">Zatwierdź</button>
+            </form>
+        </div>
+
+    </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript -->
+
+    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!--<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+    <script type="text/javascript" th:src="@{../resources/js/bootstrap.min.js}"
+            src="../resources/js/bootstrap.min.js"></script>
+    </body>
+</html>

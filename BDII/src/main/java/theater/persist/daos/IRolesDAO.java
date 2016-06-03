@@ -1,21 +1,21 @@
 package theater.persist.daos;
 
-import theater.persist.model.RolesEntity;
+import theater.persist.model.RoleEntity;
 
 import java.util.List;
 
-/**
- * Created by Wookie on 2016-05-16.
- */
-public interface IRolesDAO extends IBaseDAO<RolesEntity, Integer> {
 
-    RolesEntity getRolesById(int id);
+public interface IRolesDAO extends IBaseDAO<RoleEntity, Integer> {
 
-    List<RolesEntity> getAllRoles();
+    RoleEntity getRolesById(int id);
 
-    void addRoles(RolesEntity roles);
+    RoleEntity findByName(String name);
 
-    void updateRoles(RolesEntity roles);
+    List<RoleEntity> getAllRoles();
+
+    void addRoles(RoleEntity roles);
+
+    void updateRoles(RoleEntity roles);
 
     void deleteRoles(int id);
     

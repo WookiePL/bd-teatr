@@ -12,11 +12,11 @@ public class BuildingEntity {
     private List<RoomEntity> rooms;
 
     @Id
-    @Column(name = "building_id", columnDefinition = "serial")
+    @Column(name = "building_id", updatable=false)
     @SequenceGenerator(name = "building_building_id_seq",
             sequenceName = "building_building_id_seq",
             allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+    @GeneratedValue(strategy = GenerationType.IDENTITY,
             generator = "building_building_id_seq")
     public Integer getBuildingId() {
         return buildingId;
