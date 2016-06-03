@@ -60,7 +60,7 @@ public class UsersController implements Initializable {
 
     @FXML
     private Label titleListCheckBox;
-    
+
     @FXML
     private VBox boxListCheckBox;
 
@@ -104,38 +104,22 @@ public class UsersController implements Initializable {
                 ObservableList<RoleDAO> roles = FXCollections.observableArrayList();
                 roles.addAll(user.getRoles());
             }
-/*
-            checkBox1.setSelected(false);
-            checkBox2.setSelected(false);
-            checkBox3.setSelected(false);
-            checkBox4.setSelected(false);
-            checkBox5.setSelected(false);
 
             List<RoleDAO> roles = user.getRoles();
 
-            if (roles != null) {
-                for (RoleDAO role : roles) {
-                    switch (role.getRoleId()) {
-                        case 1:
-                            checkBox1.setSelected(true);
-                            break;
-                        case 2:
-                            checkBox2.setSelected(true);
-                            break;
-                        case 3:
-                            checkBox3.setSelected(true);
-                            break;
-                        case 4:
-                            checkBox4.setSelected(true);
-                            break;
-                        case 5:
-                            checkBox5.setSelected(true);
-                            break;
-                        default:
-                            break;
+            if (listCheckBox != null) {
+                for (CheckBox checkBox : listCheckBox) {
+                    checkBox.setSelected(false);
+                    if (roles != null) {
+                        for (RoleDAO role : roles) {
+                            if (checkBox.getText().equals(role.getRole())) {
+                                checkBox.setSelected(true);
+                                break;
+                            }
+                        }
                     }
                 }
-            }*/
+            }
         }
     }
 
@@ -143,7 +127,7 @@ public class UsersController implements Initializable {
     public void addUser() {
         UserDAO user = new UserDAO(textFieldFirstName.getText(), textFieldLastName.getText(), textFieldEmail.getText(), "tmpPassword");
         List<RoleDAO> roles = rolesRepository.getRoles();
-/*
+        /*
         if (checkBox1.isSelected()) {
             user.getRoles().add(roles.get(0));
         }
@@ -159,7 +143,7 @@ public class UsersController implements Initializable {
         if (checkBox5.isSelected()) {
             user.getRoles().add(roles.get(4));
         }
-*/
+         */
         dbUtils.persist(user);
 
         initialize(null, null);
@@ -195,7 +179,7 @@ public class UsersController implements Initializable {
             user.setEmail(textFieldEmail.getText());
 
             List<RoleDAO> roles = rolesRepository.getRoles();
-/*
+            /*
             if (checkBox1.isSelected()) {
                 if (!user.getRoles().contains(roles.get(0))) {
                     user.getRoles().add(roles.get(0));
@@ -231,7 +215,7 @@ public class UsersController implements Initializable {
             } else if (user.getRoles().contains(roles.get(4))) {
                 user.getRoles().remove(roles.get(4));
             }
-*/
+             */
             dbUtils.persist(user);
 
             initialize(null, null);
@@ -254,10 +238,11 @@ public class UsersController implements Initializable {
 
         listViewUsers.setItems(users);
         listViewUsers.refresh();
-        
-        if(roles == null || roles.isEmpty()) {
+
+        if (roles == null || roles.isEmpty()) {
             titleListCheckBox.setVisible(false);
         } else {
+            listCheckBox.clear();
             for (RoleDAO role : roles) {
                 listCheckBox.add(new CheckBox(role.getRole()));
             }
