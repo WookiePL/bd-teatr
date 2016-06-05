@@ -34,6 +34,8 @@ public class HibernateConfiguration {
     @Bean(name = "sessionFactory")
     public SessionFactory getSessionFactory(DriverManagerDataSource dataSource) {
         LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
+        sessionBuilder.setProperty("hibernate.hbm2ddl.auto","update");
+        sessionBuilder.setProperty("hibernate.show_sql","true");
         sessionBuilder.scanPackages("theater.persist.model");
         return sessionBuilder.buildSessionFactory();
     }
