@@ -1,10 +1,13 @@
 package bd2.adminPanel;
 
+import java.beans.EventHandler;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class AdminPanel extends Application {
 
@@ -26,6 +29,12 @@ public class AdminPanel extends Application {
         primaryStage.setMinHeight(480);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Admin Panel");
+        primaryStage.setOnCloseRequest(new javafx.event.EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                event.consume();
+            }
+        });
         primaryStage.show();
     }
 }
