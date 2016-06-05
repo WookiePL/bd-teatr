@@ -25,11 +25,7 @@ public class UserEntity {
 
     @Id
     @Column(name = "user_id", columnDefinition = "serial")
-    @SequenceGenerator(name = "user_user_id_seq",
-            sequenceName = "user_user_id_seq",
-            allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.IDENTITY,
-            generator = "user_user_id_seq")
+    @GeneratedValue
     public Integer getUserId() {
         return userId;
     }
@@ -97,7 +93,8 @@ public class UserEntity {
     }
 
     @ManyToMany
-    public Collection<RoleEntity> getRoles() {
+    @JoinTable(name = "user_role",schema = "theater")
+            public Collection<RoleEntity> getRoles() {
         return roles;
     }
 

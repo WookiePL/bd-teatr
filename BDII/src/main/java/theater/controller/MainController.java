@@ -1,5 +1,6 @@
 package theater.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import theater.persist.daos.BuildingDAO;
 import theater.persist.model.BuildingEntity;
 import theater.services.*;
@@ -19,7 +20,7 @@ public class MainController {
     @Autowired
     private IEventService eventService;
 
-
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home(Model model) {
 
