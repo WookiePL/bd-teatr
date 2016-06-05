@@ -24,10 +24,19 @@ public class DictonaryBuildingsController {
     private Button buttonAddBuilding;
 
     @FXML
-    private Button buttoneditBuilding;
+    private Button buttonEditBuilding;
 
     @FXML
     private Button buttonDeleteBuilding;
+
+    @FXML
+    private Button buttonAddRoom;
+
+    @FXML
+    private Button buttonEditRoom;
+
+    @FXML
+    private Button buttonDeleteRoom;
 
     @FXML
     private Button buttonAddSector;
@@ -37,15 +46,6 @@ public class DictonaryBuildingsController {
 
     @FXML
     private Button buttonDeleteSector;
-
-    @FXML
-    private Button buttonAddPlace;
-
-    @FXML
-    private Button buttonEditPlace;
-
-    @FXML
-    private Button buttonDeletePlace;
 
     @FXML
     public void back() {
