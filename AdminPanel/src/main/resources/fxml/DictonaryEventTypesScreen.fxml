@@ -35,6 +35,29 @@
                      </children>
                   </StackPane>
                </top>
+               <center>
+                  <VBox alignment="CENTER" maxWidth="-Infinity" prefWidth="225.0" spacing="20.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ListView fx:id="listViewEventTypes" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefWidth="225.0" spacing="1.0">
+                           <children>
+                              <Label text="Nazwa:" />
+                              <TextField fx:id="textFieldEventTypeName" alignment="CENTER" />
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="buttonAddEventType" mnemonicParsing="false" onAction="#addEventType" stylesheets="@GreenButton.css" text="Dodaj" />
+                              <Button fx:id="buttonEditEventType" mnemonicParsing="false" onAction="#editEventType" stylesheets="@GreenButton.css" text="Edytuj" />
+                              <Button fx:id="buttonDeleteEventType" mnemonicParsing="false" onAction="#deleteEventType" stylesheets="@RedButton.css" text="Usuń" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
             </BorderPane>
          </children>
       </AnchorPane>

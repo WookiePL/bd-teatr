@@ -5,11 +5,14 @@
  */
 package bd2.adminPanel.controllers;
 
+import bd2.adminPanel.dao.DayOfWeekDAO;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 
 public class DictonaryDaysOfWeekController {
@@ -18,7 +21,34 @@ public class DictonaryDaysOfWeekController {
     private StackPane dictionariesStackPane;
 
     @FXML
+    private ListView<DayOfWeekDAO> listViewDaysOfWeek;
+
+    @FXML
+    private TextField textFieldDayOfWeekName;
+    
+    @FXML
+    private Button buttonAddDayOfWeek;
+    
+    @FXML
+    private Button buttonEditDayOfWeek;
+    
+    @FXML
+    private Button buttonDeleteDayOfWeek;
+    
+    @FXML
     private Button buttonBackMenu;
+    
+    @FXML
+    public void addGroupOfClient() {
+    }
+    
+    @FXML
+    public void editGroupOfClient() {
+    }
+    
+    @FXML
+    public void deleteGroupOfClient() {
+    }
 
     @FXML
     public void back() {

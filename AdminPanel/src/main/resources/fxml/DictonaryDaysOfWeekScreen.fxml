@@ -35,6 +35,29 @@
                      </children>
                   </StackPane>
                </top>
+               <center>
+                  <VBox alignment="CENTER" maxWidth="-Infinity" prefWidth="225.0" spacing="20.0">
+                     <children>
+                        <ListView fx:id="listViewDaysOfWeek" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefWidth="225.0" spacing="1.0">
+                           <children>
+                              <Label text="Nazwa:" />
+                              <TextField fx:id="textFieldDayOfWeekName" alignment="CENTER" />
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button fx:id="buttonAddDayOfWeek" mnemonicParsing="false" onAction="#addDayOfWeek" stylesheets="@GreenButton.css" text="Dodaj" />
+                              <Button fx:id="buttonEditDayOfWeek" mnemonicParsing="false" onAction="#editDayOfWeek" stylesheets="@GreenButton.css" text="Edytuj" />
+                              <Button fx:id="buttonDeleteDayOfWeek" mnemonicParsing="false" onAction="#deleteDayOfWeek" stylesheets="@RedButton.css" text="Usuń" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </BorderPane.margin>
+                  </VBox>
+               </center>
             </BorderPane>
          </children>
       </AnchorPane>
