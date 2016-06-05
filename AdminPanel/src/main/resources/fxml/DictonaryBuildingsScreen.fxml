@@ -38,7 +38,7 @@
                <center>
                   <SplitPane dividerPositions="0.25, 0.5" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <items>
-                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefWidth="183.0" spacing="10.0">
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefWidth="185.0" spacing="10.0">
                            <children>
                               <Label text="Budynki:" textAlignment="CENTER">
                                  <VBox.margin>
@@ -70,10 +70,10 @@
                               </HBox>
                            </children>
                            <padding>
-                              <Insets bottom="10.0" left="15.0" right="2.0" top="10.0" />
+                              <Insets bottom="10.0" left="15.0" right="4.0" top="10.0" />
                            </padding>
                         </VBox>
-                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefWidth="170.0" spacing="10.0">
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefWidth="174.0" spacing="10.0">
                            <children>
                               <Label text="Pomieszczenia:" textAlignment="CENTER">
                                  <VBox.margin>
@@ -84,10 +84,10 @@
                                  </font>
                               </Label>
                               <ListView fx:id="listViewRooms" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
-                              <VBox alignment="CENTER_LEFT" spacing="1.0">
+                              <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefWidth="200.0" spacing="1.0">
                                  <children>
                                     <Label text="Numer:" />
-                                    <TextField fx:id="textFieldRoomNumber" />
+                                    <TextField fx:id="textFieldRoomNumber" alignment="CENTER" />
                                  </children>
                               </VBox>
                               <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" spacing="10.0" VBox.vgrow="NEVER">
@@ -102,10 +102,10 @@
                               </HBox>
                            </children>
                            <padding>
-                              <Insets bottom="10.0" left="2.0" right="2.0" top="10.0" />
+                              <Insets bottom="10.0" left="4.0" right="4.0" top="10.0" />
                            </padding>
                         </VBox>
-                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefWidth="183.0" spacing="10.0">
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefWidth="185.0" spacing="10.0">
                            <children>
                               <Label text="Sektory:" textAlignment="CENTER">
                                  <VBox.margin>
@@ -121,7 +121,7 @@
                                     <VBox alignment="CENTER_LEFT" spacing="1.0" HBox.hgrow="NEVER">
                                        <children>
                                           <Label text="Numer:" />
-                                          <TextField fx:id="textFieldSectorNumber" />
+                                          <TextField fx:id="textFieldSectorNumber" alignment="CENTER" />
                                        </children>
                                     </VBox>
                                     <VBox alignment="CENTER_LEFT" spacing="1.0" HBox.hgrow="NEVER">
@@ -129,7 +129,7 @@
                                           <Label text="Wymiary sektora:" />
                                           <HBox alignment="CENTER" prefHeight="25.0" prefWidth="181.0" spacing="1.0" VBox.vgrow="NEVER">
                                              <children>
-                                                <TextField fx:id="textFieldSectorSizeX" />
+                                                <TextField fx:id="textFieldSectorSizeX" alignment="CENTER_RIGHT" />
                                                 <Label text="x" />
                                                 <TextField fx:id="textFieldSectorSizeY" />
                                              </children>
@@ -153,7 +153,7 @@
                               </HBox>
                            </children>
                            <padding>
-                              <Insets bottom="10.0" left="2.0" right="15.0" top="10.0" />
+                              <Insets bottom="10.0" left="4.0" right="15.0" top="10.0" />
                            </padding>
                         </VBox>
                     </items>

@@ -10,7 +10,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "roles", schema = "theater")
+@Table(name = "role", schema = "theater")
 public class RoleDAO {
 
 	@Id
