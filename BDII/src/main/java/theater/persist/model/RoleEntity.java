@@ -4,19 +4,15 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "roles", schema = "theater")
+@Table(name = "role", schema = "theater")
 public class RoleEntity {
     private Integer roleId;
     private String role;
     private Collection<UserEntity> users;
 
     @Id
-    @Column(name = "role_id", columnDefinition = "serial")
-    @SequenceGenerator(name = "roles_role_id_seq",
-            sequenceName = "roles_role_id_seq",
-            allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.IDENTITY,
-            generator = "roles_role_id_seq")
+    @Column(name = "role_id")
+    @GeneratedValue
     public Integer getRoleId() {
         return roleId;
     }
@@ -35,7 +31,7 @@ public class RoleEntity {
         this.role = role;
     }
 
-    @ManyToMany(mappedBy = "roles", targetEntity = UserEntity.class)
+    @ManyToMany(mappedBy = "roles")
     public Collection<UserEntity> getUsers() {
         return users;
     }
@@ -64,4 +60,5 @@ public class RoleEntity {
         result = 31 * result + (role != null ? role.hashCode() : 0);
         return result;
     }
+
 }

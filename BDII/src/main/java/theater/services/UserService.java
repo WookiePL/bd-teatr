@@ -10,6 +10,7 @@ import theater.persist.daos.UserDAO;
 import theater.persist.dtos.UserDTO;
 import theater.persist.model.RoleEntity;
 import theater.persist.model.UserEntity;
+
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;

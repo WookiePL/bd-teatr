@@ -23,6 +23,7 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
+
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
