@@ -6,15 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import bd2.adminPanel.dao.DBUtils;
-import bd2.adminPanel.dao.users.RoleDAO;
+import bd2.adminPanel.dao.dictionaries.DayOfWeekDAO;
 
 @Repository
-public class RolesRepository {
-
-    @Autowired
+public class DaysOfWeekRepository {
+	
+	@Autowired
     private DBUtils dbUtils;
 
-    public List<RoleDAO> getRoles() {
-        return dbUtils.getAll(RoleDAO.class);
+    public List<DayOfWeekDAO> getDaysOfWeek() {
+        return dbUtils.getAll(DayOfWeekDAO.class);
     }
+    
 }
