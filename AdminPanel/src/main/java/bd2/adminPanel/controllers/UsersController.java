@@ -15,6 +15,7 @@ import bd2.adminPanel.dao.users.UserDAO;
 import bd2.adminPanel.security.Security;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -35,212 +36,213 @@ import javafx.scene.layout.VBox;
 
 public class UsersController implements Initializable {
 
-	private AnnotationConfigApplicationContext context;
-	private DBUtils dbUtils;
-	private UsersRepository usersRepository;
-	private RolesRepository rolesRepository;
-	private List<CheckBox> listCheckBox;
-	private Security security;
-	
-	@FXML
-	private StackPane usersStackPane;
+    private AnnotationConfigApplicationContext context;
+    private DBUtils dbUtils;
+    private UsersRepository usersRepository;
+    private RolesRepository rolesRepository;
+    private List<CheckBox> listCheckBox;
+    private Security security;
 
-	@FXML
-	private ListView<UserDAO> listViewUsers;
+    @FXML
+    private StackPane usersStackPane;
 
-	@FXML
-	private TextField textFieldFirstName;
+    @FXML
+    private ListView<UserDAO> listViewUsers;
 
-	@FXML
-	private TextField textFieldLastName;
+    @FXML
+    private TextField textFieldFirstName;
 
-	@FXML
-	private TextField textFieldEmail;
+    @FXML
+    private TextField textFieldLastName;
 
-	@FXML
-	private Button buttonEditUser;
+    @FXML
+    private TextField textFieldEmail;
 
-	@FXML
-	private Button buttonDeleteUser;
+    @FXML
+    private Button buttonEditUser;
 
-	@FXML
-	private Label titleListCheckBox;
+    @FXML
+    private Button buttonDeleteUser;
 
-	@FXML
-	private VBox boxListCheckBox;
+    @FXML
+    private Label titleListCheckBox;
 
-	public ListView<UserDAO> getListViewUsers() {
-		return listViewUsers;
-	}
+    @FXML
+    private VBox boxListCheckBox;
 
-	@FXML
-	public void backMenu() {
-		if (context != null) {
-			context.close();
-		}
+    public ListView<UserDAO> getListViewUsers() {
+        return listViewUsers;
+    }
 
-		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainMenuScreen.fxml"));
-		StackPane pane = null;
+    @FXML
+    public void backMenu() {
+        if (context != null) {
+            context.close();
+        }
 
-		try {
-			pane = loader.load();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainMenuScreen.fxml"));
+        StackPane pane = null;
 
-		usersStackPane.getChildren().clear();
-		usersStackPane.getChildren().add(pane);
-	}
+        try {
+            pane = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-	@FXML
-	public void userDetail() {
+        usersStackPane.getChildren().clear();
+        usersStackPane.getChildren().add(pane);
+    }
 
-		UserDAO user = listViewUsers.getSelectionModel().getSelectedItem();
+    @FXML
+    public void userDetail() {
 
-		if (user != null) {
-			textFieldFirstName.setText(user.getName());
-			textFieldLastName.setText(user.getSurname());
-			textFieldEmail.setText(user.getEmail());
+        UserDAO user = listViewUsers.getSelectionModel().getSelectedItem();
 
-			buttonEditUser.setDisable(false);
-			buttonDeleteUser.setDisable(false);
+        if (user != null) {
+            textFieldFirstName.setText(user.getName());
+            textFieldLastName.setText(user.getSurname());
+            textFieldEmail.setText(user.getEmail());
 
-			if (user.getRoles() != null) {
-				ObservableList<RoleDAO> roles = FXCollections.observableArrayList();
-				roles.addAll(user.getRoles());
-			}
+            buttonEditUser.setDisable(false);
+            buttonDeleteUser.setDisable(false);
 
-			List<RoleDAO> roles = user.getRoles();
+            if (user.getRoles() != null) {
+                ObservableList<RoleDAO> roles = FXCollections.observableArrayList();
+                roles.addAll(user.getRoles());
+            }
 
-			if (listCheckBox != null) {
-				for (CheckBox checkBox : listCheckBox) {
-					checkBox.setSelected(false);
-					if (roles != null) {
-						for (RoleDAO role : roles) {
-							if (checkBox.getText().equals(role.getRole())) {
-								checkBox.setSelected(true);
-								break;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+            List<RoleDAO> roles = user.getRoles();
 
-	@FXML
-	public void addUser() {
-		// domyslne haslo to 3 pierwsze litery imienia + 3 pierwsze litery nazwiska, male litery
-		String password = textFieldFirstName.getText().toLowerCase().substring(0, 3) + textFieldLastName.getText().toLowerCase().substring(0, 3);
-		String hashPassword = security.encode(password);
-		
-		UserDAO user = new UserDAO(textFieldFirstName.getText(), textFieldLastName.getText(), textFieldEmail.getText(), hashPassword);
-		List<RoleDAO> roles = rolesRepository.getRoles();
+            if (listCheckBox != null) {
+                for (CheckBox checkBox : listCheckBox) {
+                    checkBox.setSelected(false);
+                    if (roles != null) {
+                        for (RoleDAO role : roles) {
+                            if (checkBox.getText().equals(role.getRole())) {
+                                checkBox.setSelected(true);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-		for (CheckBox checkBox : listCheckBox) {
-			for (RoleDAO role : roles) {
-				if (role.getRole().equals(checkBox.getText())) {
-					if (checkBox.isSelected()) {
-						user.getRoles().add(role);
-					}
-					break;
-				}
-			}
-		}
+    @FXML
+    public void addUser() {
+        // domyslne haslo to 3 pierwsze litery imienia + 3 pierwsze litery nazwiska, male litery
+        String password = textFieldFirstName.getText().toLowerCase().substring(0, 3) + textFieldLastName.getText().toLowerCase().substring(0, 3);
+        String hashPassword = security.encode(password);
 
-		dbUtils.persist(user);
+        UserDAO user = new UserDAO(textFieldFirstName.getText(), textFieldLastName.getText(), textFieldEmail.getText(), password);
+        List<RoleDAO> roles = rolesRepository.getRoles();
 
-		initialize(null, null);
-	}
+        for (CheckBox checkBox : listCheckBox) {
+            for (RoleDAO role : roles) {
+                if (role.getRole().equals(checkBox.getText())) {
+                    if (checkBox.isSelected()) {
+                        user.getRoles().add(role);
+                    }
+                    break;
+                }
+            }
+        }
 
-	@FXML
-	public void deleteUser() {
-		UserDAO user = listViewUsers.getSelectionModel().getSelectedItem();
+        dbUtils.persist(user);
 
-		if (user != null) {
-			Alert alert = new Alert(AlertType.CONFIRMATION);
-			alert.getButtonTypes().set(0, new ButtonType("Tak", ButtonBar.ButtonData.YES));
-			alert.getButtonTypes().set(1, new ButtonType("Nie", ButtonBar.ButtonData.NO));
-			alert.setTitle("Usun¹æ?");
-			alert.setHeaderText("Czy na pewno chcesz usun¹æ poni¿szego " + "u¿ytkownika?");
-			alert.setContentText("E-mail: " + user.getEmail() + "\n" + "Imiê i nazwisko: " + user.getName() + " "
-					+ user.getSurname());
-			DialogPane dialogPane = alert.getDialogPane();
-			dialogPane.getStylesheets().add(getClass().getResource("/fxml/GreenButton.css").toExternalForm());
+        initialize(null, null);
+    }
 
-			alert.showAndWait().ifPresent(rs -> {
-				if (rs.getButtonData() == ButtonBar.ButtonData.YES) {
-					dbUtils.remove(user);
-					initialize(null, null);
-				}
-			});
-		}
-	}
+    @FXML
+    public void deleteUser() {
+        UserDAO user = listViewUsers.getSelectionModel().getSelectedItem();
 
-	@FXML
-	public void editUser() {
-		UserDAO user = listViewUsers.getSelectionModel().getSelectedItem();
-		if (user != null) {
-			user.setName(textFieldFirstName.getText());
-			user.setSurname(textFieldLastName.getText());
-			user.setEmail(textFieldEmail.getText());
+        if (user != null) {
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.getButtonTypes().set(0, new ButtonType("Tak", ButtonBar.ButtonData.YES));
+            alert.getButtonTypes().set(1, new ButtonType("Nie", ButtonBar.ButtonData.NO));
+            alert.setTitle("Usun¹æ?");
+            alert.setHeaderText("Czy na pewno chcesz usun¹æ poni¿szego " + "u¿ytkownika?");
+            alert.setContentText("E-mail: " + user.getEmail() + "\n" + "Imiê i nazwisko: " + user.getName() + " "
+                    + user.getSurname());
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add(getClass().getResource("/fxml/GreenButton.css").toExternalForm());
 
-			List<RoleDAO> roles = rolesRepository.getRoles();
+            alert.showAndWait().ifPresent(rs -> {
+                if (rs.getButtonData() == ButtonBar.ButtonData.YES) {
+                    dbUtils.remove(user);
+                    initialize(null, null);
+                }
+            });
+        }
+    }
 
-			for (CheckBox checkBox : listCheckBox) {
-				for (RoleDAO role : roles) {
-					if (role.getRole().equals(checkBox.getText())) {
-						if (checkBox.isSelected()) {
-							if (!user.getRoles().contains(role)) {
-								user.getRoles().add(role);
-							}
-						} else if (user.getRoles().contains(role)) {
-							user.getRoles().remove(role);
-						}
-						break;
-					}
-				}
-			}
+    @FXML
+    public void editUser() {
+        UserDAO user = listViewUsers.getSelectionModel().getSelectedItem();
+        if (user != null) {
+            user.setName(textFieldFirstName.getText());
+            user.setSurname(textFieldLastName.getText());
+            user.setEmail(textFieldEmail.getText());
 
-			dbUtils.persist(user);
+            List<RoleDAO> roles = rolesRepository.getRoles();
 
-			initialize(null, null);
-		}
-	}
+            for (CheckBox checkBox : listCheckBox) {
+                for (RoleDAO role : roles) {
+                    if (role.getRole().equals(checkBox.getText())) {
+                        if (checkBox.isSelected()) {
+                            if (!user.getRoles().contains(role)) {
+                                user.getRoles().add(role);
+                            }
+                        } else if (user.getRoles().contains(role)) {
+                            user.getRoles().remove(role);
+                        }
+                        break;
+                    }
+                }
+            }
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		ObservableList<UserDAO> users = FXCollections.observableArrayList();
-		List<RoleDAO> roles = null;
+            dbUtils.persist(user);
 
-		if (dbUtils != null) {
-			List<UserDAO> tmp_users = usersRepository.getUsers();
-			users.addAll(tmp_users);
-			roles = rolesRepository.getRoles();
-		}
+            initialize(null, null);
+        }
+    }
 
-		buttonEditUser.setDisable(true);
-		buttonDeleteUser.setDisable(true);
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<UserDAO> users = FXCollections.observableArrayList();
+        List<RoleDAO> roles = null;
 
-		listViewUsers.setItems(users);
-		listViewUsers.refresh();
+        if (dbUtils != null) {
+            List<UserDAO> tmp_users = usersRepository.getUsers();
+            users.addAll(tmp_users);
+            roles = rolesRepository.getRoles();
+        }
 
-		if (roles == null || roles.isEmpty()) {
-			titleListCheckBox.setVisible(false);
-		} else if (listCheckBox == null) {
-			listCheckBox = new ArrayList<>();
-			titleListCheckBox.setVisible(true);
-			
-			for (RoleDAO role : roles) {
-				listCheckBox.add(new CheckBox(role.getRole()));
-			}
-			listCheckBox.stream().forEach((checkBox) -> {
-				boxListCheckBox.getChildren().add(checkBox);
-			});
-		}
-	}
+        buttonEditUser.setDisable(true);
+        buttonDeleteUser.setDisable(true);
 
-	public void setContextAndRepositories(AnnotationConfigApplicationContext context/*, DBUtils dbUtils,
+        Collections.sort(users);
+        listViewUsers.setItems(users);
+        listViewUsers.refresh();
+
+        if (roles == null || roles.isEmpty()) {
+            titleListCheckBox.setVisible(false);
+        } else if (listCheckBox == null) {
+            listCheckBox = new ArrayList<>();
+            titleListCheckBox.setVisible(true);
+
+            for (RoleDAO role : roles) {
+                listCheckBox.add(new CheckBox(role.getRole()));
+            }
+            listCheckBox.stream().forEach((checkBox) -> {
+                boxListCheckBox.getChildren().add(checkBox);
+            });
+        }
+    }
+
+    public void setContextAndRepositories(AnnotationConfigApplicationContext context/*, DBUtils dbUtils,
 			UsersRepository usersRepository, RolesRepository rolesRepository*/) {
 //
 //		setContext(context);
@@ -252,14 +254,13 @@ public class UsersController implements Initializable {
 //		this.dbUtils = dbUtils;
 //		this.usersRepository = usersRepository;
 //		this.rolesRepository = rolesRepository;
-		
-		dbUtils = context.getBean("DBUtils", DBUtils.class);
-		usersRepository = context.getBean("usersRepository", UsersRepository.class);
-		rolesRepository = context.getBean("rolesRepository", RolesRepository.class);
-		security = context.getBean("security", Security.class);
-		
-		initialize(null, null);
-	}
+        dbUtils = context.getBean("DBUtils", DBUtils.class);
+        usersRepository = context.getBean("usersRepository", UsersRepository.class);
+        rolesRepository = context.getBean("rolesRepository", RolesRepository.class);
+        security = context.getBean("security", Security.class);
+
+        initialize(null, null);
+    }
 
 //	private void setContext(AnnotationConfigApplicationContext context) {
 //		this.context = context;

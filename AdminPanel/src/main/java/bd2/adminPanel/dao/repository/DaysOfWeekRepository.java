@@ -10,12 +10,12 @@ import bd2.adminPanel.dao.dictionaries.DayOfWeekDAO;
 
 @Repository
 public class DaysOfWeekRepository {
-	
-	@Autowired
+
+    @Autowired
     private DBUtils dbUtils;
 
     public List<DayOfWeekDAO> getDaysOfWeek() {
         return dbUtils.getAll(DayOfWeekDAO.class);
     }
-    
+
 }

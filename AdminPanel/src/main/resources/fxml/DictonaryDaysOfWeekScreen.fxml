@@ -38,13 +38,23 @@
                <center>
                   <VBox alignment="CENTER" maxWidth="-Infinity" prefWidth="225.0" spacing="20.0">
                      <children>
-                        <ListView fx:id="listViewDaysOfWeek" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                        <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefWidth="225.0" spacing="1.0">
+                        <ListView fx:id="listViewDaysOfWeek" onKeyReleased="#detailDayOfWeek" onMouseClicked="#detailDayOfWeek" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <HBox spacing="5.0">
                            <children>
-                              <Label text="Nazwa:" />
-                              <TextField fx:id="textFieldDayOfWeekName" alignment="CENTER" />
+                              <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="43.0" prefWidth="106.0" spacing="1.0">
+                                 <children>
+                                    <Label text="ID:" />
+                                    <TextField fx:id="textFieldDayOfWeekID" alignment="CENTER" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefWidth="225.0" spacing="1.0">
+                                 <children>
+                                    <Label text="Nazwa:" />
+                                    <TextField fx:id="textFieldDayOfWeekName" alignment="CENTER" />
+                                 </children>
+                              </VBox>
                            </children>
-                        </VBox>
+                        </HBox>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" spacing="10.0">
                            <children>
                               <Button fx:id="buttonAddDayOfWeek" mnemonicParsing="false" onAction="#addDayOfWeek" stylesheets="@GreenButton.css" text="Dodaj" />

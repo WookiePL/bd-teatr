@@ -15,6 +15,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import bd2.adminPanel.dao.DBUtils;
 import bd2.adminPanel.dao.dictionaries.EventTypeDAO;
 import bd2.adminPanel.dao.repository.EventsTypesRepository;
+import java.util.Collections;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -28,13 +29,14 @@ import javafx.scene.control.DialogPane;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
+import org.hibernate.mapping.Collection;
 
 public class DictonaryEventTypesController {
 
-	private AnnotationConfigApplicationContext context;
-	private DBUtils dbUtils;
-	private EventsTypesRepository eventsTypesRepository;
-	
+    private AnnotationConfigApplicationContext context;
+    private DBUtils dbUtils;
+    private EventsTypesRepository eventsTypesRepository;
+
     @FXML
     private StackPane dictionariesStackPane;
 
@@ -43,7 +45,7 @@ public class DictonaryEventTypesController {
 
     @FXML
     private TextField textFieldEventTypeName;
-    
+
     @FXML
     private Button buttonAddEventType;
 
@@ -58,44 +60,44 @@ public class DictonaryEventTypesController {
 
     @FXML
     public void addEventType() {
-    	EventTypeDAO type = new EventTypeDAO(textFieldEventTypeName.getText());
-    	dbUtils.persist(type);
-    	initialize(null, null);
+        EventTypeDAO type = new EventTypeDAO(textFieldEventTypeName.getText());
+        dbUtils.persist(type);
+        initialize(null, null);
     }
-    
+
     @FXML
     public void editEventType() {
-    	EventTypeDAO type = listViewEventTypes.getSelectionModel().getSelectedItem();
-		if (type != null) {
-			type.setName(textFieldEventTypeName.getText());
-			dbUtils.persist(type);
-			initialize(null, null);
-		}
+        EventTypeDAO type = listViewEventTypes.getSelectionModel().getSelectedItem();
+        if (type != null) {
+            type.setName(textFieldEventTypeName.getText());
+            dbUtils.persist(type);
+            initialize(null, null);
+        }
     }
-    
+
     @FXML
     public void deleteEventType() {
-    	EventTypeDAO type = listViewEventTypes.getSelectionModel().getSelectedItem();
+        EventTypeDAO type = listViewEventTypes.getSelectionModel().getSelectedItem();
 
-		if (type != null) {
-			Alert alert = new Alert(AlertType.CONFIRMATION);
-			alert.getButtonTypes().set(0, new ButtonType("Tak", ButtonBar.ButtonData.YES));
-			alert.getButtonTypes().set(1, new ButtonType("Nie", ButtonBar.ButtonData.NO));
-			alert.setTitle("Usun号?");
-			alert.setHeaderText("Czy na pewno chcesz usun号 typ wydarzenia?");
-			alert.setContentText("Nazwa: " + type.getName());
-			DialogPane dialogPane = alert.getDialogPane();
-			dialogPane.getStylesheets().add(getClass().getResource("/fxml/GreenButton.css").toExternalForm());
+        if (type != null) {
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.getButtonTypes().set(0, new ButtonType("Tak", ButtonBar.ButtonData.YES));
+            alert.getButtonTypes().set(1, new ButtonType("Nie", ButtonBar.ButtonData.NO));
+            alert.setTitle("Usun号?");
+            alert.setHeaderText("Czy na pewno chcesz usun号 typ wydarzenia?");
+            alert.setContentText("Nazwa: " + type.getName());
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add(getClass().getResource("/fxml/GreenButton.css").toExternalForm());
 
-			alert.showAndWait().ifPresent(rs -> {
-				if (rs.getButtonData() == ButtonBar.ButtonData.YES) {
-					dbUtils.remove(type);
-					initialize(null, null);
-				}
-			});
-		}
+            alert.showAndWait().ifPresent(rs -> {
+                if (rs.getButtonData() == ButtonBar.ButtonData.YES) {
+                    dbUtils.remove(type);
+                    initialize(null, null);
+                }
+            });
+        }
     }
-    
+
     @FXML
     public void back() {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource(
@@ -111,24 +113,24 @@ public class DictonaryEventTypesController {
         dictionariesStackPane.getChildren().clear();
         dictionariesStackPane.getChildren().add(pane);
     }
-    
+
     public void setContext(AnnotationConfigApplicationContext context) {
-		this.context = context;
-		dbUtils = this.context.getBean("DBUtils", DBUtils.class);
-		eventsTypesRepository = this.context.getBean("eventsTypesRepository", EventsTypesRepository.class);
-		initialize(null, null);
-	}
+        this.context = context;
+        dbUtils = this.context.getBean("DBUtils", DBUtils.class);
+        eventsTypesRepository = this.context.getBean("eventsTypesRepository", EventsTypesRepository.class);
+        initialize(null, null);
+    }
 
-	public void initialize(URL location, ResourceBundle resources) {
-		ObservableList<EventTypeDAO> types = FXCollections.observableArrayList();
+    public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<EventTypeDAO> types = FXCollections.observableArrayList();
 
-		if (dbUtils != null) {
-			List<EventTypeDAO> tmp_groups = eventsTypesRepository.getEventsTypes();
-			types.addAll(tmp_groups);
-		}
+        if (dbUtils != null) {
+            List<EventTypeDAO> tmp_groups = eventsTypesRepository.getEventsTypes();
+            Collections.sort(tmp_groups);
+            types.addAll(tmp_groups);
+        }
 
-		listViewEventTypes.setItems(types);
-		listViewEventTypes.refresh();
-	}
-    
+        listViewEventTypes.setItems(types);
+        listViewEventTypes.refresh();
+    }
 }

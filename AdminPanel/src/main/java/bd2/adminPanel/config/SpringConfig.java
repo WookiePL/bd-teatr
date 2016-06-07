@@ -28,5 +28,4 @@ public class SpringConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(11);
     }
-    
 }

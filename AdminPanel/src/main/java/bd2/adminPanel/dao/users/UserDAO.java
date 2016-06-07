@@ -17,83 +17,90 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "user", schema = "theater")
-public class UserDAO {
-	@Id
-	@Column(name = "user_id", columnDefinition = "serial")
-	@SequenceGenerator(name = "user_user_id_seq", sequenceName = "user_user_id_seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_user_id_seq")
-	private int userId;
-	private String name;
-	private String surname;
-	private String email;
-	private String password;
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "users_roles", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "role_id") })
-	private List<RoleDAO> roles;
+public class UserDAO implements Comparable<UserDAO> {
 
-	public UserDAO() {
+    @Id
+    @Column(name = "user_id", columnDefinition = "serial")
+    @SequenceGenerator(name = "user_user_id_seq", sequenceName = "user_user_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_user_id_seq")
+    private int userId;
+    private String name;
+    private String surname;
+    private String email;
+    private String password;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "users_roles", joinColumns = {
+        @JoinColumn(name = "user_id")}, inverseJoinColumns = {
+        @JoinColumn(name = "role_id")})
+    private List<RoleDAO> roles;
 
-	}
+    public UserDAO() {
 
-	public UserDAO(String name, String surname, String email, String password) {
-		this.name = name;
-		this.surname = surname;
-		this.email = email;
-		this.password = password;
-		roles = new ArrayList<>();
-	}
+    }
 
-	public int getUserId() {
-		return userId;
-	}
+    public UserDAO(String name, String surname, String email, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
+        roles = new ArrayList<>();
+    }
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+    public int getUserId() {
+        return userId;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getSurname() {
-		return surname;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
+    public String getSurname() {
+        return surname;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public List<RoleDAO> getRoles() {
-		return roles;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setRoles(List<RoleDAO> roles) {
-		this.roles = roles;
-	}
+    public List<RoleDAO> getRoles() {
+        return roles;
+    }
 
-	@Override
-	public String toString() {
-		return "ID: " + userId + ", " + name + " " + surname;
-	}
+    public void setRoles(List<RoleDAO> roles) {
+        this.roles = roles;
+    }
+
+    @Override
+    public String toString() {
+        return surname + " " + name + " (" + email + ")";
+    }
+
+    @Override
+    public int compareTo(UserDAO t) {
+        return surname.compareTo(t.getSurname()) != 0 ? surname.compareTo(t.getSurname()) : name.compareTo(t.getName());
+    }
 }

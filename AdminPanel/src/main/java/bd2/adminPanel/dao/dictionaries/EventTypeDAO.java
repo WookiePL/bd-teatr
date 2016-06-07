@@ -10,41 +10,45 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "eventtype", schema = "theater")
-public class EventTypeDAO {
+public class EventTypeDAO implements Comparable<EventTypeDAO>{
 
-	@Id
-	@Column(name = "event_type_id")
-	@SequenceGenerator(name = "eventtype_event_type_id_seq", sequenceName = "eventtype_event_type_id_seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "eventtype_event_type_id_seq")
-	private int eventTypeID;
-	private String name;
+    @Id
+    @Column(name = "event_type_id")
+    @SequenceGenerator(name = "eventtype_event_type_id_seq", sequenceName = "eventtype_event_type_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "eventtype_event_type_id_seq")
+    private int eventTypeID;
+    private String name;
 
-	public EventTypeDAO() {
-	}
+    public EventTypeDAO() {
+    }
 
-	public EventTypeDAO(String name) {
-		this.name = name;
-	}
+    public EventTypeDAO(String name) {
+        this.name = name;
+    }
 
-	public int getEventTypeID() {
-		return eventTypeID;
-	}
+    public int getEventTypeID() {
+        return eventTypeID;
+    }
 
-	public void setEventTypeID(int eventTypeID) {
-		this.eventTypeID = eventTypeID;
-	}
+    public void setEventTypeID(int eventTypeID) {
+        this.eventTypeID = eventTypeID;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	@Override
-	public String toString() {
-		return name;
-	}
-	
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    @Override
+    public int compareTo(EventTypeDAO t) {
+        return name.compareTo(t.getName());
+    }
 }

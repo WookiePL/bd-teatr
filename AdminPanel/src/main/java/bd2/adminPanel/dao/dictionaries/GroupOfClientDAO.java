@@ -10,34 +10,38 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "groupofclients", schema = "theater")
-public class GroupOfClientDAO {
+public class GroupOfClientDAO implements Comparable<GroupOfClientDAO>{
 
-	@Id
-	@Column(name = "group_of_clients_id", columnDefinition = "serial")
-	@SequenceGenerator(name = "groupofclients_group_of_clients_id_seq", sequenceName = "groupofclients_group_of_clients_id_seq", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "groupofclients_group_of_clients_id_seq")
-	private int groupOfClientID;
-	private String name;
+    @Id
+    @Column(name = "group_of_clients_id", columnDefinition = "serial")
+    @SequenceGenerator(name = "groupofclients_group_of_clients_id_seq", sequenceName = "groupofclients_group_of_clients_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "groupofclients_group_of_clients_id_seq")
+    private int groupOfClientID;
+    private String name;
 
-	public GroupOfClientDAO() {
+    public GroupOfClientDAO() {
 
-	}
-	
-	public GroupOfClientDAO(String name) {
-		this.name = name;
-	}
+    }
 
-	public String getName() {
-		return name;
-	}
+    public GroupOfClientDAO(String name) {
+        this.name = name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	@Override
-	public String toString() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    @Override
+    public int compareTo(GroupOfClientDAO t) {
+        return name.compareTo(t.getName());
+    }
 }
