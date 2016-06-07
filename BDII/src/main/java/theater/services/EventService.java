@@ -39,6 +39,15 @@ public class EventService implements IEventService {
     }
 
     @Override
+    public List<ReservationDTO> getAllEventReservationByRealization(int id) {
+        List<ReservationDTO> reservationDTOs = new ArrayList<>();
+        for(ReservationEntity list: reservationDAO.getAllReservationsByRealization(id)){
+            reservationDTOs.add(convertToDto(list));
+        }
+        return reservationDTOs;
+    }
+
+    @Override
     public List<ReservationDTO> getAllEventReservation() {
         List<ReservationDTO> reservationDTOs = new ArrayList<>();
         for(ReservationEntity list: reservationDAO.getAll()){

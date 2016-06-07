@@ -50,14 +50,13 @@
             <td th:text="${event.room.number}"></td>
             <td th:text="${event.room.building.address}"></td>
             <td>
-            <span th:each="reservation : ${event.reservations}">
-            <a th:href="@{'/eventReservations'(reservationId=${reservation.reservationId})}">
+            <!--<span th:each="reservation : ${event.reservations}">-->
+            <a th:href="@{'/eventReservations'(realizationId=${event.eventRealizationId})}">
               <span class="glyphicon glyphicon-calendar"></span>
             </a>
-            </span>
 
                 <!--Nie umiem znalezc siedzenia wiec jest byle co:-->
-             <a th:href="@{'/selectSeats'}"><span class="glyphicon glyphicon-pawn"></span> </a>
+             <a th:href="@{'/selectSeats'(realizationId=${event.eventRealizationId})}"><span class="glyphicon glyphicon-pawn"></span> </a>
             </td>
 
         </tr>

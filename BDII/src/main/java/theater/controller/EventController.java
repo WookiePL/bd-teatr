@@ -13,6 +13,8 @@ import theater.persist.dtos.EventRealizationDTO;
 import theater.persist.dtos.ReservationDTO;
 import theater.services.IEventService;
 
+import java.util.List;
+
 @Controller
 public class EventController {
 
@@ -28,15 +30,9 @@ public class EventController {
 
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/eventReservations"}, method = RequestMethod.GET)
-    public String eventReservations(Model model, @RequestParam(value = "reservationId", required = false) Integer reservationID) {
-        if (reservationID == null) {
-            model.addAttribute("eventReservationList", eventService.getAllEventReservation());
-        } else {
-            ReservationDTO reservation = eventService.getReservationById(reservationID);
-            if (reservation != null) {
-                model.addAttribute("eventReservationList", eventService.getAllEventReservation(reservation.getReservationId()));
-            }
-        }
+    public String eventReservations(Model model, @RequestParam(value = "realizationId", required = true) Integer realizationID) {
+        model.addAttribute("eventReservationList", eventService.getAllEventReservationByRealization(realizationID));
+        model.addAttribute("eventDescription", eventService.getEventRealizationById(realizationID));
         return "eventReservations";
     }
 
