@@ -33,23 +33,23 @@
         <tbody>
           <tr>
             <td>Wydarzenie :</td>
-            <td id="eventName"></td>
+            <td id="eventName" th:text="${eventDescription.event.name}"></td>
           </tr>
           <tr>
             <td>Data :</td>
-            <td id="eventDate"></td>
+            <td id="eventDate" th:text="${eventDescription.date}"></td>
           </tr>
           <tr>
             <td>Godzina:</td>
-            <td id="eventHour"></td>
+            <td id="eventHour" th:text="${eventDescription.hour}"></td>
           </tr>
           <tr>
             <td>Sala:</td>
-            <td id="eventRoom"></td>
+            <td id="eventRoom" th:text="${eventDescription.room.number}"></td>
           </tr>
           <tr>
             <td>Budynek:</td>
-            <td id="eventBuilding"></td>
+            <td id="eventBuilding" th:text="${eventDescription.room.building.address}"></td>
           </tr>
         </tbody>
       </table>

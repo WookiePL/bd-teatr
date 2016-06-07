@@ -11,6 +11,8 @@ public interface IEventService {
 
     List<ReservationDTO> getAllEventReservation();
 
+    List<ReservationDTO> getAllEventReservationByRealization(int id);
+
     List<ReservationDTO> getAllEventReservation(Integer id);
 
     ReservationDTO getReservationById(Integer id);
