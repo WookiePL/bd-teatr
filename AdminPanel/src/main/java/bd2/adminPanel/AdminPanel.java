@@ -29,11 +29,8 @@ public class AdminPanel extends Application {
         primaryStage.setMinHeight(480);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Admin Panel");
-        primaryStage.setOnCloseRequest(new javafx.event.EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent event) {
-                event.consume();
-            }
+        primaryStage.setOnCloseRequest((WindowEvent event) -> {
+            event.consume();
         });
         primaryStage.show();
     }
