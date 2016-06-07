@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import bd2.adminPanel.config.SpringConfig;
+import bd2.adminPanel.security.Security;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -42,7 +46,9 @@ public class LoginController implements Initializable {
         String login = "admin";
         String password = "admin";
 
-        //loadMainScreen();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        Security security = context.getBean("security", Security.class);
+        
         if (!buttonExit.focusedProperty().get()) {
             if (login.equals(textFieldLogin.getText())) {
                 if (password.equals(textPasswordField.getText())) {
@@ -55,6 +61,15 @@ public class LoginController implements Initializable {
                 labelWrongPassword.setVisible(false);
                 labelWrongLogin.setVisible(true);
             }
+            
+//          Z HASHOWANIEM
+//        	if(security.authentication(textFieldLogin.getText(), textPasswordField.getText())) {
+//        		context.close();
+//        		loadMainScreen();
+//        	} else {
+//        		labelWrongPassword.setVisible(false);
+//        		labelWrongLogin.setVisible(true);
+//        	}        	
         } else {
             exit();
         }

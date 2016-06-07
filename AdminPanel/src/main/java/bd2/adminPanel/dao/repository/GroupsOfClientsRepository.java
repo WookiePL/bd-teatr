@@ -6,15 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import bd2.adminPanel.dao.DBUtils;
-import bd2.adminPanel.dao.users.RoleDAO;
+import bd2.adminPanel.dao.dictionaries.GroupOfClientDAO;
 
 @Repository
-public class RolesRepository {
+public class GroupsOfClientsRepository {
 
-    @Autowired
+	@Autowired
     private DBUtils dbUtils;
 
-    public List<RoleDAO> getRoles() {
-        return dbUtils.getAll(RoleDAO.class);
+    public List<GroupOfClientDAO> getGroupsOfClients() {
+        return dbUtils.getAll(GroupOfClientDAO.class);
     }
+	
 }
