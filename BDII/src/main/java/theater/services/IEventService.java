@@ -21,5 +21,7 @@ public interface IEventService {
 
     void updateReservation(ReservationDTO reservation);
 
+    void deleteReservation(Integer id);
+
 }
 

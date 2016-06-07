@@ -1,769 +1,806 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="PostgreSQL - theater_db@localhost" uuid="6ae8ed8b-9e98-4d45-aca1-82280eb4364e">
-    <database-info product="PostgreSQL" version="9.5.2" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+    <database-info product="PostgreSQL" version="9.5.3" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
       <identifier-quote-string>&quot;</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
     <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.5">
       <database id="1" name="theater_db"/>
       <schema id="2" parent="1" name="theater">
-        <object-id>18607</object-id>
-        <introspection-state-number>1074</introspection-state-number>
-        <introspection-timestamp>2016-06-05.11:08:22.671</introspection-timestamp>
+        <object-id>32801</object-id>
+        <introspection-state-number>1404</introspection-state-number>
+        <introspection-timestamp>2016-06-07.13:32:03.240</introspection-timestamp>
       </schema>
       <sequence id="3" parent="2" name="building_building_id_seq">
-        <object-id>18614</object-id>
-        <state-number>894</state-number>
+        <object-id>32808</object-id>
+        <state-number>1261</state-number>
       </sequence>
       <sequence id="4" parent="2" name="cycle_cycle_id_seq">
-        <object-id>18619</object-id>
-        <state-number>897</state-number>
+        <object-id>32813</object-id>
+        <state-number>1264</state-number>
       </sequence>
       <sequence id="5" parent="2" name="event_event_id_seq">
-        <object-id>18633</object-id>
-        <state-number>901</state-number>
+        <object-id>32827</object-id>
+        <state-number>1268</state-number>
       </sequence>
       <sequence id="6" parent="2" name="eventrealization_event_realization_id_seq">
-        <object-id>18638</object-id>
-        <state-number>904</state-number>
+        <object-id>32832</object-id>
+        <state-number>1271</state-number>
       </sequence>
       <sequence id="7" parent="2" name="eventtype_event_type_id_seq">
-        <object-id>18646</object-id>
-        <state-number>907</state-number>
+        <object-id>32840</object-id>
+        <state-number>1274</state-number>
       </sequence>
       <sequence id="8" parent="2" name="groupofclients_group_of_clients_id_seq">
-        <object-id>18654</object-id>
-        <state-number>910</state-number>
+        <object-id>32848</object-id>
+        <state-number>1277</state-number>
       </sequence>
       <sequence id="9" parent="2" name="period_period_id_seq">
-        <object-id>18662</object-id>
-        <state-number>913</state-number>
+        <object-id>32856</object-id>
+        <state-number>1280</state-number>
       </sequence>
       <sequence id="10" parent="2" name="place_place_id_seq">
-        <object-id>18667</object-id>
-        <state-number>916</state-number>
+        <object-id>32861</object-id>
+        <state-number>1283</state-number>
       </sequence>
       <sequence id="11" parent="2" name="price_price_id_seq">
-        <object-id>18675</object-id>
-        <state-number>919</state-number>
+        <object-id>32869</object-id>
+        <state-number>1286</state-number>
       </sequence>
       <sequence id="12" parent="2" name="pricelist_price_list_id_seq">
-        <object-id>18680</object-id>
-        <state-number>922</state-number>
+        <object-id>32874</object-id>
+        <state-number>1289</state-number>
       </sequence>
       <sequence id="13" parent="2" name="reservation_reservation_id_seq">
-        <object-id>18688</object-id>
-        <state-number>925</state-number>
+        <object-id>32882</object-id>
+        <state-number>1292</state-number>
       </sequence>
       <sequence id="14" parent="2" name="roles_role_id_seq">
-        <object-id>18696</object-id>
-        <state-number>928</state-number>
+        <object-id>32890</object-id>
+        <state-number>1295</state-number>
       </sequence>
       <sequence id="15" parent="2" name="room_room_id_seq">
-        <object-id>18701</object-id>
-        <state-number>931</state-number>
+        <object-id>32895</object-id>
+        <state-number>1298</state-number>
       </sequence>
       <sequence id="16" parent="2" name="sector_sector_id_seq">
-        <object-id>18706</object-id>
-        <state-number>934</state-number>
+        <object-id>32900</object-id>
+        <state-number>1301</state-number>
       </sequence>
       <sequence id="17" parent="2" name="ticket_ticket_id_seq">
-        <object-id>18711</object-id>
-        <state-number>937</state-number>
+        <object-id>32905</object-id>
+        <state-number>1304</state-number>
       </sequence>
       <sequence id="18" parent="2" name="user_role_users_user_id_seq">
-        <object-id>18953</object-id>
-        <state-number>1072</state-number>
+        <object-id>33072</object-id>
+        <state-number>1402</state-number>
       </sequence>
       <sequence id="19" parent="2" name="user_user_id_seq">
-        <object-id>18719</object-id>
-        <state-number>940</state-number>
+        <object-id>32913</object-id>
+        <state-number>1307</state-number>
       </sequence>
       <table id="20" parent="2" name="building">
-        <object-id>18608</object-id>
-        <state-number>1007</state-number>
+        <object-id>32802</object-id>
+        <state-number>1393</state-number>
       </table>
       <table id="21" parent="2" name="cycle">
-        <object-id>18616</object-id>
-        <state-number>994</state-number>
+        <object-id>32810</object-id>
+        <state-number>1380</state-number>
       </table>
       <table id="22" parent="2" name="dayofweek">
-        <object-id>18621</object-id>
-        <state-number>993</state-number>
+        <object-id>32815</object-id>
+        <state-number>1379</state-number>
       </table>
       <table id="23" parent="2" name="event">
-        <object-id>18627</object-id>
-        <state-number>1001</state-number>
+        <object-id>32821</object-id>
+        <state-number>1387</state-number>
       </table>
       <table id="24" parent="2" name="eventrealization">
-        <object-id>18635</object-id>
-        <state-number>1009</state-number>
+        <object-id>32829</object-id>
+        <state-number>1395</state-number>
       </table>
       <table id="25" parent="2" name="eventtype">
-        <object-id>18640</object-id>
-        <state-number>997</state-number>
+        <object-id>32834</object-id>
+        <state-number>1383</state-number>
       </table>
       <table id="26" parent="2" name="groupofclients">
-        <object-id>18648</object-id>
-        <state-number>1002</state-number>
+        <object-id>32842</object-id>
+        <state-number>1388</state-number>
       </table>
       <table id="27" parent="2" name="period">
-        <object-id>18656</object-id>
-        <state-number>1003</state-number>
+        <object-id>32850</object-id>
+        <state-number>1389</state-number>
       </table>
       <table id="28" parent="2" name="place">
-        <object-id>18664</object-id>
-        <state-number>1000</state-number>
+        <object-id>32858</object-id>
+        <state-number>1386</state-number>
       </table>
       <table id="29" parent="2" name="price">
-        <object-id>18669</object-id>
-        <state-number>1004</state-number>
+        <object-id>32863</object-id>
+        <state-number>1390</state-number>
       </table>
       <table id="30" parent="2" name="pricelist">
-        <object-id>18677</object-id>
-        <state-number>1004</state-number>
+        <object-id>32871</object-id>
+        <state-number>1390</state-number>
       </table>
       <table id="31" parent="2" name="reservation">
-        <object-id>18682</object-id>
-        <state-number>1006</state-number>
+        <object-id>32876</object-id>
+        <state-number>1392</state-number>
       </table>
       <table id="32" parent="2" name="role">
-        <object-id>18690</object-id>
-        <state-number>1073</state-number>
+        <object-id>32884</object-id>
+        <state-number>1403</state-number>
       </table>
       <table id="33" parent="2" name="room">
-        <object-id>18698</object-id>
-        <state-number>1008</state-number>
+        <object-id>32892</object-id>
+        <state-number>1394</state-number>
       </table>
       <table id="34" parent="2" name="sector">
-        <object-id>18703</object-id>
-        <state-number>1008</state-number>
+        <object-id>32897</object-id>
+        <state-number>1394</state-number>
       </table>
       <table id="35" parent="2" name="ticket">
-        <object-id>18708</object-id>
-        <state-number>1010</state-number>
+        <object-id>32902</object-id>
+        <state-number>1396</state-number>
       </table>
       <table id="36" parent="2" name="user">
-        <object-id>18713</object-id>
-        <state-number>1074</state-number>
+        <object-id>32907</object-id>
+        <state-number>1404</state-number>
       </table>
       <table id="37" parent="2" name="user_role">
-        <object-id>18955</object-id>
-        <state-number>1074</state-number>
+        <object-id>33074</object-id>
+        <state-number>1404</state-number>
       </table>
-      <column id="38" parent="20" name="building_id">
-        <state-number>943</state-number>
+      <table id="38" parent="2" name="users_roles">
+        <object-id>32915</object-id>
+        <state-number>1398</state-number>
+      </table>
+      <column id="39" parent="20" name="building_id">
+        <state-number>1310</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;building_building_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="39" parent="20" name="address">
-        <state-number>893</state-number>
+      <column id="40" parent="20" name="address">
+        <state-number>1260</state-number>
         <data-type>text</data-type>
       </column>
-      <index id="40" parent="20" name="PK_Building">
-        <object-id>18740</object-id>
+      <index id="41" parent="20" name="PK_Building">
+        <object-id>32934</object-id>
         <columns>building_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="41" parent="20" name="PK_Building">
+      <key id="42" parent="20" name="PK_Building">
         <columns>building_id</columns>
         <underlying-index>PK_Building</underlying-index>
         <primary>1</primary>
       </key>
-      <column id="42" parent="21" name="cycle_id">
-        <state-number>944</state-number>
+      <column id="43" parent="21" name="cycle_id">
+        <state-number>1311</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;cycle_cycle_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="43" parent="21" name="period_id">
-        <state-number>896</state-number>
+      <column id="44" parent="21" name="period_id">
+        <state-number>1263</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <column id="44" parent="21" name="day_of_week_id">
-        <state-number>896</state-number>
+      <column id="45" parent="21" name="day_of_week_id">
+        <state-number>1263</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <index id="45" parent="21" name="PK_Cycle">
-        <object-id>18742</object-id>
+      <index id="46" parent="21" name="PK_Cycle">
+        <object-id>32936</object-id>
         <columns>cycle_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="46" parent="21" name="PK_Cycle">
+      <key id="47" parent="21" name="PK_Cycle">
         <columns>cycle_id</columns>
         <underlying-index>PK_Cycle</underlying-index>
         <primary>1</primary>
       </key>
-      <foreign-key id="47" parent="21" name="FK_Cycle_Period">
+      <foreign-key id="48" parent="21" name="FK_Cycle_Period">
         <columns>period_id</columns>
         <ref-key>~.period.PK_Period</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="48" parent="21" name="FK_Cycle_DayOfWeek">
+      <foreign-key id="49" parent="21" name="FK_Cycle_DayOfWeek">
         <columns>day_of_week_id</columns>
         <ref-key>~.dayofweek.PK_DayOfWeek</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="49" parent="22" name="name">
-        <state-number>899</state-number>
+      <column id="50" parent="22" name="name">
+        <state-number>1266</state-number>
         <data-type>text</data-type>
       </column>
-      <column id="50" parent="22" name="day_of_week_id">
-        <state-number>899</state-number>
+      <column id="51" parent="22" name="day_of_week_id">
+        <state-number>1266</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <index id="51" parent="22" name="PK_DayOfWeek">
-        <object-id>18744</object-id>
+      <index id="52" parent="22" name="PK_DayOfWeek">
+        <object-id>32938</object-id>
         <columns>day_of_week_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="52" parent="22" name="PK_DayOfWeek">
+      <key id="53" parent="22" name="PK_DayOfWeek">
         <columns>day_of_week_id</columns>
         <underlying-index>PK_DayOfWeek</underlying-index>
         <primary>1</primary>
       </key>
-      <column id="53" parent="23" name="event_id">
-        <state-number>945</state-number>
+      <column id="54" parent="23" name="event_id">
+        <state-number>1312</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;event_event_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="54" parent="23" name="name">
-        <state-number>900</state-number>
+      <column id="55" parent="23" name="name">
+        <state-number>1267</state-number>
         <data-type>text</data-type>
       </column>
-      <column id="55" parent="23" name="description">
-        <state-number>900</state-number>
+      <column id="56" parent="23" name="description">
+        <state-number>1267</state-number>
         <data-type>text</data-type>
       </column>
-      <column id="56" parent="23" name="event_type_id">
-        <state-number>900</state-number>
+      <column id="57" parent="23" name="event_type_id">
+        <state-number>1267</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <index id="57" parent="23" name="PK_Event">
-        <object-id>18746</object-id>
+      <index id="58" parent="23" name="PK_Event">
+        <object-id>32940</object-id>
         <columns>event_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="58" parent="23" name="PK_Event">
+      <key id="59" parent="23" name="PK_Event">
         <columns>event_id</columns>
         <underlying-index>PK_Event</underlying-index>
         <primary>1</primary>
       </key>
-      <foreign-key id="59" parent="23" name="FK_Event_EventType">
+      <foreign-key id="60" parent="23" name="FK_Event_EventType">
         <columns>event_type_id</columns>
         <ref-key>~.eventtype.PK_EventType</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="60" parent="24" name="date">
-        <state-number>903</state-number>
+      <column id="61" parent="24" name="date">
+        <state-number>1270</state-number>
         <data-type>date</data-type>
       </column>
-      <column id="61" parent="24" name="event_realization_id">
-        <state-number>946</state-number>
+      <column id="62" parent="24" name="event_realization_id">
+        <state-number>1313</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;eventrealization_event_realization_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="62" parent="24" name="price">
-        <state-number>903</state-number>
+      <column id="63" parent="24" name="price">
+        <state-number>1270</state-number>
         <data-type>integer</data-type>
       </column>
-      <column id="63" parent="24" name="hour">
-        <state-number>903</state-number>
+      <column id="64" parent="24" name="hour">
+        <state-number>1270</state-number>
         <data-type>integer</data-type>
       </column>
-      <column id="64" parent="24" name="event_id">
-        <state-number>903</state-number>
+      <column id="65" parent="24" name="event_id">
+        <state-number>1270</state-number>
         <data-type>integer</data-type>
       </column>
-      <column id="65" parent="24" name="room_id">
-        <state-number>903</state-number>
+      <column id="66" parent="24" name="room_id">
+        <state-number>1270</state-number>
         <data-type>integer</data-type>
       </column>
-      <index id="66" parent="24" name="PK_EventRealization">
-        <object-id>18748</object-id>
+      <index id="67" parent="24" name="PK_EventRealization">
+        <object-id>32942</object-id>
         <columns>event_realization_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="67" parent="24" name="PK_EventRealization">
+      <key id="68" parent="24" name="PK_EventRealization">
         <columns>event_realization_id</columns>
         <underlying-index>PK_EventRealization</underlying-index>
         <primary>1</primary>
       </key>
-      <foreign-key id="68" parent="24" name="FK_EventRealization_Event">
+      <foreign-key id="69" parent="24" name="FK_EventRealization_Event">
         <columns>event_id</columns>
         <ref-key>~.event.PK_Event</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="69" parent="24" name="FK_EventRealization_Room">
+      <foreign-key id="70" parent="24" name="FK_EventRealization_Room">
         <columns>room_id</columns>
         <ref-key>~.room.PK_Room</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="70" parent="25" name="event_type_id">
-        <state-number>947</state-number>
+      <column id="71" parent="25" name="event_type_id">
+        <state-number>1314</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;eventtype_event_type_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="71" parent="25" name="name">
-        <state-number>906</state-number>
+      <column id="72" parent="25" name="name">
+        <state-number>1273</state-number>
         <data-type>text</data-type>
       </column>
-      <index id="72" parent="25" name="PK_EventType">
-        <object-id>18750</object-id>
+      <index id="73" parent="25" name="PK_EventType">
+        <object-id>32944</object-id>
         <columns>event_type_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="73" parent="25" name="PK_EventType">
+      <key id="74" parent="25" name="PK_EventType">
         <columns>event_type_id</columns>
         <underlying-index>PK_EventType</underlying-index>
         <primary>1</primary>
       </key>
-      <column id="74" parent="26" name="group_of_clients_id">
-        <state-number>948</state-number>
+      <column id="75" parent="26" name="group_of_clients_id">
+        <state-number>1315</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;groupofclients_group_of_clients_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="75" parent="26" name="name">
-        <state-number>909</state-number>
+      <column id="76" parent="26" name="name">
+        <state-number>1276</state-number>
         <data-type>text</data-type>
       </column>
-      <index id="76" parent="26" name="PK_GroupOfClients">
-        <object-id>18752</object-id>
+      <index id="77" parent="26" name="PK_GroupOfClients">
+        <object-id>32946</object-id>
         <columns>group_of_clients_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="77" parent="26" name="PK_GroupOfClients">
+      <key id="78" parent="26" name="PK_GroupOfClients">
         <columns>group_of_clients_id</columns>
         <underlying-index>PK_GroupOfClients</underlying-index>
         <primary>1</primary>
       </key>
-      <column id="78" parent="27" name="period_id">
-        <state-number>949</state-number>
+      <column id="79" parent="27" name="period_id">
+        <state-number>1316</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;period_period_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="79" parent="27" name="name">
-        <state-number>912</state-number>
+      <column id="80" parent="27" name="name">
+        <state-number>1279</state-number>
         <data-type>text</data-type>
       </column>
-      <index id="80" parent="27" name="PK_Period">
-        <object-id>18754</object-id>
+      <index id="81" parent="27" name="PK_Period">
+        <object-id>32948</object-id>
         <columns>period_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="81" parent="27" name="PK_Period">
+      <key id="82" parent="27" name="PK_Period">
         <columns>period_id</columns>
         <underlying-index>PK_Period</underlying-index>
         <primary>1</primary>
       </key>
-      <column id="82" parent="28" name="place_id">
-        <state-number>950</state-number>
+      <column id="83" parent="28" name="place_id">
+        <state-number>1317</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;place_place_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="83" parent="28" name="number">
-        <state-number>915</state-number>
+      <column id="84" parent="28" name="number">
+        <state-number>1282</state-number>
         <data-type>integer</data-type>
       </column>
-      <column id="84" parent="28" name="sector_id">
-        <state-number>915</state-number>
+      <column id="85" parent="28" name="sector_id">
+        <state-number>1282</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <column id="85" parent="28" name="ticket_id">
-        <state-number>915</state-number>
+      <column id="86" parent="28" name="ticket_id">
+        <state-number>1282</state-number>
         <data-type>integer</data-type>
       </column>
-      <column id="86" parent="28" name="reservation_id">
-        <state-number>915</state-number>
+      <column id="87" parent="28" name="reservation_id">
+        <state-number>1282</state-number>
         <data-type>integer</data-type>
       </column>
-      <index id="87" parent="28" name="PK_Place">
-        <object-id>18756</object-id>
+      <index id="88" parent="28" name="PK_Place">
+        <object-id>32950</object-id>
         <columns>place_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="88" parent="28" name="PK_Place">
+      <key id="89" parent="28" name="PK_Place">
         <columns>place_id</columns>
         <underlying-index>PK_Place</underlying-index>
         <primary>1</primary>
       </key>
-      <foreign-key id="89" parent="28" name="FK_Place_Sector">
+      <foreign-key id="90" parent="28" name="FK_Place_Sector">
         <columns>sector_id</columns>
         <ref-key>~.sector.PK_Sector</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="90" parent="28" name="FK_Place_Ticket">
+      <foreign-key id="91" parent="28" name="FK_Place_Ticket">
         <columns>ticket_id</columns>
         <ref-key>~.ticket.PK_Ticket</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="91" parent="28" name="FK_Place_Reservation">
+      <foreign-key id="92" parent="28" name="FK_Place_Reservation">
         <columns>reservation_id</columns>
         <ref-key>~.reservation.PK_Reservation</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="92" parent="29" name="price">
-        <state-number>918</state-number>
+      <column id="93" parent="29" name="price">
+        <state-number>1285</state-number>
         <data-type>numeric</data-type>
       </column>
-      <column id="93" parent="29" name="price_id">
-        <state-number>951</state-number>
+      <column id="94" parent="29" name="price_id">
+        <state-number>1318</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;price_price_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="94" parent="29" name="group_of_clients_id">
-        <state-number>918</state-number>
+      <column id="95" parent="29" name="group_of_clients_id">
+        <state-number>1285</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <column id="95" parent="29" name="price_list_id">
-        <state-number>918</state-number>
+      <column id="96" parent="29" name="price_list_id">
+        <state-number>1285</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <column id="96" parent="29" name="period_id">
-        <state-number>918</state-number>
+      <column id="97" parent="29" name="period_id">
+        <state-number>1285</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <index id="97" parent="29" name="PK_Price">
-        <object-id>18758</object-id>
+      <index id="98" parent="29" name="PK_Price">
+        <object-id>32952</object-id>
         <columns>price_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="98" parent="29" name="PK_Price">
+      <key id="99" parent="29" name="PK_Price">
         <columns>price_id</columns>
         <underlying-index>PK_Price</underlying-index>
         <primary>1</primary>
       </key>
-      <foreign-key id="99" parent="29" name="FK_Price_GroupOfClients">
+      <foreign-key id="100" parent="29" name="FK_Price_GroupOfClients">
         <columns>group_of_clients_id</columns>
         <ref-key>~.groupofclients.PK_GroupOfClients</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="100" parent="29" name="FK_Price_PriceList">
+      <foreign-key id="101" parent="29" name="FK_Price_PriceList">
         <columns>price_list_id</columns>
         <ref-key>~.pricelist.PK_PriceList</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="101" parent="29" name="FK_Price_Period">
+      <foreign-key id="102" parent="29" name="FK_Price_Period">
         <columns>period_id</columns>
         <ref-key>~.period.PK_Period</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="102" parent="30" name="price_list_id">
-        <state-number>952</state-number>
+      <column id="103" parent="30" name="price_list_id">
+        <state-number>1319</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;pricelist_price_list_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="103" parent="30" name="from">
-        <state-number>921</state-number>
+      <column id="104" parent="30" name="from">
+        <state-number>1288</state-number>
         <data-type>date</data-type>
       </column>
-      <column id="104" parent="30" name="to">
-        <state-number>921</state-number>
+      <column id="105" parent="30" name="to">
+        <state-number>1288</state-number>
         <data-type>date</data-type>
       </column>
-      <column id="105" parent="30" name="event_id">
-        <state-number>921</state-number>
+      <column id="106" parent="30" name="event_id">
+        <state-number>1288</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <index id="106" parent="30" name="PK_PriceList">
-        <object-id>18760</object-id>
+      <index id="107" parent="30" name="PK_PriceList">
+        <object-id>32954</object-id>
         <columns>price_list_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="107" parent="30" name="PK_PriceList">
+      <key id="108" parent="30" name="PK_PriceList">
         <columns>price_list_id</columns>
         <underlying-index>PK_PriceList</underlying-index>
         <primary>1</primary>
       </key>
-      <foreign-key id="108" parent="30" name="FK_PriceList_Event">
+      <foreign-key id="109" parent="30" name="FK_PriceList_Event">
         <columns>event_id</columns>
         <ref-key>~.event.PK_Event</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="109" parent="31" name="reservation_id">
-        <state-number>953</state-number>
+      <column id="110" parent="31" name="reservation_id">
+        <state-number>1320</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;reservation_reservation_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="110" parent="31" name="name">
-        <state-number>924</state-number>
+      <column id="111" parent="31" name="name">
+        <state-number>1291</state-number>
         <data-type>text</data-type>
       </column>
-      <column id="111" parent="31" name="phone">
-        <state-number>924</state-number>
+      <column id="112" parent="31" name="phone">
+        <state-number>1291</state-number>
         <data-type>integer</data-type>
       </column>
-      <column id="112" parent="31" name="email">
-        <state-number>924</state-number>
+      <column id="113" parent="31" name="email">
+        <state-number>1291</state-number>
         <data-type>text</data-type>
       </column>
-      <column id="113" parent="31" name="date">
-        <state-number>924</state-number>
+      <column id="114" parent="31" name="date">
+        <state-number>1291</state-number>
         <data-type>date</data-type>
       </column>
-      <column id="114" parent="31" name="revoke_date">
-        <state-number>924</state-number>
+      <column id="115" parent="31" name="revoke_date">
+        <state-number>1291</state-number>
         <data-type>date</data-type>
       </column>
-      <column id="115" parent="31" name="event_realization_id">
-        <state-number>924</state-number>
+      <column id="116" parent="31" name="event_realization_id">
+        <state-number>1291</state-number>
         <data-type>integer</data-type>
       </column>
-      <column id="116" parent="31" name="user_id">
-        <state-number>924</state-number>
+      <column id="117" parent="31" name="user_id">
+        <state-number>1291</state-number>
         <data-type>integer</data-type>
       </column>
-      <index id="117" parent="31" name="PK_Reservation">
-        <object-id>18762</object-id>
+      <index id="118" parent="31" name="PK_Reservation">
+        <object-id>32956</object-id>
         <columns>reservation_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="118" parent="31" name="PK_Reservation">
+      <key id="119" parent="31" name="PK_Reservation">
         <columns>reservation_id</columns>
         <underlying-index>PK_Reservation</underlying-index>
         <primary>1</primary>
       </key>
-      <foreign-key id="119" parent="31" name="FK_Reservation_EventRealization">
+      <foreign-key id="120" parent="31" name="FK_Reservation_EventRealization">
         <columns>event_realization_id</columns>
         <ref-key>~.eventrealization.PK_EventRealization</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="120" parent="31" name="FK_Reservation_User">
+      <foreign-key id="121" parent="31" name="FK_Reservation_User">
         <columns>user_id</columns>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="121" parent="32" name="role_id">
-        <state-number>954</state-number>
+      <column id="122" parent="32" name="role_id">
+        <state-number>1321</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;roles_role_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="122" parent="32" name="role">
-        <state-number>927</state-number>
+      <column id="123" parent="32" name="role">
+        <state-number>1294</state-number>
         <data-type>text</data-type>
       </column>
-      <index id="123" parent="32" name="PK_Roles">
-        <object-id>18764</object-id>
+      <index id="124" parent="32" name="PK_Roles">
+        <object-id>32958</object-id>
         <columns>role_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="124" parent="32" name="PK_Roles">
+      <key id="125" parent="32" name="PK_Roles">
         <columns>role_id</columns>
         <underlying-index>PK_Roles</underlying-index>
         <primary>1</primary>
       </key>
-      <column id="125" parent="33" name="room_id">
-        <state-number>955</state-number>
+      <column id="126" parent="33" name="room_id">
+        <state-number>1322</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;room_room_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="126" parent="33" name="number">
-        <state-number>930</state-number>
+      <column id="127" parent="33" name="number">
+        <state-number>1297</state-number>
         <data-type>integer</data-type>
       </column>
-      <column id="127" parent="33" name="building_id">
-        <state-number>930</state-number>
+      <column id="128" parent="33" name="building_id">
+        <state-number>1297</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <index id="128" parent="33" name="PK_Room">
-        <object-id>18766</object-id>
+      <index id="129" parent="33" name="PK_Room">
+        <object-id>32960</object-id>
         <columns>room_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="129" parent="33" name="PK_Room">
+      <key id="130" parent="33" name="PK_Room">
         <columns>room_id</columns>
         <underlying-index>PK_Room</underlying-index>
         <primary>1</primary>
       </key>
-      <foreign-key id="130" parent="33" name="FK_Room_Building">
+      <foreign-key id="131" parent="33" name="FK_Room_Building">
         <columns>building_id</columns>
         <ref-key>~.building.PK_Building</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="131" parent="34" name="sector_id">
-        <state-number>956</state-number>
+      <column id="132" parent="34" name="sector_id">
+        <state-number>1323</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;sector_sector_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="132" parent="34" name="number">
-        <state-number>933</state-number>
+      <column id="133" parent="34" name="number">
+        <state-number>1300</state-number>
         <data-type>integer</data-type>
       </column>
-      <column id="133" parent="34" name="room_id">
-        <state-number>933</state-number>
+      <column id="134" parent="34" name="room_id">
+        <state-number>1300</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <index id="134" parent="34" name="PK_Sector">
-        <object-id>18768</object-id>
+      <index id="135" parent="34" name="PK_Sector">
+        <object-id>32962</object-id>
         <columns>sector_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="135" parent="34" name="PK_Sector">
+      <key id="136" parent="34" name="PK_Sector">
         <columns>sector_id</columns>
         <underlying-index>PK_Sector</underlying-index>
         <primary>1</primary>
       </key>
-      <foreign-key id="136" parent="34" name="FK_Sector_Room">
+      <foreign-key id="137" parent="34" name="FK_Sector_Room">
         <columns>room_id</columns>
         <ref-key>~.room.PK_Room</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="137" parent="35" name="ticket_id">
-        <state-number>957</state-number>
+      <column id="138" parent="35" name="ticket_id">
+        <state-number>1324</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;ticket_ticket_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="138" parent="35" name="number">
-        <state-number>936</state-number>
+      <column id="139" parent="35" name="number">
+        <state-number>1303</state-number>
         <data-type>integer</data-type>
       </column>
-      <column id="139" parent="35" name="event_realization_id">
-        <state-number>936</state-number>
+      <column id="140" parent="35" name="event_realization_id">
+        <state-number>1303</state-number>
         <data-type>integer</data-type>
       </column>
-      <column id="140" parent="35" name="user_id">
-        <state-number>936</state-number>
+      <column id="141" parent="35" name="user_id">
+        <state-number>1303</state-number>
         <data-type>integer</data-type>
       </column>
-      <index id="141" parent="35" name="PK_Ticket">
-        <object-id>18770</object-id>
+      <index id="142" parent="35" name="PK_Ticket">
+        <object-id>32964</object-id>
         <columns>ticket_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="142" parent="35" name="PK_Ticket">
+      <key id="143" parent="35" name="PK_Ticket">
         <columns>ticket_id</columns>
         <underlying-index>PK_Ticket</underlying-index>
         <primary>1</primary>
       </key>
-      <foreign-key id="143" parent="35" name="FK_Ticket_EventRealization">
+      <foreign-key id="144" parent="35" name="FK_Ticket_EventRealization">
         <columns>event_realization_id</columns>
         <ref-key>~.eventrealization.PK_EventRealization</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="144" parent="35" name="FK_Ticket_User">
+      <foreign-key id="145" parent="35" name="FK_Ticket_User">
         <columns>user_id</columns>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="145" parent="36" name="user_id">
-        <state-number>958</state-number>
+      <column id="146" parent="36" name="user_id">
+        <state-number>1325</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;user_user_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="146" parent="36" name="name">
-        <state-number>939</state-number>
+      <column id="147" parent="36" name="name">
+        <state-number>1306</state-number>
         <data-type>text</data-type>
       </column>
-      <column id="147" parent="36" name="surname">
-        <state-number>939</state-number>
+      <column id="148" parent="36" name="surname">
+        <state-number>1306</state-number>
         <data-type>text</data-type>
       </column>
-      <column id="148" parent="36" name="email">
-        <state-number>939</state-number>
+      <column id="149" parent="36" name="email">
+        <state-number>1306</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(40)</data-type>
       </column>
-      <column id="149" parent="36" name="password">
-        <state-number>939</state-number>
+      <column id="150" parent="36" name="password">
+        <state-number>1306</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(20)</data-type>
       </column>
-      <index id="150" parent="36" name="PK_User">
-        <object-id>18772</object-id>
+      <index id="151" parent="36" name="PK_User">
+        <object-id>32966</object-id>
         <columns>user_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <index id="151" parent="36" name="user_email_uindex">
-        <object-id>18774</object-id>
+      <index id="152" parent="36" name="user_email_uindex">
+        <object-id>32970</object-id>
         <columns>email</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="152" parent="36" name="PK_User">
+      <key id="153" parent="36" name="PK_User">
         <columns>user_id</columns>
         <underlying-index>PK_User</underlying-index>
         <primary>1</primary>
       </key>
-      <column id="153" parent="37" name="users_user_id">
-        <state-number>1072</state-number>
+      <column id="154" parent="37" name="users_user_id">
+        <state-number>1402</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;theater.user_role_users_user_id_seq&apos;::regclass)</default-expression>
       </column>
-      <column id="154" parent="37" name="roles_role_id">
-        <state-number>1072</state-number>
+      <column id="155" parent="37" name="roles_role_id">
+        <state-number>1402</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
-      <foreign-key id="155" parent="37" name="fk_qv5yqynjy4bcv2sdhdu41kiv4">
+      <foreign-key id="156" parent="37" name="fk_qv5yqynjy4bcv2sdhdu41kiv4">
         <columns>users_user_id</columns>
         <ref-key>~.user.PK_User</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="156" parent="37" name="fk_5kaxls1hfq7tgnqrcylsf4gqv">
+      <foreign-key id="157" parent="37" name="fk_5kaxls1hfq7tgnqrcylsf4gqv">
         <columns>roles_role_id</columns>
         <ref-key>~.role.PK_Roles</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="158" parent="38" name="role_id">
+        <state-number>1309</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="159" parent="38" name="user_id">
+        <state-number>1309</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <index id="160" parent="38" name="PK_users_roles">
+        <object-id>32968</object-id>
+        <columns>role_id
+user_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="161" parent="38" name="PK_users_roles">
+        <columns>role_id
+user_id</columns>
+        <underlying-index>PK_users_roles</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="162" parent="38" name="FK_roles">
+        <columns>role_id</columns>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="163" parent="38" name="FK_user">
+        <columns>user_id</columns>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>

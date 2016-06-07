@@ -58,9 +58,9 @@
 
       <div class="reservation-form center-align">
         <form action="#" th:action="@{'/editReservation'}" th:object="${reservation}" method="post">
-          <!--<div>-->
-            <!--<input type="hidden" class="form-control" th:field="*{reservationId}"/>-->
-          <!--</div>-->
+          <div>
+            <input type="hidden" class="form-control" th:field="*{eventRealizationId}"/>
+          </div>
           <div>
             <input type="hidden" class="form-control" th:field="*{date}"/>
           </div>

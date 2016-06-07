@@ -80,7 +80,7 @@
           </p>
           <td > <a th:href="@{'/tickets'}"><span class="glyphicon glyphicon-ok"></span></a>
           <!--Nie umiem znalezc siedzenia wiec jest byle co:-->
-          <a th:href="@{'/eventReservations'}"><span class="glyphicon glyphicon-remove"></span> </a>
+          <a th:href="@{'/deleteEventReservation'(realizationId=${eventReservation.eventRealizationId}, reservationId=${eventReservation.reservationId})}"><span class="glyphicon glyphicon-remove"></span> </a>
             <a th:href="@{'/editReservation'(reservationId=${eventReservation.reservationId})}"><span class="glyphicon glyphicon-edit"></span> </a></td>
         </tr>
 

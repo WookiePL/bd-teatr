@@ -36,11 +36,18 @@ public class EventController {
         return "eventReservations";
     }
 
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/deleteEventReservation"}, method = RequestMethod.GET)
+    public String deleteEventReservation(Model model,
+                                         @RequestParam(value = "realizationId", required = true) Integer realizationID,
+                                         @RequestParam(value = "reservationId", required = true) Integer reservationId) {
+        eventService.deleteReservation(reservationId);
+        return "redirect:/eventReservations?realizationId=" + realizationID;
+    }
 
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/editReservation"}, method = RequestMethod.GET)
-    public String editReservation(Model model, @RequestParam(value = "reservationId", required = false) Integer
-            reservationID) {
+    public String editReservation(Model model, @RequestParam(value = "reservationId", required = false) Integer reservationID) {
         ReservationDTO reservation = eventService.getReservationById(reservationID);
         if (reservation != null) {
             EventRealizationDTO event = eventService.getEventRealizationById(reservation.getReservationId());
@@ -61,7 +68,7 @@ public class EventController {
             return "redirect:/editReservation?reservationId=" + reservation.getReservationId();
         }
         eventService.updateReservation(reservation);
-        return "redirect:/eventReservations";
+        return "redirect:/eventReservations?realizationId=" + reservation.getEventRealizationId();
     }
 
 

@@ -80,6 +80,12 @@ public class EventService implements IEventService {
         reservationDAO.updateReservation(convertToEntity(reservation));
     }
 
+    @Override
+    public void deleteReservation(Integer id) {
+        reservationDAO.deleteReservation(id);
+    }
+
+
 
     private ReservationDTO convertToDto(ReservationEntity reservationEntity) {
         ReservationDTO postDto = modelMapper.map(reservationEntity, ReservationDTO.class);
