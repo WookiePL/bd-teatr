@@ -24,7 +24,9 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="noname-a.xml@0" value="6ae8ed8b-9e98-4d45-aca1-82280eb4364e" />
+        </datasource-mapping>
       </configuration>
     </facet>
   </component>

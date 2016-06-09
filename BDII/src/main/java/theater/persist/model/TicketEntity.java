@@ -1,6 +1,7 @@
 package theater.persist.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -13,7 +14,8 @@ public class TicketEntity {
     private Integer userId;
     private EventRealizationEntity eventRealization;
     private UserEntity user;
-    private List<PlaceEntity> places;
+    //private List<PlaceEntity> places;
+    private Collection<PlaceEntity> places;
 
 
     @Id
@@ -81,14 +83,23 @@ public class TicketEntity {
         this.user = user;
     }
 
-    @OneToMany(mappedBy = "ticket", targetEntity = PlaceEntity.class, fetch = FetchType.LAZY)
-    public List<PlaceEntity> getPlaces() {
-        return places;
+//    @OneToMany(mappedBy = "ticket", targetEntity = PlaceEntity.class, fetch = FetchType.LAZY)
+//    public List<PlaceEntity> getPlaces() {
+//        return places;
+//    }
+//
+//    public void setPlaces(List<PlaceEntity> places) {
+//        this.places = places;
+//    }
+    @ManyToMany(mappedBy = "tickets")
+    public Collection<PlaceEntity> getPlaces() {
+    return places;
+}
+
+    public void setPlaces(Collection<PlaceEntity> places){
+        this.places=places;
     }
 
-    public void setPlaces(List<PlaceEntity> places) {
-        this.places = places;
-    }
 
     @Override
     public boolean equals(Object o) {

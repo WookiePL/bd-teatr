@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import theater.persist.daos.*;
 import theater.persist.dtos.EventRealizationDTO;
 import theater.persist.dtos.ReservationDTO;
+import theater.persist.dtos.SectorDTO;
 import theater.persist.model.BuildingEntity;
 import theater.persist.model.EventRealizationEntity;
 import theater.persist.model.ReservationEntity;
@@ -54,6 +55,11 @@ public class EventService implements IEventService {
             reservationDTOs.add(convertToDto(list));
         }
         return reservationDTOs;
+    }
+
+    @Override
+    public List<SectorDTO> getAllSectorsByRealizationId(int id) {
+        return null;
     }
 
     @Override

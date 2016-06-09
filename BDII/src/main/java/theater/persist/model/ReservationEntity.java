@@ -2,6 +2,7 @@ package theater.persist.model;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -19,7 +20,7 @@ public class ReservationEntity {
     private Integer userId;
     private EventRealizationEntity eventRealization;
     private UserEntity user;
-    private List<PlaceEntity> places;
+    private Collection<PlaceEntity> places;
 
     @Id
     @Column(name = "reservation_id", columnDefinition = "serial")
@@ -138,12 +139,12 @@ public class ReservationEntity {
         this.user = user;
     }
 
-    @OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY)
-    public List<PlaceEntity> getPlaces() {
+    @ManyToMany(mappedBy = "reservations", fetch = FetchType.LAZY)
+    public Collection<PlaceEntity> getPlaces() {
         return places;
     }
 
-    public void setPlaces(List<PlaceEntity> places) {
+    public void setPlaces(Collection<PlaceEntity> places) {
         this.places = places;
     }
 

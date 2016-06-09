@@ -1,6 +1,7 @@
 package theater.persist.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "place", schema = "theater")
@@ -13,6 +14,8 @@ public class PlaceEntity {
     private SectorEntity sector;
     private TicketEntity ticket;
     private ReservationEntity reservation;
+    private Collection<TicketEntity> tickets;
+    private Collection<ReservationEntity> reservations;
 
     @Id
     @Column(name = "place_id", columnDefinition = "serial")
@@ -97,6 +100,26 @@ public class PlaceEntity {
 
     public void setReservation(ReservationEntity reservation) {
         this.reservation = reservation;
+    }
+
+    @ManyToMany
+    @JoinTable(name = "ticket_place",schema = "theater")
+    public Collection<TicketEntity> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(Collection<TicketEntity> tickets) {
+        this.tickets = tickets;
+    }
+
+    @ManyToMany
+    @JoinTable(name = "reservation_place",schema = "theater")
+    public Collection<ReservationEntity> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(Collection<ReservationEntity> reservations) {
+        this.reservations = reservations;
     }
 
     @Override

@@ -23,6 +23,8 @@ public class UserEntity {
     private Collection<RoleEntity> roles;
 
 
+
+
     @Id
     @Column(name = "user_id", columnDefinition = "serial")
     @GeneratedValue
