@@ -1,4 +1,4 @@
-package bd2.adminPanel.dao.dictionaries;
+package bd2.adminPanel.model.dictionaries;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "groupofclients", schema = "theater")
-public class GroupOfClientDAO implements Comparable<GroupOfClientDAO>{
+public class GroupOfClient implements Comparable<GroupOfClient>{
 
     @Id
     @Column(name = "group_of_clients_id", columnDefinition = "serial")
@@ -19,11 +19,11 @@ public class GroupOfClientDAO implements Comparable<GroupOfClientDAO>{
     private int groupOfClientID;
     private String name;
 
-    public GroupOfClientDAO() {
+    public GroupOfClient() {
 
     }
 
-    public GroupOfClientDAO(String name) {
+    public GroupOfClient(String name) {
         this.name = name;
     }
 
@@ -41,7 +41,7 @@ public class GroupOfClientDAO implements Comparable<GroupOfClientDAO>{
     }
 
     @Override
-    public int compareTo(GroupOfClientDAO t) {
+    public int compareTo(GroupOfClient t) {
         return name.compareTo(t.getName());
     }
 }

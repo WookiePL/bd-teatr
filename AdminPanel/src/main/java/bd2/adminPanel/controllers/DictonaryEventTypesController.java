@@ -7,15 +7,15 @@ package bd2.adminPanel.controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import bd2.adminPanel.dao.DBUtils;
-import bd2.adminPanel.dao.dictionaries.EventTypeDAO;
 import bd2.adminPanel.dao.repository.EventsTypesRepository;
-import java.util.Collections;
+import bd2.adminPanel.model.dictionaries.EventType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -29,7 +29,6 @@ import javafx.scene.control.DialogPane;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
-import org.hibernate.mapping.Collection;
 
 public class DictonaryEventTypesController {
 
@@ -41,7 +40,7 @@ public class DictonaryEventTypesController {
     private StackPane dictionariesStackPane;
 
     @FXML
-    private ListView<EventTypeDAO> listViewEventTypes;
+    private ListView<EventType> listViewEventTypes;
 
     @FXML
     private TextField textFieldEventTypeName;
@@ -60,14 +59,14 @@ public class DictonaryEventTypesController {
 
     @FXML
     public void addEventType() {
-        EventTypeDAO type = new EventTypeDAO(textFieldEventTypeName.getText());
+        EventType type = new EventType(textFieldEventTypeName.getText());
         dbUtils.persist(type);
         initialize(null, null);
     }
 
     @FXML
     public void editEventType() {
-        EventTypeDAO type = listViewEventTypes.getSelectionModel().getSelectedItem();
+        EventType type = listViewEventTypes.getSelectionModel().getSelectedItem();
         if (type != null) {
             type.setName(textFieldEventTypeName.getText());
             dbUtils.persist(type);
@@ -77,7 +76,7 @@ public class DictonaryEventTypesController {
 
     @FXML
     public void deleteEventType() {
-        EventTypeDAO type = listViewEventTypes.getSelectionModel().getSelectedItem();
+        EventType type = listViewEventTypes.getSelectionModel().getSelectedItem();
 
         if (type != null) {
             Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -122,10 +121,10 @@ public class DictonaryEventTypesController {
     }
 
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<EventTypeDAO> types = FXCollections.observableArrayList();
+        ObservableList<EventType> types = FXCollections.observableArrayList();
 
         if (dbUtils != null) {
-            List<EventTypeDAO> tmp_groups = eventsTypesRepository.getEventsTypes();
+            List<EventType> tmp_groups = eventsTypesRepository.getEventsTypes();
             Collections.sort(tmp_groups);
             types.addAll(tmp_groups);
         }

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import bd2.adminPanel.dao.DBUtils;
-import bd2.adminPanel.dao.users.UserDAO;
+import bd2.adminPanel.model.users.User;
 
 @Repository
 public class UsersRepository {
@@ -16,18 +16,18 @@ public class UsersRepository {
     @Autowired
     private DBUtils dbUtils;
 
-    public List<UserDAO> getUsers() {
-        return dbUtils.getAll(UserDAO.class);
+    public List<User> getUsers() {
+        return dbUtils.getAll(User.class);
     }
     
-    public UserDAO findUserByEmail(String email) {
-    	String sql = "SELECT u FROM UserDAO u WHERE u.email = ?1";
-    	TypedQuery<UserDAO> query = dbUtils.geEntityManager().createQuery(sql, UserDAO.class);
+    public User findUserByEmail(String email) {
+    	String sql = "SELECT u FROM User u WHERE u.email = ?1";
+    	TypedQuery<User> query = dbUtils.geEntityManager().createQuery(sql, User.class);
     	query.setParameter(1, email);
     	
-    	UserDAO user = null;
+    	User user = null;
     	
-    	for(UserDAO u : query.getResultList()) {
+    	for(User u : query.getResultList()) {
     		user = u;
     	}
     	

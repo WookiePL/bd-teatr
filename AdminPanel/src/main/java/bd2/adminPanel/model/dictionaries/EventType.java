@@ -1,4 +1,4 @@
-package bd2.adminPanel.dao.dictionaries;
+package bd2.adminPanel.model.dictionaries;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "eventtype", schema = "theater")
-public class EventTypeDAO implements Comparable<EventTypeDAO>{
+public class EventType implements Comparable<EventType>{
 
     @Id
     @Column(name = "event_type_id")
@@ -19,10 +19,10 @@ public class EventTypeDAO implements Comparable<EventTypeDAO>{
     private int eventTypeID;
     private String name;
 
-    public EventTypeDAO() {
+    public EventType() {
     }
 
-    public EventTypeDAO(String name) {
+    public EventType(String name) {
         this.name = name;
     }
 
@@ -48,7 +48,7 @@ public class EventTypeDAO implements Comparable<EventTypeDAO>{
     }
 
     @Override
-    public int compareTo(EventTypeDAO t) {
+    public int compareTo(EventType t) {
         return name.compareTo(t.getName());
     }
 }

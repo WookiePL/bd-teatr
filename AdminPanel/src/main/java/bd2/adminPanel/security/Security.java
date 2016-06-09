@@ -5,8 +5,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import bd2.adminPanel.dao.repository.UsersRepository;
-import bd2.adminPanel.dao.users.RoleDAO;
-import bd2.adminPanel.dao.users.UserDAO;
+import bd2.adminPanel.model.users.Role;
+import bd2.adminPanel.model.users.User;
 
 @Component
 public class Security {
@@ -18,7 +18,7 @@ public class Security {
 
 
 	public boolean authentication(String email, String password) {
-		UserDAO user = usersRepository.findUserByEmail(email);
+		User user = usersRepository.findUserByEmail(email);
 		
 		if(user == null) {
 			return false;
@@ -26,7 +26,7 @@ public class Security {
 		
 		boolean isAdmin = false;
 		
-		for(RoleDAO r : user.getRoles()) {
+		for(Role r : user.getRoles()) {
 			if(r.getRole().equals("ROLE_ADMIN")) {
 				isAdmin = true;
 				break;

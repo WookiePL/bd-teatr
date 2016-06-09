@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import bd2.adminPanel.dao.DBUtils;
-import bd2.adminPanel.dao.dictionaries.EventTypeDAO;
+import bd2.adminPanel.model.dictionaries.EventType;
 
 @Repository
 public class EventsTypesRepository {
@@ -14,8 +14,8 @@ public class EventsTypesRepository {
 	@Autowired
     private DBUtils dbUtils;
 
-    public List<EventTypeDAO> getEventsTypes() {
-        return dbUtils.getAll(EventTypeDAO.class);
+    public List<EventType> getEventsTypes() {
+        return dbUtils.getAll(EventType.class);
     }
 	
 }

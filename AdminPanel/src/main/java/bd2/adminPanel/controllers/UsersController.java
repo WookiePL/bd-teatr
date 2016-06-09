@@ -10,8 +10,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import bd2.adminPanel.dao.DBUtils;
 import bd2.adminPanel.dao.repository.RolesRepository;
 import bd2.adminPanel.dao.repository.UsersRepository;
-import bd2.adminPanel.dao.users.RoleDAO;
-import bd2.adminPanel.dao.users.UserDAO;
+import bd2.adminPanel.model.users.Role;
+import bd2.adminPanel.model.users.User;
 import bd2.adminPanel.security.Security;
 
 import java.util.ArrayList;
@@ -47,7 +47,7 @@ public class UsersController implements Initializable {
     private StackPane usersStackPane;
 
     @FXML
-    private ListView<UserDAO> listViewUsers;
+    private ListView<User> listViewUsers;
 
     @FXML
     private TextField textFieldFirstName;
@@ -70,7 +70,7 @@ public class UsersController implements Initializable {
     @FXML
     private VBox boxListCheckBox;
 
-    public ListView<UserDAO> getListViewUsers() {
+    public ListView<User> getListViewUsers() {
         return listViewUsers;
     }
 
@@ -96,7 +96,7 @@ public class UsersController implements Initializable {
     @FXML
     public void userDetail() {
 
-        UserDAO user = listViewUsers.getSelectionModel().getSelectedItem();
+        User user = listViewUsers.getSelectionModel().getSelectedItem();
 
         if (user != null) {
             textFieldFirstName.setText(user.getName());
@@ -107,17 +107,17 @@ public class UsersController implements Initializable {
             buttonDeleteUser.setDisable(false);
 
             if (user.getRoles() != null) {
-                ObservableList<RoleDAO> roles = FXCollections.observableArrayList();
+                ObservableList<Role> roles = FXCollections.observableArrayList();
                 roles.addAll(user.getRoles());
             }
 
-            List<RoleDAO> roles = user.getRoles();
+            List<Role> roles = user.getRoles();
 
             if (listCheckBox != null) {
                 for (CheckBox checkBox : listCheckBox) {
                     checkBox.setSelected(false);
                     if (roles != null) {
-                        for (RoleDAO role : roles) {
+                        for (Role role : roles) {
                             if (checkBox.getText().equals(role.getRole())) {
                                 checkBox.setSelected(true);
                                 break;
@@ -135,11 +135,11 @@ public class UsersController implements Initializable {
         String password = textFieldFirstName.getText().toLowerCase().substring(0, 3) + textFieldLastName.getText().toLowerCase().substring(0, 3);
         String hashPassword = security.encode(password);
 
-        UserDAO user = new UserDAO(textFieldFirstName.getText(), textFieldLastName.getText(), textFieldEmail.getText(), password);
-        List<RoleDAO> roles = rolesRepository.getRoles();
+        User user = new User(textFieldFirstName.getText(), textFieldLastName.getText(), textFieldEmail.getText(), hashPassword);
+        List<Role> roles = rolesRepository.getRoles();
 
         for (CheckBox checkBox : listCheckBox) {
-            for (RoleDAO role : roles) {
+            for (Role role : roles) {
                 if (role.getRole().equals(checkBox.getText())) {
                     if (checkBox.isSelected()) {
                         user.getRoles().add(role);
@@ -156,7 +156,7 @@ public class UsersController implements Initializable {
 
     @FXML
     public void deleteUser() {
-        UserDAO user = listViewUsers.getSelectionModel().getSelectedItem();
+        User user = listViewUsers.getSelectionModel().getSelectedItem();
 
         if (user != null) {
             Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -180,16 +180,16 @@ public class UsersController implements Initializable {
 
     @FXML
     public void editUser() {
-        UserDAO user = listViewUsers.getSelectionModel().getSelectedItem();
+        User user = listViewUsers.getSelectionModel().getSelectedItem();
         if (user != null) {
             user.setName(textFieldFirstName.getText());
             user.setSurname(textFieldLastName.getText());
             user.setEmail(textFieldEmail.getText());
 
-            List<RoleDAO> roles = rolesRepository.getRoles();
+            List<Role> roles = rolesRepository.getRoles();
 
             for (CheckBox checkBox : listCheckBox) {
-                for (RoleDAO role : roles) {
+                for (Role role : roles) {
                     if (role.getRole().equals(checkBox.getText())) {
                         if (checkBox.isSelected()) {
                             if (!user.getRoles().contains(role)) {
@@ -211,11 +211,11 @@ public class UsersController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<UserDAO> users = FXCollections.observableArrayList();
-        List<RoleDAO> roles = null;
+        ObservableList<User> users = FXCollections.observableArrayList();
+        List<Role> roles = null;
 
         if (dbUtils != null) {
-            List<UserDAO> tmp_users = usersRepository.getUsers();
+            List<User> tmp_users = usersRepository.getUsers();
             users.addAll(tmp_users);
             roles = rolesRepository.getRoles();
         }
@@ -233,7 +233,7 @@ public class UsersController implements Initializable {
             listCheckBox = new ArrayList<>();
             titleListCheckBox.setVisible(true);
 
-            for (RoleDAO role : roles) {
+            for (Role role : roles) {
                 listCheckBox.add(new CheckBox(role.getRole()));
             }
             listCheckBox.stream().forEach((checkBox) -> {

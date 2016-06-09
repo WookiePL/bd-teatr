@@ -1,4 +1,4 @@
-package bd2.adminPanel.dao.users;
+package bd2.adminPanel.model.users;
 
 import java.util.List;
 
@@ -11,24 +11,24 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "role", schema = "theater")
-public class RoleDAO {
+public class Role {
 
 	@Id
 	@Column(name = "role_id")
 	private int roleId;
 	private String role;
-	@ManyToMany(mappedBy = "roles", targetEntity = UserDAO.class, fetch = FetchType.EAGER)
-	private List<UserDAO> users;
+	@ManyToMany(mappedBy = "roles", targetEntity = User.class, fetch = FetchType.EAGER)
+	private List<User> users;
 
-	public RoleDAO() {
+	public Role() {
 
 	}
 
-	public RoleDAO(String role) {
+	public Role(String role) {
 		this.role = role;
 	}
 
-	public RoleDAO(int roleId, String role, List<UserDAO> users) {
+	public Role(int roleId, String role, List<User> users) {
 		super();
 		this.roleId = roleId;
 		this.role = role;
@@ -51,11 +51,11 @@ public class RoleDAO {
 		this.role = role;
 	}
 
-	public List<UserDAO> getUsers() {
+	public List<User> getUsers() {
 		return users;
 	}
 
-	public void setUsers(List<UserDAO> users) {
+	public void setUsers(List<User> users) {
 		this.users = users;
 	}
 

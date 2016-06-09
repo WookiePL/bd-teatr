@@ -13,8 +13,9 @@ import java.util.ResourceBundle;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import bd2.adminPanel.dao.DBUtils;
-import bd2.adminPanel.dao.dictionaries.GroupOfClientDAO;
 import bd2.adminPanel.dao.repository.GroupsOfClientsRepository;
+import bd2.adminPanel.model.dictionaries.GroupOfClient;
+
 import java.util.Collections;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -41,7 +42,7 @@ public class DictonaryGroupsOfClientsController {
     private StackPane dictionariesStackPane;
 
     @FXML
-    private ListView<GroupOfClientDAO> listViewGroupsOfClient;
+    private ListView<GroupOfClient> listViewGroupsOfClient;
 
     @FXML
     private TextField textFieldGroupOfClientName;
@@ -60,14 +61,14 @@ public class DictonaryGroupsOfClientsController {
 
     @FXML
     public void addGroupOfClient() {
-        GroupOfClientDAO group = new GroupOfClientDAO(textFieldGroupOfClientName.getText());
+        GroupOfClient group = new GroupOfClient(textFieldGroupOfClientName.getText());
         dbUtils.persist(group);
         initialize(null, null);
     }
 
     @FXML
     public void editGroupOfClient() {
-        GroupOfClientDAO group = listViewGroupsOfClient.getSelectionModel().getSelectedItem();
+        GroupOfClient group = listViewGroupsOfClient.getSelectionModel().getSelectedItem();
         if (group != null) {
             group.setName(textFieldGroupOfClientName.getText());
             dbUtils.persist(group);
@@ -77,7 +78,7 @@ public class DictonaryGroupsOfClientsController {
 
     @FXML
     public void deleteGroupOfClient() {
-        GroupOfClientDAO group = listViewGroupsOfClient.getSelectionModel().getSelectedItem();
+        GroupOfClient group = listViewGroupsOfClient.getSelectionModel().getSelectedItem();
 
         if (group != null) {
             Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -121,10 +122,10 @@ public class DictonaryGroupsOfClientsController {
     }
 
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<GroupOfClientDAO> groups = FXCollections.observableArrayList();
+        ObservableList<GroupOfClient> groups = FXCollections.observableArrayList();
 
         if (dbUtils != null) {
-            List<GroupOfClientDAO> tmp_groups = groupsOfClientsRepository.getGroupsOfClients();
+            List<GroupOfClient> tmp_groups = groupsOfClientsRepository.getGroupsOfClients();
             Collections.sort(tmp_groups);
             groups.addAll(tmp_groups);
         }

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import bd2.adminPanel.dao.DBUtils;
-import bd2.adminPanel.dao.dictionaries.GroupOfClientDAO;
+import bd2.adminPanel.model.dictionaries.GroupOfClient;
 
 @Repository
 public class GroupsOfClientsRepository {
@@ -14,8 +14,8 @@ public class GroupsOfClientsRepository {
 	@Autowired
     private DBUtils dbUtils;
 
-    public List<GroupOfClientDAO> getGroupsOfClients() {
-        return dbUtils.getAll(GroupOfClientDAO.class);
+    public List<GroupOfClient> getGroupsOfClients() {
+        return dbUtils.getAll(GroupOfClient.class);
     }
 	
 }

@@ -1,4 +1,4 @@
-package bd2.adminPanel.dao.dictionaries;
+package bd2.adminPanel.model.dictionaries;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,17 +7,17 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "dayofweek", schema = "theater")
-public class DayOfWeekDAO implements Comparable<DayOfWeekDAO> {
+public class DayOfWeek implements Comparable<DayOfWeek> {
     @Id
     @Column(name = "day_of_week_id")
     private int id;
     private String name;
 
-    public DayOfWeekDAO() {
+    public DayOfWeek() {
 
     }
 
-    public DayOfWeekDAO(int id, String name) {
+    public DayOfWeek(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -44,7 +44,7 @@ public class DayOfWeekDAO implements Comparable<DayOfWeekDAO> {
     }
 
     @Override
-    public int compareTo(DayOfWeekDAO t) {
+    public int compareTo(DayOfWeek t) {
         return Integer.compare(id, t.getId());
     }
 }
