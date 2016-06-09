@@ -132,10 +132,10 @@ function createSectors() {
 }
 
 
-function initializePage() {
+function initializePage(realizationId) {
 
 
-  $.getJSON("/roomInfo?realizationId=2", function(result){
+  $.getJSON("/roomInfo?realizationId=" + realizationId, function(result){
     console.log("callback");
     for (var i = 0; i < result.length; i++) {
       var sector = {

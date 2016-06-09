@@ -17,8 +17,12 @@
   <!-- Cuprum font -->
   <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
   <title>Miejsca</title>
+  <script th:inline="javascript">
+    jsRealizationId = [[${event.eventRealizationId}]];
+    console.log(jsRealizationId);
+  </script>
 </head>
-<body onload="initializePage()">
+<body onload='initializePage(jsRealizationId)'>
 
 <!-- NAVBAR -->
 <div th:include="fragments/navbar :: navbar"></div>
