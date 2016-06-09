@@ -58,7 +58,7 @@
       <file leaf-file-name="EventController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/theater/controller/EventController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="1751">
               <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -69,45 +69,45 @@
       </file>
       <file leaf-file-name="theater_db.theater.pricelist" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.pricelist">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="theater_db.theater.price" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.price">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="theater_db.theater.groupofclients" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.groupofclients">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -126,12 +126,12 @@
                 <node x="96.25" y="135.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.room</node>
                 <node x="801.75" y="581.5">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.user_role</node>
                 <node x="449.75" y="504.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.reservation</node>
-                <node x="1036.25" y="336.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.groupofclients</node>
                 <node x="1275.25" y="314.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.pricelist</node>
+                <node x="1036.25" y="336.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.groupofclients</node>
                 <node x="99.25" y="0.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.building</node>
                 <node x="1627.75" y="570.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.cycle</node>
-                <node x="203.0" y="292.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.eventrealization</node>
                 <node x="866.25" y="336.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.role</node>
+                <node x="203.0" y="292.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.eventrealization</node>
                 <node x="1512.25" y="336.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.period</node>
                 <node x="228.75" y="559.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.ticket</node>
                 <node x="1266.5723684210525" y="548.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.price</node>
@@ -140,17 +140,17 @@
               </nodes>
               <notes />
               <edges>
-                <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.price" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.period">
-                  <point x="72.0" y="-70.0" />
-                  <point x="1446.5723684210525" y="484.0" />
-                  <point x="1553.25" y="484.0" />
-                  <point x="-41.0" y="37.0" />
-                </edge>
                 <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.pricelist" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.event">
                   <point x="0.0" y="-59.0" />
                   <point x="1383.75" y="267.0" />
                   <point x="959.4276315789474" y="267.0" />
                   <point x="50.25" y="59.0" />
+                </edge>
+                <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.price" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.period">
+                  <point x="72.0" y="-70.0" />
+                  <point x="1446.5723684210525" y="484.0" />
+                  <point x="1553.25" y="484.0" />
+                  <point x="-41.0" y="37.0" />
                 </edge>
                 <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.ticket" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.eventrealization">
                   <point x="-50.25" y="-59.0" />
@@ -162,17 +162,17 @@
                   <point x="628.0833333333334" y="484.0" />
                   <point x="-70.66666666666663" y="70.0" />
                 </edge>
-                <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.eventrealization" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.room">
-                  <point x="-76.0" y="-81.0" />
-                  <point x="279.0" y="267.0" />
-                  <point x="229.75" y="267.0" />
-                  <point x="44.5" y="48.0" />
-                </edge>
                 <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.place" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.ticket">
                   <point x="54.25" y="-70.0" />
                   <point x="266.4276315789474" y="757.0" />
                   <point x="329.25" y="757.0" />
                   <point x="0.0" y="59.0" />
+                </edge>
+                <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.eventrealization" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.room">
+                  <point x="-76.0" y="-81.0" />
+                  <point x="279.0" y="267.0" />
+                  <point x="229.75" y="267.0" />
+                  <point x="44.5" y="48.0" />
                 </edge>
                 <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.room" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.building">
                   <point x="0.0" y="-48.0" />
@@ -245,13 +245,13 @@
                   <point x="0.0" y="37.0" />
                 </edge>
               </edges>
-              <settings layout="Hierarchic Group" zoom="0.8490445859872612" x="954.6706676669166" y="479.6706676669167" />
+              <settings layout="Hierarchic Group" zoom="0.8490445859872612" x="955.0" y="480.0" />
               <SelectedNodes>
                 <node>6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.event</node>
               </SelectedNodes>
               <Categories>
-                <Category>Key columns</Category>
                 <Category>Columns</Category>
+                <Category>Key columns</Category>
               </Categories>
             </state>
           </provider>
@@ -260,7 +260,7 @@
       <file leaf-file-name="RoomEntity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
+            <state relative-caret-position="850">
               <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
               <folding />
             </state>
@@ -270,7 +270,7 @@
       <file leaf-file-name="selectSeats.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/selectSeats.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="1258">
               <caret line="74" column="47" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
               <folding />
             </state>
@@ -290,7 +290,7 @@
       <file leaf-file-name="eventRealizations.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/eventRealizations.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
+            <state relative-caret-position="765">
               <caret line="45" column="46" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="46" />
               <folding />
             </state>
@@ -399,7 +399,7 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="-1928" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -429,7 +429,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -678,8 +677,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1334,7 +1334,12 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
-      <method />
+      <method>
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="BDII:war exploded" />
+        </option>
+      </method>
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Maven.build" />
@@ -1399,11 +1404,12 @@
       <workItem from="1465456965917" duration="4412000" />
       <workItem from="1465466678775" duration="247000" />
       <workItem from="1465466955130" duration="5186000" />
+      <workItem from="1465476307069" duration="7000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127029000" />
+    <option name="totallyTimeSpent" value="127036000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1415,39 +1421,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26867336" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18283582" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20575693" sideWeight="0.5072464" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20522387" sideWeight="0.49275362" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24413647" sideWeight="0.5039019" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15458423" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34336677" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24526198" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3924192" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20575693" sideWeight="0.5072464" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20522387" sideWeight="0.49275362" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24413647" sideWeight="0.5039019" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24413647" sideWeight="0.5039019" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34336677" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24526198" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3924192" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06752411" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1543,7 +1549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="13" column="38" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1557,7 +1562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1565,11 +1569,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.user_role">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -1578,21 +1586,16 @@
           </column-attributes>
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.users_roles">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.users_roles">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1604,14 +1607,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.place">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1626,9 +1629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding>
-            <marker date="1465461402000" expanded="false" signature="34:38" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1636,7 +1636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1644,7 +1643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1652,7 +1650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1660,7 +1657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="13" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1668,26 +1664,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-          <folding>
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.reservation">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1695,7 +1683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1703,7 +1690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1711,7 +1697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="86" column="39" selection-start-line="86" selection-start-column="39" selection-end-line="86" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1729,7 +1714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1737,20 +1721,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-306">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.eventrealization">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1758,28 +1740,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/theater/persist/model/RoomEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
+        <state relative-caret-position="850">
           <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.sector">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1787,7 +1767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1795,7 +1774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-612">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1803,13 +1781,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="488">
           <caret line="54" column="12" selection-start-line="31" selection-start-column="3" selection-end-line="54" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/eventRealizations.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
+        <state relative-caret-position="765">
           <caret line="45" column="46" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="46" />
           <folding />
         </state>
@@ -1817,7 +1794,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/selectSeats.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="1258">
           <caret line="74" column="47" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
           <folding />
         </state>
@@ -1825,7 +1802,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/theater/controller/EventController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
+        <state relative-caret-position="1751">
           <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1834,41 +1811,41 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.pricelist">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.price">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/4fd97736/6ae8ed8b-9e98-4d45-aca1-82280eb4364e/theater_db.theater.groupofclients">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1885,12 +1862,12 @@
             <node x="96.25" y="135.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.room</node>
             <node x="801.75" y="581.5">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.user_role</node>
             <node x="449.75" y="504.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.reservation</node>
-            <node x="1036.25" y="336.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.groupofclients</node>
             <node x="1275.25" y="314.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.pricelist</node>
+            <node x="1036.25" y="336.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.groupofclients</node>
             <node x="99.25" y="0.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.building</node>
             <node x="1627.75" y="570.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.cycle</node>
-            <node x="203.0" y="292.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.eventrealization</node>
             <node x="866.25" y="336.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.role</node>
+            <node x="203.0" y="292.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.eventrealization</node>
             <node x="1512.25" y="336.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.period</node>
             <node x="228.75" y="559.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.ticket</node>
             <node x="1266.5723684210525" y="548.0">6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.price</node>
@@ -1899,17 +1876,17 @@
           </nodes>
           <notes />
           <edges>
-            <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.price" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.period">
-              <point x="72.0" y="-70.0" />
-              <point x="1446.5723684210525" y="484.0" />
-              <point x="1553.25" y="484.0" />
-              <point x="-41.0" y="37.0" />
-            </edge>
             <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.pricelist" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.event">
               <point x="0.0" y="-59.0" />
               <point x="1383.75" y="267.0" />
               <point x="959.4276315789474" y="267.0" />
               <point x="50.25" y="59.0" />
+            </edge>
+            <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.price" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.period">
+              <point x="72.0" y="-70.0" />
+              <point x="1446.5723684210525" y="484.0" />
+              <point x="1553.25" y="484.0" />
+              <point x="-41.0" y="37.0" />
             </edge>
             <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.ticket" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.eventrealization">
               <point x="-50.25" y="-59.0" />
@@ -1921,17 +1898,17 @@
               <point x="628.0833333333334" y="484.0" />
               <point x="-70.66666666666663" y="70.0" />
             </edge>
-            <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.eventrealization" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.room">
-              <point x="-76.0" y="-81.0" />
-              <point x="279.0" y="267.0" />
-              <point x="229.75" y="267.0" />
-              <point x="44.5" y="48.0" />
-            </edge>
             <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.place" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.ticket">
               <point x="54.25" y="-70.0" />
               <point x="266.4276315789474" y="757.0" />
               <point x="329.25" y="757.0" />
               <point x="0.0" y="59.0" />
+            </edge>
+            <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.eventrealization" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.room">
+              <point x="-76.0" y="-81.0" />
+              <point x="279.0" y="267.0" />
+              <point x="229.75" y="267.0" />
+              <point x="44.5" y="48.0" />
             </edge>
             <edge source="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.room" target="6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.building">
               <point x="0.0" y="-48.0" />
@@ -2004,13 +1981,13 @@
               <point x="0.0" y="37.0" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.8490445859872612" x="954.6706676669166" y="479.6706676669167" />
+          <settings layout="Hierarchic Group" zoom="0.8490445859872612" x="955.0" y="480.0" />
           <SelectedNodes>
             <node>6ae8ed8b-9e98-4d45-aca1-82280eb4364e.TABLE:theater_db.theater.event</node>
           </SelectedNodes>
           <Categories>
-            <Category>Key columns</Category>
             <Category>Columns</Category>
+            <Category>Key columns</Category>
           </Categories>
         </state>
       </provider>
