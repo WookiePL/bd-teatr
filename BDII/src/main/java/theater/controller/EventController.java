@@ -95,4 +95,15 @@ public class EventController {
         return "eventReservations";
     }
 
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/tickets"}, method = RequestMethod.GET)
+    public String tickets(Model model, @RequestParam(value = "realizationId", required = false) Integer realizationId) {
+        EventRealizationDTO eventRealization = eventService.getEventRealizationById(realizationId);
+        if (eventRealization != null) {
+            ReservationDTO reservation = new ReservationDTO();
+            model.addAttribute("eventDescription", eventRealization);
+            return "tickets";
+        }
+        return "eventRealization";
+    }
 }

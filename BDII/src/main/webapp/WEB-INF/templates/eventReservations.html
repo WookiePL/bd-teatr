@@ -86,7 +86,7 @@
                 <span th:text="${place.number}"></span>
                 </p>
             </td>
-            <td><a th:href="@{'/tickets'}"><span class="glyphicon glyphicon-ok"></span></a>
+            <td><a th:href="@{'/tickets'(realizationId=${eventReservation.eventRealizationId})}"><span class="glyphicon glyphicon-ok"></span></a>
                 <!--Nie umiem znalezc siedzenia wiec jest byle co:-->
                 <a th:href="@{'/deleteEventReservation'(realizationId=${eventReservation.eventRealizationId}, reservationId=${eventReservation.reservationId})}"><span
                         class="glyphicon glyphicon-remove"></span> </a>
