@@ -3,103 +3,125 @@
       xmlns:th="http://www.thymeleaf.org"
       lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="initial-scale=1, width=device-width, initial-scale=1"/>
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content=""/>
-  <meta name="author" content=""/>
-  <link rel="icon" th:href="@{/resources/images/favicon.ico}" href='../resources/images/favicon.ico'/>
-  <!-- Bootstrap core CSS -->
-  <link rel='stylesheet' th:href="@{/resources/css/bootstrap.min.css}" href='../resources/css/bootstrap.min.css'/>
-  <!-- Custom styles -->
-  <link rel='stylesheet' th:href="@{/resources/css/style.css}" href='../resources/css/bootstrap.min.css'/>
-  <!-- Cuprum font -->
-  <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
-  <title>Edytuj rezerwację</title>
-  </head>
-  <body onload="initializePage()">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" th:href="@{/resources/images/favicon.ico}" href='../resources/images/favicon.ico'/>
+    <!-- Bootstrap core CSS -->
+    <link rel='stylesheet' th:href="@{/resources/css/bootstrap.min.css}" href='../resources/css/bootstrap.min.css'/>
+    <!-- Custom styles -->
+    <link rel='stylesheet' th:href="@{/resources/css/style.css}" href='../resources/css/bootstrap.min.css'/>
+    <!-- Cuprum font -->
+    <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
+    <title>Edytuj rezerwację</title>
+</head>
+<body onload="initializePage()">
 
-  <!-- NAVBAR -->
-  <div th:include="fragments/navbar :: navbar"></div>
+<!-- NAVBAR -->
+<div th:include="fragments/navbar :: navbar"></div>
 
-    <div class="container">
-      <!-- Header -->
-      <div class="center-content">
+<div class="container">
+    <!-- Header -->
+    <div class="center-content">
         <h1>Edytuj rezerwację</h1>
-      </div>
-      <!-- Event description -->
+    </div>
+    <!-- Event description -->
 
-      <table class="table table-striped event-info center-align">
+    <table class="table table-striped event-info center-align">
         <tbody>
-          <tr>
+        <tr>
             <td>Wydarzenie:</td>
             <td th:text="${event.event.name}"></td>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <td>Data:</td>
             <td th:text="${event.date}"></td>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <td>Godzina:</td>
             <td th:text="${event.hour}"></td>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <td>Sala:</td>
             <td th:text="${event.room.number}"></td>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <td>Budynek:</td>
             <td th:text="${event.room.building.address}"></td>
-          </tr>
+        </tr>
         </tbody>
-      </table>
-      <!-- Reservation form -->
+    </table>
+    <!-- Reservation form -->
 
-      <div class="reservation-form center-align">
+    <div class="reservation-form center-align">
         <form action="#" th:action="@{'/editReservation'}" th:object="${reservation}" method="post">
-          <div>
-            <input type="hidden" class="form-control" th:field="*{eventRealizationId}"/>
-          </div>
-          <div>
-            <input type="hidden" class="form-control" th:field="*{date}"/>
-          </div>
-         <div class="form-group">
-           <label for="clientName">Imię</label>
-           <input type="text" class="form-control" id="clientName" placeholder="Imię" th:field="*{name}"/>
-         </div>
-         <!--<div class="form-group">-->
-           <!--<label for="clientSurname">Nazwisko</label>-->
-           <!--<input type="text" class="form-control" id="clientSurname" placeholder="Nazwisko">-->
-         <!--</div>-->
-         <div class="form-group">
-           <label for="clientEmail">Email</label>
-           <input type="email" class="form-control" id="clientEmail" placeholder="Email" th:field="*{email}"/>
-         </div>
-         <div class="form-group">
-           <label for="clientPhone">Telefon</label>
-           <input type="tel" class="form-control" id="clientPhone" placeholder="Telefon" th:field="*{phone}"/>
-         </div>
-         <!--<div class="form-group">-->
-           <!--<label >Miejsca</label>-->
-           <!--<p id="seatsList" class="help-block"></p>-->
-         <!--</div>-->
-         <a href="eventReservations.html" class="btn btn-success left" role="button">Anuluj</a>
-         <button type="submit" class="btn btn-success right">Zatwierdź</button>
-       </form>
+            <div>
+                <input type="hidden" class="form-control" th:field="*{eventRealizationId}"/>
+            </div>
+            <div>
+                <input type="hidden" class="form-control" th:field="*{reservationId}"/>
+            </div>
+            <div>
+                <input type="hidden" class="form-control" th:field="*{places}"/>
+            </div>
+            <div>
+                <input type="hidden" class="form-control" th:field="*{date}"/>
+            </div>
+
+            <div class="form-group">
+                <label for="clientName">Imię</label>
+                <input type="text" class="form-control" id="clientName" placeholder="Imię" th:field="*{name}"/>
+            </div>
+            <div class="form-group">
+                <label for="revokeDate">Data odwołania</label>
+                <input type="text" class="form-control" id="revokeDate" placeholder="Data odwołania"
+                       th:field="*{revokeDate}"/>
+            </div>
+            <!--<div class="form-group">-->
+            <!--<label for="clientSurname">Nazwisko</label>-->
+            <!--<input type="text" class="form-control" id="clientSurname" placeholder="Nazwisko">-->
+            <!--</div>-->
+
+            <div class="form-group">
+                <label for="clientEmail">Email</label>
+                <input type="email" class="form-control" id="clientEmail" placeholder="Email" th:field="*{email}"/>
+            </div>
+            <div class="form-group">
+                <label for="clientPhone">Telefon</label>
+                <input type="tel" class="form-control" id="clientPhone" placeholder="Telefon" th:field="*{phone}"/>
+            </div>
+            <!--<div class="form-group">-->
+            <!--<label for="sector">Sektor</label>-->
+            <!--<input type="text" class="form-control" id="sector" placeholder="Sektor" th:field="*{places.replaceAll()}"/>-->
+            <!--</div>-->
+            <div class="form-group">
+                <label>Miejsca</label>
+                <p th:each="place : ${reservation.places}">
+                    Sektor:
+                    <span th:text="${place.sector.number}"></span>
+                    Miejsce:
+                    <span th:text="${place.number}"></span>
+                </p>
+            </div>
+            <a th:href="@{'/eventReservations'(realizationId=${reservation.eventRealizationId})}" class="btn btn-success left" role="button">Anuluj</a>
+            <button type="submit" class="btn btn-success right">Zatwierdź</button>
+        </form>
 
 
-     </div>
-    </div><!-- /.container -->
-  <!-- Bootstrap core JavaScript -->
-  <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"
-          src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+    </div>
+</div><!-- /.container -->
+<!-- Bootstrap core JavaScript -->
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
 
-  <script type="text/javascript" th:src="@{../resources/js/bootstrap.min.js}"
-          src="../resources/js/bootstrap.min.js"></script>
-  <!-- Page logic -->
-  <script th:src="@{../resources/js/general.js}" src="../resources/js/general.js"></script>
-  <script th:src="@{../resources/js/eventRealizations.js}" src="../resources/js/eventRealizations.js"></script>
-  </body>
+<script type="text/javascript" th:src="@{../resources/js/bootstrap.min.js}"
+        src="../resources/js/bootstrap.min.js"></script>
+<!-- Page logic -->
+<script th:src="@{../resources/js/general.js}" src="../resources/js/general.js"></script>
+<script th:src="@{../resources/js/eventRealizations.js}" src="../resources/js/eventRealizations.js"></script>
+</body>
 </html>
