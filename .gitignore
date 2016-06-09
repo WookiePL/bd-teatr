@@ -1,16 +1,4 @@
-/BDII/.classpath
-/BDII/.project
-/BDII/.idea
-/BDII/*.iml
+BDII/.idea
+BDII/*.iml
 
-/BDII/.slcache/
-/BDII/.asscache
-
-# Output files
-/BDII/out/
-/BDII/build/
-/BDII/target
-/BDII/.class
-
-.settings/
-/BDII/target-eclipse/
+BDII/target
