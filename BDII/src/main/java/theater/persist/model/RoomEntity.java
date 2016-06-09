@@ -67,7 +67,7 @@ public class RoomEntity {
         this.eventRealizations = eventRealizations;
     }
 
-    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "room", fetch = FetchType.EAGER)
     public List<SectorEntity> getSectors() {
         return sectors;
     }
