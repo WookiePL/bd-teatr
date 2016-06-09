@@ -7,18 +7,18 @@
 //   rowsNumber: 3,
 //   columnsNumber: 5
 // }
-sectorsArray = [
-  {
-    name:'Parter',
-    rowsNumber: 5,
-    columnsNumber: 8
-  },
-  {
-    name: 'Balkon',
-    rowsNumber: 4,
-    columnsNumber: 10
-  }
-];
+sectorsArray = [];
+//   {
+//     name:'Parter',
+//     rowsNumber: 5,
+//     columnsNumber: 8
+//   },
+//   {
+//     name: 'Balkon',
+//     rowsNumber: 4,
+//     columnsNumber: 10
+//   }
+// ];
 
 // seat state are kept as object as follows:
 // {
@@ -26,10 +26,10 @@ sectorsArray = [
 //   nameOfSector2: [array of seat numbers],
 //   ...
 // }
-occupiedSeats = {
-  Parter:[2,4,14,15,22],
-  Balkon:[35,36,37]
-};
+occupiedSeats = {};
+//   Parter:[2,4,14,15,22],
+//   Balkon:[35,36,37]
+// };
 selectedSeats = {};
 
 //LOGIC
@@ -105,7 +105,7 @@ function createSector(name, rowsNumber, columnsNumber) {
   var headerDiv = document.createElement('DIV');
   headerDiv.className += ' center-content';
   var header = document.createElement('H2');
-  header.innerHTML = name;
+  header.innerHTML = 'Sektor: ' + name;
   headerDiv.appendChild(header);
   container.appendChild(headerDiv);
   //create table
@@ -117,7 +117,7 @@ function createSector(name, rowsNumber, columnsNumber) {
   //fill selected seats section
   container = document.getElementById('selected-seats');
   var sectorNameParagraph = document.createElement('P');
-  sectorNameParagraph.innerHTML = name;
+  sectorNameParagraph.innerHTML = 'Sektor: ' + name;
   var sectorSelectedSeatsParagraph  = document.createElement('P');
   sectorSelectedSeatsParagraph.id = name + "SelectedSeats";
   sectorSelectedSeatsParagraph.innerHTML = '-';
@@ -133,6 +133,20 @@ function createSectors() {
 
 
 function initializePage() {
-  fillEventDescriptionTable();
-  createSectors();
+
+
+  $.getJSON("/roomInfo?realizationId=2", function(result){
+    console.log("callback");
+    for (var i = 0; i < result.length; i++) {
+      var sector = {
+        name: result[i].name.toString(),
+        rowsNumber: result[i].rowsNumber,
+        columnsNumber: result[i].columnsNumber
+      };
+      sectorsArray.push(sector);
+      occupiedSeats[result[i].name.toString()] = result[i].occupiedSeats;
+    }
+    createSectors();
+  });
+  console.log("init");
 }

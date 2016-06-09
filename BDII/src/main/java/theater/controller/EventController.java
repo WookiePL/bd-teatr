@@ -1,17 +1,19 @@
 package theater.controller;
 
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import theater.helper.SectorInfo;
 import theater.persist.dtos.EventRealizationDTO;
 import theater.persist.dtos.ReservationDTO;
+import theater.persist.dtos.RoomDTO;
 import theater.services.IEventService;
+
+import java.util.List;
 
 
 @Controller
@@ -83,6 +85,15 @@ public class EventController {
     }
 
     @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/roomInfo"}, method = RequestMethod.GET)
+    public @ResponseBody
+    List<SectorInfo> roomInfo(Model model, @RequestParam(value = "realizationId", required = false) Integer realizationId) {
+        List<SectorInfo> roomInfo = eventService.getRoomInfo(realizationId);
+        return roomInfo;
+    }
+
+
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/createReservation"}, method = RequestMethod.GET)
     public String createReservation(Model model, @RequestParam(value = "realizationId", required = false) Integer realizationId) {
         EventRealizationDTO eventRealization = eventService.getEventRealizationById(realizationId);
@@ -94,6 +105,9 @@ public class EventController {
         }
         return "eventReservations";
     }
+
+
+
 
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/tickets"}, method = RequestMethod.GET)

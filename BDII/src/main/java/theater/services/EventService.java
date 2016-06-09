@@ -5,15 +5,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.ParseException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import theater.helper.SectorInfo;
 import theater.persist.daos.*;
 import theater.persist.dtos.EventRealizationDTO;
 import theater.persist.dtos.ReservationDTO;
+import theater.persist.dtos.RoomDTO;
 import theater.persist.dtos.SectorDTO;
-import theater.persist.model.BuildingEntity;
-import theater.persist.model.EventRealizationEntity;
-import theater.persist.model.ReservationEntity;
+import theater.persist.model.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -79,6 +80,31 @@ public class EventService implements IEventService {
     @Override
     public EventRealizationDTO getEventRealizationById(Integer id) {
         return convertToDto(eventRealizationDAO.getEventRealizationById(id));
+    }
+
+    @Override
+    public List<SectorInfo> getRoomInfo(Integer realizationId) {
+        EventRealizationDTO event = convertToDto(eventRealizationDAO.getEventRealizationById(realizationId));
+        RoomEntity room = event.getRoom();
+        List<SectorEntity> sectors = room.getSectors();
+        List<SectorInfo> roomInfo = new ArrayList<>();
+        for (int i = 0; i < sectors.size(); i++) {
+            SectorInfo sectorInfo = new SectorInfo();
+            sectorInfo.name = sectors.get(i).getNumber();
+            int numberOfPlaces = sectors.get(i).getPlaces().size();
+            sectorInfo.rowsNumber = 2;
+            sectorInfo.columnsNumber = numberOfPlaces/2;
+            sectorInfo.occupiedSeats = new ArrayList<>();
+            List<ReservationEntity> reservations = event.getReservations();
+            for (int j = 0; j < reservations.size(); j++) {
+                List<PlaceEntity> places = new ArrayList<>(reservations.get(j).getPlaces());
+                for (int k = 0; k < places.size(); k++) {
+                    sectorInfo.occupiedSeats.add(places.get(k).getNumber());
+                }
+            }
+            roomInfo.add(sectorInfo);
+        }
+        return roomInfo;
     }
 
     @Override

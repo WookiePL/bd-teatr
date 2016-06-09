@@ -1,5 +1,6 @@
 package theater.services;
 
+import theater.helper.SectorInfo;
 import theater.persist.dtos.EventRealizationDTO;
 import theater.persist.dtos.ReservationDTO;
 import theater.persist.dtos.SectorDTO;
@@ -21,6 +22,8 @@ public interface IEventService {
     ReservationDTO getReservationById(Integer id);
 
     EventRealizationDTO getEventRealizationById(Integer id);
+
+    List<SectorInfo> getRoomInfo(Integer realizationId);
 
     void updateReservation(ReservationDTO reservation);
 
