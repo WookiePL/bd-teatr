@@ -1,0 +1,17 @@
+/.classpath
+/.project
+/.idea
+*.iml
+
+/.slcache/
+.asscache
+.gradle/
+
+# Output files
+/out/
+/build/
+/target
+.class
+
+.settings/
+target-eclipse/
