@@ -69,10 +69,6 @@
         <input type="text" class="form-control" id="clientName" placeholder="Imię" th:field="*{name}"/>
       </div>
       <div class="form-group">
-        <label for="surname">Surname</label>
-        <input type="text" class="form-control" id="surname" placeholder="Nazwisko" th:field="*{surname}"/>
-      </div>
-      <div class="form-group">
         <label for="clientEmail">Email</label>
         <input type="email" class="form-control" id="clientEmail" placeholder="Email" th:field="*{email}"/>
       </div>
@@ -80,13 +76,12 @@
         <label for="clientPhone">Telefon</label>
         <input type="tel" class="form-control" id="clientPhone" placeholder="Telefon" th:field="*{phone}"/>
       </div>
-      <div class="form-group">
-      <label >Miejsca</label>
+      <!--<div class="form-group">-->
+      <!--<label >Miejsca</label>-->
       <!--<p id="seatsList" class="help-block"></p>-->
-      </div>
-      <a th:href="@{'/eventRealizations'}" class="btn btn-success left" role="button">Anuluj</a>
+      <!--</div>-->
+      <a href="eventReservations.html" class="btn btn-success left" role="button">Anuluj</a>
       <button type="submit" class="btn btn-success right">Zatwierdź</button>
-
     </form>
   </div>
 

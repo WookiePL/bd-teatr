@@ -3,120 +3,54 @@
       xmlns:th="http://www.thymeleaf.org"
       lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="initial-scale=1, width=device-width, initial-scale=1"/>
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-    <link rel="icon" th:href="@{/resources/images/favicon.ico}" href='../resources/images/favicon.ico'/>
-    <!-- Bootstrap core CSS -->
-    <link rel='stylesheet' th:href="@{/resources/css/bootstrap.min.css}" href='../resources/css/bootstrap.min.css'/>
-    <!-- Custom styles -->
-    <link rel='stylesheet' th:href="@{/resources/css/style.css}" href='../resources/css/bootstrap.min.css'/>
-    <!-- Cuprum font -->
-    <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
-    <title>Bilety</title>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="initial-scale=1, width=device-width, initial-scale=1"/>
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+  <link rel="icon" th:href="@{/resources/images/favicon.ico}" href='../resources/images/favicon.ico'/>
+  <!-- Bootstrap core CSS -->
+  <link rel='stylesheet' th:href="@{/resources/css/bootstrap.min.css}" href='../resources/css/bootstrap.min.css'/>
+  <!-- Custom styles -->
+  <link rel='stylesheet' th:href="@{/resources/css/style.css}" href='../resources/css/bootstrap.min.css'/>
+  <!-- Cuprum font -->
+  <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
+  <title>Bilety</title>
 </head>
 
-<body onload="initializePage()">
+  <body onload="initializePage()">
 
-<!-- NAVBAR -->
-<div th:include="fragments/navbar :: navbar"></div>
+  <!-- NAVBAR -->
+  <div th:include="fragments/navbar :: navbar"></div>
 
 
-<div class="container">
+    <div class="container">
 
-    <div class="center-content">
+      <div class="center-content">
         <h1>Bilety</h1>
         <p id="count">sdfs</p>
-    </div>
+      </div>
 
-    <table class="table table-striped event-info center-align">
-        <tbody>
-        <!--<tr>-->
-        <!--<td>Numer:</td>-->
-        <!--<td id="number" th:text="${eventDescription.event.ticket.number}"> </td>-->
-        <!--</tr>-->
-        <tr>
-            <td>Nazwa:</td>
-            <td id="eventName" th:text="${eventDescription.event.name}"></td>
-        </tr>
-        <tr>
-            <td>Data:</td>
-            <td id="eventDate" th:text="${eventDescription.date}"></td>
-        </tr>
-        <tr>
-            <td>Godzina:</td>
-            <td id="eventHour" th:text="${eventDescription.hour}"></td>
-        </tr>
-        <tr>
-            <td>Budynek:</td>
-            <td id="eventBuilding" th:text="${eventDescription.room.building.address}"></td>
-        </tr>
-        <tr>
-            <td>Sala:</td>
-            <td id="eventRoom" th:text="${eventDescription.room.number}"></td>
-        </tr>
-        <tr>
-            <td>Sektor:</td>
-            <td>
-                to trzeba wyslac
-                <!--<span id="sector" th:each="sector : ${eventDescription.room.sectors}">-->
-                    <!--<span th:text="${sector.number}"> </span>-->
-                <!--</span>-->
-            </td>
-        </tr>
-        <tr>
-            <td>Miejsce:</td>
-            <td>
-                to tez trzeba wyslac
-                <!--<span id="place" th:each="sector : ${eventDescription.room.sectors}">-->
-                    <!--<span th:text="${sector.number}"> </span>-->
-                <!--</span>-->
-            </td>
-        </tr>
+      <div id="tickets">
+      </div>
 
-        <tr>
-            <td>Cena:</td>
-            <td>
-                <select class="form-control" id="sel1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
-            </td>
-        </tr>
-
-
-        </tbody>
-    </table>
-
-
-
-    <div id="tickets">
-    </div>
-
-    <div class="center-content">
+      <div class="center-content">
         <h2>Suma</h2>
         <p id="sum">104</p>
-    </div>
+      </div>
 
-    <div class="button-section center-content center-align">
-        <a th:href="@{'/eventRealizations'}" class="btn btn-success" role="button">Zatwierdź</a>
-    </div>
+      <div class="button-section center-content center-align">
+        <a href="eventRealizations.html"><button class="btn btn-success" type="button">Zatwierdź</button></a>
+      </div>
 
-</div><!-- /.container -->
-<!-- Bootstrap core JavaScript -->
-<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"
-        src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
-
-<script type="text/javascript" th:src="@{../resources/js/bootstrap.min.js}"
-        src="../resources/js/bootstrap.min.js"></script>
-<!-- Page logic -->
-<script th:src="@{../resources/js/general.js}" src="../resources/js/general.js"></script>
-<script th:src="@{../resources/js/eventRealizations.js}" src="../resources/js/eventRealizations.js"></script>
-</body>
+    </div><!-- /.container -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- Page logic -->
+    <script src="../assets/js/general.js"></script>
+    <script src="../assets/js/tickets.js"></script>
+  </body>
 </html>

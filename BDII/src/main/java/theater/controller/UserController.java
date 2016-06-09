@@ -33,6 +33,13 @@ public class UserController {
         return "redirect:/login";//?logout
     }
 
+//    @RequestMapping(value = {"/login"}, method = RequestMethod.POST)
+//    public String login(Model model, @RequestParam(value = "email") String email,
+//                        @RequestParam(value = "password") String psw) {
+//
+//        return "home";
+//    }
+
     @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public String login() {
         return "login";
