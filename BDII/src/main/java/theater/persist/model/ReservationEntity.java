@@ -10,6 +10,7 @@ import java.util.List;
 public class ReservationEntity {
     private Integer reservationId;
     private String name;
+    private String surname;
     private Integer phone;
     private String email;
     private Date date;
@@ -44,6 +45,18 @@ public class ReservationEntity {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    @Basic
+    @Column(name = "surname")
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
 
     @Basic
     @Column(name = "phone")

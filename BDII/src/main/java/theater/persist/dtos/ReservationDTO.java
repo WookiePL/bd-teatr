@@ -11,6 +11,7 @@ import java.util.List;
 public class ReservationDTO {
     private Integer reservationId;
     private String name;
+    private String surname;
     private Integer phone;
     private String email;
     private Date date;
@@ -35,6 +36,14 @@ public class ReservationDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public Integer getPhone() {

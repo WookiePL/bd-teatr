@@ -13,7 +13,6 @@ import theater.persist.dtos.EventRealizationDTO;
 import theater.persist.dtos.ReservationDTO;
 import theater.services.IEventService;
 
-import java.util.List;
 
 @Controller
 public class EventController {
@@ -31,6 +30,7 @@ public class EventController {
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/eventReservations"}, method = RequestMethod.GET)
     public String eventReservations(Model model, @RequestParam(value = "realizationId", required = true) Integer realizationID) {
+
         model.addAttribute("eventReservationList", eventService.getAllEventReservationByRealization(realizationID));
         model.addAttribute("eventDescription", eventService.getEventRealizationById(realizationID));
         return "eventReservations";
@@ -71,5 +71,28 @@ public class EventController {
         return "redirect:/eventReservations?realizationId=" + reservation.getEventRealizationId();
     }
 
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/selectSeats"}, method = RequestMethod.GET)
+    public String selectSeats(Model model, @RequestParam(value = "realizationId", required = false) Integer realizationId) {
+        EventRealizationDTO eventRealization = eventService.getEventRealizationById(realizationId);
+        if (eventRealization != null) {
+            model.addAttribute("event", eventRealization);
+            return "selectSeats";
+        }
+        return "eventReservations";
+    }
+
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/createReservation"}, method = RequestMethod.GET)
+    public String createReservation(Model model, @RequestParam(value = "realizationId", required = false) Integer realizationId) {
+        EventRealizationDTO eventRealization = eventService.getEventRealizationById(realizationId);
+        if (eventRealization != null) {
+            ReservationDTO reservation = new ReservationDTO();
+            model.addAttribute("event", eventRealization);
+            model.addAttribute("reservation", reservation);
+            return "createReservation";
+        }
+        return "eventReservations";
+    }
 
 }

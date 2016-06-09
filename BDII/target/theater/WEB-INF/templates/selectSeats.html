@@ -17,74 +17,78 @@
   <!-- Cuprum font -->
   <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
   <title>Miejsca</title>
-  </head>
-  <body onload="initializePage()">
+</head>
+<body onload="initializePage()">
 
-  <!-- NAVBAR -->
-  <div th:include="fragments/navbar :: navbar"></div>
+<!-- NAVBAR -->
+<div th:include="fragments/navbar :: navbar"></div>
 
-    <div class="container">
-      <div class="center-content">
-        <h1>Wybór miejsc</h1>
+<div class="container">
+  <div class="center-content">
+    <h1>Wybór miejsc</h1>
+  </div>
+  <div>
+    <!-- Event description -->
+    <table class="table table-striped event-info center-align">
+      <tbody>
+      <tr>
+        <td>Wydarzenie:</td>
+        <td th:text="${event.event.name}"></td>
+      </tr>
+      <tr>
+        <td>Data:</td>
+        <td th:text="${event.date}"></td>
+      </tr>
+      <tr>
+        <td>Godzina:</td>
+        <td th:text="${event.hour}"></td>
+      </tr>
+      <tr>
+        <td>Sala:</td>
+        <td th:text="${event.room.number}"></td>
+      </tr>
+      <tr>
+        <td>Budynek:</td>
+        <td th:text="${event.room.building.address}"></td>
+      </tr>
+      </tbody>
+    </table>
+    <!-- Legend -->
+    <table class="legend center-align">
+      <tr>
+        <td class="rect selected"></td>
+        <td class="desc">Wybrane</td>
+        <td class="rect occupied"></td>
+        <td class="desc">Zajęte</td>
+        <td class="rect with-border unoccupied"></td>
+        <td class="desc">Wolne</td>
+      </tr>
+    </table>
+    <!-- Sectors visualisation with seats selecting -->
+    <div id="sectors">
+    </div>
+    <!-- Choosen seats section -->
+    <div class="center-content">
+      <h2>Wybrane miejsca</h2>
+      <div id="selected-seats" class="center-align">
       </div>
-      <div>
-        <!-- Event description -->
-        <table class="table table-striped event-info center-align">
-          <tbody>
-            <tr>
-              <td>Wydarzenie :</td>
-              <td id="eventName"></td>
-            </tr>
-            <tr>
-              <td>Data :</td>
-              <td id="eventDate"></td>
-            </tr>
-            <tr>
-              <td>Godzina:</td>
-              <td id="eventHour"></td>
-            </tr>
-            <tr>
-              <td>Sala:</td>
-              <td id="eventRoom"></td>
-            </tr>
-            <tr>
-              <td>Budynek:</td>
-              <td id="eventBuilding"></td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- Legend -->
-        <table class="legend center-align">
-          <tr>
-            <td class="rect selected"></td>
-            <td class="desc">Wybrane</td>
-            <td class="rect occupied"></td>
-            <td class="desc">Zajęte</td>
-            <td class="rect with-border unoccupied"></td>
-            <td class="desc">Wolne</td>
-          <tr>
-        </table>
-        <!-- Sectors visualisation with seats selecting -->
-        <div id="sectors">
-        </div>
-        <!-- Choosen seats section -->
-        <div class="center-content">
-          <h2>Wybrane miejsca</h2>
-          <div id="selected-seats" class="center-align">
-          </div>
-          <div class="button-section center-align">
-            <a href="tickets.html" class="btn btn-success left" role="button">Bilet</a>
-            <a href="createReservation.html" class="btn btn-success right" role="button">Rezerwacja</a>
-          </div>
-        </div>
+      <div class="button-section center-align">
+        <a href="tickets.html" class="btn btn-success left" role="button">Bilet</a>
+        <a th:href="@{'/createReservation'(realizationId=${event.eventRealizationId})}" class="btn btn-success right" role="button">Rezerwacja</a>
+
       </div>
-    </div><!-- /.container -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <!-- Page logic -->
-    <script src="../assets/js/general.js"></script>
-    <script src="../assets/js/selectSeats.js"></script>
-  </body>
+    </div>
+  </div>
+</div><!-- /.container -->
+<!-- Bootstrap core JavaScript -->
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+
+<script type="text/javascript" th:src="@{../resources/js/bootstrap.min.js}"
+        src="../resources/js/bootstrap.min.js"></script>
+<!-- Page logic -->
+<script th:src="@{../resources/js/general.js}" src="../resources/js/general.js"></script>
+<script th:src="@{../resources/js/eventRealizations.js}" src="../resources/js/eventRealizations.js"></script>
+</body>
 </html>

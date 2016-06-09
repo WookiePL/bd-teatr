@@ -57,19 +57,21 @@
     <table class="table table-striped large-table center-align">
         <thead>
         <tr>
-            <th>Imię Nazwisko</th>
-            <th>Email</th>
-            <th>Telefon</th>
-            <th>Data utworzenia</th>
-            <th>Data odwołania</th>
-            <th>Sektor</th>
-            <th>Miejsca</th>
-            <th>Akcja</th>
+            <th>Imię </th>
+            <th>Nazwisko </th>
+            <th>Email </th>
+            <th>Telefon </th>
+            <th>Data utworzenia </th>
+            <th>Data odwołania </th>
+            <th>Sektor </th>
+            <th>Miejsca </th>
+            <th>Akcja </th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="eventReservation : ${eventReservationList}">
             <td th:text="${eventReservation.name}"></td>
+            <td th:text="${eventReservation.surname}"></td>
             <td th:text="${eventReservation.email}"></td>
             <td th:text="${eventReservation.phone}"></td>
             <td th:text="${eventReservation.date}"></td>
