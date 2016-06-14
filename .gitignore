@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-BDII/.idea
+
 BDII/*.iml
 
-BDII/target
-=======
 DD2L.sql
 DDL.sql
 DDL3.sql
@@ -17,5 +14,5 @@ README.txt
 
 BDII/.idea
 BDII/target
-
->>>>>>> 1b5028a0ad2471290c051adbee523a71676f304a
+BDII/.idea/*
+BDII/target/*
