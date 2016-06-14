@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="603751752">
+  <component name="DataSourceManagerImpl" format="xml" hash="2627824132">
     <data-source source="LOCAL" name="PostgreSQL - theater_db@localhost" uuid="6ae8ed8b-9e98-4d45-aca1-82280eb4364e">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>

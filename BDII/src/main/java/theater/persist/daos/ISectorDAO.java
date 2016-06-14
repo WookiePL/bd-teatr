@@ -11,6 +11,8 @@ public interface ISectorDAO extends IBaseDAO<SectorEntity, Integer> {
 
     SectorEntity getSectorById(int id);
 
+    SectorEntity findByNumber(Integer number);
+
     List<SectorEntity> getAllSectors();
 
     void addSector(SectorEntity sector);

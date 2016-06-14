@@ -4,7 +4,7 @@
     <data-source name="PostgreSQL - theater_db@localhost" uuid="6ae8ed8b-9e98-4d45-aca1-82280eb4364e">
       <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
-      <schema-pattern>theater_db.theater</schema-pattern>
+      <introspection-scope>theater_db:theater</introspection-scope>
     </data-source>
   </component>
 </project>

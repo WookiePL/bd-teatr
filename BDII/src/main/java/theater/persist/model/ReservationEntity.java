@@ -139,7 +139,7 @@ public class ReservationEntity {
         this.user = user;
     }
 
-    @ManyToMany(mappedBy = "reservations", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "reservations", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public Collection<PlaceEntity> getPlaces() {
         return places;
     }

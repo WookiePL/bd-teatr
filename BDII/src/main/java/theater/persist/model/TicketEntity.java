@@ -14,7 +14,6 @@ public class TicketEntity {
     private Integer userId;
     private EventRealizationEntity eventRealization;
     private UserEntity user;
-    //private List<PlaceEntity> places;
     private Collection<PlaceEntity> places;
 
 
@@ -83,14 +82,6 @@ public class TicketEntity {
         this.user = user;
     }
 
-//    @OneToMany(mappedBy = "ticket", targetEntity = PlaceEntity.class, fetch = FetchType.LAZY)
-//    public List<PlaceEntity> getPlaces() {
-//        return places;
-//    }
-//
-//    public void setPlaces(List<PlaceEntity> places) {
-//        this.places = places;
-//    }
     @ManyToMany(mappedBy = "tickets")
     public Collection<PlaceEntity> getPlaces() {
     return places;
