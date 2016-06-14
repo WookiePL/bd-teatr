@@ -1,4 +1,21 @@
+<<<<<<< HEAD
 BDII/.idea
 BDII/*.iml
 
 BDII/target
+=======
+DD2L.sql
+DDL.sql
+DDL3.sql
+DDL5.sql
+theater-dll.sql
+bd-teatr2.eap
+*.class
+config
+servers
+README.txt
+
+BDII/.idea
+BDII/target
+
+>>>>>>> 1b5028a0ad2471290c051adbee523a71676f304a
