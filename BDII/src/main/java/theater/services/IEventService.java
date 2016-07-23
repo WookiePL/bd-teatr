@@ -16,6 +16,8 @@ public interface IEventService {
 
     List<EventRealizationDTO> getAllEventRealization();
 
+    List<EventDTO> getAllEvents();
+
     List<ReservationDTO> getAllEventReservation();
 
     List<SectorDTO> getAllSectorsByRealizationId(int id);

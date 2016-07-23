@@ -1,10 +1,13 @@
 package theater.persist.dtos;
 
 
+import theater.persist.model.EventTypeEntity;
+
 public class EventDTO {
     private Integer eventId;
     private String name;
     private Integer eventTypeId;
+    private EventTypeEntity eventType;
     private String description;
 
     public Integer getEventTypeId() {
@@ -13,6 +16,14 @@ public class EventDTO {
 
     public void setEventTypeId(Integer eventTypeId) {
         this.eventTypeId = eventTypeId;
+    }
+
+    public EventTypeEntity getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(EventTypeEntity eventType) {
+        this.eventType = eventType;
     }
 
     public String getDescription() {
