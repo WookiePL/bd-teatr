@@ -38,6 +38,20 @@ public class EventController {
     }
 
     @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/priceList"}, method = RequestMethod.GET)
+    public String priceList(Model model) {
+        model.addAttribute("priceList", eventService.getAllEventRealization());
+        return "priceList";
+    }
+
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/events"}, method = RequestMethod.GET)
+    public String events(Model model) {
+        model.addAttribute("events", eventService.getAllEvents());
+        return "events";
+    }
+
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/eventReservations"}, method = RequestMethod.GET)
     public String eventReservations(Model model, @RequestParam(value = "realizationId", required = true) Integer realizationID) {
 

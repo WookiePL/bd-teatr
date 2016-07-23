@@ -23,6 +23,9 @@ public class EventService implements IEventService {
     private ReservationDAO reservationDAO;
 
     @Autowired
+    private EventDAO eventDAO;
+
+    @Autowired
     private SectorDAO sectorDAO;
 
     @Autowired
@@ -54,6 +57,15 @@ public class EventService implements IEventService {
             realizationDTOs.add(convertToDto(list));
         }
         return realizationDTOs;
+    }
+
+    @Override
+    public List<EventDTO> getAllEvents() {
+        List<EventDTO> eventDTOs = new ArrayList<>();
+        for(EventEntity list: eventDAO.getAll()){
+            eventDTOs.add(convertToDto(list));
+        }
+        return eventDTOs;
     }
 
     @Override
@@ -233,6 +245,10 @@ public class EventService implements IEventService {
 
     private PriceListDTO convertToDto(PriceListEntity priceListEntity) {
         return modelMapper.map(priceListEntity, PriceListDTO.class);
+    }
+
+    private EventDTO convertToDto(EventEntity eventEntity) {
+        return modelMapper.map(eventEntity, EventDTO.class);
     }
 
     private PlaceDTO convertToDto(PlaceEntity placeEntity) {

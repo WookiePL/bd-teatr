@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="initial-scale=1, width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" th:href="@{/resources/images/favicon.ico}" href='../resources/images/favicon.ico'/>
+    <!-- Bootstrap core CSS -->
+    <link rel='stylesheet' th:href="@{/resources/css/bootstrap.min.css}" href='../resources/css/bootstrap.min.css'/>
+    <!-- Custom styles -->
+    <link rel='stylesheet' th:href="@{/resources/css/style.css}" href='../resources/css/bootstrap.min.css'/>
+    <!-- Cuprum font -->
+    <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
+    <title>Wydarzenie</title>
+</head>
+<body onload="fillEventsTable()">
+
+<!-- NAVBAR -->
+<div th:include="fragments/navbar :: navbar"></div>
+<div class="container">
+    <!-- Header -->
+    <div class="center-content">
+        <h1>Wydarzenia</h1>
+    </div>
+    <!-- Events table -->
+    <table class="table table-striped large-table center-align">
+        <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Rodzaj</th>
+            <th>Opis</th>
+            <th>Akcja</th>
+        </tr>
+        </thead>
+        <!--<tbody id="eventsTableBody">-->
+        <tbody>
+        <tr th:each="event : ${events}">
+            <td th:text="${event.name}"></td>
+            <td th:text="${event.eventType.name}"></td>
+            <td th:text="${event.description}"></td>
+            <td>
+            <!--<span th:each="reservation : ${event.reservations}">-->
+            <a th:href="@{'/eventReservations'(realizationId=${event.eventTypeId})}">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </a>
+
+                <!--Nie umiem znalezc siedzenia wiec jest byle co:-->
+             <a th:href="@{'/selectSeats'(realizationId=${event.eventTypeId})}">
+                 <span class="glyphicon glyphicon-plus-sign"></span>
+             </a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div><!-- /.container -->
+<!-- Bootstrap core JavaScript -->
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js}"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+
+<script type="text/javascript" th:src="@{../resources/js/bootstrap.min.js}"
+        src="../resources/js/bootstrap.min.js"></script>
+<!-- Page logic -->
+<script th:src="@{../resources/js/general.js}" src="../resources/js/general.js"></script>
+<script th:src="@{../resources/js/eventRealizations.js}" src="../resources/js/eventRealizations.js"></script>
+</body>
+</html>
