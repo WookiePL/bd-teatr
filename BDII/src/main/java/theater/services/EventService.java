@@ -57,6 +57,15 @@ public class EventService implements IEventService {
     }
 
     @Override
+    public List<PriceListDTO> getAllPriceList() {
+        List<PriceListDTO> priceListDTOs = new ArrayList<>();
+        for(PriceListEntity list: priceListDAO.getAll()){
+            priceListDTOs.add(convertToDto(list));
+        }
+        return priceListDTOs;
+    }
+
+    @Override
     public List<ReservationDTO> getAllEventReservationByRealization(int id) {
         List<ReservationDTO> reservationDTOs = new ArrayList<>();
         for(ReservationEntity list: reservationDAO.getAllReservationsByRealization(id)){
@@ -87,6 +96,7 @@ public class EventService implements IEventService {
         }
         return reservationDTOs;
     }
+
 
     @Override
     public ReservationDTO getReservationById(Integer id) {
@@ -215,6 +225,7 @@ public class EventService implements IEventService {
         reservationDAO.updateReservation(convertToEntity(reservation));
     }
 
+
     @Override
     public PriceListEntity getPriceListForEvent(Integer eventId, Date date) {
         return priceListDAO.findByEventIdAndDate(eventId, date);
@@ -281,11 +292,9 @@ public class EventService implements IEventService {
         return postDto;
     }
 
-
     @Override
     public EventRealizationEntity convertToEntity(EventRealizationDTO eventRealization) {
         EventRealizationEntity realizationEntity = modelMapper.map(eventRealization, EventRealizationEntity.class);
         return realizationEntity;
     }
-
 }

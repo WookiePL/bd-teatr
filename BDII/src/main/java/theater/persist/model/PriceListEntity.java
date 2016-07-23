@@ -1,5 +1,7 @@
 package theater.persist.model;
 
+//import com.sun.org.apache.xpath.internal.operations.String;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -12,6 +14,7 @@ public class PriceListEntity {
     private Date from;
     private Date to;
     private Integer eventId;
+    private String name;
     private EventEntity event;
     private List<PriceEntity> prices;
 
@@ -60,6 +63,16 @@ public class PriceListEntity {
         this.eventId = eventId;
     }
 
+    @Basic
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @ManyToOne
     @JoinColumn(name = "event_id", insertable = false, updatable = false)
     public EventEntity getEvent() {
@@ -90,6 +103,7 @@ public class PriceListEntity {
         if (from != null ? !from.equals(that.from) : that.from != null) return false;
         if (to != null ? !to.equals(that.to) : that.to != null) return false;
         if (eventId != null ? !eventId.equals(that.eventId) : that.eventId != null) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
 
         return true;
     }
@@ -100,6 +114,7 @@ public class PriceListEntity {
         result = 31 * result + (from != null ? from.hashCode() : 0);
         result = 31 * result + (to != null ? to.hashCode() : 0);
         result = 31 * result + (eventId != null ? eventId.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
         return result;
     }
 }

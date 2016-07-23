@@ -31,6 +31,13 @@ public class EventController {
     private IEventService eventService;
 
     @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/priceList"}, method = RequestMethod.GET)
+    public String priceList(Model model) {
+        model.addAttribute("priceList", eventService.getAllPriceList());
+        return "priceList";
+    }
+
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/eventRealizations"}, method = RequestMethod.GET)
     public String eventRealizations(Model model) {
         model.addAttribute("eventRealizationList", eventService.getAllEventRealization());

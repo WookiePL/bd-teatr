@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="initial-scale=1, width=device-width, initial-scale=1"/>
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+  <link rel="icon" th:href="@{/resources/images/favicon.ico}" href='../resources/images/favicon.ico'/>
+  <!-- Bootstrap core CSS -->
+  <link rel='stylesheet' th:href="@{/resources/css/bootstrap.min.css}" href='../resources/css/bootstrap.min.css'/>
+  <!-- Custom styles -->
+  <link rel='stylesheet' th:href="@{/resources/css/style.css}" href='../resources/css/bootstrap.min.css'/>
+  <!-- Cuprum font -->
+  <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
+  <title>Wydarzenia</title>
+  </head>
+  <body onload="fillEventsTable()">
+  <!-- NAVBAR -->
+  <div th:include="fragments/navbar :: navbar"></div>
+
+    <div class="container">
+      <!-- Header -->
+      <div class="center-content">
+        <h1>Cenniki</h1>
+      </div>
+      <!-- Events table -->
+      <table class="table table-striped large-table center-align">
+        <thead>
+          <tr>
+            <th>Nazwa</th>
+            <th>Od</th>
+            <th>Do</th>
+            <th>Akcja</th>
+          </tr>
+        </thead>
+        <tbody id="eventsTableBody">
+        </tbody>
+      </table>
+         <a href="eventReservations.html"><button type="button" class="btn btn-success right">Dodaj</button></a>
+    </div><!-- /.container -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- Page logic -->
+    <script src="../assets/js/general.js"></script>
+    <script src="../assets/js/priceList.js"></script>
+  </body>
+</html>
