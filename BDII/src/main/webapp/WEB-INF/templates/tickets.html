@@ -17,27 +17,23 @@
     <!-- Cuprum font -->
     <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
     <title>Bilety</title>
+    <!-- Page logic -->
+    <script th:src="@{../resources/js/general.js}" src="../resources/js/general.js"></script>
+    <script th:src="@{../resources/js/tickets.js}" src="../resources/js/eventRealizations.js"></script>
 </head>
 
-<body onload="initializePage()">
+<body>
 
 <!-- NAVBAR -->
 <div th:include="fragments/navbar :: navbar"></div>
 
-
 <div class="container">
-
     <div class="center-content">
         <h1>Bilety</h1>
-        <p id="count">sdfs</p>
+        <p id="count" th:text="${numberOfTickets}"></p>
     </div>
-
-    <table class="table table-striped event-info center-align">
+    <table class="table table-striped event-info center-align" th:each="place : ${places}">
         <tbody>
-        <!--<tr>-->
-        <!--<td>Numer:</td>-->
-        <!--<td id="number" th:text="${eventDescription.event.ticket.number}"> </td>-->
-        <!--</tr>-->
         <tr>
             <td>Nazwa:</td>
             <td id="eventName" th:text="${eventDescription.event.name}"></td>
@@ -60,52 +56,46 @@
         </tr>
         <tr>
             <td>Sektor:</td>
-            <td>
-                to trzeba wyslac
-                <!--<span id="sector" th:each="sector : ${eventDescription.room.sectors}">-->
-                    <!--<span th:text="${sector.number}"> </span>-->
-                <!--</span>-->
-            </td>
+            <td th:text="${place.sector.number}"></td>
         </tr>
         <tr>
             <td>Miejsce:</td>
-            <td>
-                to tez trzeba wyslac
-                <!--<span id="place" th:each="sector : ${eventDescription.room.sectors}">-->
-                    <!--<span th:text="${sector.number}"> </span>-->
-                <!--</span>-->
-            </td>
+            <td th:text="${place.number}"></td>
         </tr>
-
         <tr>
             <td>Cena:</td>
             <td>
-                <select class="form-control" id="sel1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
+                <!--<p th:text="${priceList.priceListId}"></p>-->
+                <!--<p th:each="price : ${priceList.prices}"></p>-->
+                <select class="form-control" name="selectPrice" onchange="sumPrices();" th:switch="${priceList}">
+                    <!--cennik jest nieskonczony-->
+                    <option th:if="${priceList != null}" th:each="price : ${priceList?.prices}" th:value="${price.price}" th:text="${price.groupOfClients.name} + ' ' + ${price.price} + zł"></option>
+                    <option th:if="${priceList == null}" th:value="${eventDescription.price}" th:text="${eventDescription.price} + zł"></option>
+                    <!--<option value="2">2</option>-->
+                    <!--<option value="3">3</option>-->
                 </select>
             </td>
         </tr>
-
-
         </tbody>
     </table>
-
-
-
     <div id="tickets">
     </div>
-
     <div class="center-content">
         <h2>Suma</h2>
-        <p id="sum">104</p>
+        <p id="sum"></p>
     </div>
+    <script>
+        sumPrices();
+    </script>
+    <form action="#" th:action="@{'/addTickets'}" method="post">
+        <input type="hidden" th:value="${reservationId}" name="reservationId" />
+        <input type="hidden" th:value="${eventDescription.eventRealizationId}" name="realizationId" />
+        <input type="hidden" th:each="place : ${places}" name="placeIds" th:value="${place.placeId}" />
+        <div class="button-section center-content center-align">
+            <button type="submit" class="btn btn-success">Zatwierdź</button>
+        </div>
+    </form>
 
-    <div class="button-section center-content center-align">
-        <a th:href="@{'/eventRealizations'}" class="btn btn-success" role="button">Zatwierdź</a>
-    </div>
 
 </div><!-- /.container -->
 <!-- Bootstrap core JavaScript -->
@@ -115,8 +105,6 @@
 
 <script type="text/javascript" th:src="@{../resources/js/bootstrap.min.js}"
         src="../resources/js/bootstrap.min.js"></script>
-<!-- Page logic -->
-<script th:src="@{../resources/js/general.js}" src="../resources/js/general.js"></script>
-<script th:src="@{../resources/js/eventRealizations.js}" src="../resources/js/eventRealizations.js"></script>
+
 </body>
 </html>

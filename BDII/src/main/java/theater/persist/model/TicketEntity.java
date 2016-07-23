@@ -82,7 +82,8 @@ public class TicketEntity {
         this.user = user;
     }
 
-    @ManyToMany(mappedBy = "tickets")
+    @ManyToMany
+    @JoinTable(name = "ticket_place", schema = "theater")
     public Collection<PlaceEntity> getPlaces() {
     return places;
 }

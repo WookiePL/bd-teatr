@@ -1,7 +1,7 @@
 package theater.persist.model;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 
@@ -70,7 +70,7 @@ public class PriceListEntity {
         this.event = event;
     }
 
-    @OneToMany(mappedBy = "priceList", targetEntity = PriceEntity.class, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "priceList", targetEntity = PriceEntity.class, fetch = FetchType.EAGER)
     public List<PriceEntity> getPrices() {
         return prices;
     }

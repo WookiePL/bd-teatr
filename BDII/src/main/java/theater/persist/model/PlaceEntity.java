@@ -58,8 +58,7 @@ public class PlaceEntity {
         this.sector = sector;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "ticket_place",schema = "theater")
+    @ManyToMany(mappedBy = "places")
     public Collection<TicketEntity> getTickets() {
         return tickets;
     }
@@ -68,8 +67,7 @@ public class PlaceEntity {
         this.tickets = tickets;
     }
 
-    @ManyToMany
-    @JoinTable(name = "reservation_place",schema = "theater")
+    @ManyToMany(mappedBy = "places")
     public Collection<ReservationEntity> getReservations() {
         return reservations;
     }

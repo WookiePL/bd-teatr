@@ -22,9 +22,6 @@ public class UserEntity {
     private List<TicketEntity> tickets;
     private Collection<RoleEntity> roles;
 
-
-
-
     @Id
     @Column(name = "user_id", columnDefinition = "serial")
     @GeneratedValue
@@ -96,7 +93,7 @@ public class UserEntity {
 
     @ManyToMany
     @JoinTable(name = "user_role",schema = "theater")
-            public Collection<RoleEntity> getRoles() {
+    public Collection<RoleEntity> getRoles() {
         return roles;
     }
 

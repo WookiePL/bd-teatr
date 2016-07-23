@@ -6,7 +6,7 @@ import java.math.BigInteger;
 @Entity
 @Table(name = "price", schema = "theater")
 public class PriceEntity {
-    private BigInteger price;
+    private Integer price; //BigInteger
     private Integer priceId;
     private Integer groupOfClientsId;
     private Integer priceListId;
@@ -32,12 +32,13 @@ public class PriceEntity {
 
     @Basic
     @Column(name = "price")
-    public BigInteger getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
+//    public float getPriceFloat() { return price  .floatValue(); }
 
-    public void setPrice(BigInteger price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 

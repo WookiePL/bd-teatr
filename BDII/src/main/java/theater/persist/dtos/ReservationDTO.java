@@ -4,8 +4,8 @@ import theater.persist.model.EventRealizationEntity;
 import theater.persist.model.PlaceEntity;
 import theater.persist.model.UserEntity;
 
-import java.sql.Date;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 

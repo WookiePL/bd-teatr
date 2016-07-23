@@ -57,13 +57,29 @@
   <!-- Reservation form -->
 
   <div class="reservation-form center-align">
-    <form action="#" th:action="@{'/editReservation'}" th:object="${reservation}" method="post">
+    <form action="#" th:action="@{'/addReservation'}" th:object="${reservation}" method="post">
       <!--<div>-->
-      <!--<input type="hidden" class="form-control" th:field="*{reservationId}"/>-->
+      <!--<input type="hidden" class="form-control" th:field="*{date}"/>-->
       <!--</div>-->
-      <div>
-        <input type="hidden" class="form-control" th:field="*{date}"/>
+      <!--<div>-->
+        <!--<input type="hidden" class="form-control" th:field="*{e}"/>-->
+      <!--</div>-->
+      <!--<div>-->
+        <!--<input type="hidden" class="form-control" th:field="*{user}"/>-->
+      <!--</div>-->
+      <!--<div>-->
+        <!--<input type="hidden" class="form-control" th:field="*{eventRealizationId}"/>-->
+      <!--</div>-->
+
+      <div >
+        <input type="hidden" class="form-control" th:field="*{reservationId}"/>
+        <input type="hidden" th:each="seat : ${seats}" name="seats" th:value="${seat}" />
+        <input type="hidden" name="realizationId" th:value="${realizationId}"/>
       </div>
+
+      <!--<div>-->
+        <!--<input type="hidden" class="form-control" th:field="*{eventRealizationId}"/>-->
+      <!--</div>-->
       <div class="form-group">
         <label for="clientName">Imię</label>
         <input type="text" class="form-control" id="clientName" placeholder="Imię" th:field="*{name}"/>
@@ -81,8 +97,24 @@
         <input type="tel" class="form-control" id="clientPhone" placeholder="Telefon" th:field="*{phone}"/>
       </div>
       <div class="form-group">
-      <label >Miejsca</label>
-      <!--<p id="seatsList" class="help-block"></p>-->
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Sektor </th>
+            <th>Miejsce </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="place : ${placesList}">
+            <td th:text="${place.sectorId}">
+              <input type="text" th:field="*{sectorId}" />
+            </td>
+            <td th:text="${place.placeId}">
+              <input type="text" th:field="*{placeId}" />
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </div>
       <a th:href="@{'/eventRealizations'}" class="btn btn-success left" role="button">Anuluj</a>
       <button type="submit" class="btn btn-success right">Zatwierdź</button>

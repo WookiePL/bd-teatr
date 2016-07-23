@@ -5,7 +5,6 @@ public class EventDTO {
     private Integer eventId;
     private String name;
     private Integer eventTypeId;
-
     private String description;
 
     public Integer getEventTypeId() {
