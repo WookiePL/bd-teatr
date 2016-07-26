@@ -80,6 +80,33 @@ public class EventController {
     }
 
     @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/addEvent"}, method = RequestMethod.GET)
+    public String addEvent(Model model, @RequestParam(value = "eventId", required = false) String eventId) {
+        model.addAttribute("eventTypes", eventService.getAllEventTypes());
+        EventDTO event = new EventDTO();
+        model.addAttribute("event", event);
+        return "addEvent";
+    }
+
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/addEvent"}, method = RequestMethod.POST)
+    public String addEvent(@RequestParam("eventName") String eventName, @RequestParam("eventType") String eventType,
+                                 @RequestParam("eventDescription") String eventDescription) {
+        Integer eventTypeId = Integer.parseInt(eventType);
+        eventService.addEvent(eventName, eventTypeId, eventDescription);
+        return "redirect:/events";
+    }
+
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/editEvent"}, method = RequestMethod.GET)
+    public String editEvent(Model model, @RequestParam(value = "eventId", required = false) String eventId) {
+        model.addAttribute("eventTypes", eventService.getAllEventTypes());
+        EventDTO event = eventService.getEventById(Integer.parseInt(eventId));
+        model.addAttribute("event", event);
+        return "editEvent";
+    }
+
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/eventReservations"}, method = RequestMethod.GET)
     public String eventReservations(Model model, @RequestParam(value = "realizationId", required = true) Integer realizationID) {
 
