@@ -26,8 +26,6 @@ public interface IEventService {
 
     List<ReservationDTO> getAllEventReservation(Integer id);
 
-    List<PriceListDTO> getAllPriceList();
-
     ReservationDTO getReservationById(Integer id);
 
     EventRealizationDTO getEventRealizationById(Integer id);
@@ -44,6 +42,11 @@ public interface IEventService {
 
     void deleteReservation(Integer id);
 
+    List<PriceListDTO> getAllPriceList();
+
+    PriceListDTO getPriceListById(Integer id);
+
+    void updatePriceList(Integer priceListID, PriceListDTO priceList);
 
     List<PlaceEntity> convertToEntity(List<PlaceDTO> placeDTOList);
 

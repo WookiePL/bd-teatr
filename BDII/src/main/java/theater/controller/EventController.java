@@ -30,14 +30,42 @@ public class EventController {
     @Autowired
     private IEventService eventService;
 
-    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/priceList"}, method = RequestMethod.GET)
     public String priceList(Model model) {
         model.addAttribute("priceList", eventService.getAllPriceList());
         return "priceList";
     }
 
-    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @RequestMapping(value = {"/editPriceList"}, method = RequestMethod.GET)
+    public String editPriceList(Model model, @RequestParam(value = "priceListId", required = false) Integer priceListID) {
+        PriceListDTO priceList = eventService.getPriceListById(priceListID);
+        if (priceList != null) {
+            EventRealizationDTO event = eventService.getEventRealizationById(priceList.getEventId());
+            if (event != null) {
+                model.addAttribute("priceList", priceList);
+                model.addAttribute("event", event);
+            }
+        }
+        return  "editPriceList";
+    }
+
+    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @RequestMapping(value = {"/editPriceList"}, method = RequestMethod.POST)
+    public String editPriceList(@RequestParam(value = "priceListId", required = false) Integer priceListID,
+                                @ModelAttribute(value = "priceList") PriceListDTO newPriceList, BindingResult result) {
+        PriceListDTO priceList = eventService.getPriceListById(priceListID);
+        /*if (result.hasErrors()) {
+            return "redirect:/editPriceList?priceListId=" + priceList.getPriceListId();
+
+        }*/
+        eventService.updatePriceList(priceListID, newPriceList);
+        return "redirect:/editPriceList?priceListId=" + priceList.getPriceListId();
+    }
+
+
+    @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/eventRealizations"}, method = RequestMethod.GET)
     public String eventRealizations(Model model) {
         model.addAttribute("eventRealizationList", eventService.getAllEventRealization());

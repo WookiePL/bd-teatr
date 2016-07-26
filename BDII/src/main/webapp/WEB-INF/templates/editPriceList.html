@@ -16,7 +16,7 @@
   <link rel='stylesheet' th:href="@{/resources/css/style.css}" href='../resources/css/bootstrap.min.css'/>
   <!-- Cuprum font -->
   <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
-  <title>Edytuj rezerwację</title>
+  <title>Edytuj cennik</title>
   </head>
   <body onload="//iniatializePage()">
   <!-- NAVBAR -->
@@ -31,38 +31,41 @@
       <!-- Event description -->
       <!-- Reservation form -->
       <div class="reservation-form center-align">
-       <form method="#" action="eventReservations.html">
-         <div class="form-group">
-           <label for="clientName">Nazwa</label>
-           <input type="text" class="form-control" id="clientName" placeholder="Nazwa">
+       <form action="#" th:action="@{'/editPriceList'}"  th:object="${priceList}" method="post">
+         <div>
+             <input type="hidden" class="form-control" th:field="*{priceListId}"/>
+         </div>
+           <div>
+               <input type="hidden" name="priceListId" th:value="${priceList.priceListId}"/>
+           </div>
+           <div class="form-group">
+           <label for="priceListName">Nazwa</label>
+           <input type="text" class="form-control" id="priceListName" placeholder="Nazwa" th:field="*{name}"/>
          </div>
          <div class="form-group">
-           <label for="clientSurname">Od</label>
-           <input type="date" class="form-control" id="clientSurname">
+           <label for="priceListFrom">Od</label>
+           <input type="date" class="form-control" id="priceListFrom" th:field="*{from}"/>
          </div>
          <div class="form-group">
-           <label for="clientEmail">Do</label>
-           <input type="date" class="form-control" id="clientEmail">
+           <label for="priceListTo">Do</label>
+           <input type="date" class="form-control" id="priceListTo" th:field="*{to}"/>
          </div>
 
 	 <div class="price-list-edit-group">
          <div class="form-group">
            <label for="clientPhone">Cykl</label>
 	   <select>
-	     <option value="volvo">Przykładowy cykl</option>
-	     <option value="saab">Saab</option>
-	     <option value="mercedes">Mercedes</option>
-	     <option value="audi">Audi</option>
+
 	   </select>
            <a href="eventReservations.html" class="btn btn-success right" role="button">Dodaj cykl</a>
          </div>
          <div class="form-group">
            <label for="clientPhone">Normalny</label>
-           <input type="tel" class="form-control" id="clientPhone" placeholder="Normalny">
+           <input type="tel" class="form-control" id="clientPhone" placeholder="Normalny"/>
          </div>
          <div class="form-group">
            <label for="clientPhone">Ulgowy</label>
-           <input type="tel" class="form-control" id="clientPhone" placeholder="Ulgowy">
+           <input type="tel" class="form-control" id="clientPhone" placeholder="Ulgowy"/>
          </div>
 	 </div>
 
@@ -73,7 +76,7 @@
     </div><!-- /.container -->
     <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+   <!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"></script>')</script>-->
     <script src="../assets/js/bootstrap.min.js"></script>
     <!-- Page logic -->
     <script src="../assets/js/general.js"></script>
