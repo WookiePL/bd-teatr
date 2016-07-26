@@ -26,6 +26,9 @@ public class EventService implements IEventService {
     private EventDAO eventDAO;
 
     @Autowired
+    private EventTypeDAO eventTypeDAO;
+
+    @Autowired
     private SectorDAO sectorDAO;
 
     @Autowired
@@ -75,6 +78,28 @@ public class EventService implements IEventService {
             eventDTOs.add(convertToDto(list));
         }
         return eventDTOs;
+    }
+
+    @Override
+    public void addEvent(String eventName, Integer eventTypeId, String eventDescription){
+        EventDTO event = new EventDTO();
+        event.setName(eventName);
+        event.setEventTypeId(eventTypeId);
+        event.setDescription(eventDescription);
+        eventDAO.addEvent(convertToEntity(event));
+    }
+
+    public List<EventTypeDTO> getAllEventTypes() {
+        List<EventTypeDTO> eventTypesDTOs = new ArrayList<>();
+        for(EventTypeEntity list: eventTypeDAO.getAll()){
+            eventTypesDTOs.add(convertToDto(list));
+        }
+        return eventTypesDTOs;
+    }
+
+    @Override
+    public EventDTO getEventById(Integer id) {
+        return convertToDto(eventDAO.getEventById(id));
     }
 
     @Override
@@ -262,6 +287,10 @@ public class EventService implements IEventService {
         return modelMapper.map(eventEntity, EventDTO.class);
     }
 
+    private EventTypeDTO convertToDto(EventTypeEntity eventTypeEntity) {
+        return modelMapper.map(eventTypeEntity, EventTypeDTO.class);
+    }
+
     private PlaceDTO convertToDto(PlaceEntity placeEntity) {
         PlaceDTO place = modelMapper.map(placeEntity, PlaceDTO.class);
         return place;
@@ -291,6 +320,10 @@ public class EventService implements IEventService {
 
     private TicketEntity convertToEntity(TicketDTO ticketDTO) throws ParseException {
         return modelMapper.map(ticketDTO, TicketEntity.class);
+    }
+
+    private EventEntity convertToEntity(EventDTO eventDTO) throws ParseException {
+        return modelMapper.map(eventDTO, EventEntity.class);
     }
 
     private PlaceEntity convertToEntity(PlaceDTO placeDTO) throws ParseException {

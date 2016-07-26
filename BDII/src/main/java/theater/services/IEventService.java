@@ -18,6 +18,12 @@ public interface IEventService {
 
     List<EventDTO> getAllEvents();
 
+    List<EventTypeDTO> getAllEventTypes();
+
+    public EventDTO getEventById(Integer id);
+
+    public void addEvent(String eventName, Integer eventTypeId, String eventDescription);
+
     List<ReservationDTO> getAllEventReservation();
 
     List<SectorDTO> getAllSectorsByRealizationId(int id);
