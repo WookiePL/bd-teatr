@@ -24,6 +24,10 @@ public interface IEventService {
 
     public void addEvent(String eventName, Integer eventTypeId, String eventDescription);
 
+    public void deleteEvent(Integer id);
+
+    public void updateEvent(Integer eventId, String eventName, Integer eventType, String eventDescription);
+
     List<ReservationDTO> getAllEventReservation();
 
     List<SectorDTO> getAllSectorsByRealizationId(int id);
