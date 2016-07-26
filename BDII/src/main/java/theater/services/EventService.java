@@ -103,6 +103,20 @@ public class EventService implements IEventService {
     }
 
     @Override
+    public void deleteEvent(Integer id) {
+        eventDAO.deleteEvent(id);
+    }
+
+    @Override
+    public void updateEvent(Integer eventId, String eventName, Integer eventType, String eventDescription) {
+        EventDTO event = convertToDto(eventDAO.getEventById(eventId));
+        event.setName(eventName);
+        event.setEventTypeId(eventType);
+        event.setDescription(eventDescription);
+        eventDAO.updateEvent(convertToEntity(event));
+    }
+
+    @Override
     public List<ReservationDTO> getAllEventReservationByRealization(int id) {
         List<ReservationDTO> reservationDTOs = new ArrayList<>();
         for(ReservationEntity list: reservationDAO.getAllReservationsByRealization(id)){
@@ -261,7 +275,6 @@ public class EventService implements IEventService {
         reservation.setDate(dto.getDate());
         reservationDAO.updateReservation(convertToEntity(reservation));
     }
-
 
     @Override
     public PriceListEntity getPriceListForEvent(Integer eventId, Date date) {

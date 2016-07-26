@@ -79,6 +79,22 @@ public class EventController {
     }
 
     @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/editEvent"}, method = RequestMethod.POST)
+    public String editEvent(@RequestParam("eventId") String eventId, @RequestParam("eventName") String eventName, @RequestParam("eventType") String eventType,
+                           @RequestParam("eventDescription") String eventDescription) {
+        Integer eventTypeId = Integer.parseInt(eventType);
+        eventService.updateEvent(Integer.parseInt(eventId), eventName, eventTypeId, eventDescription);
+        return "redirect:/events";
+    }
+
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @RequestMapping(value = {"/deleteEvent"}, method = RequestMethod.GET)
+    public String deleteEvent(@RequestParam(value = "eventId", required = true) Integer eventId) {
+        eventService.deleteEvent(eventId);
+        return "redirect:/events";
+    }
+
+    @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/eventReservations"}, method = RequestMethod.GET)
     public String eventReservations(Model model, @RequestParam(value = "realizationId", required = true) Integer realizationID) {
 
