@@ -10,7 +10,10 @@ import theater.persist.daos.*;
 import theater.persist.dtos.*;
 import theater.persist.model.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 @Service
 @Transactional
@@ -62,15 +65,7 @@ public class EventService implements IEventService {
         return realizationDTOs;
     }
 
-    @Override
 
-    public List<PriceListDTO> getAllPriceList() {
-        List<PriceListDTO> priceListDTOs = new ArrayList<>();
-        for (PriceListEntity list : priceListDAO.getAll()) {
-            priceListDTOs.add(convertToDto(list));
-        }
-        return priceListDTOs;
-    }
 
     public List<EventDTO> getAllEvents() {
         List<EventDTO> eventDTOs = new ArrayList<>();
@@ -292,6 +287,31 @@ public class EventService implements IEventService {
         reservationDAO.deleteReservation(id);
     }
 
+    @Override
+    public List<PriceListDTO> getAllPriceList() {
+        List<PriceListDTO> priceListDTOs = new ArrayList<>();
+        for (PriceListEntity list : priceListDAO.getAll()) {
+            priceListDTOs.add(convertToDto(list));
+        }
+        return priceListDTOs;
+    }
+
+    @Override
+    public PriceListDTO getPriceListById(Integer id) {
+        return convertToDto(priceListDAO.getPriceListById(id));
+    }
+
+    @Override
+    public void updatePriceList(Integer priceListID, PriceListDTO priceList) {
+        PriceListDTO dto = convertToDto(priceListDAO.getPriceListById(priceListID));
+        priceList.setFrom(dto.getFrom());
+        priceList.setTo(dto.getTo());
+        if(dto.getName() != null) {
+            priceList.setName(dto.getName()); }
+        priceListDAO.updatePriceList(convertToEntity(priceList));
+
+    }
+
     private PriceListDTO convertToDto(PriceListEntity priceListEntity) {
         return modelMapper.map(priceListEntity, PriceListDTO.class);
     }
@@ -347,6 +367,11 @@ public class EventService implements IEventService {
     private ReservationEntity convertToEntity(ReservationDTO reservationDTO) throws ParseException {
         ReservationEntity reservation = modelMapper.map(reservationDTO, ReservationEntity.class);
         return reservation;
+    }
+
+    private PriceListEntity convertToEntity(PriceListDTO priceListDTO) throws ParseException {
+        PriceListEntity priceList = modelMapper.map(priceListDTO, PriceListEntity.class);
+        return priceList;
     }
 
     private EventRealizationDTO convertToDto(EventRealizationEntity eventRealizationEntity) {
