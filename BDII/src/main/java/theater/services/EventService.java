@@ -289,6 +289,11 @@ public class EventService implements IEventService {
     }
 
     @Override
+    public void deletePriceList(Integer id) {
+        priceListDAO.deletePriceList(id);
+    }
+
+    @Override
     public void updatePriceList(Integer priceListID, PriceListDTO priceList) {
         PriceListDTO dto = convertToDto(priceListDAO.getPriceListById(priceListID));
         priceList.setFrom(dto.getFrom());

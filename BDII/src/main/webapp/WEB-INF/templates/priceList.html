@@ -51,8 +51,9 @@
 <!--
                 &lt;!&ndash;Nie umiem znalezc siedzenia wiec jest byle co:&ndash;&gt;
              <a th:href="@{'/selectSeats'(realizationId=${event.eventRealizationId})}">-->
-                 <span class="glyphicon glyphicon-plus-sign"></span>
-           <!--  </a>&ndash;&gt;-->
+                <a th:href="@{'/deletePriceList'(priceListId=${price.priceListId})}">
+                 <span class="glyphicon glyphicon-remove-circle"></span>
+           </a>
             </td>
           <!--  <td th:text="${event.event.name}"></td>
             <td th:text="${event.event.eventType.name}"></td>

@@ -64,6 +64,12 @@ public class EventController {
         return "redirect:/editPriceList?priceListId=" + priceList.getPriceListId();
     }
 
+    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @RequestMapping(value = {"/deletePriceList"}, method = RequestMethod.GET)
+    public String deletePriceList(@RequestParam(value = "priceListId", required = true) Integer priceListID) {
+        eventService.deletePriceList(priceListID);
+        return "redirect:/priceList";
+    }
 
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/eventRealizations"}, method = RequestMethod.GET)

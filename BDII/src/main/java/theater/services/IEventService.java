@@ -52,6 +52,8 @@ public interface IEventService {
 
     PriceListDTO getPriceListById(Integer id);
 
+    void deletePriceList(Integer id);
+
     void updatePriceList(Integer priceListID, PriceListDTO priceList);
 
     List<PlaceEntity> convertToEntity(List<PlaceDTO> placeDTOList);
