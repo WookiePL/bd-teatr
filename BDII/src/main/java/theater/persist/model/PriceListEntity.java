@@ -34,7 +34,7 @@ public class PriceListEntity {
     }
 
     @Basic
-    @Column(name = "from")
+    @Column(name = "\"from\"")
     public Date getFrom() {
         return from;
     }
@@ -44,7 +44,7 @@ public class PriceListEntity {
     }
 
     @Basic
-    @Column(name = "to")
+    @Column(name = "\"to\"")
     public Date getTo() {
         return to;
     }
