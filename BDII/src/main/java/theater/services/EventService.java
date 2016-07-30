@@ -153,21 +153,21 @@ public class EventService implements IEventService {
     }
 
     @Override
-    public void addRealization(Integer eventId, Integer roomId, String realizationDate, Integer realizationTime){
+    public void addRealization(Integer eventId, Integer roomId, java.sql.Date realizationDate, Integer realizationTime){
         EventRealizationDTO eventRealization = new EventRealizationDTO();
         eventRealization.setEventId(eventId);
         eventRealization.setRoomId(roomId);
-        //eventRealization.setDate(realizationDate);
+        eventRealization.setDate(realizationDate);
         eventRealization.setHour(realizationTime);
         eventRealizationDAO.addEventRealization(convertToEntity(eventRealization));
     }
 
     @Override
-    public void updateRealization(Integer realizationId, Integer eventId, Integer roomId, Date realizationDate, Integer realizationHour) {
+    public void updateRealization(Integer realizationId, Integer eventId, Integer roomId, java.sql.Date realizationDate, Integer realizationHour) {
         EventRealizationDTO eventRealization = convertToDto(eventRealizationDAO.getEventRealizationById(realizationId));
         eventRealization.setEventId(eventId);
         eventRealization.setRoomId(roomId);
-        //eventRealization.setDate(realizationDate);
+        eventRealization.setDate(realizationDate);
         eventRealization.setHour(realizationHour);
         eventRealizationDAO.updateEventRealization(convertToEntity(eventRealization));
     }

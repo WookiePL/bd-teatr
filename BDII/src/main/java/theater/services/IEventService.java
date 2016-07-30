@@ -38,9 +38,9 @@ public interface IEventService {
 
     public List<RoomDTO> getAllRooms();
 
-    public void addRealization(Integer eventId, Integer roomId, String realizationDate, Integer realizationTime);
+    public void addRealization(Integer eventId, Integer roomId, java.sql.Date realizationDate, Integer realizationTime);
 
-    public void updateRealization(Integer realizationId, Integer eventId, Integer roomId, Date realizationDate, Integer realizationHour);
+    public void updateRealization(Integer realizationId, Integer eventId, Integer roomId, java.sql.Date realizationDate, Integer realizationHour);
 
     public void deleteEventRealization(Integer id);
 
