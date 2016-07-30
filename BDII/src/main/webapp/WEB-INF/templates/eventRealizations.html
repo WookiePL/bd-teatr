@@ -56,14 +56,25 @@
             </a>
 
                 <!--Nie umiem znalezc siedzenia wiec jest byle co:-->
-             <a th:href="@{'/selectSeats'(realizationId=${event.eventRealizationId})}">
-                 <span class="glyphicon glyphicon-plus-sign"></span>
-             </a>
+            <a th:href="@{'/selectSeats'(realizationId=${event.eventRealizationId})}">
+                <span class="glyphicon glyphicon-print"></span>
+            </a>
+            <a th:href="@{'/editRealization'(realizationId=${event.eventRealizationId})}">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+
+            <a th:href="@{'/deleteRealization'(realizationId=${event.eventRealizationId})}">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+            </a>
             </td>
 
         </tr>
         </tbody>
     </table>
+
+    <a th:href="@{'/addRealization'}">
+        <span class="glyphicon glyphicon-plus-sign"></span>
+    </a>
 
 </div><!-- /.container -->
 <!-- Bootstrap core JavaScript -->

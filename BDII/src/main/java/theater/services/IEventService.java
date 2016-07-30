@@ -34,6 +34,16 @@ public interface IEventService {
 
     List<ReservationDTO> getAllEventReservationByRealization(int id);
 
+    public List<BuildingDTO> getAllBuildings();
+
+    public List<RoomDTO> getAllRooms();
+
+    public void addRealization(Integer eventId, Integer roomId, String realizationDate, Integer realizationTime);
+
+    public void updateRealization(Integer realizationId, Integer eventId, Integer roomId, Date realizationDate, Integer realizationHour);
+
+    public void deleteEventRealization(Integer id);
+
     List<ReservationDTO> getAllEventReservation(Integer id);
 
     ReservationDTO getReservationById(Integer id);

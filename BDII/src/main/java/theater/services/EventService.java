@@ -26,6 +26,12 @@ public class EventService implements IEventService {
     private ReservationDAO reservationDAO;
 
     @Autowired
+    private BuildingDAO buildingDAO;
+
+    @Autowired
+    private RoomDAO roomDAO;
+
+    @Autowired
     private EventDAO eventDAO;
 
     @Autowired
@@ -64,8 +70,6 @@ public class EventService implements IEventService {
         }
         return realizationDTOs;
     }
-
-
 
     public List<EventDTO> getAllEvents() {
         List<EventDTO> eventDTOs = new ArrayList<>();
@@ -127,6 +131,44 @@ public class EventService implements IEventService {
             reservationDTOs.add(convertToDto(list));
         }
         return reservationDTOs;
+    }
+
+    @Override
+    public List<BuildingDTO> getAllBuildings() {
+        List<BuildingDTO> buildingDTOs = new ArrayList<>();
+        for(BuildingEntity list: buildingDAO.getAllBuildings()){
+            buildingDTOs.add(convertToDto(list));
+        }
+        return buildingDTOs;
+    }
+
+    @Override
+    public List<RoomDTO> getAllRooms() {
+        List<RoomDTO> roomDTOs = new ArrayList<>();
+        for(RoomEntity list: roomDAO.getAllRooms()){
+            roomDTOs.add(convertToDto(list));
+        }
+        return roomDTOs;
+    }
+
+    @Override
+    public void addRealization(Integer eventId, Integer roomId, String realizationDate, Integer realizationTime){
+        EventRealizationDTO eventRealization = new EventRealizationDTO();
+        eventRealization.setEventId(eventId);
+        eventRealization.setRoomId(roomId);
+        //eventRealization.setDate(realizationDate);
+        eventRealization.setHour(realizationTime);
+        eventRealizationDAO.addEventRealization(convertToEntity(eventRealization));
+    }
+
+    @Override
+    public void updateRealization(Integer realizationId, Integer eventId, Integer roomId, Date realizationDate, Integer realizationHour) {
+        EventRealizationDTO eventRealization = convertToDto(eventRealizationDAO.getEventRealizationById(realizationId));
+        eventRealization.setEventId(eventId);
+        eventRealization.setRoomId(roomId);
+        //eventRealization.setDate(realizationDate);
+        eventRealization.setHour(realizationHour);
+        eventRealizationDAO.updateEventRealization(convertToEntity(eventRealization));
     }
 
     @Override
@@ -272,6 +314,11 @@ public class EventService implements IEventService {
     }
 
     @Override
+    public void deleteEventRealization(Integer id) {
+        eventRealizationDAO.deleteEventRealization(id);
+    }
+
+    @Override
     public PriceListEntity getPriceListForEvent(Integer eventId, Date date) {
         return priceListDAO.findByEventIdAndDate(eventId, date);
 //        for(int i = 0; i < priceListEntityList.size(); i++) {
@@ -314,7 +361,14 @@ public class EventService implements IEventService {
         if(dto.getName() != null) {
             priceList.setName(dto.getName()); }
         priceListDAO.updatePriceList(convertToEntity(priceList));
+    }
 
+    private BuildingDTO convertToDto(BuildingEntity buildingEntity) {
+        return modelMapper.map(buildingEntity, BuildingDTO.class);
+    }
+
+    private RoomDTO convertToDto(RoomEntity roomEntity) {
+        return modelMapper.map(roomEntity, RoomDTO.class);
     }
 
     private PriceListDTO convertToDto(PriceListEntity priceListEntity) {

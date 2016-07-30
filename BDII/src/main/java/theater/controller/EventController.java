@@ -85,6 +85,58 @@ public class EventController {
         return "events";
     }
 
+    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @RequestMapping(value = {"/addRealization"}, method = RequestMethod.GET)
+    public String addRealization(Model model) {
+        model.addAttribute("events", eventService.getAllEvents());
+        model.addAttribute("rooms", eventService.getAllRooms());
+        return "addRealization";
+    }
+
+    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @RequestMapping(value = {"/addRealization"}, method = RequestMethod.POST)
+    public String addRealization(@RequestParam("event") String event, @RequestParam("realizationDate") String realizationDate,
+                                 @RequestParam("realizationTime") String realizationTime, @RequestParam("room") String room) {
+        Integer eventId = Integer.parseInt(event);
+        Integer roomId = Integer.parseInt(room);
+        //TODO date
+        Integer realizationHour = Integer.parseInt(realizationTime);
+        eventService.addRealization(eventId, roomId, realizationDate, realizationHour);
+        return "redirect:/eventRealizations";
+    }
+
+    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @RequestMapping(value = {"/editRealization"}, method = RequestMethod.GET)
+    public String editRealization(Model model, @RequestParam(value = "realizationId", required = false) String eventRealizationId) {
+        EventRealizationDTO eventRealization = eventService.getEventRealizationById(Integer.parseInt(eventRealizationId));
+        model.addAttribute("eventRealization", eventRealization);
+        model.addAttribute("events", eventService.getAllEvents());
+        model.addAttribute("rooms", eventService.getAllRooms());
+        return "editRealization";
+    }
+
+    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @RequestMapping(value = {"/editRealization"}, method = RequestMethod.POST)
+    public String editRealization(@RequestParam("event") String event, @RequestParam("realizationDate") String realizationDate,
+                                  @RequestParam("realizationTime") String realizationTime, @RequestParam("room") String room,
+                                  @RequestParam("eventRealizationId") String realization) {
+        Integer eventId = Integer.parseInt(event);
+        Integer roomId = Integer.parseInt(room);
+        Integer realizationId = Integer.parseInt(realization);
+        //TODO date
+        Date eventRealizationDate = null;
+        Integer realizationHour = Integer.parseInt(realizationTime);
+        eventService.updateRealization(realizationId, eventId, roomId, eventRealizationDate, realizationHour);
+        return "redirect:/eventRealizations";
+    }
+
+    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @RequestMapping(value = {"/deleteRealization"}, method = RequestMethod.GET)
+    public String deleteRealization(@RequestParam(value = "realizationId", required = true) Integer eventRealizationId) {
+        eventService.deleteEventRealization(eventRealizationId);
+        return "redirect:/eventRealizations";
+    }
+
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/addEvent"}, method = RequestMethod.GET)
     public String addEvent(Model model, @RequestParam(value = "eventId", required = false) String eventId) {
