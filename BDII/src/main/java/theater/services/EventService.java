@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.ParseException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import theater.helper.DateConverter;
 import theater.helper.SectorInfo;
 import theater.persist.daos.*;
 import theater.persist.dtos.*;
@@ -311,10 +312,30 @@ public class EventService implements IEventService {
         PriceListDTO dto = convertToDto(priceListDAO.getPriceListById(priceListID));
         priceList.setFrom(dto.getFrom());
         priceList.setTo(dto.getTo());
-        if(dto.getName() != null) {
-            priceList.setName(dto.getName()); }
+        priceList.setName(dto.getName());
+        priceList.setEventId(dto.getEventId());
         priceListDAO.updatePriceList(convertToEntity(priceList));
 
+    }
+
+    @Override
+    public void updatePriceList(Integer priceListId, String priceListFrom, String priceListTo, String priceListName, Integer eventId) {
+        PriceListDTO priceList = convertToDto(priceListDAO.getPriceListById(priceListId));
+        priceList.setFrom(DateConverter.getInstance().stringToDate(priceListFrom));
+        priceList.setTo(DateConverter.getInstance().stringToDate(priceListTo));
+        priceList.setName(priceListName);
+        priceList.setEventId(eventId);
+        priceListDAO.updatePriceList(convertToEntity(priceList));
+    }
+
+    @Override
+    public void addPriceList(String priceListFrom, String priceListTo, String priceListName, Integer eventId) {
+        PriceListDTO priceList = new PriceListDTO();
+        priceList.setFrom(DateConverter.getInstance().stringToDate(priceListFrom));
+        priceList.setTo(DateConverter.getInstance().stringToDate(priceListTo));
+        priceList.setName(priceListName);
+        priceList.setEventId(eventId);
+        priceListDAO.addPriceList(convertToEntity(priceList));
     }
 
     private PriceListDTO convertToDto(PriceListEntity priceListEntity) {

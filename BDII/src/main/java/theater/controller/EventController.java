@@ -42,10 +42,10 @@ public class EventController {
     public String editPriceList(Model model, @RequestParam(value = "priceListId", required = false) Integer priceListID) {
         PriceListDTO priceList = eventService.getPriceListById(priceListID);
         if (priceList != null) {
-            EventRealizationDTO event = eventService.getEventRealizationById(priceList.getEventId());
+            EventDTO event = eventService.getEventById(priceList.getEventId());
             if (event != null) {
                 model.addAttribute("priceList", priceList);
-                model.addAttribute("event", event);
+                model.addAttribute("events", eventService.getAllEvents());
             }
         }
         return  "editPriceList";
@@ -53,15 +53,32 @@ public class EventController {
 
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/editPriceList"}, method = RequestMethod.POST)
-    public String editPriceList(@RequestParam(value = "priceListId", required = false) Integer priceListID,
-                                @ModelAttribute(value = "priceList") PriceListDTO newPriceList, BindingResult result) {
-        PriceListDTO priceList = eventService.getPriceListById(priceListID);
+    public String editPriceList(@RequestParam("priceListId") String priceListId, @RequestParam("priceListFrom") String priceListFrom, @RequestParam("priceListTo") String priceListTo, @RequestParam("priceListName") String priceListName, @RequestParam("event") String event) {
+        //PriceListDTO priceList = eventService.getPriceListById(priceListID);
         /*if (result.hasErrors()) {
             return "redirect:/editPriceList?priceListId=" + priceList.getPriceListId();
 
         }*/
-        eventService.updatePriceList(priceListID, newPriceList);
-        return "redirect:/editPriceList?priceListId=" + priceList.getPriceListId();
+        Integer eventId = Integer.parseInt(event);
+        eventService.updatePriceList(Integer.parseInt(priceListId), priceListFrom, priceListTo, priceListName, eventId);
+        return "redirect:/priceList";
+    }
+
+    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @RequestMapping(value = {"/addPriceList"}, method = RequestMethod.GET)
+    public String addPriceList(Model model, @RequestParam(value = "priceListId", required = false) String priceListId) {
+        model.addAttribute("events", eventService.getAllEvents());
+        PriceListDTO priceList = new PriceListDTO();
+        model.addAttribute("priceList", priceList);
+        return "addPriceList";
+    }
+
+    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @RequestMapping(value = {"/addPriceList"}, method = RequestMethod.POST)
+    public String addPriceList(@RequestParam("priceListFrom") String priceListFrom, @RequestParam("priceListTo") String priceListTo, @RequestParam("priceListName") String priceListName, @RequestParam("event") String event) {
+        Integer eventId = Integer.parseInt(event);
+        eventService.addPriceList(priceListFrom, priceListTo,priceListName, eventId);
+        return "redirect:/priceList";
     }
 
     @PreAuthorize("hasRole('ROLE_STAFF')")

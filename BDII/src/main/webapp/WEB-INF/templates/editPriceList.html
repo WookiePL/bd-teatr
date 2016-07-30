@@ -28,27 +28,32 @@
       <div class="center-content">
         <h1>Utwórz/Edytuj cennik</h1>
       </div>
-      <!-- Event description -->
-      <!-- Reservation form -->
+
       <div class="reservation-form center-align">
-       <form action="#" th:action="@{'/editPriceList'}"  th:object="${priceList}" method="post">
-         <div>
+       <form method="#" action="editPriceList.html" th:method="post">
+        <!-- <div>
              <input type="hidden" class="form-control" th:field="*{priceListId}"/>
          </div>
            <div>
                <input type="hidden" name="priceListId" th:value="${priceList.priceListId}"/>
-           </div>
+           </div>-->
            <div class="form-group">
            <label for="priceListName">Nazwa</label>
-           <input type="text" class="form-control" id="priceListName" placeholder="Nazwa" th:field="*{name}"/>
+           <input type="text" class="form-control" id="priceListName" name="priceListName" placeholder="Nazwa" th:value="${priceList.name}"/>
          </div>
          <div class="form-group">
            <label for="priceListFrom">Od</label>
-           <input type="date" class="form-control" id="priceListFrom" th:field="*{from}"/>
+           <input type="date" class="form-control" id="priceListFrom" name="priceListFrom" th:value="${priceList.from}"/>
          </div>
          <div class="form-group">
            <label for="priceListTo">Do</label>
-           <input type="date" class="form-control" id="priceListTo" th:field="*{to}"/>
+           <input type="date" class="form-control" id="priceListTo" name="priceListTo" th:value="${priceList.to}"/>
+         </div>
+         <div class="form-group">
+           <label for="event">Wydarzenie:</label>
+           <select id="event" name="event">
+             <option th:each="event : ${events}" th:text="${event.name}" th:value="${event.eventId}" th:selected="${ event.eventId == priceList.eventId}"></option>
+           </select>
          </div>
 
 	 <div class="price-list-edit-group">
@@ -68,8 +73,8 @@
            <input type="tel" class="form-control" id="clientPhone" placeholder="Ulgowy"/>
          </div>
 	 </div>
-
-         <a href="eventReservations.html" class="btn btn-success left" role="button">Anuluj</a>
+         <input type="hidden" class="form-control" id="priceListId"  name="priceListId" th:value="${priceList.priceListId}"/>
+         <a href="priceList.html" class="btn btn-success left" role="button">Anuluj</a>
          <button type="submit" class="btn btn-success right">Zatwierdź</button>
        </form>
      </div>

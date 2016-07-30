@@ -60,6 +60,10 @@ public interface IEventService {
 
     void updatePriceList(Integer priceListID, PriceListDTO priceList);
 
+    void updatePriceList(Integer priceListId, String priceListFrom, String priceListTo, String priceListName, Integer eventId);
+
+    void addPriceList(String priceListFrom, String priceListTo, String priceListName, Integer eventId);
+
     List<PlaceEntity> convertToEntity(List<PlaceDTO> placeDTOList);
 
     EventRealizationEntity convertToEntity(EventRealizationDTO eventRealizationDTO);
