@@ -3,12 +3,14 @@ package theater.controller;
 import com.google.gson.Gson;
 import com.sun.javafx.collections.ObservableListWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.datetime.DateFormatter;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import theater.helper.DateConverter;
 import theater.helper.SectorInfo;
 import theater.persist.daos.EventRealizationDAO;
 import theater.persist.daos.PlaceDAO;
@@ -116,9 +118,9 @@ public class EventController {
                                  @RequestParam("realizationTime") String realizationTime, @RequestParam("room") String room) {
         Integer eventId = Integer.parseInt(event);
         Integer roomId = Integer.parseInt(room);
-        //TODO date
+        java.sql.Date eventRealizationDate = DateConverter.getInstance().stringToDate(realizationDate);
         Integer realizationHour = Integer.parseInt(realizationTime);
-        eventService.addRealization(eventId, roomId, realizationDate, realizationHour);
+        eventService.addRealization(eventId, roomId, eventRealizationDate, realizationHour);
         return "redirect:/eventRealizations";
     }
 
@@ -140,8 +142,7 @@ public class EventController {
         Integer eventId = Integer.parseInt(event);
         Integer roomId = Integer.parseInt(room);
         Integer realizationId = Integer.parseInt(realization);
-        //TODO date
-        Date eventRealizationDate = null;
+        java.sql.Date eventRealizationDate = DateConverter.getInstance().stringToDate(realizationDate);
         Integer realizationHour = Integer.parseInt(realizationTime);
         eventService.updateRealization(realizationId, eventId, roomId, eventRealizationDate, realizationHour);
         return "redirect:/eventRealizations";
