@@ -1,4 +1,18 @@
-BDII/.idea
+
 BDII/*.iml
 
+DD2L.sql
+DDL.sql
+DDL3.sql
+DDL5.sql
+theater-dll.sql
+bd-teatr2.eap
+*.class
+config
+servers
+README.txt
+
+BDII/.idea
 BDII/target
+BDII/.idea/*
+BDII/target/*

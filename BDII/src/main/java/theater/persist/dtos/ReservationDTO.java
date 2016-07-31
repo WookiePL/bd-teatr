@@ -4,7 +4,8 @@ import theater.persist.model.EventRealizationEntity;
 import theater.persist.model.PlaceEntity;
 import theater.persist.model.UserEntity;
 
-import java.sql.Date;
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 
@@ -20,7 +21,7 @@ public class ReservationDTO {
     private Integer userId;
     private EventRealizationEntity eventRealization;
     private UserEntity user;
-    private List<PlaceEntity> places;
+    private Collection<PlaceEntity> places;
 
     public Integer getReservationId() {
         return reservationId;
@@ -110,11 +111,11 @@ public class ReservationDTO {
         this.user = user;
     }
 
-    public List<PlaceEntity> getPlaces() {
+    public Collection<PlaceEntity> getPlaces() {
         return places;
     }
 
-    public void setPlaces(List<PlaceEntity> places) {
+    public void setPlaces(Collection<PlaceEntity> places) {
         this.places = places;
     }
 }

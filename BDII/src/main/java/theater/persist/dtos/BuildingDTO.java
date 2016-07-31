@@ -10,7 +10,6 @@ public class BuildingDTO {
     private String address;
     private List<RoomEntity> rooms;
 
-
     public Integer getBuildingId() {
         return buildingId;
     }
@@ -19,11 +18,11 @@ public class BuildingDTO {
         this.buildingId = buildingId;
     }
 
-    public String getAdress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAdress(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

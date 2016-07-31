@@ -30,28 +30,27 @@
   <!-- Event description -->
   <!-- Reservation form -->
   <div class="reservation-form center-align">
-    <form method="#" action="editRealization.html" th:method="POST">
+    <form method="#" action="addRealization.html" th:method="POST">
       <div class="form-group">
         <label for="event">Nazwa</label>
         <select id="event" name="event">
-          <option th:each="event : ${events}" th:text="${event.name}" th:value="${event.eventId}" th:selected="${ event.eventId == eventRealization.eventId }"></option>
+          <option th:each="event : ${events}" th:text="${event.name}" th:value="${event.eventId}"></option>
         </select>
       </div>
       <div class="form-group">
         <label for="realizationDate">Data</label>
-        <input type="text" class="form-control" id="realizationDate" name="realizationDate" th:value="${eventRealization.date}"/>
+        <input type="text" class="form-control" id="realizationDate" name="realizationDate"/>
       </div>
       <div class="form-group">
         <label for="realizationTime">Godzina</label>
-        <input type="text" class="form-control" id="realizationTime"  name="realizationTime" th:value="${eventRealization.hour}"/>
+        <input type="text" class="form-control" id="realizationTime"  name="realizationTime"/>
       </div>
       <div class="form-group">
         <label for="room">Miejsce</label>
         <select id="room" name="room">
-          <option th:each="room : ${rooms}" th:text="${room.building.address} + ': ' + ${room.number}" th:value="${room.roomId}" th:selected="${ room.roomId == eventRealization.roomId }"></option>
+          <option th:each="room : ${rooms}" th:text="${room.building.address} + ': ' + ${room.number}" th:value="${room.roomId}"></option>
         </select>
       </div>
-      <input type="hidden" class="form-control" id="eventRealizationId"  name="eventRealizationId" th:value="${eventRealization.eventRealizationId}"/>
       <a href="eventRealizations.html" class="btn btn-success left" role="button">Anuluj</a>
       <button type="submit" class="btn btn-success right">Zatwierdź</button>
     </form>

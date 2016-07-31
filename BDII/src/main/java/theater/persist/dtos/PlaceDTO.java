@@ -1,14 +1,16 @@
 package theater.persist.dtos;
 
-/**
- * Created by Wookie on 2016-05-16.
- */
+import theater.persist.model.ReservationEntity;
+import theater.persist.model.TicketEntity;
+
+import java.util.Collection;
+
 public class PlaceDTO {
     private Integer placeId;
     private Integer number;
     private Integer sectorId;
-    private Integer ticketId;
-    private Integer reservationId;
+    private Collection<TicketEntity> tickets;
+    private Collection<ReservationEntity> reservations;
 
     public Integer getPlaceId() {
         return placeId;
@@ -34,19 +36,19 @@ public class PlaceDTO {
         this.sectorId = sectorId;
     }
 
-    public Integer getTicketId() {
-        return ticketId;
+    public Collection<TicketEntity> getTickets() {
+        return tickets;
     }
 
-    public void setTicketId(Integer ticketId) {
-        this.ticketId = ticketId;
+    public void setTickets(Collection<TicketEntity> tickets) {
+        this.tickets = tickets;
     }
 
-    public Integer getReservationId() {
-        return reservationId;
+    public Collection<ReservationEntity> getReservations() {
+        return reservations;
     }
 
-    public void setReservationId(Integer reservationId) {
-        this.reservationId = reservationId;
+    public void setReservations(Collection<ReservationEntity> reservations) {
+        this.reservations = reservations;
     }
 }

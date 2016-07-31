@@ -119,10 +119,9 @@ function initializePage() {
 
 function sumPrices() {
   sum = 0;
-  for (var i = 0; i < tickets.length; i++) {
-    var select = document.getElementById('select' + i);
-    var priceIndex = select.options[select.selectedIndex].value;
-    sum += prices[priceIndex].price;
+  var selects = document.getElementsByName('selectPrice');
+  for (var i = 0; i < selects.length; i++) {
+    sum += parseFloat(selects[i].value);
   }
-  document.getElementById('sum').innerHTML = sum;
+  document.getElementById('sum').innerHTML = sum + 'zł';
 }

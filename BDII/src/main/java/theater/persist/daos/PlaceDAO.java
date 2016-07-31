@@ -9,12 +9,16 @@ import java.util.List;
 public class PlaceDAO extends BaseDAO<PlaceEntity, Integer> implements IPlaceDAO {
     @Override
     public PlaceEntity getPlaceById(int id) {
+        PlaceEntity place = super.readById(id);
+        if (place != null) {
+            return place;
+        }
         return null;
     }
 
     @Override
     public List<PlaceEntity> getAllPlaces() {
-        return null;
+        return super.getAll();
     }
 
     @Override

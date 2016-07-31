@@ -1,9 +1,10 @@
 package theater.persist.model;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
-import java.sql.Date;
 import java.util.Collection;
-import java.util.List;
+import java.util.Date;
 
 
 @Entity
@@ -120,7 +121,7 @@ public class ReservationEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "event_realization_id",insertable = false, updatable = false)
+    @JoinColumn(name = "event_realization_id", insertable = false, updatable = false)
     public EventRealizationEntity getEventRealization() {
         return eventRealization;
     }
@@ -130,7 +131,7 @@ public class ReservationEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user_id",insertable = false, updatable = false)
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
     public UserEntity getUser() {
         return user;
     }
@@ -139,7 +140,8 @@ public class ReservationEntity {
         this.user = user;
     }
 
-    @ManyToMany(mappedBy = "reservations", fetch = FetchType.LAZY)
+    @ManyToMany
+    @JoinTable(name = "place_reservation", schema = "theater")
     public Collection<PlaceEntity> getPlaces() {
         return places;
     }

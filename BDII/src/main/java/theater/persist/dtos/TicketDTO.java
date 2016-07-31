@@ -1,13 +1,19 @@
 package theater.persist.dtos;
 
-/**
- * Created by Wookie on 2016-05-16.
- */
+import theater.persist.model.EventRealizationEntity;
+import theater.persist.model.PlaceEntity;
+import theater.persist.model.UserEntity;
+
+import java.util.Collection;
+
 public class TicketDTO {
     private Integer ticketId;
     private Integer number;
     private Integer eventRealizationId;
     private Integer userId;
+    private EventRealizationEntity eventRealization;
+    private UserEntity user;
+    private Collection<PlaceEntity> places;
 
     public Integer getTicketId() {
         return ticketId;
@@ -39,5 +45,29 @@ public class TicketDTO {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public EventRealizationEntity getEventRealization() {
+        return eventRealization;
+    }
+
+    public void setEventRealization(EventRealizationEntity eventRealization) {
+        this.eventRealization = eventRealization;
+    }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
+
+    public Collection<PlaceEntity> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(Collection<PlaceEntity> places) {
+        this.places = places;
     }
 }

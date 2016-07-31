@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
-    <title>TEST</title>
+    <title>Witaj!</title>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
 </head>
@@ -15,16 +15,34 @@
 
     <div><br/><br/>
         <h2>Witaj!</h2>
-        Jestes w trybie kasjera.<br/><br/>
-        Toje możliwości to:<br/>
+        Jestes w trybie kasjera.<br/><hr/>
+        Twoje możliwości to:<br/>
         <ul>
-            <li>Dodanie nowego klienta do wydarzenia, wybór ilości i położenia miejsc</li>
-            <li>Podgląd, edycję i kasowanie danej rezerwacji danego klienta</li>
-            <li>KSprzedanie biletów - podstawowych, ulogwych i seniorskich</li>
+            <li>Przeglądanie realizacji wydarzeń</li>
+            <li>Przeglądanie rezerwacji</li>
+            <li>Tworzenie i edycja rezerwacji</li>
+            <li>Sprzedaż biletów</li>
         </ul>
-
-
+        <hr/>
+        Aby przeglądać wydarzenia, kliknij <a th:href="@{'/eventRealizations'}">Wydarzenia</a> na nawigacji.<br/>
+        Aby przeglądać rezerwacje dla danego wydarzenia, kliknij ikonę <span class="glyphicon glyphicon-calendar"></span> przy wybranym wydarzeniu.<br/>
+        Aby dodać nową rezerwację lub sprzedać bilet, kliknij ikonę <span class="glyphicon glyphicon-plus-sign"></span> przy wybranym wydarzeniu.<br/>
         <br/>
+        Po kliknięciu <span class="glyphicon glyphicon-plus-sign"></span>, pojawi się ekran wyboru miejsc. Miejsca zaznaczone na czerwono, są już niedostępne. Miejsca wybiera się klikając na wybrane miejsce, jego kolor zmieni się na zielony. Ponowne kliknięcie na wybrane miejsce spowoduje jego odznaczenie. Aktualnie wybrane mijsca są również wypisane na dole strony.<br/>
+        <br/>
+        Gdy miejsca są już wybrane istnieją dwie możliwości - utworzenie rezerwacji na wybrane miejsca, lub sprzedaż biletu, bez rezerwacji. <br/>
+        Aby utworzyć rezerwację na wybrane miejsca, kliknij przycisk "Rezerwacja".<br/>
+        Aby dokonać sprzedaży biletów, kliknij przycisk "bilety".<br/>
+        <br/>
+        Po wybraniu <span class="glyphicon glyphicon-calendar"></span> w tabeli z realizacjami wydarzeń, nastąpi przejście do tabeli z rezerwacjami dla danego wydarzenia.<br/>
+        Obok każdej rezerwacji znajdują się 3 ikony.<br/>
+        Kliknij <span class="glyphicon glyphicon-ok"></span> aby sprzedać zarezerwowane bilety.<br/>
+        Kliknij <span class="glyphicon glyphicon-remove"></span> aby usunąć daną rezerwację.<br/>
+        Kliknij <span class="glyphicon glyphicon-edit"></span> aby dokonać edycji danych do rezerwacji.<br/>
+        <br/>
+        Ekran sprzedaży biletów, prezentuje każdy bilet w formie tabeli, dla każdego biletu należy wybrać cenę.<br/>
+        Po wybraniu cen, sprzedaży dokonujemy klikając przycisk "Zatwierdź".
+
     </div>
 </div>
 </body>

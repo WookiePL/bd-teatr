@@ -31,7 +31,7 @@ public class ReservationDAO extends BaseDAO<ReservationEntity, Integer> implemen
     @Override
     public List<ReservationEntity> getAllReservationsByRealization(int id) {
         Criteria criteria = super.getCriteria();
-        return criteria.add(Restrictions.eq("eventRealizationId", id)).list();
+        return criteria.add(Restrictions.eq("eventRealizationId", id)).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
     }
 
     @Override

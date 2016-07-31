@@ -9,11 +9,7 @@ public class PlaceEntity {
     private Integer placeId;
     private Integer number;
     private Integer sectorId;
-    private Integer ticketId;
-    private Integer reservationId;
     private SectorEntity sector;
-    private TicketEntity ticket;
-    private ReservationEntity reservation;
     private Collection<TicketEntity> tickets;
     private Collection<ReservationEntity> reservations;
 
@@ -52,26 +48,6 @@ public class PlaceEntity {
         this.sectorId = sectorId;
     }
 
-    @Basic
-    @Column(name = "ticket_id")
-    public Integer getTicketId() {
-        return ticketId;
-    }
-
-    public void setTicketId(Integer ticketId) {
-        this.ticketId = ticketId;
-    }
-
-    @Basic
-    @Column(name = "reservation_id")
-    public Integer getReservationId() {
-        return reservationId;
-    }
-
-    public void setReservationId(Integer reservationId) {
-        this.reservationId = reservationId;
-    }
-
     @ManyToOne
     @JoinColumn(name = "sector_id", insertable = false, updatable = false)
     public SectorEntity getSector() {
@@ -82,28 +58,7 @@ public class PlaceEntity {
         this.sector = sector;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "ticket_id", insertable = false, updatable = false)
-    public TicketEntity getTicket() {
-        return ticket;
-    }
-
-    public void setTicket(TicketEntity ticket) {
-        this.ticket = ticket;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "reservation_id",insertable = false, updatable = false)
-    public ReservationEntity getReservation() {
-        return reservation;
-    }
-
-    public void setReservation(ReservationEntity reservation) {
-        this.reservation = reservation;
-    }
-
-    @ManyToMany
-    @JoinTable(name = "ticket_place",schema = "theater")
+    @ManyToMany(mappedBy = "places")
     public Collection<TicketEntity> getTickets() {
         return tickets;
     }
@@ -112,8 +67,7 @@ public class PlaceEntity {
         this.tickets = tickets;
     }
 
-    @ManyToMany
-    @JoinTable(name = "reservation_place",schema = "theater")
+    @ManyToMany(mappedBy = "places")
     public Collection<ReservationEntity> getReservations() {
         return reservations;
     }
@@ -131,9 +85,7 @@ public class PlaceEntity {
 
         if (placeId != null ? !placeId.equals(that.placeId) : that.placeId != null) return false;
         if (number != null ? !number.equals(that.number) : that.number != null) return false;
-        if (sectorId != null ? !sectorId.equals(that.sectorId) : that.sectorId != null) return false;
-        if (ticketId != null ? !ticketId.equals(that.ticketId) : that.ticketId != null) return false;
-        if (reservationId != null ? !reservationId.equals(that.reservationId) : that.reservationId != null)
+        if (sectorId != null ? !sectorId.equals(that.sectorId) : that.sectorId != null)
             return false;
 
         return true;
@@ -144,8 +96,6 @@ public class PlaceEntity {
         int result = placeId != null ? placeId.hashCode() : 0;
         result = 31 * result + (number != null ? number.hashCode() : 0);
         result = 31 * result + (sectorId != null ? sectorId.hashCode() : 0);
-        result = 31 * result + (ticketId != null ? ticketId.hashCode() : 0);
-        result = 31 * result + (reservationId != null ? reservationId.hashCode() : 0);
         return result;
     }
 }

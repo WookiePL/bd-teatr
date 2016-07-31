@@ -1,5 +1,7 @@
 package theater.persist.daos;
 
+import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import theater.persist.model.SectorEntity;
 
@@ -14,6 +16,13 @@ public class SectorDAO extends BaseDAO<SectorEntity, Integer> implements ISector
             return sector;
         }
         return null;
+    }
+
+    @Override
+    public SectorEntity findByNumber(Integer number) {
+        return (SectorEntity) currentSession().createCriteria(SectorEntity.class)
+                                                .add(Restrictions.eq("number", number))
+                                                    .uniqueResult();
     }
 
     @Override

@@ -59,30 +59,32 @@
     <div class="reservation-form center-align">
         <form action="#" th:action="@{'/editReservation'}" th:object="${reservation}" method="post">
             <div>
-                <input type="hidden" class="form-control" th:field="*{eventRealizationId}"/>
+            <input type="hidden" class="form-control" th:field="*{eventRealizationId}"/>
             </div>
+            <!--<div>-->
+            <!--<input type="hidden" class="form-control" th:field="*{reservationId}"/>-->
+            <!--</div>-->
+            <!--<div>-->
+            <!--<input type="hidden" class="form-control" th:field="*{places}"/>-->
+            <!--</div>-->
+            <!--<div>-->
+            <!--<input type="hidden" class="form-control" th:field="*{date}"/>-->
+            <!--</div>-->
             <div>
-                <input type="hidden" class="form-control" th:field="*{reservationId}"/>
+                <input type="hidden" name="reservationId" th:value="${reservation.reservationId}"/>
             </div>
-            <div>
-                <input type="hidden" class="form-control" th:field="*{places}"/>
-            </div>
-            <div>
-                <input type="hidden" class="form-control" th:field="*{date}"/>
-            </div>
-
             <div class="form-group">
                 <label for="clientName">Imię</label>
                 <input type="text" class="form-control" id="clientName" placeholder="Imię" th:field="*{name}"/>
             </div>
+            <!--<div class="form-group">-->
+            <!--<label for="revokeDate">Data odwołania</label>-->
+            <!--<input type="text" class="form-control" id="revokeDate" placeholder="Data odwołania"-->
+            <!--th:field="*{revokeDate}"/>-->
+            <!--</div>-->
             <div class="form-group">
-                <label for="revokeDate">Data odwołania</label>
-                <input type="text" class="form-control" id="revokeDate" placeholder="Data odwołania"
-                       th:field="*{revokeDate}"/>
-            </div>
-            <div class="form-group">
-            <label for="clientSurname">Nazwisko</label>
-            <input type="text" class="form-control" id="clientSurname" placeholder="Nazwisko" th:field="*{surname}"/>
+                <label for="clientSurname">Nazwisko</label>
+                <input type="text" class="form-control" id="clientSurname" placeholder="Nazwisko" th:field="*{surname}"/>
             </div>
 
             <div class="form-group">
@@ -93,20 +95,27 @@
                 <label for="clientPhone">Telefon</label>
                 <input type="tel" class="form-control" id="clientPhone" placeholder="Telefon" th:field="*{phone}"/>
             </div>
-            <!--<div class="form-group">-->
-            <!--<label for="sector">Sektor</label>-->
-            <!--<input type="text" class="form-control" id="sector" placeholder="Sektor" th:field="*{places.replaceAll()}"/>-->
-            <!--</div>-->
             <div class="form-group">
-                <label>Miejsca</label>
-                <p th:each="place : ${reservation.places}">
-                    Sektor:
-                    <span th:text="${place.sector.number}"></span>
-                    Miejsce:
-                    <span th:text="${place.number}"></span>
-                </p>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Sektor </th>
+                        <th>Miejsce </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+                    <tr th:each="place : ${reservation.places}">
+                        <td th:text="${place.sectorId}"></td>
+                        <input type="text" th:field="*{sectorId}" />
+                        <td th:text="${place.placeId}"></td>
+                        <input type="text" th:field="*{placeId}" />
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-            <a th:href="@{'/eventReservations'(realizationId=${reservation.eventRealizationId})}" class="btn btn-success left" role="button">Anuluj</a>
+            <a th:href="@{'/eventReservations'(realizationId=${reservation.eventRealizationId})}"
+               class="btn btn-success left" role="button">Anuluj</a>
             <button type="submit" class="btn btn-success right">Zatwierdź</button>
         </form>
 

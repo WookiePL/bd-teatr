@@ -17,8 +17,12 @@
   <!-- Cuprum font -->
   <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
   <title>Miejsca</title>
+  <script th:inline="javascript">
+    jsRealizationId = [[${event.eventRealizationId}]];
+    console.log(jsRealizationId);
+  </script>
 </head>
-<body onload="initializePage()">
+<body onload='initializePage(jsRealizationId)'>
 
 <!-- NAVBAR -->
 <div th:include="fragments/navbar :: navbar"></div>
@@ -73,9 +77,18 @@
       <div id="selected-seats" class="center-align">
       </div>
       <div class="button-section center-align">
-        <a th:href="@{'/tickets'(realizationId=${event.eventRealizationId})}" class="btn btn-success left" role="button">Bilet</a>
-        <a th:href="@{'/createReservation'(realizationId=${event.eventRealizationId})}" class="btn btn-success right" role="button">Rezerwacja</a>
 
+        <form id="toTicketsForm" action="#" th:action="@{'/tickets'}" method="post">
+          <div id="ticketsFormData"></div>
+          <input type="button" onclick="submitToTickets()" class="btn btn-success left" value="Bilety" />
+        </form>
+
+        <form id="toReservationForm" action="#" th:action="@{'/createReservation'}" method="post">
+          <div id="reservationFormData"></div>
+          <input type="button" onclick="submitToReservation()" class="btn btn-success right" value="Rezerwacja"/>
+        </form>
+        <!--<a th:href="@{'/tickets'(realizationId=${event.eventRealizationId})}" class="btn btn-success left" role="button">Bilet</a>-->
+        <!--<a th:href="@{'/createReservation'(realizationId=${event.eventRealizationId})}" class="btn btn-success right" role="button">Rezerwacja</a>-->
       </div>
     </div>
   </div>
@@ -89,6 +102,6 @@
         src="../resources/js/bootstrap.min.js"></script>
 <!-- Page logic -->
 <script th:src="@{../resources/js/general.js}" src="../resources/js/general.js"></script>
-<script th:src="@{../resources/js/eventRealizations.js}" src="../resources/js/eventRealizations.js"></script>
+<script th:src="@{../resources/js/selectSeats.js}" src="../resources/js/eventRealizations.js"></script>
 </body>
 </html>

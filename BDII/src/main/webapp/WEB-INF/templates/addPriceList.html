@@ -25,29 +25,48 @@
     <div class="container">
       <!-- Header -->
       <div class="center-content">
-        <h1>Edytuj wydarzenie</h1>
+        <h1>Utwórz cennik</h1>
       </div>
-      <!-- Event description -->
-      <!-- Reservation form -->
-      <div class="reservation-form center-align">
-       <form method="#" action="editEvent.html" th:method="POST">
-         <div class="form-group">
-           <label for="eventName">Nazwa</label>
-           <input type="text" class="form-control" id="eventName"  name="eventName" th:value="${event.name}"/>
-         </div>
-         <div class="form-group">
-           <label for="eventType">Rodzaj</label>
-	   <select id="eventType" name="eventType">
-           <option th:each="eventType : ${eventTypes}" th:text="${eventType.name}" th:value="${eventType.eventTypeId}" th:selected="${ eventType.eventTypeId == event.eventTypeId }"></option>
-	   </select>
-         </div>
-         <div class="form-group">
-           <label for="eventDescription">Opis</label>
-           <input type="textarea" class="form-control" id="eventDescription" name="eventDescription" th:value="${event.description}"/>
-         </div>
-         <input type="hidden" class="form-control" id="eventId"  name="eventId" th:value="${event.eventId}"/>
 
-         <a href="events.html" class="btn btn-success left" role="button">Anuluj</a>
+      <div class="reservation-form center-align">
+          <form method="#" action="addPriceList.html" th:method="POST">
+        <div class="form-group">
+          <label for="priceListName">Nazwa</label>
+          <input type="text" class="form-control" id="priceListName" placeholder="Nazwa" name="priceListName"/>
+        </div>
+        <div class="form-group">
+          <label for="priceListFrom">Od</label>
+          <input type="date" class="form-control" id="priceListFrom" name="priceListFrom"/>
+        </div>
+        <div class="form-group">
+          <label for="priceListTo">Do</label>
+          <input type="date" class="form-control" id="priceListTo" name="priceListTo"/>
+        </div>
+        <div class="form-group">
+            <label for="event">Wydarzenie:</label>
+            <select id="event" name="event">
+                <option th:each="event : ${events}" th:text="${event.name}" th:value="${event.eventId}"></option>
+            </select>
+        </div>
+        <div class="price-list-edit-group">
+          <div class="form-group">
+            <label for="period">Cykl</label>
+            <select>
+
+            </select>
+            <a href="eventReservations.html" class="btn btn-success right" role="button">Dodaj cykl</a>
+          </div>
+          <div class="form-group">
+            <label for="period">Normalny</label>
+            <input type="tel" class="form-control" id="period" placeholder="Normalny"/>
+          </div>
+          <div class="form-group">
+            <label for="period">Ulgowy</label>
+            <input type="tel" class="form-control" id="period" placeholder="Ulgowy"/>
+          </div>
+        </div>
+
+         <a href="priceList.html" class="btn btn-success left" role="button">Anuluj</a>
          <button type="submit" class="btn btn-success right">Zatwierdź</button>
        </form>
      </div>

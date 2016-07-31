@@ -4,9 +4,6 @@ import theater.persist.model.ReservationEntity;
 
 import java.util.List;
 
-/**
- * Created by Wookie on 2016-05-16.
- */
 public interface IReservationDAO extends IBaseDAO<ReservationEntity, Integer> {
 
     ReservationEntity getReservationById(int id);

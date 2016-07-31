@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="BDII:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="theater.war">
-      <element id="artifact" artifact-name="BDII:war exploded" />
-    </root>
-  </artifact>
-</component>
