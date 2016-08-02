@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bd2.adminPanel.controllers;
 
 import java.io.IOException;
@@ -16,28 +11,25 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import bd2.adminPanel.dao.DBUtils;
 import bd2.adminPanel.dao.repository.BuildingsRepository;
-import bd2.adminPanel.dao.repository.EventsTypesRepository;
 import bd2.adminPanel.dao.repository.PlacesRepository;
 import bd2.adminPanel.dao.repository.RoomsRepository;
 import bd2.adminPanel.dao.repository.SectorsRepository;
 import bd2.adminPanel.model.dictionaries.Building;
-import bd2.adminPanel.model.dictionaries.EventType;
 import bd2.adminPanel.model.dictionaries.Place;
 import bd2.adminPanel.model.dictionaries.Room;
 import bd2.adminPanel.model.dictionaries.Sector;
-import bd2.adminPanel.model.users.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.StackPane;
 
 public class DictonaryBuildingsController {
@@ -174,20 +166,24 @@ public class DictonaryBuildingsController {
 	@FXML
 	public void addBuilding() {
 		String address = textFieldBuildingAddress.getText();
-		Building building = new Building();
-		building.setAddress(address);
-		building.setRooms(new ArrayList<>());
-		dbUtils.persist(building);
-		initialize(null, null);
+		if(address.length() > 0) {
+			Building building = new Building();
+			building.setAddress(address);
+			building.setRooms(new ArrayList<>());
+			dbUtils.persist(building);
+			initialize(null, null);
+		}
 	}
 
 	@FXML
 	public void editBuilding() {
 		String address = textFieldBuildingAddress.getText();
 		Building building = listViewBuildings.getSelectionModel().getSelectedItem();
-		building.setAddress(address);
-		dbUtils.persist(building);
-		initialize(null, null);
+		if(address.length() > 0 && building != null) {
+			building.setAddress(address);
+			dbUtils.persist(building);
+			initialize(null, null);
+		}
 	}
 
 	@FXML
@@ -215,25 +211,37 @@ public class DictonaryBuildingsController {
 
 	@FXML
 	public void addRoom() {
-		Building building = listViewBuildings.getSelectionModel().getSelectedItem();
-		Integer number = Integer.parseInt(textFieldRoomNumber.getText());
-		Room room = new Room();
-		room.setNumber(number);
-		room.setBuildingId(building.getBuildingId());
-		room.setSectors(new ArrayList<>());
-		building.getRooms().add(room);
-		dbUtils.persist(room);
-		dbUtils.persist(building);
-		roomDetail();
+		try {
+			Building building = listViewBuildings.getSelectionModel().getSelectedItem();
+			if(building != null && textFieldRoomNumber.getText().length() > 0) {
+				Integer number = Integer.parseInt(textFieldRoomNumber.getText());
+				Room room = new Room();
+				room.setNumber(number);
+				room.setBuildingId(building.getBuildingId());
+				room.setSectors(new ArrayList<>());
+				building.getRooms().add(room);
+				dbUtils.persist(room);
+				dbUtils.persist(building);
+				roomDetail();
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
 	public void editRoom() {
-		Integer number = Integer.parseInt(textFieldRoomNumber.getText());
-		Room room = listViewRooms.getSelectionModel().getSelectedItem();
-		room.setNumber(number);
-		dbUtils.persist(room);
-		roomDetail();
+		try {
+			Room room = listViewRooms.getSelectionModel().getSelectedItem();
+			if(room != null && textFieldRoomNumber.getText().length() > 0) {
+				Integer number = Integer.parseInt(textFieldRoomNumber.getText());
+				room.setNumber(number);
+				dbUtils.persist(room);
+				roomDetail();
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
@@ -261,63 +269,74 @@ public class DictonaryBuildingsController {
 
 	@FXML
 	public void addSector() {
-		Room room = listViewRooms.getSelectionModel().getSelectedItem();
-		Integer number = Integer.parseInt(textFieldSectorNumber.getText());
-		Integer sizeX = Integer.parseInt(textFieldSectorSizeX.getText());
-		Integer sizeY = Integer.parseInt(textFieldSectorSizeY.getText());
-		Sector sector = new Sector();
-		sector.setNumber(number);
-		sector.setRoomId(room.getRoomId());
-		sector.setSize_X(sizeX);
-		sector.setSize_Y(sizeY);
-		
-		dbUtils.persist(sector);
-		
-		List<Place> places =  new ArrayList<>();
-		for(int i = 0; i < sizeX * sizeY; ++i) {
-			Place place = new Place();
-			place.setNumber(i);
-			place.setSectorId(sector.getSectorId());
-			places.add(place);
-			dbUtils.persist(place);
+		try {
+			Room room = listViewRooms.getSelectionModel().getSelectedItem();
+			if(room != null && textFieldSectorNumber.getText().length() > 0 && textFieldSectorSizeX.getText().length() > 0 && textFieldSectorSizeY.getText().length() > 0) {
+				Integer number = Integer.parseInt(textFieldSectorNumber.getText());
+				Integer sizeX = Integer.parseInt(textFieldSectorSizeX.getText());
+				Integer sizeY = Integer.parseInt(textFieldSectorSizeY.getText());
+				Sector sector = new Sector();
+				sector.setNumber(number);
+				sector.setRoomId(room.getRoomId());
+				sector.setSize_X(sizeX);
+				sector.setSize_Y(sizeY);
+				
+				dbUtils.persist(sector);
+				
+				List<Place> places =  new ArrayList<>();
+				for(int i = 0; i < sizeX * sizeY; ++i) {
+					Place place = new Place();
+					place.setNumber(i);
+					place.setSectorId(sector.getSectorId());
+					places.add(place);
+					dbUtils.persist(place);
+				}
+				
+				sector.setPlaces(places);
+				room.getSectors().add(sector);
+					
+				dbUtils.persist(room);
+				sectorDetail();
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
-		
-		sector.setPlaces(places);
-		room.getSectors().add(sector);
-			
-		dbUtils.persist(room);
-		sectorDetail();
 	}
 
 	@FXML
 	public void editSector() {
-		Sector sector = listViewSectors.getSelectionModel().getSelectedItem();
-
-		for(int i = 0; i < sector.getSize_X() * sector.getSize_Y(); ++i) {		
-			dbUtils.remove(placesRepository.findPlaceBySectorId(sector.getSectorId()).get(i));
-		}
-
-		Integer number = Integer.parseInt(textFieldSectorNumber.getText());
-		sector.setNumber(number);
-
-		Integer sizeX = Integer.parseInt(textFieldSectorSizeX.getText());
-		sector.setSize_X(sizeX);
-
-		Integer sizeY = Integer.parseInt(textFieldSectorSizeY.getText());
-		sector.setSize_Y(sizeY);
+		try {
+			Sector sector = listViewSectors.getSelectionModel().getSelectedItem();
+			if(sector != null && textFieldSectorNumber.getText().length() > 0 && textFieldSectorSizeX.getText().length() > 0 && textFieldSectorSizeY.getText().length() > 0) {
+				for(int i = 0; i < sector.getSize_X() * sector.getSize_Y(); ++i) {		
+					dbUtils.remove(placesRepository.findPlaceBySectorId(sector.getSectorId()).get(i));
+				}
 		
-		List<Place> places =  new ArrayList<>();
-		for(int i = 0; i < sizeX * sizeY; ++i) {
-			Place place = new Place();
-			place.setNumber(i);
-			place.setSectorId(sector.getSectorId());
-			places.add(place);
-			dbUtils.persist(place);
-		}
+				Integer number = Integer.parseInt(textFieldSectorNumber.getText());
+				sector.setNumber(number);
 		
-		sector.setPlaces(places);
-		dbUtils.persist(sector);
-		sectorDetail();
+				Integer sizeX = Integer.parseInt(textFieldSectorSizeX.getText());
+				sector.setSize_X(sizeX);
+		
+				Integer sizeY = Integer.parseInt(textFieldSectorSizeY.getText());
+				sector.setSize_Y(sizeY);
+				
+				List<Place> places =  new ArrayList<>();
+				for(int i = 0; i < sizeX * sizeY; ++i) {
+					Place place = new Place();
+					place.setNumber(i);
+					place.setSectorId(sector.getSectorId());
+					places.add(place);
+					dbUtils.persist(place);
+				}
+				
+				sector.setPlaces(places);
+				dbUtils.persist(sector);
+				sectorDetail();
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML

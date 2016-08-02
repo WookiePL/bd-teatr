@@ -59,15 +59,17 @@ public class DictonaryEventTypesController {
 
     @FXML
     public void addEventType() {
-        EventType type = new EventType(textFieldEventTypeName.getText());
-        dbUtils.persist(type);
-        initialize(null, null);
+    	if(textFieldEventTypeName.getText().length() > 0) {
+	        EventType type = new EventType(textFieldEventTypeName.getText());
+	        dbUtils.persist(type);
+	        initialize(null, null);
+    	}
     }
 
     @FXML
     public void editEventType() {
         EventType type = listViewEventTypes.getSelectionModel().getSelectedItem();
-        if (type != null) {
+        if (type != null && textFieldEventTypeName.getText().length() > 0) {
             type.setName(textFieldEventTypeName.getText());
             dbUtils.persist(type);
             initialize(null, null);

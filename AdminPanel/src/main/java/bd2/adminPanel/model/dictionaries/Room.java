@@ -36,7 +36,6 @@ public class Room implements Comparable<Room> {
 		this.roomId = roomId;
 	}
 
-//	@Basic
 	@Column(name = "number")
 	public Integer getNumber() {
 		return number;
@@ -46,7 +45,6 @@ public class Room implements Comparable<Room> {
 		this.number = number;
 	}
 
-//	@Basic
 	@Column(name = "building_id")
 	public Integer getBuildingId() {
 		return buildingId;

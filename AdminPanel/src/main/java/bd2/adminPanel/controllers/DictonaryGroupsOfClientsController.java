@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bd2.adminPanel.controllers;
 
 import java.io.IOException;
@@ -61,15 +56,17 @@ public class DictonaryGroupsOfClientsController {
 
     @FXML
     public void addGroupOfClient() {
-        GroupOfClient group = new GroupOfClient(textFieldGroupOfClientName.getText());
-        dbUtils.persist(group);
-        initialize(null, null);
+    	if(textFieldGroupOfClientName.getText().length() > 0) {
+	        GroupOfClient group = new GroupOfClient(textFieldGroupOfClientName.getText());
+	        dbUtils.persist(group);
+	        initialize(null, null);
+    	}
     }
 
     @FXML
     public void editGroupOfClient() {
         GroupOfClient group = listViewGroupsOfClient.getSelectionModel().getSelectedItem();
-        if (group != null) {
+        if (group != null && textFieldGroupOfClientName.getText().length() > 0) {
             group.setName(textFieldGroupOfClientName.getText());
             dbUtils.persist(group);
             initialize(null, null);

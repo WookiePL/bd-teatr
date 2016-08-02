@@ -131,27 +131,30 @@ public class UsersController implements Initializable {
 
     @FXML
     public void addUser() {
-        // domyslne haslo to 3 pierwsze litery imienia + 3 pierwsze litery nazwiska, male litery
-        String password = textFieldFirstName.getText().toLowerCase().substring(0, 3) + textFieldLastName.getText().toLowerCase().substring(0, 3);
-        String hashPassword = security.encode(password);
-
-        User user = new User(textFieldFirstName.getText(), textFieldLastName.getText(), textFieldEmail.getText(), hashPassword);
-        List<Role> roles = rolesRepository.getRoles();
-
-        for (CheckBox checkBox : listCheckBox) {
-            for (Role role : roles) {
-                if (role.getRole().equals(checkBox.getText())) {
-                    if (checkBox.isSelected()) {
-                        user.getRoles().add(role);
-                    }
-                    break;
-                }
-            }
-        }
-
-        dbUtils.persist(user);
-
-        initialize(null, null);
+    	String firstName = textFieldFirstName.getText();
+    	String lastName = textFieldLastName.getText();
+    	if(firstName.length() >= 3 && lastName.length() >= 3) {
+    		// domyslne haslo to 3 pierwsze litery imienia + 3 pierwsze litery nazwiska, male litery
+	        String password = firstName.toLowerCase().substring(0, 3) + lastName.toLowerCase().substring(0, 3);
+	        String hashPassword = security.encode(password);
+	
+	        User user = new User(textFieldFirstName.getText(), textFieldLastName.getText(), textFieldEmail.getText(), hashPassword);
+	        List<Role> roles = rolesRepository.getRoles();
+	
+	        for (CheckBox checkBox : listCheckBox) {
+	            for (Role role : roles) {
+	                if (role.getRole().equals(checkBox.getText())) {
+	                    if (checkBox.isSelected()) {
+	                        user.getRoles().add(role);
+	                    }
+	                    break;
+	                }
+	            }
+	        }
+	
+	        dbUtils.persist(user);
+	        initialize(null, null);
+    	}
     }
 
     @FXML
@@ -242,18 +245,7 @@ public class UsersController implements Initializable {
         }
     }
 
-    public void setContextAndRepositories(AnnotationConfigApplicationContext context/*, DBUtils dbUtils,
-			UsersRepository usersRepository, RolesRepository rolesRepository*/) {
-//
-//		setContext(context);
-//		setDBUtils(dbUtils);
-//		setUsersRepository(usersRepository);
-//		setRolesRepository(rolesRepository);
-
-//		this.context = context;
-//		this.dbUtils = dbUtils;
-//		this.usersRepository = usersRepository;
-//		this.rolesRepository = rolesRepository;
+    public void setContextAndRepositories(AnnotationConfigApplicationContext context) {
         dbUtils = context.getBean("DBUtils", DBUtils.class);
         usersRepository = context.getBean("usersRepository", UsersRepository.class);
         rolesRepository = context.getBean("rolesRepository", RolesRepository.class);
@@ -261,20 +253,4 @@ public class UsersController implements Initializable {
 
         initialize(null, null);
     }
-
-//	private void setContext(AnnotationConfigApplicationContext context) {
-//		this.context = context;
-//	}
-//
-//	private void setDBUtils(DBUtils dbUtils) {
-//		this.dbUtils = dbUtils;
-//	}
-//
-//	private void setUsersRepository(UsersRepository usersRepository) {
-//		this.usersRepository = usersRepository;
-//	}
-//
-//	private void setRolesRepository(RolesRepository rolesRepository) {
-//		this.rolesRepository = rolesRepository;
-//	}
 }

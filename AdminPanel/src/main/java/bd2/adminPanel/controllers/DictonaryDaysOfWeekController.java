@@ -69,23 +69,37 @@ public class DictonaryDaysOfWeekController implements Initializable {
     
     @FXML
     public void addDayOfWeek() {
-        DayOfWeek day = new DayOfWeek(
-                Integer.parseInt(textFieldDayOfWeekID.getText()),
-                textFieldDayOfWeekName.getText()
-        );
-        dbUtils.persist(day);
-        initialize(null, null);
+    	try {
+	    	boolean isExist = true;
+	    	if(textFieldDayOfWeekID.getText().length() > 0) {
+	    		isExist = daysOfWeekRepository.getIds().contains(Integer.parseInt(textFieldDayOfWeekID.getText()));
+	    	}
+	    	
+	    	if(!isExist && textFieldDayOfWeekName.getText().length() > 0) {
+		        DayOfWeek day = new DayOfWeek(
+		                Integer.parseInt(textFieldDayOfWeekID.getText()),
+		                textFieldDayOfWeekName.getText()
+		        );
+		        dbUtils.persist(day);
+		        initialize(null, null);
+	    	}
+    	} catch(Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML
     public void editDayOfWeek() {
-        DayOfWeek day = listViewDaysOfWeek.getSelectionModel().getSelectedItem();
-        if (day != null) {
-            day.setName(textFieldDayOfWeekName.getText());
-            day.setId(Integer.parseInt(textFieldDayOfWeekID.getText()));
-            dbUtils.persist(day);
-            initialize(null, null);
-        }
+    	try {
+	        DayOfWeek day = listViewDaysOfWeek.getSelectionModel().getSelectedItem();
+	        if (day != null) {
+	            day.setName(textFieldDayOfWeekName.getText());
+	            dbUtils.persist(day);
+	            initialize(null, null);
+	        }
+    	} catch(Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML

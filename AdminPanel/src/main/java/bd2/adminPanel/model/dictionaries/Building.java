@@ -12,8 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import org.springframework.core.style.ToStringCreator;
-
 @Entity
 @Table(name = "building", schema = "theater")
 public class Building implements Comparable<Building> {
@@ -34,7 +32,6 @@ public class Building implements Comparable<Building> {
 		this.buildingId = buildingId;
 	}
 
-	// @Basic
 	@Column(name = "address")
 	public String getAddress() {
 		return address;
