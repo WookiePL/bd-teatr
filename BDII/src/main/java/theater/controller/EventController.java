@@ -233,7 +233,7 @@ public class EventController {
     @RequestMapping(value = {"/createReservation"}, method = RequestMethod.POST)
     public String createReservation(Model model, @RequestParam("seats") String[] seats, @RequestParam("realizationId") String realizationId) {
         Integer realizationIdInt = Integer.parseInt(realizationId);
-        List<PlaceDTO> selectedPlaces = eventService.convertSelectedSeatsStringArrayToPlaceList(seats);
+        List<PlaceEntity> selectedPlaces = eventService.convertSelectedSeatsStringArrayToPlaceEntityList(seats);
         EventRealizationDTO eventRealization = eventService.getEventRealizationById(realizationIdInt);
         if (eventRealization != null) {
             ReservationDTO reservation = new ReservationDTO();
@@ -270,8 +270,10 @@ public class EventController {
         ReservationDTO reservation = eventService.getReservationById(reservationID);
         if (reservation != null) {
             EventRealizationDTO event = eventService.getEventRealizationById(reservation.getEventRealizationId());
+            List<PlaceEntity> places = (List<PlaceEntity>) reservation.getPlaces();
             if (event != null) {
                 model.addAttribute("reservation", reservation);
+                model.addAttribute("places", places);
                 model.addAttribute("event", event);
             }
             return "editReservation";

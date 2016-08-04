@@ -106,12 +106,8 @@
           </thead>
           <tbody>
           <tr th:each="place : ${placesList}">
-            <td th:text="${place.sectorId}">
-              <input type="text" th:field="*{sectorId}" />
-            </td>
-            <td th:text="${place.placeId}">
-              <input type="text" th:field="*{placeId}" />
-            </td>
+            <td th:text="${place.sector.number}"></td>
+            <td th:text="${place.number}"></td>
           </tr>
           </tbody>
         </table>
