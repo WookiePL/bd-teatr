@@ -19,6 +19,9 @@ public class MainController {
 
     @Autowired
     private IEventService eventService;
+/*
+    @Autowired
+    private IPeriodService periodService;*/
 
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)

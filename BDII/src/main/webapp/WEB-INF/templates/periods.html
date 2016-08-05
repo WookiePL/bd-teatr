@@ -25,33 +25,33 @@
 <div class="container">
     <!-- Header -->
     <div class="center-content">
-        <h1>Cenniki</h1>
+        <h1>Cykle</h1>
     </div>
     <!-- Events table -->
     <table class="table table-striped large-table center-align">
         <thead>
         <tr>
             <th>Nazwa</th>
-            <th>Od</th>
+            <!--<th>Od</th>
             <th>Do</th>
-            <th>Akcja</th>
+            <th>Akcja</th>-->
         </tr>
         </thead>
         <!--<tbody id="eventsTableBody">-->
         <tbody>
-        <tr th:each="price : ${priceList}">
-            <td th:text="${price.name}"></td>
-            <td th:text="${price.from}"></td>
-            <td th:text="${price.to}"></td>
+        <tr th:each="period : ${periods}">
+            <td th:text="${period.name}"></td>
+            <!--<td th:text="${price.from}"></td>
+            <td th:text="${price.to}"></td>-->
             <td>
                 <!--<span th:each="price : ${priceList}">-->
-            <a th:href="@{'/editPriceList'(priceListId=${price.priceListId})}">
+            <a th:href="@{'/editPeriod'(periodId=${period.periodId})}">
               <span class="glyphicon glyphicon-pencil"></span>
             </a>
 <!--
                 &lt;!&ndash;Nie umiem znalezc siedzenia wiec jest byle co:&ndash;&gt;
              <a th:href="@{'/selectSeats'(realizationId=${event.eventRealizationId})}">-->
-                <a th:href="@{'/deletePriceList'(priceListId=${price.priceListId})}">
+                <a th:href="@{'/deletePeriod'(periodId=${period.periodId})}">
                  <span class="glyphicon glyphicon-remove-circle"></span>
            </a>
             </td>
@@ -77,7 +77,7 @@
         </tbody>
     </table>
 
-    <a th:href="@{'/addPriceList'}">
+    <a th:href="@{'/addPeriod'}">
         <span class="glyphicon glyphicon-plus-sign"></span>
     </a>
 
