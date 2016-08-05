@@ -136,7 +136,7 @@ public class UsersController implements Initializable {
     	if(firstName.length() >= 3 && lastName.length() >= 3) {
     		// domyslne haslo to 3 pierwsze litery imienia + 3 pierwsze litery nazwiska, male litery
 	        String password = firstName.toLowerCase().substring(0, 3) + lastName.toLowerCase().substring(0, 3);
-	        String hashPassword = security.encode(password);
+	        String hashPassword = password; //security.encode(password);
 	
 	        User user = new User(textFieldFirstName.getText(), textFieldLastName.getText(), textFieldEmail.getText(), hashPassword);
 	        List<Role> roles = rolesRepository.getRoles();

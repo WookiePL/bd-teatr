@@ -13,6 +13,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
+/**
+ * Class 
+ */
 public class DictionariesController implements Initializable {
 
 	private static AnnotationConfigApplicationContext context;

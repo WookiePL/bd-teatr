@@ -33,9 +33,6 @@ public class LoginController implements Initializable {
     private Label labelWrongLogin;
 
     @FXML
-    private Label labelWrongPassword;
-
-    @FXML
     private Button buttonLogin;
 
     @FXML
@@ -43,31 +40,15 @@ public class LoginController implements Initializable {
 
     @FXML
     public void login() {
-//        String login = "admin";
-//        String password = "admin";
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         Security security = context.getBean("security", Security.class);
         
         if (!buttonExit.focusedProperty().get()) {
-//            if (login.equals(textFieldLogin.getText())) {
-//                if (password.equals(textPasswordField.getText())) {
-//                    loadMainScreen();
-//                } else {
-//                    labelWrongLogin.setVisible(false);
-//                    labelWrongPassword.setVisible(true);
-//                }
-//            } else {
-//                labelWrongPassword.setVisible(false);
-//                labelWrongLogin.setVisible(true);
-//            }
-            
-//          Z HASHOWANIEM
         	if(security.authentication(textFieldLogin.getText(), textPasswordField.getText())) {
         		context.close();
         		loadMainScreen();
         	} else {
-        		labelWrongPassword.setVisible(false);
         		labelWrongLogin.setVisible(true);
         	}        	
         } else {
