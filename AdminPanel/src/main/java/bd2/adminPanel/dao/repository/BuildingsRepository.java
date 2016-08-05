@@ -6,16 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import bd2.adminPanel.dao.DBUtils;
-import bd2.adminPanel.model.dictionaries.EventType;
+import bd2.adminPanel.model.dictionaries.Building;
 
 @Repository
-public class EventsTypesRepository {
+public class BuildingsRepository {
 
 	@Autowired
     private DBUtils dbUtils;
 
-    public List<EventType> getEventsTypes() {
-        return dbUtils.getAll(EventType.class);
+    public List<Building> getBuildings() {
+        return dbUtils.getAll(Building.class);
     }
 	
 }

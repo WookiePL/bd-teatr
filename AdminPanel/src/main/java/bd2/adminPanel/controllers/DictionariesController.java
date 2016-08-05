@@ -90,6 +90,7 @@ public class DictionariesController implements Initializable {
 
 		try {
 			pane = loader.load();
+			((DictonaryBuildingsController) loader.getController()).setContext(context);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bd2.adminPanel.controllers;
 
 import java.io.IOException;
@@ -13,8 +8,9 @@ import java.util.ResourceBundle;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import bd2.adminPanel.dao.DBUtils;
-import bd2.adminPanel.dao.dictionaries.GroupOfClientDAO;
 import bd2.adminPanel.dao.repository.GroupsOfClientsRepository;
+import bd2.adminPanel.model.dictionaries.GroupOfClient;
+
 import java.util.Collections;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -41,7 +37,7 @@ public class DictonaryGroupsOfClientsController {
     private StackPane dictionariesStackPane;
 
     @FXML
-    private ListView<GroupOfClientDAO> listViewGroupsOfClient;
+    private ListView<GroupOfClient> listViewGroupsOfClient;
 
     @FXML
     private TextField textFieldGroupOfClientName;
@@ -60,15 +56,17 @@ public class DictonaryGroupsOfClientsController {
 
     @FXML
     public void addGroupOfClient() {
-        GroupOfClientDAO group = new GroupOfClientDAO(textFieldGroupOfClientName.getText());
-        dbUtils.persist(group);
-        initialize(null, null);
+    	if(textFieldGroupOfClientName.getText().length() > 0) {
+	        GroupOfClient group = new GroupOfClient(textFieldGroupOfClientName.getText());
+	        dbUtils.persist(group);
+	        initialize(null, null);
+    	}
     }
 
     @FXML
     public void editGroupOfClient() {
-        GroupOfClientDAO group = listViewGroupsOfClient.getSelectionModel().getSelectedItem();
-        if (group != null) {
+        GroupOfClient group = listViewGroupsOfClient.getSelectionModel().getSelectedItem();
+        if (group != null && textFieldGroupOfClientName.getText().length() > 0) {
             group.setName(textFieldGroupOfClientName.getText());
             dbUtils.persist(group);
             initialize(null, null);
@@ -77,7 +75,7 @@ public class DictonaryGroupsOfClientsController {
 
     @FXML
     public void deleteGroupOfClient() {
-        GroupOfClientDAO group = listViewGroupsOfClient.getSelectionModel().getSelectedItem();
+        GroupOfClient group = listViewGroupsOfClient.getSelectionModel().getSelectedItem();
 
         if (group != null) {
             Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -121,10 +119,10 @@ public class DictonaryGroupsOfClientsController {
     }
 
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<GroupOfClientDAO> groups = FXCollections.observableArrayList();
+        ObservableList<GroupOfClient> groups = FXCollections.observableArrayList();
 
         if (dbUtils != null) {
-            List<GroupOfClientDAO> tmp_groups = groupsOfClientsRepository.getGroupsOfClients();
+            List<GroupOfClient> tmp_groups = groupsOfClientsRepository.getGroupsOfClients();
             Collections.sort(tmp_groups);
             groups.addAll(tmp_groups);
         }

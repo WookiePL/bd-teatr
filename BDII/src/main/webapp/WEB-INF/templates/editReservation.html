@@ -18,8 +18,8 @@
     <!--<link rel='stylesheet' type='text/css' th:href="@{https://fonts.googleapis.com/css?family=Cuprum}" href='https://fonts.googleapis.com/css?family=Cuprum' />-->
     <title>Edytuj rezerwację</title>
 </head>
-<body onload="initializePage()">
-
+<!--<body onload="initializePage()">-->
+<body>
 <!-- NAVBAR -->
 <div th:include="fragments/navbar :: navbar"></div>
 
@@ -105,11 +105,9 @@
                     </thead>
                     <tbody>
                     <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-                    <tr th:each="place : ${reservation.places}">
-                        <td th:text="${place.sectorId}"></td>
-                        <input type="text" th:field="*{sectorId}" />
-                        <td th:text="${place.placeId}"></td>
-                        <input type="text" th:field="*{placeId}" />
+                    <tr th:each="place : ${places}">
+                        <td th:text="${place.sector.number}"></td>
+                        <td th:text="${place.number}"></td>
                     </tr>
                     </tbody>
                 </table>

@@ -11,6 +11,7 @@
 			<property name="javax.persistence.jdbc.url" value=" jdbc:postgresql://localhost:5432/theater_db" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			<property name="hibernate.default_schema" value="theater" />
+			<property name="hibernate.temp.use_jdbc_metadata_defaults" value="false" />
 		</properties>
 	</persistence-unit>
 </persistence>

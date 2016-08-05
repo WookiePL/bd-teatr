@@ -1,4 +1,4 @@
-package bd2.adminPanel.dao.users;
+package bd2.adminPanel.model.users;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "user", schema = "theater")
-public class UserDAO implements Comparable<UserDAO> {
+public class User implements Comparable<User> {
 
     @Id
     @Column(name = "user_id", columnDefinition = "serial")
@@ -32,13 +32,13 @@ public class UserDAO implements Comparable<UserDAO> {
     @JoinTable(name = "users_roles", joinColumns = {
         @JoinColumn(name = "user_id")}, inverseJoinColumns = {
         @JoinColumn(name = "role_id")})
-    private List<RoleDAO> roles;
+    private List<Role> roles;
 
-    public UserDAO() {
+    public User() {
 
     }
 
-    public UserDAO(String name, String surname, String email, String password) {
+    public User(String name, String surname, String email, String password) {
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -86,11 +86,11 @@ public class UserDAO implements Comparable<UserDAO> {
         this.password = password;
     }
 
-    public List<RoleDAO> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<RoleDAO> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 
@@ -100,7 +100,7 @@ public class UserDAO implements Comparable<UserDAO> {
     }
 
     @Override
-    public int compareTo(UserDAO t) {
+    public int compareTo(User t) {
         return surname.compareTo(t.getSurname()) != 0 ? surname.compareTo(t.getSurname()) : name.compareTo(t.getName());
     }
 }

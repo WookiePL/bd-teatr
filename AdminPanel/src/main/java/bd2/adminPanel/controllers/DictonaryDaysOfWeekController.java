@@ -13,8 +13,9 @@ import java.util.ResourceBundle;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import bd2.adminPanel.dao.DBUtils;
-import bd2.adminPanel.dao.dictionaries.DayOfWeekDAO;
 import bd2.adminPanel.dao.repository.DaysOfWeekRepository;
+import bd2.adminPanel.model.dictionaries.DayOfWeek;
+
 import java.util.Collections;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -41,7 +42,7 @@ public class DictonaryDaysOfWeekController implements Initializable {
     private StackPane dictionariesStackPane;
 
     @FXML
-    private ListView<DayOfWeekDAO> listViewDaysOfWeek;
+    private ListView<DayOfWeek> listViewDaysOfWeek;
 
     @FXML
     private TextField textFieldDayOfWeekID;
@@ -68,27 +69,42 @@ public class DictonaryDaysOfWeekController implements Initializable {
     
     @FXML
     public void addDayOfWeek() {
-        DayOfWeekDAO day = new DayOfWeekDAO(
-                Integer.parseInt(textFieldDayOfWeekID.getText()),
-                textFieldDayOfWeekName.getText()
-        );
-        dbUtils.persist(day);
-        initialize(null, null);
+    	try {
+	    	boolean isExist = true;
+	    	if(textFieldDayOfWeekID.getText().length() > 0) {
+	    		isExist = daysOfWeekRepository.getIds().contains(Integer.parseInt(textFieldDayOfWeekID.getText()));
+	    	}
+	    	
+	    	if(!isExist && textFieldDayOfWeekName.getText().length() > 0) {
+		        DayOfWeek day = new DayOfWeek(
+		                Integer.parseInt(textFieldDayOfWeekID.getText()),
+		                textFieldDayOfWeekName.getText()
+		        );
+		        dbUtils.persist(day);
+		        initialize(null, null);
+	    	}
+    	} catch(Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML
     public void editDayOfWeek() {
-        DayOfWeekDAO day = listViewDaysOfWeek.getSelectionModel().getSelectedItem();
-        if (day != null) {
-            day.setName(textFieldDayOfWeekName.getText());
-            dbUtils.persist(day);
-            initialize(null, null);
-        }
+    	try {
+	        DayOfWeek day = listViewDaysOfWeek.getSelectionModel().getSelectedItem();
+	        if (day != null) {
+	            day.setName(textFieldDayOfWeekName.getText());
+	            dbUtils.persist(day);
+	            initialize(null, null);
+	        }
+    	} catch(Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML
     public void deleteDayOfWeek() {
-        DayOfWeekDAO day = listViewDaysOfWeek.getSelectionModel().getSelectedItem();
+        DayOfWeek day = listViewDaysOfWeek.getSelectionModel().getSelectedItem();
 
         if (day != null) {
             Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -133,10 +149,10 @@ public class DictonaryDaysOfWeekController implements Initializable {
     }
 
     public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<DayOfWeekDAO> days = FXCollections.observableArrayList();
+        ObservableList<DayOfWeek> days = FXCollections.observableArrayList();
 
         if (dbUtils != null) {
-            List<DayOfWeekDAO> tmp_days = daysOfWeekRepository.getDaysOfWeek();
+            List<DayOfWeek> tmp_days = daysOfWeekRepository.getDaysOfWeek();
             days.addAll(tmp_days);
             Collections.sort(days);
         }

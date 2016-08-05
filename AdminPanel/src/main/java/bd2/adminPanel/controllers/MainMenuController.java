@@ -20,9 +20,6 @@ import javafx.scene.layout.StackPane;
 public class MainMenuController implements Initializable {
 
     private AnnotationConfigApplicationContext context;
-//  private DBUtils dbUtils;
-//  private UsersRepository usersRepository;
-//  private RolesRepository rolesRepository;
 
     @FXML
     private StackPane menuStackPane;
@@ -72,7 +69,6 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void logout() {
-//      dbUtils.close();
         context.close();
         FXMLLoader loader = new FXMLLoader(this.getClass()
                 .getResource("/fxml/LoginScreen.fxml"));
@@ -90,7 +86,6 @@ public class MainMenuController implements Initializable {
 
     @FXML
     public void exit() {
-//	dbUtils.close();
         context.close();
         Platform.exit();
         System.exit(0);
@@ -107,8 +102,5 @@ public class MainMenuController implements Initializable {
         });
 
         context = new AnnotationConfigApplicationContext(SpringConfig.class);
-//	dbUtils = context.getBean("DBUtils", DBUtils.class);
-//	usersRepository = context.getBean("usersRepository", UsersRepository.class);
-//	rolesRepository = context.getBean("rolesRepository", RolesRepository.class);
     }
 }

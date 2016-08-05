@@ -90,6 +90,11 @@ public class EventController {
         return "redirect:/priceList";
     }
 
+    /**
+     * Prepares event realizations list
+     * @param model model to return model to return
+     * @return eventRealizations view
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/eventRealizations"}, method = RequestMethod.GET)
     public String eventRealizations(Model model) {
@@ -190,7 +195,7 @@ public class EventController {
         eventService.updateEvent(Integer.parseInt(eventId), eventName, eventTypeId, eventDescription);
         return "redirect:/events";
     }
-
+    
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/deleteEvent"}, method = RequestMethod.GET)
     public String deleteEvent(@RequestParam(value = "eventId", required = true) Integer eventId) {
@@ -198,6 +203,12 @@ public class EventController {
         return "redirect:/events";
     }
 
+    /**
+     * Prepares event reservations data 
+     * @param model model to return
+     * @param realizationID id of event realization
+     * @return eventReservations view
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/eventReservations"}, method = RequestMethod.GET)
     public String eventReservations(Model model, @RequestParam(value = "realizationId", required = true) Integer realizationID) {
@@ -207,6 +218,12 @@ public class EventController {
         return "eventReservations";
     }
 
+    /**
+     * Deletes an event reservation
+     * @param realizationID id of event realization
+     * @param reservationId id of event reservation
+     * @return redirect
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/deleteEventReservation"}, method = RequestMethod.GET)
     public String deleteEventReservation(@RequestParam(value = "realizationId", required = true) Integer realizationID,
@@ -215,7 +232,12 @@ public class EventController {
         return "redirect:/eventReservations?realizationId=" + realizationID;
     }
 
-
+    /**
+     * Prepares data for selecting seats
+     * @param model model to return
+     * @param realizationId id of event realization
+     * @return selectSeats view
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/selectSeats"}, method = RequestMethod.GET)
     public String selectSeats(Model model, @RequestParam(value = "realizationId", required = false) Integer realizationId) {
@@ -228,12 +250,18 @@ public class EventController {
     }
 
 
-
+    /**
+     * Prepares data to create reservation
+     * @param model model to return
+     * @param seats an array of pairs in string (coma separated): sectorNumber, placeNumber
+     * @param realizationId id of event realization
+     * @return createReservation view
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/createReservation"}, method = RequestMethod.POST)
     public String createReservation(Model model, @RequestParam("seats") String[] seats, @RequestParam("realizationId") String realizationId) {
         Integer realizationIdInt = Integer.parseInt(realizationId);
-        List<PlaceDTO> selectedPlaces = eventService.convertSelectedSeatsStringArrayToPlaceList(seats);
+        List<PlaceEntity> selectedPlaces = eventService.convertSelectedSeatsStringArrayToPlaceEntityList(seats);
         EventRealizationDTO eventRealization = eventService.getEventRealizationById(realizationIdInt);
         if (eventRealization != null) {
             ReservationDTO reservation = new ReservationDTO();
@@ -248,6 +276,14 @@ public class EventController {
         return "redirect:/eventRealizations";
     }
 
+    /**
+     * Creates new reservation
+     * @param seats an array of pairs in string (coma separated): sectorNumber, placeNumber
+     * @param realizationId id of event realization
+     * @param reservation new reservation object
+     * @param result binding result
+     * @return
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/addReservation"}, method = RequestMethod.POST)
     public String addReservation(@RequestParam("seats") String[] seats, @RequestParam("realizationId") String realizationId,
@@ -264,14 +300,22 @@ public class EventController {
         return "redirect:/eventReservations?realizationId=" + reservation.getEventRealizationId();
     }
 
+    /**
+     * Prepares reservation to edit
+     * @param model model to return
+     * @param reservationID id of event reservation
+     * @return editReservation view
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/editReservation"}, method = RequestMethod.GET)
     public String editReservation(Model model, @RequestParam(value = "reservationId", required = false) Integer reservationID) {
         ReservationDTO reservation = eventService.getReservationById(reservationID);
         if (reservation != null) {
             EventRealizationDTO event = eventService.getEventRealizationById(reservation.getEventRealizationId());
+            List<PlaceEntity> places = (List<PlaceEntity>) reservation.getPlaces();
             if (event != null) {
                 model.addAttribute("reservation", reservation);
+                model.addAttribute("places", places);
                 model.addAttribute("event", event);
             }
             return "editReservation";
@@ -279,6 +323,13 @@ public class EventController {
         return "eventRealizations";
     }
 
+    /**
+     * Updates reservation
+     * @param reservationID id of event reservation
+     * @param newReservation edited reservation object
+     * @param result binding result
+     * @return redirect
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/editReservation"}, method = RequestMethod.POST)
     public String editReservation(@RequestParam(value = "reservationId", required = false) Integer reservationID,
@@ -291,6 +342,20 @@ public class EventController {
         return "redirect:/eventReservations?realizationId=" + reservation.getEventRealizationId();
     }
 
+    /**
+     * Prepares and returns json with room information
+     * @param model model to return
+     * @param realizationId id of event realization
+     * @return roomInfo Json eg:
+     * [
+     *   {
+     *       "name": 11,
+     *       "rowsNumber": 2,
+     *       "columnsNumber": 3,
+     *       "occupiedSeats": [3,4]
+     *   }
+     * ]
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/roomInfo"}, method = RequestMethod.GET)
     public
@@ -300,7 +365,12 @@ public class EventController {
         return roomInfo;
     }
 
-    //wejscie w bilety z rezerwacji
+    /**
+     * Prepares ticket data from a reservation
+     * @param model model to return
+     * @param reservationId id of event reservation
+     * @return tickets view
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/tickets"}, method = RequestMethod.GET)
     public String tickets(Model model, @RequestParam(value = "reservationId", required = false) Integer reservationId) {
@@ -315,7 +385,13 @@ public class EventController {
         return "tickets";
     }
 
-    //wejscie w bilety z wyboru miejsc
+    /**
+     * Prepares ticket data from selected places
+     * @param model model to return
+     * @param seats an array of pairs in string (coma separated): sectorNumber, placeNumber 
+     * @param realizationId id of event realisation
+     * @return tickets view
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/tickets"}, method = RequestMethod.POST)
     public String tickets(Model model, @RequestParam("seats") String[] seats, @RequestParam("realizationId") String realizationId) {
@@ -335,6 +411,14 @@ public class EventController {
         return "redirect:/eventRealizations";
     }
 
+    /**
+     * Creates new ticket and removes reservation if exists
+     * @param model model to return
+     * @param placeIds an array of selected places ids
+     * @param realizationId id of event realisation
+     * @param reservationId id of event reservation
+     * @return redirect
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/addTickets"}, method = RequestMethod.POST)
     public String addTickets(Model model, @RequestParam("placeIds") String[] placeIds, @RequestParam("realizationId") String realizationId,
