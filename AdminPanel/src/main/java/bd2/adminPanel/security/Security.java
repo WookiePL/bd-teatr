@@ -37,7 +37,10 @@ public class Security {
 			return false;
 		}
 		
-		if(!encoder.matches(password, user.getPassword())) {
+//		if(!encoder.matches(password, user.getPassword())) {
+//			return false;
+//		}
+		if(!password.equals(user.getPassword())) {
 			return false;
 		}
 		

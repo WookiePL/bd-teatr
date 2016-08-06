@@ -1,20 +1,29 @@
 package bd2.adminPanel;
 
-import java.beans.EventHandler;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+/**
+ * Main class of application.
+ *
+ */
 public class AdminPanel extends Application {
 
+	/**
+	 * Main method.
+	 * @param args input params
+	 */
     public static void main(String[] args) {
         launch(args);
     }
 
+    /**
+     * Method set main window of app
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
