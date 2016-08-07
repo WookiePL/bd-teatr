@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
@@ -14,16 +14,42 @@
     <div th:include="fragments/navbar :: navbar"></div>
 
     <div><br/><br/>
+
         <h2>Witaj!</h2>
-        Jestes w trybie kasjera.<br/><hr/>
-        Twoje możliwości to:<br/>
-        <ul>
-            <li>Przeglądanie realizacji wydarzeń</li>
-            <li>Przeglądanie rezerwacji</li>
-            <li>Tworzenie i edycja rezerwacji</li>
-            <li>Sprzedaż biletów</li>
-        </ul>
+        Posiadasz uprawnienia:
+        <b>
+            <span sec:authorize="hasRole('ROLE_CASHIER')">kasjera</span><span sec:authorize="(hasRole('ROLE_CASHIER') and hasRole('ROLE_STAFF')) or (hasRole('ROLE_CASHIER') and hasRole('ROLE_ADMIN'))">, </span><span sec:authorize="hasRole('ROLE_STAFF')">pracownika uzupełniającego dane</span><span sec:authorize="(hasRole('ROLE_STAFF') and hasRole('ROLE_ADMIN')) or (hasRole('ROLE_CASHIER') and hasRole('ROLE_ADMIN'))">, </span><span sec:authorize="hasRole('ROLE_ADMIN')">administratora</span>.
+        </b>
+        <span sec:authorize="(hasRole('ROLE_CASHIER') and hasRole('ROLE_STAFF') and hasRole('ROLE_ADMIN'))"><br/>Masz więc wszystkie możliwe uprawnienia.</span>
         <hr/>
+
+
+        <div sec:authorize="hasRole('ROLE_CASHIER')">
+            Twoje możliwości jako kasjer to:<br/>
+            <ul>
+                <li>Przeglądanie realizacji wydarzeń</li>
+                <li>Przeglądanie rezerwacji</li>
+                <li>Tworzenie i edycja rezerwacji</li>
+                <li>Sprzedaż biletów</li>
+            </ul>
+            <hr/>
+        </div>
+        <div sec:authorize="hasRole('ROLE_STAFF')">
+            Twoje możliwości jako pracownik uzupełniający dane to:<br/>
+            <ul>
+                <li>Przeglądanie wydarzeń/cenników/cykli</li>
+                <li>Przeglądanie</li>
+                <li>Tworzenie i edycja wydarzeń oraz cenników</li>
+            </ul>
+            <hr/>
+        </div>
+
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+            Twoje konto ma uprawnienia administratora.<br/>
+            Możesz więc zalogować się do systemu z osobnej aplikacji administratora.
+            <hr/>
+        </div>
+
         Aby przeglądać wydarzenia, kliknij <a th:href="@{'/eventRealizations'}">Wydarzenia</a> na nawigacji.<br/>
         Aby przeglądać rezerwacje dla danego wydarzenia, kliknij ikonę <span class="glyphicon glyphicon-calendar"></span> przy wybranym wydarzeniu.<br/>
         Aby dodać nową rezerwację lub sprzedać bilet, kliknij ikonę <span class="glyphicon glyphicon-plus-sign"></span> przy wybranym wydarzeniu.<br/>

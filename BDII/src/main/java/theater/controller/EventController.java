@@ -95,7 +95,7 @@ public class EventController {
      * @param model model to return model to return
      * @return eventRealizations view
      */
-    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @PreAuthorize("hasRole('ROLE_CASHIER') or hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/eventRealizations"}, method = RequestMethod.GET)
     public String eventRealizations(Model model) {
         model.addAttribute("eventRealizationList", eventService.getAllEventRealization());

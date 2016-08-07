@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
@@ -29,25 +29,32 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><!-- </li class="active"> -->
+                    <li sec:authorize="hasRole('ROLE_CASHIER') or hasRole('ROLE_STAFF')">
                         <a th:href="@{'/eventRealizations'}">Realizacje wydarzeń</a>
                     </li>
-                    <li>
+                    <li sec:authorize="hasRole('ROLE_STAFF')">
                         <a th:href="@{'/events'}">Wydarzenia</a>
                     </li>
-                    <li>
+                    <li sec:authorize="hasRole('ROLE_STAFF')">
                         <a th:href="@{'/priceList'}">Cenniki</a>
                     </li>
-                    <li>
+                    <li sec:authorize="hasRole('ROLE_STAFF')">
                         <a th:href="@{'/periods'}">Cykle</a>
                     </li>
                     <!--<li class="active">-->
                         <!--<a th:href="@{'/eventReservations'}">Rezerwacje </a>-->
                     <!--</li>-->
                 </ul>
+
                 <ul class="nav navbar-nav  navbar-right">
                     <li>
                         <a th:href="@{'/logout'}">Wyloguj</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-brand navbar-right" >
+                    <li style="font-size: 12px;">
+                        Zalogowany jako <b><span sec:authentication="name"></span></b>
+                        <br/>
                     </li>
                 </ul>
             </div>

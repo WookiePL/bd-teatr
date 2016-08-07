@@ -11,6 +11,7 @@ import org.springframework.web.multipart.support.StandardServletMultipartResolve
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
+import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
@@ -26,6 +27,7 @@ public class TemplateEngineConfiguration {
         SpringTemplateEngine springTemplateEngine = new SpringTemplateEngine();
         springTemplateEngine.setTemplateResolver(templateResolver());
         springTemplateEngine.setMessageSource(messageSource());
+        springTemplateEngine.addDialect(new SpringSecurityDialect());
         return springTemplateEngine;
     }
 
