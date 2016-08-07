@@ -28,6 +28,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
@@ -97,6 +98,9 @@ public class DictonaryBuildingsController {
 
 	@FXML
 	private TextField textFieldSectorSizeY;
+	
+	@FXML
+	private Label labelError;
 
 	@FXML
 	public void back() {
@@ -222,10 +226,11 @@ public class DictonaryBuildingsController {
 				building.getRooms().add(room);
 				dbUtils.persist(room);
 				dbUtils.persist(building);
+				labelError.setVisible(false);
 				roomDetail();
 			}
 		} catch(Exception e) {
-			e.printStackTrace();
+			labelError.setVisible(true);
 		}
 	}
 
@@ -237,10 +242,12 @@ public class DictonaryBuildingsController {
 				Integer number = Integer.parseInt(textFieldRoomNumber.getText());
 				room.setNumber(number);
 				dbUtils.persist(room);
+				labelError.setVisible(false);
 				roomDetail();
+				
 			}
 		} catch(Exception e) {
-			e.printStackTrace();
+			labelError.setVisible(true);
 		}
 	}
 
@@ -291,15 +298,16 @@ public class DictonaryBuildingsController {
 					places.add(place);
 					dbUtils.persist(place);
 				}
-				
+				labelError.setVisible(false);
 				sector.setPlaces(places);
 				room.getSectors().add(sector);
 					
 				dbUtils.persist(room);
 				sectorDetail();
+				
 			}
 		} catch(Exception e) {
-			e.printStackTrace();
+			labelError.setVisible(true);
 		}
 	}
 
@@ -329,13 +337,13 @@ public class DictonaryBuildingsController {
 					places.add(place);
 					dbUtils.persist(place);
 				}
-				
+				labelError.setVisible(false);
 				sector.setPlaces(places);
 				dbUtils.persist(sector);
 				sectorDetail();
 			}
 		} catch(Exception e) {
-			e.printStackTrace();
+			labelError.setVisible(true);
 		}
 	}
 

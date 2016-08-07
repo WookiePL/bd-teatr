@@ -28,12 +28,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 
 public class DictonaryDaysOfWeekController implements Initializable {
 
+	private static final String ID_EXIST = "Podane id ju¿ istnieje";
+	private static final String ID_PARSE_ERROR = "Id musi byæ liczb¹";
+	
     private AnnotationConfigApplicationContext context;
     private DBUtils dbUtils;
     private DaysOfWeekRepository daysOfWeekRepository;
@@ -63,6 +67,9 @@ public class DictonaryDaysOfWeekController implements Initializable {
     private Button buttonBackMenu;
 
     @FXML
+    private Label labelError;
+    
+    @FXML
     public void detailDayOfWeek() {
         
     }
@@ -80,11 +87,16 @@ public class DictonaryDaysOfWeekController implements Initializable {
 		                Integer.parseInt(textFieldDayOfWeekID.getText()),
 		                textFieldDayOfWeekName.getText()
 		        );
+		        labelError.setVisible(false);
 		        dbUtils.persist(day);
 		        initialize(null, null);
+	    	} else {
+	    		labelError.setText(ID_EXIST);
+	    		labelError.setVisible(true);
 	    	}
     	} catch(Exception e) {
-			e.printStackTrace();
+			labelError.setText(ID_PARSE_ERROR);
+			labelError.setVisible(true);
 		}
     }
 

@@ -36,221 +36,249 @@ import javafx.scene.layout.VBox;
 
 public class UsersController implements Initializable {
 
-    private AnnotationConfigApplicationContext context;
-    private DBUtils dbUtils;
-    private UsersRepository usersRepository;
-    private RolesRepository rolesRepository;
-    private List<CheckBox> listCheckBox;
-    private Security security;
-
-    @FXML
-    private StackPane usersStackPane;
-
-    @FXML
-    private ListView<User> listViewUsers;
-
-    @FXML
-    private TextField textFieldFirstName;
-
-    @FXML
-    private TextField textFieldLastName;
-
-    @FXML
-    private TextField textFieldEmail;
-
-    @FXML
-    private Button buttonEditUser;
-
-    @FXML
-    private Button buttonDeleteUser;
-
-    @FXML
-    private Label titleListCheckBox;
-
-    @FXML
-    private VBox boxListCheckBox;
-
-    public ListView<User> getListViewUsers() {
-        return listViewUsers;
-    }
-
-    @FXML
-    public void backMenu() {
-        if (context != null) {
-            context.close();
-        }
-
-        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainMenuScreen.fxml"));
-        StackPane pane = null;
-
-        try {
-            pane = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        usersStackPane.getChildren().clear();
-        usersStackPane.getChildren().add(pane);
-    }
-
-    @FXML
-    public void userDetail() {
-
-        User user = listViewUsers.getSelectionModel().getSelectedItem();
-
-        if (user != null) {
-            textFieldFirstName.setText(user.getName());
-            textFieldLastName.setText(user.getSurname());
-            textFieldEmail.setText(user.getEmail());
-
-            buttonEditUser.setDisable(false);
-            buttonDeleteUser.setDisable(false);
-
-            if (user.getRoles() != null) {
-                ObservableList<Role> roles = FXCollections.observableArrayList();
-                roles.addAll(user.getRoles());
-            }
-
-            List<Role> roles = user.getRoles();
-
-            if (listCheckBox != null) {
-                for (CheckBox checkBox : listCheckBox) {
-                    checkBox.setSelected(false);
-                    if (roles != null) {
-                        for (Role role : roles) {
-                            if (checkBox.getText().equals(role.getRole())) {
-                                checkBox.setSelected(true);
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @FXML
-    public void addUser() {
-    	String firstName = textFieldFirstName.getText();
-    	String lastName = textFieldLastName.getText();
-    	if(firstName.length() >= 3 && lastName.length() >= 3) {
-    		// domyslne haslo to 3 pierwsze litery imienia + 3 pierwsze litery nazwiska, male litery
-	        String password = firstName.toLowerCase().substring(0, 3) + lastName.toLowerCase().substring(0, 3);
-	        String hashPassword = password; //security.encode(password);
+	private static final String EMAIL_EXIST = "Podany e-mail ju¿ istnieje";
+	private static final String WRONG_LENGTH = "Minimalna d³ugoœæ 3 znaki";
 	
-	        User user = new User(textFieldFirstName.getText(), textFieldLastName.getText(), textFieldEmail.getText(), hashPassword);
-	        List<Role> roles = rolesRepository.getRoles();
+	private AnnotationConfigApplicationContext context;
+	private DBUtils dbUtils;
+	private UsersRepository usersRepository;
+	private RolesRepository rolesRepository;
+	private List<CheckBox> listCheckBox;
+	private Security security;
 	
-	        for (CheckBox checkBox : listCheckBox) {
-	            for (Role role : roles) {
-	                if (role.getRole().equals(checkBox.getText())) {
-	                    if (checkBox.isSelected()) {
-	                        user.getRoles().add(role);
-	                    }
-	                    break;
-	                }
-	            }
-	        }
+	@FXML
+	private StackPane usersStackPane;
+
+	@FXML
+	private ListView<User> listViewUsers;
+
+	@FXML
+	private TextField textFieldFirstName;
+
+	@FXML
+	private TextField textFieldLastName;
+
+	@FXML
+	private TextField textFieldEmail;
+
+	@FXML
+	private TextField textFieldPassword;
+
+	@FXML
+	private Label labelError;
+
+	@FXML
+	private Button buttonEditUser;
+
+	@FXML
+	private Button buttonDeleteUser;
+
+	@FXML
+	private Label titleListCheckBox;
+
+	@FXML
+	private VBox boxListCheckBox;
+
+	public ListView<User> getListViewUsers() {
+		return listViewUsers;
+	}
+
+	@FXML
+	public void backMenu() {
+		if (context != null) {
+			context.close();
+		}
+
+		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainMenuScreen.fxml"));
+		StackPane pane = null;
+
+		try {
+			pane = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		usersStackPane.getChildren().clear();
+		usersStackPane.getChildren().add(pane);
+	}
+
+	@FXML
+	public void userDetail() {
+
+		User user = listViewUsers.getSelectionModel().getSelectedItem();
+
+		if (user != null) {
+			textFieldFirstName.setText(user.getName());
+			textFieldLastName.setText(user.getSurname());
+			textFieldEmail.setText(user.getEmail());
+			textFieldPassword.setText(user.getPassword());
+
+			buttonEditUser.setDisable(false);
+			buttonDeleteUser.setDisable(false);
+
+			if (user.getRoles() != null) {
+				ObservableList<Role> roles = FXCollections.observableArrayList();
+				roles.addAll(user.getRoles());
+			}
+
+			List<Role> roles = user.getRoles();
+
+			if (listCheckBox != null) {
+				for (CheckBox checkBox : listCheckBox) {
+					checkBox.setSelected(false);
+					if (roles != null) {
+						for (Role role : roles) {
+							if (checkBox.getText().equals(role.getRole())) {
+								checkBox.setSelected(true);
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@FXML
+	public void addUser() {
+		String firstName = textFieldFirstName.getText();
+		String lastName = textFieldLastName.getText();
+		String email = textFieldEmail.getText();
+		String password = textFieldPassword.getText();
+		if (firstName.length() >= 3 && lastName.length() >= 3 && email.length() >= 3 && password.length() >= 3) {
+			if(usersRepository.findUserByEmail(email) == null) {
+				User user = new User(firstName, lastName, email, password);
+				List<Role> roles = rolesRepository.getRoles();
 	
-	        dbUtils.persist(user);
-	        initialize(null, null);
-    	}
-    }
+				for (CheckBox checkBox : listCheckBox) {
+					for (Role role : roles) {
+						if (role.getRole().equals(checkBox.getText())) {
+							if (checkBox.isSelected()) {
+								user.getRoles().add(role);
+							}
+							break;
+						}
+					}
+				}
+				labelError.setVisible(false);
+				dbUtils.persist(user);
+				initialize(null, null);
+			} else {
+				labelError.setText(EMAIL_EXIST);
+				labelError.setVisible(true);
+			}
+		} else {
+			labelError.setText(WRONG_LENGTH);
+			labelError.setVisible(true);
+		}
+	}
 
-    @FXML
-    public void deleteUser() {
-        User user = listViewUsers.getSelectionModel().getSelectedItem();
+	@FXML
+	public void deleteUser() {
+		User user = listViewUsers.getSelectionModel().getSelectedItem();
 
-        if (user != null) {
-            Alert alert = new Alert(AlertType.CONFIRMATION);
-            alert.getButtonTypes().set(0, new ButtonType("Tak", ButtonBar.ButtonData.YES));
-            alert.getButtonTypes().set(1, new ButtonType("Nie", ButtonBar.ButtonData.NO));
-            alert.setTitle("Usun¹æ?");
-            alert.setHeaderText("Czy na pewno chcesz usun¹æ poni¿szego " + "u¿ytkownika?");
-            alert.setContentText("E-mail: " + user.getEmail() + "\n" + "Imiê i nazwisko: " + user.getName() + " "
-                    + user.getSurname());
-            DialogPane dialogPane = alert.getDialogPane();
-            dialogPane.getStylesheets().add(getClass().getResource("/fxml/GreenButton.css").toExternalForm());
+		if (user != null) {
+			Alert alert = new Alert(AlertType.CONFIRMATION);
+			alert.getButtonTypes().set(0, new ButtonType("Tak", ButtonBar.ButtonData.YES));
+			alert.getButtonTypes().set(1, new ButtonType("Nie", ButtonBar.ButtonData.NO));
+			alert.setTitle("Usun¹æ?");
+			alert.setHeaderText("Czy na pewno chcesz usun¹æ poni¿szego " + "u¿ytkownika?");
+			alert.setContentText("E-mail: " + user.getEmail() + "\n" + "Imiê i nazwisko: " + user.getName() + " "
+					+ user.getSurname());
+			DialogPane dialogPane = alert.getDialogPane();
+			dialogPane.getStylesheets().add(getClass().getResource("/fxml/GreenButton.css").toExternalForm());
 
-            alert.showAndWait().ifPresent(rs -> {
-                if (rs.getButtonData() == ButtonBar.ButtonData.YES) {
-                    dbUtils.remove(user);
-                    initialize(null, null);
-                }
-            });
-        }
-    }
+			alert.showAndWait().ifPresent(rs -> {
+				if (rs.getButtonData() == ButtonBar.ButtonData.YES) {
+					dbUtils.remove(user);
+					initialize(null, null);
+				}
+			});
+		}
+	}
 
-    @FXML
-    public void editUser() {
-        User user = listViewUsers.getSelectionModel().getSelectedItem();
-        if (user != null) {
-            user.setName(textFieldFirstName.getText());
-            user.setSurname(textFieldLastName.getText());
-            user.setEmail(textFieldEmail.getText());
+	@FXML
+	public void editUser() {
+		String firstName = textFieldFirstName.getText();
+		String lastName = textFieldLastName.getText();
+		String email = textFieldEmail.getText();
+		String password = textFieldPassword.getText();
+		User user = listViewUsers.getSelectionModel().getSelectedItem();
+		if (user != null && firstName.length() >= 3 && lastName.length() >= 3 && email.length() >= 3 && password.length() >= 3) {
+			if(!email.equals(user.getEmail()) && usersRepository.findUserByEmail(email) != null) {
+				labelError.setText(EMAIL_EXIST);
+				labelError.setVisible(true);
+			} else {
+				user.setName(firstName);
+				user.setSurname(lastName);
+				user.setEmail(email);
+				user.setPassword(password);
+	
+				List<Role> roles = rolesRepository.getRoles();
+	
+				for (CheckBox checkBox : listCheckBox) {
+					for (Role role : roles) {
+						if (role.getRole().equals(checkBox.getText())) {
+							if (checkBox.isSelected()) {
+								if (!user.getRoles().contains(role)) {
+									user.getRoles().add(role);
+								}
+							} else if (user.getRoles().contains(role)) {
+								user.getRoles().remove(role);
+							}
+							break;
+						}
+					}
+				}
+				labelError.setVisible(false);
+				dbUtils.persist(user);
+				initialize(null, null);
+			}
+		} else {
+			labelError.setText(WRONG_LENGTH);
+			labelError.setVisible(true);
+		}
+	}
 
-            List<Role> roles = rolesRepository.getRoles();
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		ObservableList<User> users = FXCollections.observableArrayList();
+		List<Role> roles = null;
 
-            for (CheckBox checkBox : listCheckBox) {
-                for (Role role : roles) {
-                    if (role.getRole().equals(checkBox.getText())) {
-                        if (checkBox.isSelected()) {
-                            if (!user.getRoles().contains(role)) {
-                                user.getRoles().add(role);
-                            }
-                        } else if (user.getRoles().contains(role)) {
-                            user.getRoles().remove(role);
-                        }
-                        break;
-                    }
-                }
-            }
+		if (dbUtils != null) {
+			List<User> tmp_users = usersRepository.getUsers();
+			users.addAll(tmp_users);
+			roles = rolesRepository.getRoles();
+		}
 
-            dbUtils.persist(user);
+		buttonEditUser.setDisable(true);
+		buttonDeleteUser.setDisable(true);
 
-            initialize(null, null);
-        }
-    }
+		Collections.sort(users);
+		listViewUsers.setItems(users);
+		listViewUsers.refresh();
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        ObservableList<User> users = FXCollections.observableArrayList();
-        List<Role> roles = null;
+		if (roles == null || roles.isEmpty()) {
+			titleListCheckBox.setVisible(false);
+		} else if (listCheckBox == null) {
+			listCheckBox = new ArrayList<>();
+			titleListCheckBox.setVisible(true);
 
-        if (dbUtils != null) {
-            List<User> tmp_users = usersRepository.getUsers();
-            users.addAll(tmp_users);
-            roles = rolesRepository.getRoles();
-        }
+			for (Role role : roles) {
+				listCheckBox.add(new CheckBox(role.getRole()));
+			}
+			listCheckBox.stream().forEach((checkBox) -> {
+				boxListCheckBox.getChildren().add(checkBox);
+			});
+		}
+	}
 
-        buttonEditUser.setDisable(true);
-        buttonDeleteUser.setDisable(true);
+	public void setContextAndRepositories(AnnotationConfigApplicationContext context) {
+		dbUtils = context.getBean("DBUtils", DBUtils.class);
+		usersRepository = context.getBean("usersRepository", UsersRepository.class);
+		rolesRepository = context.getBean("rolesRepository", RolesRepository.class);
+		security = context.getBean("security", Security.class);
 
-        Collections.sort(users);
-        listViewUsers.setItems(users);
-        listViewUsers.refresh();
-
-        if (roles == null || roles.isEmpty()) {
-            titleListCheckBox.setVisible(false);
-        } else if (listCheckBox == null) {
-            listCheckBox = new ArrayList<>();
-            titleListCheckBox.setVisible(true);
-
-            for (Role role : roles) {
-                listCheckBox.add(new CheckBox(role.getRole()));
-            }
-            listCheckBox.stream().forEach((checkBox) -> {
-                boxListCheckBox.getChildren().add(checkBox);
-            });
-        }
-    }
-
-    public void setContextAndRepositories(AnnotationConfigApplicationContext context) {
-        dbUtils = context.getBean("DBUtils", DBUtils.class);
-        usersRepository = context.getBean("usersRepository", UsersRepository.class);
-        rolesRepository = context.getBean("rolesRepository", RolesRepository.class);
-        security = context.getBean("security", Security.class);
-
-        initialize(null, null);
-    }
+		initialize(null, null);
+	}
 }

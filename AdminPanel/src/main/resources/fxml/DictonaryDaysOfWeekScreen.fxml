@@ -38,7 +38,8 @@
                <center>
                   <VBox alignment="CENTER" maxWidth="-Infinity" prefWidth="225.0" spacing="20.0">
                      <children>
-                        <ListView fx:id="listViewDaysOfWeek" onKeyReleased="#detailDayOfWeek" onMouseClicked="#detailDayOfWeek" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <ListView fx:id="listViewDaysOfWeek" onKeyReleased="#detailDayOfWeek" onMouseClicked="#detailDayOfWeek" prefHeight="161.0" prefWidth="225.0" VBox.vgrow="ALWAYS" />
+                        <Label fx:id="labelError" text="Id musi być liczbą" textFill="RED" visible="false" />
                         <HBox spacing="5.0">
                            <children>
                               <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="43.0" prefWidth="106.0" spacing="1.0">
