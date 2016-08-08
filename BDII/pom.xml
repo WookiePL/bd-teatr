@@ -33,7 +33,11 @@
       <scope>provided</scope>
     </dependency>
 
-
+    <dependency>
+      <groupId>org.thymeleaf.extras</groupId>
+      <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+      <version>2.1.2.RELEASE</version>
+    </dependency>
 
     <dependency>
       <scope>compile</scope>
