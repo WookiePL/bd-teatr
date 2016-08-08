@@ -39,6 +39,12 @@ public class EventController {
         return "priceList";
     }
 
+
+    @RequestMapping(value = {"/accessDenied"}, method = RequestMethod.GET)
+    public String accessDenied(Model model) {
+        return "accessDenied";
+    }
+
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/editPriceList"}, method = RequestMethod.GET)
     public String editPriceList(Model model, @RequestParam(value = "priceListId", required = false) Integer priceListID) {
