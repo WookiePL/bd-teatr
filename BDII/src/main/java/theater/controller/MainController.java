@@ -23,7 +23,7 @@ public class MainController {
     @Autowired
     private IPeriodService periodService;*/
 
-    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @PreAuthorize("hasRole('ROLE_CASHIER') or hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home(Model model) {
 

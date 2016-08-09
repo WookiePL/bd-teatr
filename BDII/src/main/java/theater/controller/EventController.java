@@ -168,7 +168,7 @@ public class EventController {
      * @param model
      * @return events
      */
-    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @PreAuthorize("hasRole('ROLE_CASHIER') or hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/events"}, method = RequestMethod.GET)
     public String events(Model model) {
         model.addAttribute("events", eventService.getAllEvents());
@@ -270,7 +270,7 @@ public class EventController {
      * @param eventId
      * @return addEvent
      */
-    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/addEvent"}, method = RequestMethod.GET)
     public String addEvent(Model model, @RequestParam(value = "eventId", required = false) String eventId) {
         model.addAttribute("eventTypes", eventService.getAllEventTypes());
@@ -287,7 +287,7 @@ public class EventController {
      * @param eventDescription
      * @return redirect to events
      */
-    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/addEvent"}, method = RequestMethod.POST)
     public String addEvent(@RequestParam("eventName") String eventName, @RequestParam("eventType") String eventType,
                                  @RequestParam("eventDescription") String eventDescription) {
@@ -303,7 +303,7 @@ public class EventController {
      * @param eventId
      * @return editEvent
      */
-    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/editEvent"}, method = RequestMethod.GET)
     public String editEvent(Model model, @RequestParam(value = "eventId", required = false) String eventId) {
         model.addAttribute("eventTypes", eventService.getAllEventTypes());
@@ -321,7 +321,7 @@ public class EventController {
      * @param eventDescription
      * @return redirect to events
      */
-    @PreAuthorize("hasRole('ROLE_CASHIER')")
+    @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/editEvent"}, method = RequestMethod.POST)
     public String editEvent(@RequestParam("eventId") String eventId, @RequestParam("eventName") String eventName, @RequestParam("eventType") String eventType,
                            @RequestParam("eventDescription") String eventDescription) {
@@ -329,8 +329,8 @@ public class EventController {
         eventService.updateEvent(Integer.parseInt(eventId), eventName, eventTypeId, eventDescription);
         return "redirect:/events";
     }
-    
-    @PreAuthorize("hasRole('ROLE_CASHIER')")
+
+    @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/deleteEvent"}, method = RequestMethod.GET)
     public String deleteEvent(@RequestParam(value = "eventId", required = true) Integer eventId) {
         eventService.deleteEvent(eventId);
