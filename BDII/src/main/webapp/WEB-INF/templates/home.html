@@ -18,9 +18,14 @@
         <h2>Witaj!</h2>
         Posiadasz uprawnienia:
         <b>
-            <span sec:authorize="hasRole('ROLE_CASHIER')">kasjera</span><span sec:authorize="(hasRole('ROLE_CASHIER') and hasRole('ROLE_STAFF')) or (hasRole('ROLE_CASHIER') and hasRole('ROLE_ADMIN'))">, </span><span sec:authorize="hasRole('ROLE_STAFF')">pracownika uzupełniającego dane</span><span sec:authorize="(hasRole('ROLE_STAFF') and hasRole('ROLE_ADMIN')) or (hasRole('ROLE_CASHIER') and hasRole('ROLE_ADMIN'))">, </span><span sec:authorize="hasRole('ROLE_ADMIN')">administratora</span>.
+            <span sec:authorize="hasRole('ROLE_CASHIER')">kasjera</span>
+            <span sec:authorize="(hasRole('ROLE_CASHIER') and hasRole('ROLE_STAFF')) or (hasRole('ROLE_CASHIER') and hasRole('ROLE_ADMIN'))">, </span>
+            <span sec:authorize="hasRole('ROLE_STAFF')">pracownika uzupełniającego dane</span>
+            <span sec:authorize="(hasRole('ROLE_STAFF') and hasRole('ROLE_ADMIN')) or (hasRole('ROLE_CASHIER') and hasRole('ROLE_ADMIN'))">, </span>
+            <span sec:authorize="hasRole('ROLE_ADMIN')">administratora</span>.
         </b>
-        <span sec:authorize="(hasRole('ROLE_CASHIER') and hasRole('ROLE_STAFF') and hasRole('ROLE_ADMIN'))"><br/>Masz więc wszystkie możliwe uprawnienia.</span>
+        <span sec:authorize="(hasRole('ROLE_CASHIER') and hasRole('ROLE_STAFF') and hasRole('ROLE_ADMIN'))"><br/>
+            Masz więc wszystkie możliwe uprawnienia.</span>
         <hr/>
 
 

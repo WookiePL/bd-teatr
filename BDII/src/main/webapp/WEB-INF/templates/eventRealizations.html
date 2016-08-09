@@ -51,19 +51,19 @@
             <td th:text="${event.room.building.address}"></td>
             <td>
             <!--<span th:each="reservation : ${event.reservations}">-->
-            <a th:href="@{'/eventReservations'(realizationId=${event.eventRealizationId})}">
+            <a sec:authorize="hasRole('ROLE_CASHIER')" th:href="@{'/eventReservations'(realizationId=${event.eventRealizationId})}">
               <span class="glyphicon glyphicon-calendar"></span>
             </a>
 
                 <!--Nie umiem znalezc siedzenia wiec jest byle co:-->
-            <a th:href="@{'/selectSeats'(realizationId=${event.eventRealizationId})}">
+            <a sec:authorize="hasRole('ROLE_CASHIER')" th:href="@{'/selectSeats'(realizationId=${event.eventRealizationId})}">
                 <span class="glyphicon glyphicon-print"></span>
             </a>
-            <a th:href="@{'/editRealization'(realizationId=${event.eventRealizationId})}">
+            <a sec:authorize="hasRole('ROLE_STAFF')" th:href="@{'/editRealization'(realizationId=${event.eventRealizationId})}">
                 <span class="glyphicon glyphicon-pencil"></span>
             </a>
 
-            <a th:href="@{'/deleteRealization'(realizationId=${event.eventRealizationId})}">
+            <a sec:authorize="hasRole('ROLE_STAFF')" th:href="@{'/deleteRealization'(realizationId=${event.eventRealizationId})}">
                 <span class="glyphicon glyphicon-remove-circle"></span>
             </a>
             </td>
@@ -72,7 +72,7 @@
         </tbody>
     </table>
 
-    <a th:href="@{'/addRealization'}">
+    <a sec:authorize="hasRole('ROLE_STAFF')" th:href="@{'/addRealization'}">
         <span class="glyphicon glyphicon-plus-sign"></span>
     </a>
 
