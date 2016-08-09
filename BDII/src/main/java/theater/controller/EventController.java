@@ -25,13 +25,21 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-
+/**
+ * Controller for handling all comunication with user via web server.
+ */
 @Controller
 public class EventController {
 
     @Autowired
     private IEventService eventService;
 
+    /**
+     * Handling price list page.
+     *
+     * @param model
+     * @return priceList
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/priceList"}, method = RequestMethod.GET)
     public String priceList(Model model) {
@@ -39,12 +47,24 @@ public class EventController {
         return "priceList";
     }
 
-
+    /**
+     * Handling access denied page.
+     *
+     * @param model
+     * @return accesDenied
+     */
     @RequestMapping(value = {"/accessDenied"}, method = RequestMethod.GET)
     public String accessDenied(Model model) {
         return "accessDenied";
     }
 
+    /**
+     * Handling price list edit page.
+     *
+     * @param model
+     * @param priceListID
+     * @return editPriceList
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/editPriceList"}, method = RequestMethod.GET)
     public String editPriceList(Model model, @RequestParam(value = "priceListId", required = false) Integer priceListID) {
@@ -59,6 +79,16 @@ public class EventController {
         return  "editPriceList";
     }
 
+    /**
+     * Handling request from user to edit price list page.
+     *
+     * @param priceListId
+     * @param priceListFrom
+     * @param priceListTo
+     * @param priceListName
+     * @param event
+     * @return redirect to priceList
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/editPriceList"}, method = RequestMethod.POST)
     public String editPriceList(@RequestParam("priceListId") String priceListId, @RequestParam("priceListFrom") String priceListFrom, @RequestParam("priceListTo") String priceListTo, @RequestParam("priceListName") String priceListName, @RequestParam("event") String event) {
@@ -72,6 +102,14 @@ public class EventController {
         return "redirect:/priceList";
     }
 
+
+    /**
+     * Handling adding new price list.
+     *
+     * @param model
+     * @param priceListId
+     * @return addPriceList
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/addPriceList"}, method = RequestMethod.GET)
     public String addPriceList(Model model, @RequestParam(value = "priceListId", required = false) String priceListId) {
@@ -81,6 +119,15 @@ public class EventController {
         return "addPriceList";
     }
 
+    /**
+     * Handling request from user to add price list page.
+     *
+     * @param priceListFrom
+     * @param priceListTo
+     * @param priceListName
+     * @param event
+     * @return redirect to priceList
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/addPriceList"}, method = RequestMethod.POST)
     public String addPriceList(@RequestParam("priceListFrom") String priceListFrom, @RequestParam("priceListTo") String priceListTo, @RequestParam("priceListName") String priceListName, @RequestParam("event") String event) {
@@ -89,6 +136,12 @@ public class EventController {
         return "redirect:/priceList";
     }
 
+    /**
+     * Handling deleting price lists.
+     *
+     * @param priceListID
+     * @return redirect to priceList
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/deletePriceList"}, method = RequestMethod.GET)
     public String deletePriceList(@RequestParam(value = "priceListId", required = true) Integer priceListID) {
@@ -97,7 +150,8 @@ public class EventController {
     }
 
     /**
-     * Prepares event realizations list
+     * Prepares event realizations list.
+     *
      * @param model model to return model to return
      * @return eventRealizations view
      */
@@ -108,6 +162,12 @@ public class EventController {
         return "eventRealizations";
     }
 
+    /**
+     * Handling events list.
+     *
+     * @param model
+     * @return events
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/events"}, method = RequestMethod.GET)
     public String events(Model model) {
@@ -115,6 +175,12 @@ public class EventController {
         return "events";
     }
 
+    /**
+     * Handling add realization page.
+     *
+     * @param model
+     * @return addRealization
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/addRealization"}, method = RequestMethod.GET)
     public String addRealization(Model model) {
@@ -123,6 +189,15 @@ public class EventController {
         return "addRealization";
     }
 
+    /**
+     * Handling request from user to add realization page.
+     *
+     * @param event
+     * @param realizationDate
+     * @param realizationTime
+     * @param room
+     * @return
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/addRealization"}, method = RequestMethod.POST)
     public String addRealization(@RequestParam("event") String event, @RequestParam("realizationDate") String realizationDate,
@@ -135,6 +210,13 @@ public class EventController {
         return "redirect:/eventRealizations";
     }
 
+    /**
+     * Handling edit realization page.
+     *
+     * @param model
+     * @param eventRealizationId
+     * @return editRealization
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/editRealization"}, method = RequestMethod.GET)
     public String editRealization(Model model, @RequestParam(value = "realizationId", required = false) String eventRealizationId) {
@@ -145,6 +227,15 @@ public class EventController {
         return "editRealization";
     }
 
+    /**
+     * Handling request from user to edit realization page.
+     * @param event
+     * @param realizationDate
+     * @param realizationTime
+     * @param room
+     * @param realization
+     * @return redirect to eventRealizations
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/editRealization"}, method = RequestMethod.POST)
     public String editRealization(@RequestParam("event") String event, @RequestParam("realizationDate") String realizationDate,
@@ -159,6 +250,12 @@ public class EventController {
         return "redirect:/eventRealizations";
     }
 
+    /**
+     * Handling deleting realizations.
+     *
+     * @param eventRealizationId
+     * @return redirect to ecentRealizations
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/deleteRealization"}, method = RequestMethod.GET)
     public String deleteRealization(@RequestParam(value = "realizationId", required = true) Integer eventRealizationId) {
@@ -166,6 +263,13 @@ public class EventController {
         return "redirect:/eventRealizations";
     }
 
+    /**
+     * Handling adding events page.
+     *
+     * @param model
+     * @param eventId
+     * @return addEvent
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/addEvent"}, method = RequestMethod.GET)
     public String addEvent(Model model, @RequestParam(value = "eventId", required = false) String eventId) {
@@ -175,6 +279,14 @@ public class EventController {
         return "addEvent";
     }
 
+    /**
+     * Handling request from user to add event page.
+     *
+     * @param eventName
+     * @param eventType
+     * @param eventDescription
+     * @return redirect to events
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/addEvent"}, method = RequestMethod.POST)
     public String addEvent(@RequestParam("eventName") String eventName, @RequestParam("eventType") String eventType,
@@ -184,6 +296,13 @@ public class EventController {
         return "redirect:/events";
     }
 
+    /**
+     * Handling editing events
+     *
+     * @param model
+     * @param eventId
+     * @return editEvent
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/editEvent"}, method = RequestMethod.GET)
     public String editEvent(Model model, @RequestParam(value = "eventId", required = false) String eventId) {
@@ -193,6 +312,15 @@ public class EventController {
         return "editEvent";
     }
 
+    /**
+     * Handling request from user to edit event page.
+     *
+     * @param eventId
+     * @param eventName
+     * @param eventType
+     * @param eventDescription
+     * @return redirect to events
+     */
     @PreAuthorize("hasRole('ROLE_CASHIER')")
     @RequestMapping(value = {"/editEvent"}, method = RequestMethod.POST)
     public String editEvent(@RequestParam("eventId") String eventId, @RequestParam("eventName") String eventName, @RequestParam("eventType") String eventType,
