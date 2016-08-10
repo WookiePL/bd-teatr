@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Wookie on 2016-07-31.
+ * Controller for handling communication with user via web server which concerns Periods.
  */
 @Controller
 public class PeriodController {
@@ -25,6 +25,11 @@ public class PeriodController {
     @Autowired
     private IPeriodService periodService;
 
+    /**
+     * Handling periods page.
+     * @param model
+     * @return view of periods
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/periods"}, method = RequestMethod.GET)
     public String periods(Model model) {
@@ -32,6 +37,12 @@ public class PeriodController {
         return "periods";
     }
 
+    /**
+     * Handling period list edit page
+     * @param model
+     * @param cycleId
+     * @return
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/addPeriod"}, method = RequestMethod.GET)
     public String addPeriod(Model model, @RequestParam(value = "cycleId", required = false) String cycleId) {
@@ -42,6 +53,12 @@ public class PeriodController {
         return "addPeriod";
     }
 
+    /**
+     * Handling request from user to edit periods page.
+     * @param model
+     * @param periodId
+     * @return redirect to periods
+     */
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/editPeriod"}, method = RequestMethod.GET)
     public String editPeriod(Model model, @RequestParam(value = "periodId", required = false) Integer periodId) {

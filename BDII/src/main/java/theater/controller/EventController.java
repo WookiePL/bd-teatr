@@ -92,11 +92,6 @@ public class EventController {
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/editPriceList"}, method = RequestMethod.POST)
     public String editPriceList(@RequestParam("priceListId") String priceListId, @RequestParam("priceListFrom") String priceListFrom, @RequestParam("priceListTo") String priceListTo, @RequestParam("priceListName") String priceListName, @RequestParam("event") String event) {
-        //PriceListDTO priceList = eventService.getPriceListById(priceListID);
-        /*if (result.hasErrors()) {
-            return "redirect:/editPriceList?priceListId=" + priceList.getPriceListId();
-
-        }*/
         Integer eventId = Integer.parseInt(event);
         eventService.updatePriceList(Integer.parseInt(priceListId), priceListFrom, priceListTo, priceListName, eventId);
         return "redirect:/priceList";

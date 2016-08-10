@@ -5,7 +5,7 @@ import theater.persist.dtos.DayOfWeekDTO;
 import java.util.List;
 
 /**
- * Created by Wookie on 2016-08-10.
+ * Helper to define which checkboxes are checked on Edit/Add periods Form
  */
 public class DayOfWeekHelper {
 
