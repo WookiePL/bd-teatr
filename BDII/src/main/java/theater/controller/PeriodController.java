@@ -7,9 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import theater.helper.DayOfWeekHelper;
 import theater.persist.dtos.CycleDTO;
+import theater.persist.dtos.DayOfWeekDTO;
 import theater.persist.dtos.PeriodDTO;
 import theater.services.IPeriodService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Wookie on 2016-07-31.
@@ -36,6 +41,28 @@ public class PeriodController {
         model.addAttribute("cycle", cycleDTO);
         return "addPeriod";
     }
+
+    @PreAuthorize("hasRole('ROLE_STAFF')")
+    @RequestMapping(value = {"/editPeriod"}, method = RequestMethod.GET)
+    public String editPeriod(Model model, @RequestParam(value = "periodId", required = false) Integer periodId) {
+        model.addAttribute("periods", periodService.getAllPeriods());
+        DayOfWeekHelper dayOfWeekHelper = new DayOfWeekHelper();
+        List<DayOfWeekDTO> checkedDaysOfWeek = new ArrayList<DayOfWeekDTO>();
+        dayOfWeekHelper.setCheckedDaysOfWeek(checkedDaysOfWeek);
+
+        model.addAttribute("daysOfWeek", periodService.getAllDaysOfWeek());
+        model.addAttribute("checkedDaysOfWeek", dayOfWeekHelper);
+
+        PeriodDTO period = periodService.getPeriodById(periodId);
+        if (period != null) {
+            model.addAttribute("period", period);
+        }
+       /* CycleDTO cycleDTO = new CycleDTO();
+        model.addAttribute("cycle", cycleDTO);*/
+
+        return "editPeriod";
+    }
+
 /*
     @PreAuthorize("hasRole('ROLE_STAFF')")
     @RequestMapping(value = {"/addPriceList"}, method = RequestMethod.POST)

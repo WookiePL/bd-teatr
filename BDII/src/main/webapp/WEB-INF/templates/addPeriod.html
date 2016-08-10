@@ -22,55 +22,29 @@
   <!-- NAVBAR -->
   <div th:include="fragments/navbar :: navbar"></div>
 
-    <div class="container">
+  <div class="container">
       <!-- Header -->
       <div class="center-content">
-        <h1>Utwórz cennik</h1>
+          <h1>Utwórz cykl</h1>
       </div>
 
       <div class="reservation-form center-align">
-          <form method="#" action="addPriceList.html" th:method="POST">
-        <div class="form-group">
-          <label for="priceListName">Nazwa</label>
-          <input type="text" class="form-control" id="priceListName" placeholder="Nazwa" name="priceListName"/>
-        </div>
-        <div class="form-group">
-          <label for="priceListFrom">Od</label>
-          <input type="date" class="form-control" id="priceListFrom" name="priceListFrom"/>
-        </div>
-        <div class="form-group">
-          <label for="priceListTo">Do</label>
-          <input type="date" class="form-control" id="priceListTo" name="priceListTo"/>
-        </div>
-        <div class="form-group">
-            <label for="event">Wydarzenie:</label>
-            <select id="event" name="event">
-                <option th:each="event : ${events}" th:text="${event.name}" th:value="${event.eventId}"></option>
-            </select>
-        </div>
-        <div class="price-list-edit-group">
-          <div class="form-group">
-            <label for="period">Cykl</label>
-            <select>
+          <form method="#" action="editPeriod.html"  th:method="post">
 
-            </select>
-            <a href="eventReservations.html" class="btn btn-success right" role="button">Dodaj cykl</a>
-          </div>
-          <div class="form-group">
-            <label for="period">Normalny</label>
-            <input type="tel" class="form-control" id="period" placeholder="Normalny"/>
-          </div>
-          <div class="form-group">
-            <label for="period">Ulgowy</label>
-            <input type="tel" class="form-control" id="period" placeholder="Ulgowy"/>
-          </div>
-        </div>
+              <div class="form-group">
+                  <label for="periodName">Nazwa</label>
+                  <input type="text" class="form-control" id="periodName" name="periodName" placeholder="Nazwa" th:value="${period.name}"/>
+              </div>
+              <div class="form-group" th:each="dayOfWeek : ${daysOfWeek}">
+                  <input type="checkbox" th:field="*{checkedDaysOfWeek}" th:value="${dayOfWeek.name}"/>
+                  <label th:text="${dayOfWeek.name}"></label>
+              </div>
 
-         <a href="priceList.html" class="btn btn-success left" role="button">Anuluj</a>
-         <button type="submit" class="btn btn-success right">Zatwierdź</button>
-       </form>
-     </div>
-    </div><!-- /.container -->
+              <a href="periods.html" class="btn btn-success left" role="button">Anuluj</a>
+              <button type="submit" class="btn btn-success right">Zatwierdź</button>
+          </form>
+      </div>
+  </div><!-- /.container -->
     <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>

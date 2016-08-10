@@ -13,4 +13,7 @@ public interface IPeriodService {
     List<PeriodDTO> getAllPeriods();
     List<PriceDTO> getAllPrices();
     List<GroupOfClientsDTO> getAllGroupsOfClients();
+
+    PeriodDTO getPeriodById(Integer id);
+
 }

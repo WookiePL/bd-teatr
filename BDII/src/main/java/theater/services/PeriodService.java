@@ -69,6 +69,11 @@ public class PeriodService implements IPeriodService {
         return null;
     }
 
+    @Override
+    public PeriodDTO getPeriodById(Integer id) {
+        return convertToDto(periodDAO.getPeriodById(id));
+    }
+
     private DayOfWeekDTO convertToDto(DayOfWeekEntity dayOfWeekEntity) {
         return modelMapper.map(dayOfWeekEntity, DayOfWeekDTO.class);
     }

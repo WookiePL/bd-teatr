@@ -26,62 +26,22 @@
     <div class="container">
       <!-- Header -->
         <div class="center-content">
-            <h1>Utwórz/Edytuj cykl</h1>
+            <h1>Edytuj cykl</h1>
         </div>
 
       <div class="reservation-form center-align">
-       <form method="#" action="editPeriod.html" th:method="post">
-        <!-- <div>
-             <input type="hidden" class="form-control" th:field="*{priceListId}"/>
-         </div>
-           <div>
-               <input type="hidden" name="priceListId" th:value="${priceList.priceListId}"/>
-           </div>-->
+       <form method="#" action="editPeriod.html"  th:method="post">
+
            <div class="form-group">
            <label for="periodName">Nazwa</label>
            <input type="text" class="form-control" id="periodName" name="periodName" placeholder="Nazwa" th:value="${period.name}"/>
          </div>
-           <div class="form-group">
-               <input type="checkbox" class="" id="dayOfWeek1">Poniedziałek
-           </div>
-           <div class="form-group">
-               <input type="checkbox" class="" id="dayOfWeek2">Wtorek
-           </div>
-           <div class="form-group">
-               <input type="checkbox" class="" id="dayOfWeek3">Środa
-           </div>
-           <div class="form-group">
-               <input type="checkbox" class="" id="dayOfWeek4">Czwartek
-           </div>
-           <div class="form-group">
-               <input type="checkbox" class="" id="dayOfWeek5">Piątek
-           </div>
-           <div class="form-group">
-               <input type="checkbox" class="" id="dayOfWeek6">Sobota
-           </div>
-           <div class="form-group">
-               <input type="checkbox" class="" id="dayOfWeek7">Niedziela
+           <div class="form-group" th:each="dayOfWeek : ${daysOfWeek}">
+               <input type="checkbox" th:field="*{checkedDaysOfWeek}" th:value="${dayOfWeek.name}"/>
+               <label th:text="${dayOfWeek.name}"></label>
            </div>
 
-	 <div class="price-list-edit-group">
-         <div class="form-group">
-           <label for="clientPhone">Cykl</label>
-	   <select>
-
-	   </select>
-           <a href="eventReservations.html" class="btn btn-success right" role="button">Dodaj cykl</a>
-         </div>
-         <div class="form-group">
-           <label for="clientPhone">Normalny</label>
-           <input type="tel" class="form-control" id="clientPhone" placeholder="Normalny"/>
-         </div>
-         <div class="form-group">
-           <label for="clientPhone">Ulgowy</label>
-           <input type="tel" class="form-control" id="clientPhone" placeholder="Ulgowy"/>
-         </div>
-	 </div>
-         <input type="hidden" class="form-control" id="priceListId"  name="priceListId" th:value="${priceList.priceListId}"/>
-         <a href="priceList.html" class="btn btn-success left" role="button">Anuluj</a>
+         <a href="periods.html" class="btn btn-success left" role="button">Anuluj</a>
          <button type="submit" class="btn btn-success right">Zatwierdź</button>
        </form>
      </div>
